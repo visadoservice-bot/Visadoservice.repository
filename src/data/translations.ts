@@ -76,6 +76,16 @@ export const translations = {
           highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue"],
           cta: "Prendre conseil",
           targetSection: "contact"
+        },
+        {
+          id: "billetterie",
+          number: "05",
+          title: "Billetterie Internationale & Vols",
+          subtitle: "Voyagez partout dans le monde",
+          description: "Réservation et émission de billets d'avion vers toutes les destinations avec les meilleures offres de vol partenaires (Air Algérie, Air France et compagnies internationales).",
+          highlights: ["Billets vers tous les pays", "Meilleures offres Air Algérie & Air France", "Assistance directe au 0557 42 67 84"],
+          cta: "Réserver un vol",
+          targetSection: "contact"
         }
       ]
     },
@@ -428,6 +438,16 @@ export const translations = {
           highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر ومتاح"],
           cta: "طلب استشارة",
           targetSection: "contact"
+        },
+        {
+          id: "billetterie",
+          number: "05",
+          title: "حجز تذاكر الطيران الدولية",
+          subtitle: "سافروا إلى كافة أنحاء العالم",
+          description: "حجز وإصدار تذاكر الطيران لجميع دول العالم بأفضل الأسعار مع الخطوط الجوية الجزائرية والخطوط الفرنسية وكبرى الشركات الدولية.",
+          highlights: ["تذاكر لجميع دول العالم", "أفضل عروض Air Algérie & Air France", "حجز فوري عبر 0557 42 67 84"],
+          cta: "حجز تذكرة طيران",
+          targetSection: "contact"
         }
       ]
     },
@@ -779,6 +799,16 @@ export const translations = {
           description: "Tailored strategic guidance formulated around your travel profile, destination, and personal or corporate circumstance.",
           highlights: ["Custom orientation", "Step-by-step clarity", "Continuous availability"],
           cta: "Get expert advice",
+          targetSection: "contact"
+        },
+        {
+          id: "billetterie",
+          number: "05",
+          title: "International Flight Ticketing",
+          subtitle: "Travel Anywhere Worldwide",
+          description: "Flight reservation and ticketing worldwide with exclusive partner fares (Air Algérie, Air France, and international carriers).",
+          highlights: ["Flights to all destinations worldwide", "Best partner offers Air Algérie & Air France", "Direct assistance at 0557 42 67 84"],
+          cta: "Book a flight",
           targetSection: "contact"
         }
       ]

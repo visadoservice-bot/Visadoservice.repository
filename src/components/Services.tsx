@@ -21,7 +21,8 @@ export const Services: React.FC<ServicesProps> = ({
     schengen: imagery.services.schengen,
     canada: imagery.services.canada,
     dossier: imagery.services.dossier,
-    conseil: imagery.services.conseil
+    conseil: imagery.services.conseil,
+    billetterie: imagery.services.billetterie
   };
 
   const handleAction = (item: typeof t.services.items[0]) => {

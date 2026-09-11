@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Play, Pause, Maximize2, ExternalLink, X, MapPin, CheckCircle, Volume2, VolumeX, ShieldCheck } from 'lucide-react';
+import { Play, Pause, Maximize2, ExternalLink, X, MapPin, CheckCircle, Volume2, VolumeX, ShieldCheck, MessageCircle } from 'lucide-react';
 import { imagery } from '../data/imagery';
 import { siteConfig } from '../data/config';
 import { translations } from '../data/translations';
@@ -19,6 +19,8 @@ interface VideoReel {
   thumbnail: string;
   tag: string;
   tiktokUrl: string;
+  youtubeEmbedUrl?: string;
+  youtubeShortsUrl?: string;
 }
 
 interface PhotoItem {
@@ -44,73 +46,79 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
   const t = translations[currentLang];
 
-  // The 3 authentic videos from the agency
+  // The authentic videos from the agency
   const videoReels: VideoReel[] = [
     {
       id: "reel-1",
       title: currentLang === 'ar' 
-        ? "معالجة الملفات وتأكيد مواعيد BLS" 
+        ? "جولة داخلية حقيقية في مكاتبنا بوهران" 
         : currentLang === 'en' 
-        ? "File Processing & BLS Appointment Confirmation"
-        : "Traitement de Dossier & Confirmation de Rendez-vous BLS",
+        ? "Official YouTube Tour of our Oran Office"
+        : "Visite Vidéo Réelle des Bureaux à Oran",
       subtitle: currentLang === 'ar'
-        ? "مراجعة دقيقة لملفات تأشيرة إسبانيا شنغن والمطبوعات الرسمية"
+        ? "فضاء استقبال عصري ومريح ومكاتب استشارة متكاملة"
         : currentLang === 'en'
-        ? "Rigorous verification of BLS Spain forms and appointment confirmation"
-        : "Vérification rigoureuse des formulaires officiels BLS Spain et confirmation de dépôt",
+        ? "Modern consulting workstations, comfortable lounge and welcoming client reception"
+        : "Espaces de consultation modernes, accueil soigné et bureaux équipés",
       description: currentLang === 'ar'
-        ? "مشهد مصور داخل وكالتنا يوضح إعداد ملفات مواعيد BLS إسبانيا مع الأعلام الرسمية واللافتة المضيئة لوكالة Visado Service."
+        ? "اكتشفوا الفضاء الحقيقي المخصص لاستقبالكم في 14 شارع النقيب حادري محمد: تجهيزات حديثة، راحة تامة وقائمة شاملة لكافة الخدمات المقدمة."
         : currentLang === 'en'
-        ? "Authentic footage inside our Oran office showing official BLS Spain appointment slips, the executive desk with flags, and the illuminated 3D Visado sign."
-        : "Séquence filmée dans nos bureaux montrant les fiches de confirmation BLS Spain, le bureau avec les drapeaux officiels et l'enseigne 3D rétroéclairée de Visado Service.",
-      duration: "0:15",
-      thumbnail: imagery.realAgency.appointmentFiles,
-      tag: "BLS Spain • Dossiers",
-      tiktokUrl: siteConfig.tiktokUrl
+        ? "Experience the authentic atmosphere at 14 Rue Capitaine Hadri Mohamed: modern desks, complete comfort, and visa consulting stations."
+        : "Découvrez l'espace d'accueil réel au 14 Rue Capitaine Hadri Mohamed : postes de consultation informatisés, confort soigné et accueil personnalisé.",
+      duration: "0:25",
+      thumbnail: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
+      tag: "Locaux Oran • YouTube",
+      tiktokUrl: siteConfig.tiktokUrl,
+      youtubeEmbedUrl: "https://www.youtube.com/embed/30VIItLvrUI?autoplay=1&rel=0&enablejsapi=1",
+      youtubeShortsUrl: "https://www.youtube.com/shorts/30VIItLvrUI"
     },
     {
       id: "reel-2",
       title: currentLang === 'ar' 
-        ? "جولة داخلية في مكاتبنا بوهران" 
+        ? "معالجة ملفات التأشيرة والخدمات الرسمية" 
         : currentLang === 'en' 
-        ? "Interior Walkthrough of our Oran Office"
-        : "Visite Intérieure de nos Bureaux à Oran",
+        ? "Visa File Processing & Prestations Walkthrough"
+        : "Présentation des Services & Traitement des Dossiers",
       subtitle: currentLang === 'ar'
-        ? "فضاء استقبال عصري ومريح ومكاتب استشارة متكاملة"
+        ? "مراجعة دقيقة لملفات التأشيرة وخدمات حجز المواعيد والوثائق"
         : currentLang === 'en'
-        ? "Modern consulting workstations, elegant chandeliers and welcoming client reception"
-        : "Espaces de consultation modernes, luminaires design et mur décoratif des capitales",
+        ? "Rigorous verification of visa forms, document assembly and bookings"
+        : "Vérification rigoureuse des dossiers de visa, prise de rendez-vous et conseil",
       description: currentLang === 'ar'
-        ? "اكتشفوا الفضاء المخصص لاستقبالكم في 14 شارع النقيب حادري محمد: تجهيزات حديثة، راحة تامة وقائمة شاملة لكافة الخدمات المقدمة."
+        ? "مشهد توضيحي للخدمات المقدمة ومراحل التكفل بملفات التأشيرة وحجوزات الطيران مع فريق Visado Service."
         : currentLang === 'en'
-        ? "Experience the welcoming atmosphere at 14 Rue Capitaine Hadri Mohamed: modern desks, complete comfort, and full list of visa services on entrance decals."
-        : "Découvrez l'espace d'accueil au 14 Rue Capitaine Hadri Mohamed : postes de travail informatisés, confort soigné et vitrophanie détaillée de nos prestations.",
-      duration: "0:18",
-      thumbnail: imagery.realAgency.agencyInterior,
-      tag: "Visite Bureaux • Oran",
-      tiktokUrl: siteConfig.tiktokUrl
+        ? "Authentic overview of services, appointments scheduling, and flight booking assistance by Visado Service team."
+        : "Présentation concrète des démarches de visa, préparation documentaire rigoureuse et billetterie avec l'équipe Visado Service.",
+      duration: "0:30",
+      thumbnail: "https://img.youtube.com/vi/Q7CLYUX4Tew/hqdefault.jpg",
+      tag: "Dossiers & Visas • YouTube",
+      tiktokUrl: siteConfig.tiktokUrl,
+      youtubeEmbedUrl: "https://www.youtube.com/embed/Q7CLYUX4Tew?autoplay=1&rel=0&enablejsapi=1",
+      youtubeShortsUrl: "https://www.youtube.com/shorts/Q7CLYUX4Tew"
     },
     {
       id: "reel-3",
       title: currentLang === 'ar' 
-        ? "الوصول ومدخل الوكالة بشارع حادري محمد" 
+        ? "مرافقة وإرشادات شاملة للتأشيرات الدولية" 
         : currentLang === 'en' 
-        ? "Street Arrival & Agency Entrance"
-        : "Arrivée & Immersion à l'Agence (14 Rue Hadri Mohamed)",
+        ? "Comprehensive Visa Guidance & Travel Advisory"
+        : "Conseil & Accompagnement Visas Internationaux",
       subtitle: currentLang === 'ar'
-        ? "من واجهة الشارع الحجرية مباشرة إلى مكتب الاستقبال وخريطة العالم المضيئة"
+        ? "نصائح وإرشادات مخصصة لنجاح طلبات تأشيرة شنغن وكندا وكافة الوجهات"
         : currentLang === 'en'
-        ? "From the sunny stone storefront to our front desk and golden illuminated world map"
-        : "De la façade extérieure en pierre jusqu'à notre planisphère doré lumineux",
+        ? "Bespoke guidance for successful Schengen, Canada, and global visa applications"
+        : "Conseils et astuces clés pour réussir vos démarches de visa Schengen, Canada et monde entier",
       description: currentLang === 'ar'
-        ? "مقطع يوثق سهولة الوصول إلى الوكالة بوسط وهران مع مدخل أنيق وموظفين جاهزين لإرشادكم ومرافقتكم في كل الإجراءات."
+        ? "فيديو يوضح المرافقة الشخصية لكل عميل حسب حالته المهنية والعائلية لتفادي أخطاء الملفات وضمان أعلى نسبة قبول."
         : currentLang === 'en'
-        ? "Walk straight from the street into Visado Service Oran: recognizable storefront decals, easy access steps, and warm team greeting."
-        : "Immersion directe depuis la rue dans l'agence : façade en pierre claire, vitrophanies distinctives, accueil chaleureux et grand planisphère mural.",
-      duration: "0:22",
-      thumbnail: imagery.realAgency.storefrontOran,
-      tag: "Façade • Immersion",
-      tiktokUrl: siteConfig.tiktokUrl
+        ? "Authentic walkthrough on customized client advisory and procedural accuracy by Visado Service consultants."
+        : "Accompagnement individualisé selon votre profil professionnel et personnel pour garantir des dossiers complets et conformes.",
+      duration: "0:28",
+      thumbnail: "https://img.youtube.com/vi/_94n5bV3q6g/hqdefault.jpg",
+      tag: "Conseil Visa • YouTube",
+      tiktokUrl: siteConfig.tiktokUrl,
+      youtubeEmbedUrl: "https://www.youtube.com/embed/_94n5bV3q6g?autoplay=1&rel=0&enablejsapi=1",
+      youtubeShortsUrl: "https://www.youtube.com/shorts/_94n5bV3q6g"
     }
   ];
 
@@ -257,7 +265,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 activeTab === 'photos' ? 'bg-[#C7A76C] text-[#071A2F] font-bold shadow-md' : 'text-white/70 hover:text-white'
               }`}
             >
-              {currentLang === 'ar' ? 'الصور الحقيقية' : currentLang === 'en' ? 'Real Photos' : 'Photos réelles'}
+              {currentLang === 'ar' ? 'الصور الحقيقية (5)' : currentLang === 'en' ? 'Real Photos (5)' : 'Photos réelles (5)'}
             </button>
           </div>
         </div>
@@ -269,7 +277,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#C7A76C] animate-pulse" />
                 <h3 className="font-serif-luxury text-xl sm:text-2xl text-white">
-                  {currentLang === 'ar' ? 'جولات فيديو وتوثيق الملفات' : currentLang === 'en' ? 'Agency Reels & File Walkthroughs' : "Visites Vidéos & Traitement des Dossiers"}
+                  {currentLang === 'ar' ? 'فيديوهات حقيقية من الوكالة والخدمات' : currentLang === 'en' ? 'Authentic Agency & Service Videos' : "Vidéos Authentiques des Bureaux & Services"}
                 </h3>
               </div>
               <a
@@ -396,56 +404,93 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
           </div>
         )}
 
-        {/* Billetterie Callout with Authentic Poster Contact */}
-        <div className="mt-16 p-8 sm:p-10 rounded-sm bg-gradient-to-r from-[#0B2545] to-[#071A2F] border border-[#C7A76C]/30 shadow-2xl relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Billetterie Callout with Authentic Poster Spotlight */}
+        <div className="mt-16 p-6 sm:p-10 rounded-sm bg-gradient-to-r from-[#0B2545] via-[#071A2F] to-[#051322] border border-[#C7A76C]/40 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-8 space-y-3">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#C7A76C] font-bold">
-                {currentLang === 'ar' ? 'خدمة حجز التذاكر الدولية' : currentLang === 'en' ? 'INTERNATIONAL FLIGHT TICKETING' : 'SERVICE BILLETTERIE INTERNATIONALE'}
-              </span>
-              <h3 className="font-serif-luxury text-2xl sm:text-4xl text-white font-normal">
-                {currentLang === 'ar' ? 'سافروا إلى كافة أنحاء العالم مع Visado Service' : currentLang === 'en' ? 'Travel Anywhere in the World with Visado Service' : 'Voyagez Partout dans le Monde avec Visado Service'}
+            {/* Poster Spotlight preview with click to zoom */}
+            <div className="lg:col-span-4 relative group cursor-pointer" onClick={() => setActivePhotoModal(photos[4])}>
+              <div className="relative overflow-hidden rounded-sm border-2 border-[#C7A76C]/50 shadow-2xl bg-black">
+                <img
+                  src="/images/visado_billetterie_officielle.jpg"
+                  alt="Affiche Officielle Billetterie Internationale Visado Service"
+                  className="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                
+                <div className="absolute top-3 left-3">
+                  <span className="px-2.5 py-1 rounded-sm bg-red-600 text-white text-[10px] uppercase tracking-wider font-bold shadow-md flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    Billetterie Internationale
+                  </span>
+                </div>
+
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                  <span className="text-[11px] text-[#C7A76C] font-mono font-semibold">
+                    Air Algérie & Air France
+                  </span>
+                  <span className="text-[10px] text-white/80 luxury-glass px-2 py-0.5 rounded-sm flex items-center gap-1">
+                    <Maximize2 className="w-3 h-3" /> Agrandir
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Content description & Booking lines */}
+            <div className="lg:col-span-8 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="h-px w-6 bg-[#C7A76C]" />
+                <span className="text-xs uppercase tracking-[0.25em] text-[#C7A76C] font-bold">
+                  {currentLang === 'ar' ? 'خدمة حجز التذاكر الدولية' : currentLang === 'en' ? 'INTERNATIONAL FLIGHT TICKETING' : 'SERVICE BILLETTERIE INTERNATIONALE'}
+                </span>
+              </div>
+              
+              <h3 className="font-serif-luxury text-2xl sm:text-4xl text-white font-normal leading-tight">
+                {currentLang === 'ar' ? 'سافروا إلى كافة أنحاء العالم مع Visado Service' : currentLang === 'en' ? 'Travel Anywhere in the World with Visado Service' : 'Voyagez Partout dans le Monde avec Visado Service !'}
               </h3>
-              <p className="text-sm text-[#E9ECEF]/80 font-light max-w-2xl leading-relaxed">
+              
+              <p className="text-sm text-[#E9ECEF]/85 font-light max-w-2xl leading-relaxed">
                 {currentLang === 'ar'
                   ? 'أفضل عروض الرحلات الجوية مع الخطوط الجوية الجزائرية والخطوط الفرنسية، استشارات شخصية وسرعة في الحجز. تواصلوا معنا مباشرة على 0557 42 67 84.'
                   : currentLang === 'en'
                   ? 'Competitive fares with Air Algérie and Air France, bespoke flight routing, and dedicated booking assistance. Direct line: 0557 42 67 84.'
-                  : 'Meilleures offres de vols avec Air Algérie & Air France, conseils personnalisés et billetterie rapide toutes destinations. Réservations directes au 0557 42 67 84.'}
+                  : 'Billets vers tous les pays du monde aux meilleures offres avec Air Algérie & Air France. Conseils, assistance personnalisée et émission immédiate de vos billets d\'avion.'}
               </p>
               
-              <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-[#E9ECEF]">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#C7A76C]" />
-                  Air Algérie & Air France
+              {/* Popular destinations badges from poster */}
+              <div className="py-2">
+                <span className="text-[11px] uppercase tracking-wider text-[#C7A76C] font-semibold block mb-2">
+                  {currentLang === 'ar' ? 'الوجهات الأكثر طلباً :' : currentLang === 'en' ? 'Popular Destinations:' : 'Destinations Populaires :'}
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#C7A76C]" />
-                  Europe • Canada • Turquie • Moyen-Orient
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#C7A76C]" />
-                  Assistance immédiate
-                </span>
+                <div className="flex flex-wrap gap-2 text-xs font-mono text-white/90">
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Europe</span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Canada</span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Turquie</span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Royaume-Uni</span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Moyen-Orient</span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Asie</span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white/5 border border-white/10">Afrique</span>
+                </div>
               </div>
-            </div>
 
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-              <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="py-3.5 px-6 bg-[#C7A76C] hover:bg-[#b89658] text-[#071A2F] text-xs uppercase tracking-widest font-bold rounded-sm text-center shadow-lg transition-colors"
-              >
-                Appeler : {siteConfig.phone}
-              </a>
-              <a
-                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent("Bonjour Visado Service, je souhaite réserver un billet d'avion ou obtenir des informations de vol.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-3.5 px-6 bg-white/10 hover:bg-white/15 text-white text-xs uppercase tracking-widest font-semibold rounded-sm text-center border border-white/20 transition-colors"
-              >
-                Billetterie WhatsApp
-              </a>
+              {/* Booking CTAs */}
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`tel:${siteConfig.phoneRaw}`}
+                  className="py-3.5 px-6 bg-[#C7A76C] hover:bg-[#b89658] text-[#071A2F] text-xs uppercase tracking-widest font-bold rounded-sm text-center shadow-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Réservation : {siteConfig.phone}</span>
+                </a>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent("Bonjour Visado Service, je souhaite réserver un billet d'avion ou obtenir des informations de vol.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3.5 px-6 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs uppercase tracking-widest font-bold rounded-sm text-center shadow-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Billetterie WhatsApp</span>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -475,51 +520,64 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
               </button>
             </div>
 
-            {/* Video Simulated Canvas / Player */}
-            <div className="relative h-[380px] sm:h-[460px] bg-black overflow-hidden flex items-center justify-center group">
-              <img
-                src={activeVideoModal.thumbnail}
-                alt={activeVideoModal.title}
-                className={`w-full h-full object-cover transition-transform duration-1000 ${
-                  isPlaying ? 'scale-105' : 'scale-100'
-                }`}
-              />
-              <div className="absolute inset-0 bg-black/20" />
-
-              {/* Real Video Overlay Scanline / Ambient Animation */}
-              {isPlaying && (
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-white/5 to-transparent animate-pulse" />
-              )}
-
-              {/* Watermark in video */}
-              <div className="absolute top-4 right-4 luxury-glass px-3 py-1 rounded-sm border border-white/10 text-xs text-white/90 font-mono flex items-center gap-1.5">
-                <span>@visadoservice</span>
-              </div>
-
-              {/* Center Play / Pause trigger */}
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="p-4 rounded-full bg-black/60 hover:bg-[#C7A76C] text-white hover:text-[#071A2F] transition-all transform hover:scale-110"
-              >
-                {isPlaying ? <Pause className="w-7 h-7" /> : <Play className="w-7 h-7 ml-0.5" />}
-              </button>
-
-              {/* Audio Toggle */}
-              <button
-                onClick={() => setIsMuted(!isMuted)}
-                className="absolute bottom-4 right-4 p-2 rounded-full bg-black/60 text-white/80 hover:text-white transition-colors"
-              >
-                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-              </button>
-
-              {/* Video Timeline Bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-                <div
-                  className="h-full bg-[#C7A76C] transition-all duration-300"
-                  style={{ width: `${videoProgress}%` }}
+            {/* Video Canvas / Player */}
+            {activeVideoModal.youtubeEmbedUrl ? (
+              <div className="relative h-[380px] sm:h-[480px] bg-black overflow-hidden flex items-center justify-center">
+                <iframe
+                  key={activeVideoModal.id}
+                  src={activeVideoModal.youtubeEmbedUrl}
+                  title={activeVideoModal.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
               </div>
-            </div>
+            ) : (
+              <div className="relative h-[380px] sm:h-[460px] bg-black overflow-hidden flex items-center justify-center group">
+                <img
+                  src={activeVideoModal.thumbnail}
+                  alt={activeVideoModal.title}
+                  className={`w-full h-full object-cover transition-transform duration-1000 ${
+                    isPlaying ? 'scale-105' : 'scale-100'
+                  }`}
+                />
+                <div className="absolute inset-0 bg-black/20" />
+
+                {/* Real Video Overlay Scanline / Ambient Animation */}
+                {isPlaying && (
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-white/5 to-transparent animate-pulse" />
+                )}
+
+                {/* Watermark in video */}
+                <div className="absolute top-4 right-4 luxury-glass px-3 py-1 rounded-sm border border-white/10 text-xs text-white/90 font-mono flex items-center gap-1.5">
+                  <span>@visadoservice</span>
+                </div>
+
+                {/* Center Play / Pause trigger */}
+                <button
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  className="p-4 rounded-full bg-black/60 hover:bg-[#C7A76C] text-white hover:text-[#071A2F] transition-all transform hover:scale-110"
+                >
+                  {isPlaying ? <Pause className="w-7 h-7" /> : <Play className="w-7 h-7 ml-0.5" />}
+                </button>
+
+                {/* Audio Toggle */}
+                <button
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="absolute bottom-4 right-4 p-2 rounded-full bg-black/60 text-white/80 hover:text-white transition-colors"
+                >
+                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                </button>
+
+                {/* Video Timeline Bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+                  <div
+                    className="h-full bg-[#C7A76C] transition-all duration-300"
+                    style={{ width: `${videoProgress}%` }}
+                  />
+                </div>
+              </div>
+            )}
 
             {/* Modal Bottom Information */}
             <div className="p-6 bg-[#071A2F]">
@@ -535,15 +593,27 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={activeVideoModal.tiktokUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 py-3 bg-[#FE2C55] hover:bg-[#e0264b] text-white text-center text-xs uppercase tracking-wider font-bold rounded-sm flex items-center justify-center gap-2 transition-colors shadow-md"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Voir cette vidéo sur TikTok</span>
-                </a>
+                {activeVideoModal.youtubeShortsUrl ? (
+                  <a
+                    href={activeVideoModal.youtubeShortsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-3 bg-[#FF0000] hover:bg-[#d90000] text-white text-center text-xs uppercase tracking-wider font-bold rounded-sm flex items-center justify-center gap-2 transition-colors shadow-md"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Ouvrir sur YouTube Shorts</span>
+                  </a>
+                ) : (
+                  <a
+                    href={activeVideoModal.tiktokUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-3 bg-[#FE2C55] hover:bg-[#e0264b] text-white text-center text-xs uppercase tracking-wider font-bold rounded-sm flex items-center justify-center gap-2 transition-colors shadow-md"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Voir cette vidéo sur TikTok</span>
+                  </a>
+                )}
                 <button
                   onClick={() => {
                     setActiveVideoModal(null);

@@ -4,25 +4,54 @@ export const imagery = {
     logo: "/logo.png",
     schengenVisaPassport: "/images/visado_schengen_visa_passport_1789153466844.jpg",
     appointmentFiles: "/images/visado_appointment_files_1789153496388.jpg",
-    agencyInterior: "/images/visado_agency_interior_1789153481345.jpg",
+    agencyInterior: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
     storefrontOran: "/images/visado_storefront_oran_1789153512649.jpg",
-    ticketingPoster: "/images/visado_ticketing_poster_1789153531363.jpg",
+    ticketingPoster: "/images/visado_billetterie_officielle.jpg",
+    youtubeOfficeTour: "https://www.youtube.com/embed/30VIItLvrUI",
+    youtubeOfficeShortsUrl: "https://www.youtube.com/shorts/30VIItLvrUI",
+    youtubeVideo2Embed: "https://www.youtube.com/embed/Q7CLYUX4Tew",
+    youtubeVideo2ShortsUrl: "https://www.youtube.com/shorts/Q7CLYUX4Tew",
+    youtubeVideo3Embed: "https://www.youtube.com/embed/_94n5bV3q6g",
+    youtubeVideo3ShortsUrl: "https://www.youtube.com/shorts/_94n5bV3q6g"
+  },
+  youtubeVideos: {
+    officeTour: {
+      id: "30VIItLvrUI",
+      embedUrl: "https://www.youtube.com/embed/30VIItLvrUI",
+      shortsUrl: "https://www.youtube.com/shorts/30VIItLvrUI",
+      thumbnail: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
+      title: "Visite des locaux Visado Service à Oran"
+    },
+    servicesOverview: {
+      id: "Q7CLYUX4Tew",
+      embedUrl: "https://www.youtube.com/embed/Q7CLYUX4Tew",
+      shortsUrl: "https://www.youtube.com/shorts/Q7CLYUX4Tew",
+      thumbnail: "https://img.youtube.com/vi/Q7CLYUX4Tew/hqdefault.jpg",
+      title: "Présentation des Services & Traitement des Dossiers"
+    },
+    clientGuidance: {
+      id: "_94n5bV3q6g",
+      embedUrl: "https://www.youtube.com/embed/_94n5bV3q6g",
+      shortsUrl: "https://www.youtube.com/shorts/_94n5bV3q6g",
+      thumbnail: "https://img.youtube.com/vi/_94n5bV3q6g/hqdefault.jpg",
+      title: "Conseils & Accompagnement Visas Visado Service"
+    }
   },
   hero: {
     main: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2400&q=85", // Airplane wing floating over golden hour clouds
-    fallback: "/images/visado_agency_interior_1789153481345.jpg",
+    fallback: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
     alt: "Voyage en avion au-dessus des nuages à l'aube"
   },
   intro: {
     texture: "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&w=1800&q=80", // Airplane window soft dawn
-    traveler: "/images/visado_agency_interior_1789153481345.jpg"
+    traveler: "/images/visado_schengen_visa_passport_1789153466844.jpg" // Real approved Spain Schengen visa on passport
   },
   services: {
     schengen: "/images/visado_appointment_files_1789153496388.jpg", // Real appointment files & European/Algerian flags
     canada: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1600&q=80", // Canadian turquoise lake and mountain peaks
     dossier: "/images/visado_schengen_visa_passport_1789153466844.jpg", // Real Spain Schengen visa issued on passport with Visado card
-    conseil: "/images/visado_agency_interior_1789153481345.jpg", // Real Visado Service consulting desk in Oran
-    billetterie: "/images/visado_ticketing_poster_1789153531363.jpg" // Real Billetterie Internationale Air Algérie & Air France poster
+    conseil: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg", // Real Visado Service consulting desk in Oran from YouTube
+    billetterie: "/images/visado_billetterie_officielle.jpg" // Real Billetterie Internationale Air Algérie & Air France poster
   },
   europe: {
     france: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80", // Paris
@@ -38,6 +67,6 @@ export const imagery = {
   },
   agency: {
     oranStreet: "/images/visado_storefront_oran_1789153512649.jpg", // Real storefront at 14 Rue Hadri Mohamed
-    desk: "/images/visado_agency_interior_1789153481345.jpg" // Real consultation office
+    desk: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg" // Real consultation office from YouTube
   }
 };
