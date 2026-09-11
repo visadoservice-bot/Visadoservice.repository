@@ -126,10 +126,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Phone quick link */}
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            className="hidden xl:flex items-center gap-2 text-xs text-[#E9ECEF]/70 hover:text-[#C7A76C] transition-colors"
+            className="hidden xl:flex items-center gap-2 text-xs text-[#E9ECEF]/70 hover:text-[#C7A76C] transition-colors whitespace-nowrap shrink-0"
           >
-            <Phone className="w-3.5 h-3.5 text-[#C7A76C]" />
-            <span className="font-mono tracking-wider">{siteConfig.phone}</span>
+            <Phone className="w-3.5 h-3.5 text-[#C7A76C] shrink-0" />
+            <span className="font-mono tracking-wider whitespace-nowrap select-all">{siteConfig.phone}</span>
           </a>
 
           {/* Primary CTA Button */}
@@ -214,10 +214,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className="flex items-center justify-center gap-2 text-sm text-white/80 hover:text-[#C7A76C] py-2"
+              className="flex items-center justify-center gap-2 text-sm text-white/80 hover:text-[#C7A76C] py-2 whitespace-nowrap"
             >
-              <Phone className="w-4 h-4 text-[#C7A76C]" />
-              <span className="font-mono">{siteConfig.phone}</span>
+              <Phone className="w-4 h-4 text-[#C7A76C] shrink-0" />
+              <span className="font-mono whitespace-nowrap">{siteConfig.phone}</span>
             </a>
           </div>
         </div>
