@@ -1,0 +1,6 @@
+{
+  "name": "Visado Service | Agence Visa à Oran",
+  "description": "Visado Service à Oran vous accompagne dans vos démarches de visa Schengen, Canada et autres destinations avec un service professionnel et personnalisé.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
