@@ -79,9 +79,16 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
                     <span className="font-serif-luxury text-xs tracking-widest text-[#C7A76C] font-bold">
                       {dest.number}
                     </span>
-                    <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full luxury-glass text-white/80 border border-white/10">
-                      Schengen
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      {dest.id === 'es' && (
+                        <span className="text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm bg-[#C7A76C] text-[#071A2F] font-bold shadow-md">
+                          Visa Réel Délivré
+                        </span>
+                      )}
+                      <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full luxury-glass text-white/80 border border-white/10">
+                        Schengen
+                      </span>
+                    </div>
                   </div>
 
                   {/* Bottom Editorial Content */}
@@ -132,6 +139,24 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
             <h3 className="font-serif-luxury text-3xl sm:text-4xl text-white font-normal mb-4">
               {selectedDest.name}
             </h3>
+
+            {selectedDest.id === 'es' && (
+              <div className="mb-6 rounded-sm overflow-hidden border border-[#C7A76C]/40 relative">
+                <img
+                  src={imagery.realAgency.schengenVisaPassport}
+                  alt="Exemple de visa Schengen Espagne obtenu avec Visado Service"
+                  className="w-full h-56 object-cover object-center"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-3 flex items-center justify-between">
+                  <span className="text-[11px] text-[#C7A76C] font-semibold uppercase tracking-wider">
+                    Cas Réel • Visa Schengen Espagne Délivré
+                  </span>
+                  <span className="text-[10px] text-white/80 font-mono">
+                    Passeport client & Carte Visado
+                  </span>
+                </div>
+              </div>
+            )}
 
             <p className="text-sm sm:text-base text-[#E9ECEF]/90 font-light leading-relaxed mb-6">
               {selectedDest.description}

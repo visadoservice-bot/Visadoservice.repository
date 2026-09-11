@@ -8,6 +8,7 @@ export interface SiteConfig {
   postalCode: string;
   phone: string;
   phoneRaw: string;
+  phoneSecondary?: string;
   whatsapp: string;
   whatsappRaw: string;
   email: string;

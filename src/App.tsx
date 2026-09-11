@@ -7,6 +7,7 @@ import { EuropeSection } from './components/EuropeSection';
 import { CanadaSection } from './components/CanadaSection';
 import { Approach } from './components/Approach';
 import { WhyUs } from './components/WhyUs';
+import { AgencyMediaShowcase } from './components/AgencyMediaShowcase';
 import { Trust } from './components/Trust';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
@@ -88,7 +89,13 @@ export default function App() {
         {/* 7. Pourquoi Visado Service (5 Piliers & Agence Oran) */}
         <WhyUs currentLang={currentLang} />
 
-        {/* 8. Confiance & Rigueur */}
+        {/* 8. Galerie Réelle & Vidéos de l'Agence (Locaux, Visas Délivrés, BLS) */}
+        <AgencyMediaShowcase
+          currentLang={currentLang}
+          onOpenConsultation={() => setIsConsultationModalOpen(true)}
+        />
+
+        {/* 9. Confiance & Rigueur */}
         <Trust currentLang={currentLang} />
 
         {/* 9. Témoignages (Structure éthique sans faux avis) */}

@@ -69,23 +69,31 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
               </h3>
 
               <div className="space-y-5 text-sm">
-                {/* Phone */}
-                <a
-                  href={`tel:${siteConfig.phoneRaw}`}
-                  className="flex items-start gap-4 text-[#E9ECEF]/90 hover:text-white group transition-colors"
-                >
+                {/* Phone Primary & Secondary */}
+                <div className="flex items-start gap-4 text-[#E9ECEF]/90 group">
                   <div className="p-3 rounded-sm bg-white/5 group-hover:bg-[#C7A76C]/20 transition-colors shrink-0">
                     <Phone className="w-5 h-5 text-[#C7A76C]" />
                   </div>
-                  <div>
+                  <div className="space-y-1">
                     <span className="text-xs text-[#E9ECEF]/50 block uppercase tracking-wider mb-0.5">
                       {t.contact.phoneLabel}
                     </span>
-                    <span className="font-mono text-base text-white group-hover:text-[#C7A76C] transition-colors font-medium">
-                      {siteConfig.phone}
-                    </span>
+                    <a
+                      href={`tel:${siteConfig.phoneRaw}`}
+                      className="font-mono text-base text-white hover:text-[#C7A76C] transition-colors font-medium block"
+                    >
+                      {siteConfig.phone} <span className="text-xs font-sans text-[#C7A76C] font-normal">(Ligne directe & Billetterie)</span>
+                    </a>
+                    {siteConfig.phoneSecondary && (
+                      <a
+                        href="tel:+213555778460"
+                        className="font-mono text-sm text-white/80 hover:text-[#C7A76C] transition-colors block"
+                      >
+                        {siteConfig.phoneSecondary} <span className="text-xs font-sans text-white/40 font-normal">(Standard)</span>
+                      </a>
+                    )}
                   </div>
-                </a>
+                </div>
 
                 {/* WhatsApp */}
                 <a

@@ -15,18 +15,28 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'header' }
   const [hasError, setHasError] = useState(false);
 
   // Height configurations
-  const heightClass = variant === 'footer' ? 'h-10 md:h-12' : variant === 'drawer' ? 'h-9' : 'h-8 md:h-10';
+  const heightClass = variant === 'footer' ? 'h-12 md:h-14' : variant === 'drawer' ? 'h-11' : 'h-10 md:h-11';
 
   if (!hasError && siteConfig.logoUrl) {
     return (
       <div className={`flex items-center gap-3 ${className}`}>
-        <img
-          src={siteConfig.logoUrl}
-          alt={siteConfig.name}
-          onError={() => setHasError(true)}
-          className={`${heightClass} w-auto object-contain transition-opacity duration-300`}
-        />
-        {/* Fallback indicator hidden if image loads */}
+        <div className="bg-white/95 rounded-md p-1 sm:p-1.5 shadow-md flex items-center justify-center border border-white/20">
+          <img
+            src={siteConfig.logoUrl}
+            alt={siteConfig.name}
+            onError={() => setHasError(true)}
+            className={`${heightClass} w-auto object-contain transition-transform duration-300 hover:scale-105`}
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="hidden sm:flex flex-col text-left">
+          <span className="font-serif-luxury font-bold text-base md:text-lg tracking-[0.12em] text-white">
+            VISADO SERVICE
+          </span>
+          <span className="text-[9px] uppercase tracking-[0.25em] text-[#C7A76C] font-medium">
+            Oran • Algérie
+          </span>
+        </div>
       </div>
     );
   }
