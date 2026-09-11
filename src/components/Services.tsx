@@ -1,7 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
-import { imagery } from '../data/imagery';
-import { translations } from '../data/translations';
+import { Globe, FileCheck2, Plane, Sparkles, ArrowRight } from 'lucide-react';
 import { Language } from '../types';
 
 interface ServicesProps {
@@ -15,125 +13,164 @@ export const Services: React.FC<ServicesProps> = ({
   onNavigateToSection,
   onOpenConsultation
 }) => {
-  const t = translations[currentLang];
-
-  const serviceImages: Record<string, string> = {
-    schengen: imagery.services.schengen,
-    canada: imagery.services.canada,
-    dossier: imagery.services.dossier,
-    conseil: imagery.services.conseil,
-    billetterie: imagery.services.billetterie
-  };
-
-  const handleAction = (item: typeof t.services.items[0]) => {
-    if (item.targetSection === 'europe') {
-      onNavigateToSection('europe');
-    } else if (item.targetSection === 'canada') {
-      onNavigateToSection('canada');
-    } else {
-      onOpenConsultation();
+  const servicesList = [
+    {
+      id: "schengen",
+      icon: Globe,
+      iconColor: "text-[#1A73E8]",
+      iconBg: "bg-[#E8F0FE]",
+      title: currentLang === 'ar' ? 'تأشيرات شنغن وأوروبا' : currentLang === 'en' ? 'Schengen & European Visas' : 'Visa Schengen & Europe',
+      subtitle: currentLang === 'ar' ? 'فرنسا، إسبانيا، إيطاليا وكافة دول أوروبا' : currentLang === 'en' ? 'France, Spain, Italy & Schengen Area' : 'France, Espagne, Italie & Espace Schengen',
+      description: currentLang === 'ar'
+        ? 'مرافقة شاملة لإعداد الملف، حجز المواعيد (TLScontact, BLS, VFS)، التأمين الدولي، والتحقق الدقيق من الوثائق.'
+        : currentLang === 'en'
+        ? 'Comprehensive application file preparation, appointment assistance (TLScontact, BLS, VFS), travel insurance, and consular document verification.'
+        : 'Assistance complète pour le montage de dossier, prise de rendez-vous consulaires (TLScontact, BLS, VFS), assurance voyage et conformité des pièces.',
+      features: currentLang === 'ar' 
+        ? ['حجز وتتبع المواعيد', 'تدقيق كامل للوثائق', 'تأمين سفر دولي معتمد']
+        : ['Assistance prise de RDV', 'Audit minutieux des pièces', 'Assurance voyage certifiée']
+    },
+    {
+      id: "canada",
+      icon: Sparkles,
+      iconColor: "text-[#D93025]",
+      iconBg: "bg-[#FCE8E6]",
+      title: currentLang === 'ar' ? 'تأشيرات كندا والدول الدولية' : currentLang === 'en' ? 'Canada & Global Visas' : 'Visa Canada & International',
+      subtitle: currentLang === 'ar' ? 'تأشيرة زائر، دراسة، وسياحة' : currentLang === 'en' ? 'Visitor, Study & Tourism Visas' : 'Visiteur, Tourisme & Études',
+      description: currentLang === 'ar'
+        ? 'إعداد الحساب الإلكتروني الرسمي لكندا، صياغة رسائل الشرح المتقنة، وترتيب الوثائق المالية والمهنية.'
+        : currentLang === 'en'
+        ? 'Official online portal submissions, customized purpose-of-travel explanation letters, and financial backing organization.'
+        : 'Création et téléversement sur le portail officiel canadien, rédaction soignée des lettres explicatives et structuration des garanties financières.',
+      features: currentLang === 'ar'
+        ? ['تعبئة الاستمارات الرسمية', 'رسائل دافع متقنة', 'تنسيق البصمات والمتابعة']
+        : ['Formulaires en ligne IRCC', 'Lettres explicatives solides', 'Suivi étape par étape']
+    },
+    {
+      id: "dossier",
+      icon: FileCheck2,
+      iconColor: "text-[#1E8E3E]",
+      iconBg: "bg-[#E6F4EA]",
+      title: currentLang === 'ar' ? 'إعداد ومراجعة الملفات' : currentLang === 'en' ? 'File Auditing & Verification' : 'Traitement & Audit de Dossier',
+      subtitle: currentLang === 'ar' ? 'ضمان اكتمال الوثائق وتفادي الرفض' : currentLang === 'en' ? 'Prevent errors & maximize success' : 'Éviter les erreurs & maximiser l\'accord',
+      description: currentLang === 'ar'
+        ? 'فحص شامل وتدقيق دقيق لشهادات العمل، السجلات التجارية، كشوف الحسابات البنكية وحجوزات الفنادق.'
+        : currentLang === 'en'
+        ? 'Rigorous pre-submission audit of employment records, trade registers, bank statements, and confirmed accommodation.'
+        : 'Examen rigoureux et structuration méthodique des justificatifs professionnels, fiches de paie, relevés bancaires et hébergements.',
+      features: currentLang === 'ar'
+        ? ['تصحيح الثغرات والنقائص', 'ترتيب منطقي ومقنع للملف', 'مطابقة معايير القنصليات']
+        : ['Détection des anomalies', 'Classement optimal des pièces', 'Conformité consulaire stricte']
+    },
+    {
+      id: "billetterie",
+      icon: Plane,
+      iconColor: "text-[#F9AB00]",
+      iconBg: "bg-[#FEF7E0]",
+      title: currentLang === 'ar' ? 'حجز التذاكر والفنادق' : currentLang === 'en' ? 'Flight & Hotel Ticketing' : 'Billetterie & Réservations',
+      subtitle: currentLang === 'ar' ? 'الخطوط الجوية الجزائرية والشركات العالمية' : currentLang === 'en' ? 'Air Algérie, Air France & Global Airlines' : 'Air Algérie, Air France & Vols Mondiaux',
+      description: currentLang === 'ar'
+        ? 'إصدار تذاكر الطيران الرسمية وحجوزات الفنادق المؤكدة الصالحة للتقديم في ملفات التأشيرات والسفر.'
+        : currentLang === 'en'
+        ? 'Official confirmed flight bookings and certified hotel reservations tailored for consular application compliance.'
+        : 'Émission de billets d\'avion et de réservations hôtelières confirmées conformes aux exigences des ambassades et consulats.',
+      features: currentLang === 'ar'
+        ? ['تذاكر طيران مؤكدة', 'حجوزات فندقية موثوقة', 'أفضل الأسعار والخيارات']
+        : ['Billets d\'avion certifiés', 'Réservations d\'hôtel valides', 'Tarifs compétitifs']
     }
-  };
+  ];
 
   return (
-    <section id="services" className="py-28 sm:py-36 bg-[#0B2545]/40 relative overflow-hidden">
-      {/* Background aesthetics */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-16 sm:py-20 bg-white border-b border-[#DADCE0]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
-        {/* Editorial Section Header */}
-        <div className="max-w-3xl mb-20">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-8 bg-[#C7A76C]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C7A76C] font-semibold">
-              {t.services.overline}
-            </span>
-          </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight mb-4">
-            {t.services.heading}
+        {/* Simple Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs uppercase font-semibold tracking-wider text-[#1A73E8] bg-[#E8F0FE] px-3 py-1 rounded-full inline-block mb-3">
+            {currentLang === 'ar' ? 'خدماتنا الرئيسية' : currentLang === 'en' ? 'Our Core Services' : 'Nos Services'}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#202124] tracking-tight">
+            {currentLang === 'ar' 
+              ? 'خدمات شاملة لمرافقة التأشيرات والسفر' 
+              : currentLang === 'en' 
+              ? 'Comprehensive Visa & Travel Services' 
+              : 'Des démarches claires, structurées et sans stress'}
           </h2>
-          <p className="text-lg text-[#E9ECEF]/80 font-light max-w-xl">
-            {t.services.subheading}
+          <p className="mt-2 text-sm sm:text-base text-[#5F6368]">
+            {currentLang === 'ar'
+              ? 'حلول موثوقة ومخصصة لجميع احتياجاتكم من إعداد الملف حتى السفر.'
+              : 'Une prise en charge personnalisée de votre dossier du premier conseil jusqu’à l’obtention.'}
           </p>
         </div>
 
-        {/* Large Format Showcase for Services */}
-        <div className="space-y-16 lg:space-y-24">
-          {t.services.items.map((service, index) => {
-            const isEven = index % 2 === 1;
-            const imgSrc = serviceImages[service.id] || imagery.services.schengen;
-
+        {/* 4 Clean Minimalist Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {servicesList.map((service) => {
+            const IconComponent = service.icon;
             return (
               <div
                 key={service.id}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${
-                  isEven ? 'lg:flex-row-reverse' : ''
-                }`}
+                className="google-card p-6 flex flex-col justify-between"
               >
-                {/* Visual block */}
-                <div className={`lg:col-span-7 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="relative group overflow-hidden rounded-sm border border-white/10 shadow-2xl">
-                    <img
-                      src={imgSrc}
-                      alt={service.title}
-                      className="w-full h-[360px] sm:h-[440px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#071A2F]/90 via-[#071A2F]/30 to-transparent" />
-                    
-                    {/* Corner Service Number Watermark */}
-                    <div className="absolute top-6 left-6 luxury-glass px-4 py-1.5 rounded-sm border border-white/10">
-                      <span className="font-serif-luxury text-sm font-semibold tracking-wider text-[#C7A76C]">
-                        SERVICE {service.number}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                      <span className="text-xs uppercase tracking-[0.2em] text-[#E9ECEF]/75 font-medium">
-                        {service.subtitle}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Editorial Content block */}
-                <div className={`lg:col-span-5 space-y-6 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="space-y-3">
-                    <span className="text-xs uppercase tracking-[0.2em] text-[#C7A76C] font-semibold">
-                      {service.subtitle}
-                    </span>
-                    <h3 className="font-serif-luxury text-2xl sm:text-4xl text-white font-normal leading-snug">
-                      {service.title}
-                    </h3>
+                <div>
+                  {/* Icon */}
+                  <div className={`w-11 h-11 rounded-lg ${service.iconBg} ${service.iconColor} flex items-center justify-center mb-4`}>
+                    <IconComponent className="w-5 h-5" />
                   </div>
 
-                  <p className="text-base text-[#E9ECEF]/80 leading-relaxed font-light">
+                  {/* Title & Subtitle */}
+                  <h3 className="text-base font-bold text-[#202124] mb-1">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs font-medium text-[#1A73E8] mb-3">
+                    {service.subtitle}
+                  </p>
+
+                  {/* Short Description */}
+                  <p className="text-xs text-[#5F6368] leading-relaxed mb-4">
                     {service.description}
                   </p>
 
-                  {/* Highlights list */}
-                  <div className="space-y-2.5 pt-2">
-                    {service.highlights.map((h, i) => (
-                      <div key={i} className="flex items-center gap-3 text-sm text-[#F7F7F5]/90">
-                        <CheckCircle2 className="w-4 h-4 text-[#C7A76C] shrink-0" />
-                        <span>{h}</span>
-                      </div>
+                  {/* Bullet features */}
+                  <ul className="space-y-1.5 border-t border-[#F1F3F4] pt-3 mb-4">
+                    {service.features.map((feat, idx) => (
+                      <li key={idx} className="text-[11px] text-[#3C4043] flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1A73E8]" />
+                        <span>{feat}</span>
+                      </li>
                     ))}
-                  </div>
-
-                  {/* Elegant Text CTA button with arrow */}
-                  <div className="pt-4">
-                    <button
-                      onClick={() => handleAction(service)}
-                      className="inline-flex items-center gap-3 text-xs sm:text-sm uppercase tracking-[0.16em] text-[#C7A76C] hover:text-white font-bold group transition-colors pb-1 border-b border-[#C7A76C]/40 hover:border-white"
-                    >
-                      <span>{service.cta}</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </button>
-                  </div>
+                  </ul>
                 </div>
 
+                {/* Card Action */}
+                <button
+                  onClick={onOpenConsultation}
+                  className="w-full mt-2 py-2 px-3 text-xs font-semibold text-[#1A73E8] bg-[#F8F9FA] hover:bg-[#E8F0FE] border border-[#DADCE0] hover:border-[#1A73E8] rounded-md transition-colors flex items-center justify-center gap-1"
+                >
+                  <span>{currentLang === 'ar' ? 'طلب الخدمة' : 'Demander ce service'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             );
           })}
+        </div>
+
+        {/* Global Bottom Prompt */}
+        <div className="mt-10 p-5 bg-[#F8F9FA] border border-[#DADCE0] rounded-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <h4 className="text-sm font-bold text-[#202124]">
+              {currentLang === 'ar' ? 'هل لديك حالة خاصة أو استفسار عن وجهة معينة؟' : 'Vous avez un doute sur les pièces à fournir pour votre profil ?'}
+            </h4>
+            <p className="text-xs text-[#5F6368]">
+              {currentLang === 'ar' ? 'فريقنا في وهران مستعد للإجابة على جميع تساؤلاتكم.' : 'Nos conseillers étudient votre situation (salarié, commerçant, étudiant, retraité).'}
+            </p>
+          </div>
+          <button
+            onClick={onOpenConsultation}
+            className="px-5 py-2.5 bg-[#1A73E8] hover:bg-[#1557B0] text-white text-xs font-semibold rounded-md whitespace-nowrap shadow-xs transition-colors"
+          >
+            {currentLang === 'ar' ? 'استشارة مجانية' : 'Demander un conseil'}
+          </button>
         </div>
 
       </div>

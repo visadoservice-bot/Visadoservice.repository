@@ -1,6 +1,6 @@
 import React from 'react';
-import { ChevronDown, ArrowRight } from 'lucide-react';
-import { imagery } from '../data/imagery';
+import { ArrowRight, Phone, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
+import { siteConfig } from '../data/config';
 import { translations } from '../data/translations';
 import { Language } from '../types';
 
@@ -18,77 +18,119 @@ export const Hero: React.FC<HeroProps> = ({
   const t = translations[currentLang];
 
   return (
-    <section id="hero" className="relative w-full min-h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#071A2F]">
-      {/* Cinematic Background Image with Zoom subtle parallax feel */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={imagery.hero.main}
-          alt={imagery.hero.alt}
-          className="w-full h-full object-cover object-center scale-105 transition-transform duration-[12000ms] ease-out will-change-transform"
-          loading="eager"
-        />
-        {/* Editorial Gradients: Deep Luxury Dark Blue (#071A2F) blend */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071A2F] via-[#071A2F]/65 to-[#071A2F]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071A2F]/90 via-[#071A2F]/50 to-transparent" />
-        <div className="absolute inset-0 backdrop-blur-[0.5px]" />
-      </div>
-
-      {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 pb-16 flex flex-col justify-center h-full">
-        <div className="max-w-3xl space-y-6 sm:space-y-8">
+    <section id="hero" className="bg-[#F8F9FA] border-b border-[#DADCE0] py-14 sm:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Subtle Pill Eyebrow */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C7A76C] animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#F7F7F5]/90 uppercase">
-              {t.hero.smallLabel}
-            </span>
+          {/* Main Editorial Text (Google Sites Style) */}
+          <div className="lg:col-span-7 space-y-6">
+            
+            {/* Minimal Google Business Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DADCE0] rounded-full text-xs font-medium text-[#3C4043] shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#1A73E8]" />
+              <span>{currentLang === 'ar' ? 'وكالة معتمدة ومرافقة تأشيرات في وهران' : currentLang === 'en' ? 'Visa Advisory & Travel Agency in Oran' : 'Agence de préparation de dossiers Visa & Billetterie à Oran'}</span>
+            </div>
+
+            {/* Clear Main Heading */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#202124] tracking-tight leading-[1.2]">
+              {currentLang === 'ar' 
+                ? 'مرافقة احترافية لإعداد ملفات التأشيرة وحجز التذاكر' 
+                : currentLang === 'en' 
+                ? 'Expert Visa File Preparation & International Ticketing in Oran' 
+                : 'Accompagnement et préparation de vos dossiers de visa à Oran'}
+            </h1>
+
+            {/* Short Clear Presentation Subtitle */}
+            <p className="text-base sm:text-lg text-[#5F6368] leading-relaxed font-normal">
+              {currentLang === 'ar'
+                ? 'نرافقكم خطوة بخطوة في استخراج تأشيرات شنغن (فرنسا، إسبانيا، إيطاليا...)، كندا، وكافة الوجهات الدولية مع حجز التذاكر والاستشارات الدقيقة.'
+                : currentLang === 'en'
+                ? 'Step-by-step assistance for Schengen visas (France, Spain, Italy...), Canada, and global destinations with certified file checks and ticketing.'
+                : 'Visado Service vous accompagne avec rigueur dans toutes vos démarches : visas Schengen (France, Espagne, Italie...), Canada, formulaires consulaires, réservations et billetterie officielle.'}
+            </p>
+
+            {/* Action Buttons (CTAs) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <button
+                onClick={onOpenConsultation}
+                className="px-6 py-3.5 bg-[#1A73E8] hover:bg-[#1557B0] text-white text-sm font-semibold rounded-md shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2"
+              >
+                <span>{currentLang === 'ar' ? 'طلب تسعيرة أو موعد' : currentLang === 'en' ? 'Request a Free Quote' : 'Demander un devis gratuit'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <a
+                href={`tel:${siteConfig.phoneRaw}`}
+                className="px-6 py-3.5 bg-white hover:bg-[#F1F3F4] text-[#3C4043] border border-[#DADCE0] text-sm font-semibold rounded-md transition-colors flex items-center justify-center gap-2"
+              >
+                <Phone className="w-4 h-4 text-[#1A73E8]" />
+                <span>{currentLang === 'ar' ? 'اتصل بنا : 0557426784' : `Appeler : ${siteConfig.phone}`}</span>
+              </a>
+            </div>
+
+            {/* Google Business Trust Bullet Points */}
+            <div className="pt-4 border-t border-[#E8EAED] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#3C4043]">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#1E8E3E] shrink-0" />
+                <span>{currentLang === 'ar' ? 'تدقيق شامل للملفات' : 'Vérification complète des pièces'}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#1A73E8] shrink-0" />
+                <span>{currentLang === 'ar' ? 'متابعة شخصية لكل عميل' : 'Accompagnement personnalisé'}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#D93025] shrink-0" />
+                <span>{currentLang === 'ar' ? 'مقرنا : 14 شارع حادري وهران' : 'Agence physique à Oran'}</span>
+              </div>
+            </div>
+
           </div>
 
-          {/* Grand Titre Editorial */}
-          <h1 className="font-serif-luxury text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-medium leading-[1.08] tracking-tight text-white drop-shadow-sm">
-            {t.hero.title}
-          </h1>
+          {/* Right Minimal Visual Card (Google Business Profile card style) */}
+          <div className="lg:col-span-5">
+            <div className="google-card p-4 sm:p-5 bg-white">
+              <div className="relative rounded overflow-hidden aspect-[4/3] bg-[#F1F3F4] mb-4">
+                <img
+                  src="/images/visado_schengen_visa_passport_1789153466844.jpg"
+                  alt="Dossier et visa traité par Visado Service"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-2 left-2 bg-[#202124]/80 text-white text-[11px] font-medium px-2.5 py-1 rounded backdrop-blur-xs">
+                  {currentLang === 'ar' ? 'تأشيرات وملفات حقيقية' : 'Passeport & Visa officiel'}
+                </div>
+              </div>
 
-          {/* Sous-titre */}
-          <p className="text-base sm:text-lg md:text-xl text-[#E9ECEF]/90 font-light leading-relaxed max-w-2xl">
-            {t.hero.subtitle}
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-            <button
-              onClick={onOpenConsultation}
-              className="px-8 py-4 bg-[#C7A76C] hover:bg-[#b89658] text-[#071A2F] text-xs sm:text-sm font-bold uppercase tracking-[0.16em] rounded-sm shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-3 group"
-            >
-              <span>{t.hero.ctaPrimary}</span>
-              <ArrowRight className="w-4 h-4 text-[#071A2F] group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button
-              onClick={onExploreServices}
-              className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] rounded-sm border border-white/20 hover:border-white/40 backdrop-blur-md transition-all duration-300 flex items-center justify-center"
-            >
-              {t.hero.ctaSecondary}
-            </button>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-[#202124]">Visado Service Oran</span>
+                  <span className="text-[#1E8E3E] font-medium flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1E8E3E]" />
+                    {currentLang === 'ar' ? 'مفتوح اليوم' : 'Ouvert de 09h à 17h'}
+                  </span>
+                </div>
+                <p className="text-xs text-[#5F6368]">
+                  14 Rue Capitaine Hadri Mohamed, Oran 31000
+                </p>
+                <div className="pt-2 flex gap-2">
+                  <a
+                    href="#contact"
+                    className="flex-1 text-center py-2 text-xs font-semibold text-[#1A73E8] bg-[#E8F0FE] hover:bg-[#D2E3FC] rounded transition-colors"
+                  >
+                    {currentLang === 'ar' ? 'معلومات الاتصال' : 'Itinéraire & Horaires'}
+                  </a>
+                  <button
+                    onClick={onOpenConsultation}
+                    className="flex-1 text-center py-2 text-xs font-semibold text-white bg-[#1A73E8] hover:bg-[#1557B0] rounded transition-colors"
+                  >
+                    {currentLang === 'ar' ? 'طلب موعد' : 'Prendre RDV'}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
       </div>
-
-      {/* Scroll to explore indicator */}
-      <a
-        href="#intro"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 group text-[#E9ECEF]/60 hover:text-white transition-colors"
-        aria-label={t.hero.scrollPrompt}
-      >
-        <span className="text-[10px] uppercase tracking-[0.3em] font-medium">
-          {t.hero.scrollPrompt}
-        </span>
-        <div className="w-6 h-9 rounded-full border border-white/20 flex items-start justify-center p-1">
-          <div className="w-1 h-2 bg-[#C7A76C] rounded-full animate-bounce mt-1" />
-        </div>
-      </a>
     </section>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Award, Briefcase, Users, MapPin, Clock, Play, ExternalLink, Video, CheckCircle2 } from 'lucide-react';
-import { imagery } from '../data/imagery';
-import { translations } from '../data/translations';
+import { Zap, CheckCheck, Headphones, CircleDollarSign, MapPin, Play } from 'lucide-react';
+import { siteConfig } from '../data/config';
 import { Language } from '../types';
 
 interface WhyUsProps {
@@ -9,229 +8,161 @@ interface WhyUsProps {
 }
 
 export const WhyUs: React.FC<WhyUsProps> = ({ currentLang }) => {
-  const [selectedVideoKey, setSelectedVideoKey] = useState<'officeTour' | 'servicesOverview' | 'clientGuidance'>('officeTour');
-  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
-  const t = translations[currentLang];
+  const [isPlayingTour, setIsPlayingTour] = useState(false);
 
-  const videos = {
-    officeTour: {
-      id: "30VIItLvrUI",
-      title: currentLang === 'ar' ? "فيديو جولة المكاتب بوهران" : currentLang === 'en' ? "Oran Agency Office Walkthrough" : "Visite Réelle des Locaux d'Oran",
-      tag: "Visite Bureaux",
-      url: "https://www.youtube.com/shorts/30VIItLvrUI",
-      embed: "https://www.youtube.com/embed/30VIItLvrUI?autoplay=1&rel=0&enablejsapi=1",
-      thumb: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg"
+  const pillars = [
+    {
+      icon: Zap,
+      color: "text-[#1A73E8]",
+      bg: "bg-[#E8F0FE]",
+      title: currentLang === 'ar' ? 'السرعة والفعالية' : currentLang === 'en' ? 'Speed & Efficiency' : 'Rapidité & Efficacité',
+      desc: currentLang === 'ar'
+        ? 'معالجة سريعة ودقيقة للاستمارات، رصد فوري للمواعيد المتاحة، ودون تأخير في الإجراءات.'
+        : currentLang === 'en'
+        ? 'Fast turnaround times, prompt appointment tracking, and timely submission preparation.'
+        : 'Prise en charge rapide de vos formulaires, veille active sur les créneaux de rendez-vous et respect strict des délais.'
     },
-    servicesOverview: {
-      id: "Q7CLYUX4Tew",
-      title: currentLang === 'ar' ? "فيديو تقديم الخدمات ومعالجة الملفات" : currentLang === 'en' ? "Visa File Processing & Services" : "Traitement des Dossiers & Prestations",
-      tag: "Dossiers & Prestations",
-      url: "https://www.youtube.com/shorts/Q7CLYUX4Tew",
-      embed: "https://www.youtube.com/embed/Q7CLYUX4Tew?autoplay=1&rel=0&enablejsapi=1",
-      thumb: "https://img.youtube.com/vi/Q7CLYUX4Tew/hqdefault.jpg"
+    {
+      icon: CheckCheck,
+      color: "text-[#1E8E3E]",
+      bg: "bg-[#E6F4EA]",
+      title: currentLang === 'ar' ? 'البساطة وراحة البال' : currentLang === 'en' ? 'Simplicity & Peace of Mind' : 'Simplicité & Zéro Stress',
+      desc: currentLang === 'ar'
+        ? 'نتكفل بكافة التعقيدات الإدارية من ترجمة، حجز فنادق، وتأمين حتى يكون ملفكم جاهزاً 100%.'
+        : currentLang === 'en'
+        ? 'We take care of the paperwork, verified bookings, and travel insurance for a smooth process.'
+        : 'Nous nous occupons des démarches complexes : conformité des justificatifs, réservations officielles et assurances valides.'
     },
-    clientGuidance: {
-      id: "_94n5bV3q6g",
-      title: currentLang === 'ar' ? "فيديو مرافقة واستشارات التأشيرة" : currentLang === 'en' ? "Visa Guidance & Advice" : "Conseil & Accompagnement Visa",
-      tag: "Conseils & Visas",
-      url: "https://www.youtube.com/shorts/_94n5bV3q6g",
-      embed: "https://www.youtube.com/embed/_94n5bV3q6g?autoplay=1&rel=0&enablejsapi=1",
-      thumb: "https://img.youtube.com/vi/_94n5bV3q6g/hqdefault.jpg"
+    {
+      icon: Headphones,
+      color: "text-[#9334E6]",
+      bg: "bg-[#F3E8FD]",
+      title: currentLang === 'ar' ? 'متابعة ودعم مستمر' : currentLang === 'en' ? 'Dedicated Customer Support' : 'Support Client & Conseil Dédié',
+      desc: currentLang === 'ar'
+        ? 'مستشار خاص يجيب على أسئلتكم عبر الهاتف، واتساب، أو مباشرة في مقرنا بوهران.'
+        : currentLang === 'en'
+        ? 'A dedicated visa advisor available by phone, WhatsApp, or directly at our physical office in Oran.'
+        : 'Un conseiller à votre écoute par téléphone, WhatsApp ou directement au sein de notre agence à Oran.'
+    },
+    {
+      icon: CircleDollarSign,
+      color: "text-[#F9AB00]",
+      bg: "bg-[#FEF7E0]",
+      title: currentLang === 'ar' ? 'أسعار واضحة وشفافة' : currentLang === 'en' ? 'Transparent Pricing' : 'Prix Clairs & Transparents',
+      desc: currentLang === 'ar'
+        ? 'تسعيرة محددة ومفصلة من البداية بدون أي تكاليف خفية أو مفاجآت.'
+        : currentLang === 'en'
+        ? 'Upfront, transparent pricing tailored to your specific service with no hidden fees.'
+        : 'Tarifs transparents annoncés dès le premier contact, sans frais cachés et avec devis clair.'
     }
-  };
-
-  const activeVideo = videos[selectedVideoKey];
-
-  const pillarIcons = [
-    <Award key="0" className="w-5 h-5 text-[#C7A76C]" />,
-    <Briefcase key="1" className="w-5 h-5 text-[#C7A76C]" />,
-    <Users key="2" className="w-5 h-5 text-[#C7A76C]" />,
-    <MapPin key="3" className="w-5 h-5 text-[#C7A76C]" />,
-    <Clock key="4" className="w-5 h-5 text-[#C7A76C]" />
   ];
 
   return (
-    <section id="why-us" className="py-28 sm:py-36 bg-[#071A2F] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-us" className="py-16 sm:py-20 bg-[#F8F9FA] border-b border-[#DADCE0]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column: Real YouTube Video Embed & Verified Office Showcase */}
-          <div className="lg:col-span-6 relative">
+        {/* Section Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs uppercase font-semibold tracking-wider text-[#1A73E8] bg-[#E8F0FE] px-3 py-1 rounded-full inline-block mb-3">
+            {currentLang === 'ar' ? 'لماذا تختارنا' : currentLang === 'en' ? 'Why Choose Us' : 'Pourquoi nous choisir'}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#202124] tracking-tight">
+            {currentLang === 'ar'
+              ? 'خبرة واحترافية لضمان أفضل فرصة لقبول ملفكم'
+              : 'Une méthode rigoureuse au service de votre projet de voyage'}
+          </h2>
+          <p className="mt-2 text-sm sm:text-base text-[#5F6368]">
+            {currentLang === 'ar'
+              ? 'مكتبنا يوفر لكم راحة البال والضمان عبر معايير عمل صارمة.'
+              : 'Découvrez les engagements qui font la réputation de Visado Service à Oran.'}
+          </p>
+        </div>
+
+        {/* 4 Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+          {pillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
+            return (
+              <div key={idx} className="google-card p-6 bg-white">
+                <div className={`w-10 h-10 rounded-lg ${pillar.bg} ${pillar.color} flex items-center justify-center mb-4`}>
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-[#202124] mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-xs text-[#5F6368] leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Real Agency Presentation Card (Google Business verified badge & video) */}
+        <div className="google-card p-6 bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
-            {/* Video Selector Tabs */}
-            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 mb-3">
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedVideoKey('officeTour');
-                  setIsPlayingVideo(true);
-                }}
-                className={`py-2 px-2 sm:px-3 text-[11px] sm:text-xs uppercase tracking-wider font-semibold rounded-sm transition-all flex items-center justify-center gap-1 text-center ${
-                  selectedVideoKey === 'officeTour'
-                    ? 'bg-[#C7A76C] text-[#071A2F] shadow-md'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
-                }`}
-              >
-                <Video className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">1. Locaux</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedVideoKey('servicesOverview');
-                  setIsPlayingVideo(true);
-                }}
-                className={`py-2 px-2 sm:px-3 text-[11px] sm:text-xs uppercase tracking-wider font-semibold rounded-sm transition-all flex items-center justify-center gap-1 text-center ${
-                  selectedVideoKey === 'servicesOverview'
-                    ? 'bg-[#C7A76C] text-[#071A2F] shadow-md'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
-                }`}
-              >
-                <Video className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">2. Dossiers</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedVideoKey('clientGuidance');
-                  setIsPlayingVideo(true);
-                }}
-                className={`py-2 px-2 sm:px-3 text-[11px] sm:text-xs uppercase tracking-wider font-semibold rounded-sm transition-all flex items-center justify-center gap-1 text-center ${
-                  selectedVideoKey === 'clientGuidance'
-                    ? 'bg-[#C7A76C] text-[#071A2F] shadow-md'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
-                }`}
-              >
-                <Video className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">3. Visas</span>
-              </button>
+            {/* Left info */}
+            <div className="md:col-span-7 space-y-3">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#1E8E3E] bg-[#E6F4EA] px-2.5 py-1 rounded">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>{currentLang === 'ar' ? 'وكالة معتمدة ومسجلة بوهران' : 'Établissement physique vérifié à Oran'}</span>
+              </div>
+              <h3 className="text-lg font-bold text-[#202124]">
+                {currentLang === 'ar' ? 'مقرنا في قلب مدينة وهران في خدمتكم' : 'Visitez nos locaux au 14 Rue Capitaine Hadri à Oran'}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#5F6368] leading-relaxed">
+                {currentLang === 'ar'
+                  ? 'نستقبلكم طيلة أيام الأسبوع من السبت إلى الخميس (09:00 - 17:00) لتقديم الاستشارات، فحص المستندات، واستلام المعاملات بكل ثقة وأمان.'
+                  : 'Nous vous accueillons du samedi au jeudi pour étudier vos pièces, procéder aux réservations officielles et déposer vos demandes en toute sérénité.'}
+              </p>
+              <div className="pt-1 flex flex-wrap gap-4 text-xs font-medium text-[#3C4043]">
+                <span>📍 14 Rue Capitaine Hadri Mohamed, Oran</span>
+                <span>📞 {siteConfig.phone}</span>
+                <span>✉️ {siteConfig.email}</span>
+              </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-sm border-2 border-[#C7A76C]/40 shadow-2xl bg-black">
-              
-              {isPlayingVideo ? (
-                <div className="w-full h-[480px] sm:h-[520px] bg-black relative">
-                  <iframe
-                    key={activeVideo.id}
-                    src={activeVideo.embed}
-                    title={activeVideo.title}
-                    className="w-full h-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                  <div className="absolute top-2 right-2 z-10 flex gap-2">
-                    <a
-                      href={activeVideo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-2.5 py-1 bg-red-600 hover:bg-red-700 text-white text-[11px] font-semibold rounded-sm shadow-md flex items-center gap-1"
-                    >
-                      <span>YouTube</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              ) : (
-                <div className="relative h-[480px] sm:h-[520px] w-full group cursor-pointer" onClick={() => setIsPlayingVideo(true)}>
-                  <img
-                    src={activeVideo.thumb}
-                    alt={activeVideo.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071A2F] via-[#071A2F]/30 to-black/40" />
-                  
-                  {/* Top Badge */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="px-3 py-1.5 rounded-sm bg-red-600 text-white text-[10px] uppercase tracking-wider font-bold shadow-lg flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-                      {activeVideo.tag} • Vidéo Réelle
-                    </span>
-                    <a
-                      href={activeVideo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="px-2.5 py-1 rounded-sm luxury-glass text-[11px] text-white/90 hover:text-white flex items-center gap-1 border border-white/20"
-                    >
-                      <span>YouTube</span>
-                      <ExternalLink className="w-3 h-3 text-[#C7A76C]" />
-                    </a>
-                  </div>
-
-                  {/* Play Button Trigger */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      type="button"
-                      aria-label="Lancer la vidéo réelle"
-                      className="w-20 h-20 rounded-full bg-[#C7A76C] text-[#071A2F] flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-white"
-                    >
-                      <Play className="w-8 h-8 fill-current ml-1" />
-                    </button>
-                  </div>
-
-                  {/* Floating Stat/Location Overlay */}
-                  <div className="absolute bottom-6 left-6 right-6 luxury-glass-card p-5 rounded-sm border border-white/10">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Video className="w-3.5 h-3.5 text-[#C7A76C]" />
-                      <span className="text-[10px] uppercase tracking-[0.25em] text-[#C7A76C] font-bold block">
-                        {activeVideo.title}
+            {/* Right: Short Video Embed of the Agency */}
+            <div className="md:col-span-5">
+              <div className="relative rounded overflow-hidden aspect-video bg-[#202124] border border-[#DADCE0] shadow-2xs">
+                {!isPlayingTour ? (
+                  <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlayingTour(true)}>
+                    <img
+                      src="https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg"
+                      alt="Aperçu des locaux Visado Service Oran"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                    />
+                    <div className="absolute inset-0 bg-[#202124]/40 flex flex-col items-center justify-center gap-2">
+                      <div className="w-12 h-12 rounded-full bg-[#1A73E8] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                        <Play className="w-5 h-5 ml-0.5 fill-current" />
+                      </div>
+                      <span className="text-[11px] font-semibold text-white bg-black/60 px-2 py-0.5 rounded">
+                        {currentLang === 'ar' ? 'شاهد فيديو المقر' : 'Vidéo de nos locaux'}
                       </span>
                     </div>
-                    <p className="text-sm font-serif-luxury text-white">
-                      14 Rue Capitaine Hadri Mohamed, Oran, Algérie
-                    </p>
-                    <p className="text-xs text-[#E9ECEF]/75 mt-1">
-                      Cliquez pour lancer la vidéo authentique ou visionner sur YouTube.
-                    </p>
                   </div>
-                </div>
-              )}
-
-            </div>
-          </div>
-
-          {/* Right Column: Editorial Pillars */}
-          <div className="lg:col-span-6 space-y-10">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-8 bg-[#C7A76C]" />
-                <span className="text-xs uppercase tracking-[0.25em] text-[#C7A76C] font-semibold">
-                  {t.whyUs.overline}
-                </span>
+                ) : (
+                  <div className="relative w-full h-full">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/30VIItLvrUI?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&controls=1&showinfo=0"
+                      title="Visado Service Oran Locaux"
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                    <button
+                      onClick={() => setIsPlayingTour(false)}
+                      className="absolute top-2 right-2 bg-black/70 hover:bg-black text-white text-[10px] font-semibold px-2 py-0.5 rounded shadow z-10"
+                    >
+                      ✕ Fermer
+                    </button>
+                  </div>
+                )}
               </div>
-              <h2 className="font-serif-luxury text-3xl sm:text-5xl font-normal text-white tracking-tight mb-4">
-                {t.whyUs.heading}
-              </h2>
-              <p className="text-base text-[#E9ECEF]/80 font-light leading-relaxed">
-                {t.whyUs.subheading}
-              </p>
-            </div>
-
-            {/* Structured Pillars */}
-            <div className="space-y-6">
-              {t.whyUs.pillars.map((pillar, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 p-4 rounded-sm border border-white/5 hover:border-[#C7A76C]/30 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 group"
-                >
-                  <div className="p-2.5 rounded-sm bg-white/5 group-hover:bg-[#C7A76C]/20 transition-colors shrink-0">
-                    {pillarIcons[index % pillarIcons.length]}
-                  </div>
-                  <div>
-                    <h3 className="font-serif-luxury text-lg text-white font-medium mb-1 tracking-wide">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#E9ECEF]/75 font-light leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
             </div>
 
           </div>
-
         </div>
 
       </div>

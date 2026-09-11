@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, ShieldAlert } from 'lucide-react';
+import { ChevronDown, HelpCircle, CheckCircle2 } from 'lucide-react';
 import { translations } from '../data/translations';
 import { Language } from '../types';
 
@@ -16,59 +16,48 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang }) => {
   };
 
   return (
-    <section id="faq" className="py-28 sm:py-36 bg-[#0B2545]/30 relative overflow-hidden border-t border-white/5">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-16 sm:py-20 bg-[#F8F9FA] border-b border-[#DADCE0]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-8 bg-[#C7A76C]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C7A76C] font-semibold">
-              {t.faq.overline}
-            </span>
-            <span className="h-px w-8 bg-[#C7A76C]" />
-          </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-normal text-white tracking-tight mb-4">
-            {t.faq.heading}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs uppercase font-semibold tracking-wider text-[#1A73E8] bg-[#E8F0FE] px-3 py-1 rounded-full inline-block mb-3">
+            {currentLang === 'ar' ? 'الأسئلة الشائعة' : 'Questions fréquentes'}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#202124] tracking-tight">
+            {currentLang === 'ar' ? 'كل ما تحتاج معرفته عن خدماتنا' : 'Réponses claires à vos questions'}
           </h2>
-          <p className="text-base sm:text-lg text-[#E9ECEF]/80 font-light leading-relaxed max-w-xl mx-auto">
-            {t.faq.subheading}
+          <p className="mt-2 text-sm sm:text-base text-[#5F6368]">
+            {currentLang === 'ar'
+              ? 'إجابات شفافة ومفصلة حول ملفات التأشيرة والمواعيد والتكاليف.'
+              : 'Informations transparentes sur les démarches, délais et prise en charge de votre dossier.'}
           </p>
         </div>
 
         {/* Accordion list */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {t.faq.items.map((item, index) => {
             const isOpen = openIndex === index;
-            const isGuaranteeQuestion = item.id === 'faq-6';
 
             return (
               <div
                 key={item.id}
-                className={`luxury-glass rounded-sm border transition-all duration-300 overflow-hidden ${
-                  isOpen
-                    ? 'border-[#C7A76C]/60 shadow-xl bg-[#0B2545]/60'
-                    : 'border-white/10 hover:border-white/25'
-                }`}
+                className="google-card overflow-hidden bg-white transition-all"
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full text-left px-6 py-5 sm:py-6 flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 focus:outline-hidden cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <div className="flex items-center gap-3.5">
-                    {isGuaranteeQuestion ? (
-                      <ShieldAlert className="w-5 h-5 text-[#C7A76C] shrink-0" />
-                    ) : (
-                      <HelpCircle className="w-5 h-5 text-white/40 shrink-0" />
-                    )}
-                    <span className="font-serif-luxury text-lg sm:text-xl text-white font-normal leading-snug">
+                  <div className="flex items-center gap-3">
+                    <HelpCircle className="w-4 h-4 text-[#1A73E8] shrink-0" />
+                    <span className="text-sm sm:text-base font-semibold text-[#202124] leading-snug">
                       {item.question}
                     </span>
                   </div>
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border border-white/10 transition-transform duration-300 shrink-0 ${
-                      isOpen ? 'rotate-180 bg-[#C7A76C] text-[#071A2F]' : 'text-white/60'
+                    className={`w-7 h-7 rounded-full flex items-center justify-center bg-[#F1F3F4] text-[#5F6368] transition-transform duration-200 shrink-0 ${
+                      isOpen ? 'rotate-180 bg-[#E8F0FE] text-[#1A73E8]' : ''
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -76,10 +65,8 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang }) => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-[#E9ECEF]/85 font-light leading-relaxed border-t border-white/5 animate-fadeIn">
-                    <p className={`${isGuaranteeQuestion ? 'p-3 bg-white/5 border-l-2 border-[#C7A76C] text-white' : ''}`}>
-                      {item.answer}
-                    </p>
+                  <div className="px-5 pb-4 pt-1 text-xs sm:text-sm text-[#5F6368] leading-relaxed border-t border-[#F1F3F4]">
+                    <p>{item.answer}</p>
                   </div>
                 )}
               </div>

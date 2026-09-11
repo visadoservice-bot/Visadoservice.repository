@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Intro } from './components/Intro';
 import { Services } from './components/Services';
-import { EuropeSection } from './components/EuropeSection';
-import { CanadaSection } from './components/CanadaSection';
-import { Approach } from './components/Approach';
 import { WhyUs } from './components/WhyUs';
 import { AgencyMediaShowcase } from './components/AgencyMediaShowcase';
-import { Trust } from './components/Trust';
-import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -43,78 +37,54 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#071A2F] text-[#F7F7F5] selection:bg-[#C7A76C]/30 selection:text-white ${currentLang === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+    <div className={`min-h-screen bg-white text-[#202124] ${currentLang === 'ar' ? 'font-arabic' : 'font-sans'}`}>
       
-      {/* Header / Navbar */}
+      {/* 1. En-tête / Header (Style Google Sites / Profil Entreprise) */}
       <Navbar
         currentLang={currentLang}
         onLanguageChange={(lang) => setCurrentLang(lang)}
         onOpenConsultation={() => setIsConsultationModalOpen(true)}
       />
 
-      {/* Main Content Sections */}
+      {/* Main Single Page Content */}
       <main>
-        {/* 1. Hero Cinématique */}
+        {/* 2. Bannière principale / Hero */}
         <Hero
           currentLang={currentLang}
           onOpenConsultation={() => setIsConsultationModalOpen(true)}
           onExploreServices={() => handleNavigateToSection('services')}
         />
 
-        {/* 2. Transition Éditoriale & Manifeste */}
-        <Intro currentLang={currentLang} />
-
-        {/* 3. Nos Expertises / Services en Grands Formats */}
+        {/* 3. Services (Grille 4 services épurés) */}
         <Services
           currentLang={currentLang}
           onNavigateToSection={handleNavigateToSection}
           onOpenConsultation={() => setIsConsultationModalOpen(true)}
         />
 
-        {/* 4. Section Europe Immersive (Schengen) */}
-        <EuropeSection
-          currentLang={currentLang}
-          onOpenConsultation={() => setIsConsultationModalOpen(true)}
-        />
-
-        {/* 5. Section Canada Immersive & Parcours */}
-        <CanadaSection
-          currentLang={currentLang}
-          onOpenConsultation={() => setIsConsultationModalOpen(true)}
-        />
-
-        {/* 6. Notre Approche (Timeline 5 étapes) */}
-        <Approach currentLang={currentLang} />
-
-        {/* 7. Pourquoi Visado Service (5 Piliers & Agence Oran) */}
+        {/* 4. Pourquoi nous choisir / À propos (Rapidité, Simplicité, Support, Prix transparents) */}
         <WhyUs currentLang={currentLang} />
 
-        {/* 8. Galerie Réelle & Vidéos de l'Agence (Locaux, Visas Délivrés, BLS) */}
+        {/* 5. Galerie Photos & Vidéos authentiques (Locaux à Oran, Visas délivrés, Billetterie) */}
         <AgencyMediaShowcase
           currentLang={currentLang}
           onOpenConsultation={() => setIsConsultationModalOpen(true)}
         />
 
-        {/* 9. Confiance & Rigueur */}
-        <Trust currentLang={currentLang} />
-
-        {/* 9. Témoignages (Structure éthique sans faux avis) */}
-        <Testimonials currentLang={currentLang} />
-
-        {/* 10. Questions Fréquentes (FAQ Accordéon) */}
+        {/* 6. Foire Aux Questions (FAQ Accordéon) */}
         <FAQ currentLang={currentLang} />
 
-        {/* 11. Contact & Localisation à Oran */}
+        {/* 7. Formulaire de contact / Devis & Carte Google Maps */}
         <ContactSection currentLang={currentLang} />
       </main>
 
-      {/* Footer */}
+      {/* 8. Pied de page / Footer */}
       <Footer currentLang={currentLang} />
 
       {/* Bouton WhatsApp Flottant */}
       <WhatsAppFloat currentLang={currentLang} />
 
-      {/* Modal Consultation "Parler à un conseiller" */}
+      {/* Modal Devis / Consultation */}
       <ConsultationModal
         isOpen={isConsultationModalOpen}
         onClose={() => setIsConsultationModalOpen(false)}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { X, MessageCircle, Phone, Calendar, Send, CheckCircle2 } from 'lucide-react';
+import { X, MessageCircle, Phone, CheckCircle2, Send } from 'lucide-react';
 import { siteConfig, WHATSAPP_CONSULTANT_MESSAGE } from '../data/config';
-import { translations } from '../data/translations';
 import { Language } from '../types';
 
 interface ConsultationModalProps {
@@ -17,15 +16,13 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [destination, setDestination] = useState('France');
+  const [destination, setDestination] = useState('Espagne / Schengen');
   const [isSent, setIsSent] = useState(false);
-
-  const t = translations[currentLang];
 
   if (!isOpen) return null;
 
   const directWhatsAppUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(
-    `Bonjour Visado Service, je m'appelle ${name || '[Nom]'}. Je souhaite parler à un conseiller concernant mon projet de visa (${destination}).`
+    `Bonjour Visado Service, je m'appelle ${name || '[Nom]'}. Je souhaite être contacté par un conseiller pour un projet de visa (${destination}). Mon numéro : ${phone || '[Téléphone]'}.`
   )}`;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,147 +31,150 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-lg luxury-glass border border-white/20 rounded-sm shadow-2xl p-6 sm:p-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-fadeIn">
+      <div className="relative w-full max-w-lg bg-white rounded-lg shadow-2xl overflow-hidden border border-[#DADCE0]">
         
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-white/60 hover:text-white rounded-full hover:bg-white/10 transition-colors"
-          aria-label="Fermer"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        {/* Modal Header */}
-        <div className="mb-6">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#C7A76C] font-semibold block mb-1">
-            Visado Service • Oran
-          </span>
-          <h3 className="font-serif-luxury text-2xl sm:text-3xl text-white font-normal">
-            Parler à un conseiller
-          </h3>
-          <p className="text-xs sm:text-sm text-[#E9ECEF]/75 mt-1 font-light leading-relaxed">
-            Notre équipe vous accompagne avec méthode et discrétion pour préparer votre dossier de visa.
-          </p>
-        </div>
-
-        {/* Immediate Direct Options */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          <a
-            href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(WHATSAPP_CONSULTANT_MESSAGE)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-[#25D366]/20 hover:bg-[#25D366] text-white rounded-sm border border-[#25D366]/40 flex flex-col items-center text-center transition-all group"
-          >
-            <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:text-white mb-1" />
-            <span className="text-xs font-semibold">WhatsApp Direct</span>
-            <span className="text-[10px] text-white/70">Réponse rapide</span>
-          </a>
-
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            className="p-3 bg-white/5 hover:bg-white/10 text-white rounded-sm border border-white/15 flex flex-col items-center text-center transition-all group"
-          >
-            <Phone className="w-5 h-5 text-[#C7A76C] mb-1" />
-            <span className="text-xs font-semibold">Appel Agence</span>
-            <span className="text-[10px] text-white/70">{siteConfig.phone}</span>
-          </a>
-        </div>
-
-        <div className="relative flex items-center justify-center my-6">
-          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10" /></div>
-          <span className="relative px-3 bg-[#071A2F] text-[11px] uppercase tracking-wider text-[#E9ECEF]/50">
-            ou laissez vos coordonnées
-          </span>
-        </div>
-
-        {isSent ? (
-          <div className="py-8 text-center space-y-3 bg-white/5 border border-[#C7A76C]/40 rounded-sm">
-            <CheckCircle2 className="w-10 h-10 text-[#C7A76C] mx-auto" />
-            <h4 className="font-serif-luxury text-xl text-white">Demande enregistrée</h4>
-            <p className="text-xs text-[#E9ECEF]/80 max-w-xs mx-auto">
-              Un conseiller Visado Service vous contactera dans la journée.
-            </p>
-            <button
-              onClick={onClose}
-              className="mt-3 px-5 py-2 bg-[#C7A76C] text-[#071A2F] text-xs font-bold uppercase tracking-wider rounded-sm"
-            >
-              Fermer
-            </button>
+        {/* Modal Top Bar */}
+        <div className="p-4 bg-[#F8F9FA] border-b border-[#DADCE0] flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded bg-[#1A73E8] text-white flex items-center justify-center font-bold text-xs">
+              V
+            </div>
+            <span className="font-bold text-sm text-[#202124]">
+              {currentLang === 'ar' ? 'طلب استشارة سريعة' : 'Demander un devis ou une consultation'}
+            </span>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#E9ECEF]/75 mb-1 font-medium">
-                Nom complet
-              </label>
-              <input
-                type="text"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Ex. Amina Benali"
-                className="w-full px-3.5 py-2.5 bg-white/5 border border-white/15 focus:border-[#C7A76C] rounded-sm text-sm text-white placeholder-white/30 focus:outline-none"
-              />
-            </div>
+          <button
+            onClick={onClose}
+            className="p-1 text-[#5F6368] hover:text-[#202124] rounded-full hover:bg-[#E8EAED] transition-colors"
+            aria-label="Fermer"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#E9ECEF]/75 mb-1 font-medium">
-                Numéro de téléphone
-              </label>
-              <input
-                type="tel"
-                required
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="0555 00 00 00"
-                className="w-full px-3.5 py-2.5 bg-white/5 border border-white/15 focus:border-[#C7A76C] rounded-sm text-sm text-white placeholder-white/30 focus:outline-none"
-              />
-            </div>
+        <div className="p-6">
+          {/* Direct Instant Channels */}
+          <div className="grid grid-cols-2 gap-3 mb-5">
+            <a
+              href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(WHATSAPP_CONSULTANT_MESSAGE)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-[#E6F4EA] hover:bg-[#ceead6] text-[#137333] rounded-lg border border-[#CEEAD6] flex flex-col items-center text-center transition-colors"
+            >
+              <MessageCircle className="w-5 h-5 text-[#1E8E3E] mb-1" />
+              <span className="text-xs font-bold">WhatsApp Direct</span>
+              <span className="text-[11px] text-[#5F6368]">Réponse immédiate</span>
+            </a>
 
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#E9ECEF]/75 mb-1 font-medium">
-                Destination envisagée
-              </label>
-              <select
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-[#071A2F] border border-white/15 focus:border-[#C7A76C] rounded-sm text-sm text-white focus:outline-none"
-              >
-                <option value="France">France (Schengen)</option>
-                <option value="Italie">Italie (Schengen)</option>
-                <option value="Espagne">Espagne (Schengen)</option>
-                <option value="Allemagne">Allemagne (Schengen)</option>
-                <option value="Belgique">Belgique (Schengen)</option>
-                <option value="Malte">Malte (Schengen)</option>
-                <option value="Canada">Canada (Tourisme)</option>
-                <option value="Autre destination">Autre destination</option>
-              </select>
-            </div>
+            <a
+              href={`tel:${siteConfig.phoneRaw}`}
+              className="p-3 bg-[#E8F0FE] hover:bg-[#d2e3fc] text-[#1A73E8] rounded-lg border border-[#D2E3FC] flex flex-col items-center text-center transition-colors"
+            >
+              <Phone className="w-5 h-5 text-[#1A73E8] mb-1" />
+              <span className="text-xs font-bold">Appel Téléphonique</span>
+              <span className="text-[11px] text-[#5F6368]">{siteConfig.phone}</span>
+            </a>
+          </div>
 
-            <div className="pt-2 flex gap-3">
-              <button
-                type="submit"
-                className="flex-1 py-3 bg-[#C7A76C] hover:bg-[#b89658] text-[#071A2F] text-xs uppercase tracking-widest font-bold rounded-sm shadow-md transition-all flex items-center justify-center gap-2"
-              >
-                <Send className="w-3.5 h-3.5" />
-                <span>Être rappelé</span>
-              </button>
+          <div className="relative flex items-center justify-center my-4">
+            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#DADCE0]" /></div>
+            <span className="relative px-3 bg-white text-[11px] font-semibold uppercase tracking-wider text-[#70757A]">
+              {currentLang === 'ar' ? 'أو اترك بياناتك لنتصل بك' : 'ou laissez vos coordonnées'}
+            </span>
+          </div>
 
-              <a
-                href={directWhatsAppUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-3 px-4 bg-[#25D366]/20 hover:bg-[#25D366] text-white text-xs font-semibold rounded-sm border border-[#25D366]/40 flex items-center gap-1.5 transition-colors"
-                title="Envoyer sur WhatsApp"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span className="hidden sm:inline">WhatsApp</span>
-              </a>
+          {!isSent ? (
+            <form onSubmit={handleSubmit} className="space-y-3.5">
+              <div>
+                <label className="block text-xs font-semibold text-[#202124] mb-1">
+                  {currentLang === 'ar' ? 'الاسم الكامل *' : 'Votre Nom et Prénom *'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ex: Mourad Hadj"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[#202124] mb-1">
+                  {currentLang === 'ar' ? 'رقم الهاتف *' : 'Numéro de téléphone *'}
+                </label>
+                <input
+                  type="tel"
+                  required
+                  placeholder="Ex: 0550 00 00 00"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[#202124] mb-1">
+                  {currentLang === 'ar' ? 'الوجهة أو نوع الخدمة' : 'Destination / Service souhaité'}
+                </label>
+                <select
+                  value={destination}
+                  onChange={(e) => setDestination(e.target.value)}
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
+                >
+                  <option value="Espagne / Schengen">Espagne / Visa Schengen</option>
+                  <option value="France / Schengen">France / Visa Schengen</option>
+                  <option value="Canada (Tourisme / Études)">Canada (Tourisme / Études)</option>
+                  <option value="Italie / Portugal / Europe">Italie / Portugal / Autre Europe</option>
+                  <option value="Royaume-Uni (UK)">Royaume-Uni (UK)</option>
+                  <option value="Turquie / Dubaï">Turquie / Dubaï</option>
+                  <option value="Billetterie Avion">Billetterie & Vol</option>
+                </select>
+              </div>
+
+              <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
+                <button
+                  type="submit"
+                  className="btn-google-primary flex-1 text-center text-xs py-2.5"
+                >
+                  {currentLang === 'ar' ? 'إرسال الطلب' : 'Valider ma demande'}
+                </button>
+                <a
+                  href={directWhatsAppUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs py-2.5 px-3 rounded transition-colors text-center shadow-xs flex items-center justify-center gap-1.5"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </form>
+          ) : (
+            <div className="py-6 text-center space-y-3">
+              <div className="w-12 h-12 bg-[#E6F4EA] text-[#1E8E3E] rounded-full flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-7 h-7" />
+              </div>
+              <h4 className="text-base font-bold text-[#202124]">
+                {currentLang === 'ar' ? 'تم تسجيل طلبكم' : 'Demande bien enregistrée !'}
+              </h4>
+              <p className="text-xs text-[#5F6368] max-w-xs mx-auto">
+                {currentLang === 'ar'
+                  ? 'سيتواصل معكم أحد مستشارينا في أقرب وقت.'
+                  : 'Un conseiller Visado Service vous contactera dans les plus brefs délais.'}
+              </p>
+              <div className="pt-2">
+                <button
+                  onClick={onClose}
+                  className="btn-google-primary text-xs py-2 px-6"
+                >
+                  Fermer
+                </button>
+              </div>
             </div>
-          </form>
-        )}
+          )}
+        </div>
 
       </div>
     </div>

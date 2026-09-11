@@ -6,9 +6,9 @@
   }
 
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    background-color: #071A2F;
-    color: #F7F7F5;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FFFFFF;
+    color: #202124;
   }
 
   [dir="rtl"] {
@@ -16,44 +16,34 @@
   }
 }
 
-.font-serif-luxury {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-}
-
-.font-sans-clean {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-}
-
 .font-arabic {
   font-family: 'Cairo', system-ui, -apple-system, sans-serif;
 }
 
-/* Subtle luxury grain / backdrop */
-.luxury-glass {
-  background: rgba(7, 26, 47, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Minimalist Google Sites Card Styles */
+.google-card {
+  background-color: #FFFFFF;
+  border: 1px solid #DADCE0;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.luxury-glass-card {
-  background: rgba(11, 37, 69, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(199, 167, 108, 0.15);
+.google-card:hover {
+  border-color: #BDC1C6;
+  box-shadow: 0 2px 8px rgba(60, 64, 67, 0.08);
 }
 
-/* Custom discreet scrollbar */
+/* Discreet scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #071A2F;
+  background: #F1F3F4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1B3B60;
+  background: #BDC1C6;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C7A76C;
+  background: #1A73E8;
 }
