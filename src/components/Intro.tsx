@@ -65,13 +65,13 @@ export const Intro: React.FC<IntroProps> = ({ currentLang }) => {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Primary Image Frame */}
-              <div className="relative overflow-hidden rounded-sm border border-white/10 shadow-2xl">
+              <div className="relative overflow-hidden rounded-sm border border-[#C7A76C]/30 shadow-2xl">
                 <img
                   src={imagery.intro.traveler}
-                  alt="Voyageur préparant son départ"
-                  className="w-full h-[460px] sm:h-[520px] object-cover object-center grayscale-[20%] hover:grayscale-0 hover:scale-105 transition-all duration-700"
+                  alt="Passeport avec visa Espagne Schengen et carte officielle Visado Service"
+                  className="w-full h-[460px] sm:h-[520px] object-cover object-center hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071A2F]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071A2F]/70 via-transparent to-transparent" />
               </div>
 
               {/* Floating Architectural Badge */}
