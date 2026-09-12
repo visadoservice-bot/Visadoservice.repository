@@ -78,12 +78,12 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang }) => {
           </p>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+        {/* 4 Pillars Grid & Mobile Snap-Carousel */}
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-5 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 mb-12">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
-              <div key={idx} className="google-card p-6 bg-white">
+              <div key={idx} className="google-card p-6 bg-white min-w-[260px] sm:min-w-0 snap-start flex flex-col">
                 <div className={`w-10 h-10 rounded-lg ${pillar.bg} ${pillar.color} flex items-center justify-center mb-4`}>
                   <Icon className="w-5 h-5" />
                 </div>

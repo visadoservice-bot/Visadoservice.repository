@@ -103,14 +103,14 @@ export const Services: React.FC<ServicesProps> = ({
           </p>
         </div>
 
-        {/* 4 Clean Minimalist Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 4 Clean Minimalist Cards - Responsive Grid & Mobile Snap-Carousel */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-5 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {servicesList.map((service) => {
             const IconComponent = service.icon;
             return (
               <div
                 key={service.id}
-                className="google-card p-6 flex flex-col justify-between"
+                className="google-card p-6 flex flex-col justify-between min-w-[285px] sm:min-w-[320px] md:min-w-0 snap-start"
               >
                 <div>
                   {/* Icon */}
@@ -145,10 +145,10 @@ export const Services: React.FC<ServicesProps> = ({
                 {/* Card Action */}
                 <button
                   onClick={onOpenConsultation}
-                  className="w-full mt-2 py-2 px-3 text-xs font-semibold text-[#1A73E8] bg-[#F8F9FA] hover:bg-[#E8F0FE] border border-[#DADCE0] hover:border-[#1A73E8] rounded-md transition-colors flex items-center justify-center gap-1"
+                  className="w-full mt-2 py-2 px-3 text-xs font-semibold text-[#1A73E8] bg-[#F8F9FA] hover:bg-[#E8F0FE] border border-[#DADCE0] hover:border-[#1A73E8] rounded-md transition-colors flex items-center justify-center gap-1 cursor-pointer"
                 >
                   <span>{currentLang === 'ar' ? 'طلب الخدمة' : 'Demander ce service'}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
                 </button>
               </div>
             );
@@ -157,7 +157,7 @@ export const Services: React.FC<ServicesProps> = ({
 
         {/* Global Bottom Prompt */}
         <div className="mt-10 p-5 bg-[#F8F9FA] border border-[#DADCE0] rounded-lg flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-start">
             <h4 className="text-sm font-bold text-[#202124]">
               {currentLang === 'ar' ? 'هل لديك حالة خاصة أو استفسار عن وجهة معينة؟' : 'Vous avez un doute sur les pièces à fournir pour votre profil ?'}
             </h4>
@@ -167,7 +167,7 @@ export const Services: React.FC<ServicesProps> = ({
           </div>
           <button
             onClick={onOpenConsultation}
-            className="px-5 py-2.5 bg-[#1A73E8] hover:bg-[#1557B0] text-white text-xs font-semibold rounded-md whitespace-nowrap shadow-xs transition-colors"
+            className="w-full sm:w-auto px-5 py-2.5 bg-[#1A73E8] hover:bg-[#1557B0] text-white text-xs font-semibold rounded-md whitespace-nowrap shadow-xs transition-colors cursor-pointer"
           >
             {currentLang === 'ar' ? 'استشارة مجانية' : 'Demander un conseil'}
           </button>

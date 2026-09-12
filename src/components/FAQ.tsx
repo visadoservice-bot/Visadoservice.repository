@@ -46,7 +46,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang }) => {
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 focus:outline-hidden cursor-pointer"
+                  className="w-full text-start px-5 py-4 flex items-center justify-between gap-4 focus:outline-hidden cursor-pointer text-[#202124]"
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3">

@@ -13,7 +13,7 @@ import { Language } from './types';
 import { translations } from './data/translations';
 
 export default function App() {
-  const [currentLang, setCurrentLang] = useState<Language>('fr');
+  const [currentLang, setCurrentLang] = useState<Language>('ar');
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   // Synchronize document language and text direction (RTL for Arabic)

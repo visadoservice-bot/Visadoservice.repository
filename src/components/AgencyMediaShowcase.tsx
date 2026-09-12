@@ -177,20 +177,20 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
           </div>
         </div>
 
-        {/* 1. Real Video Cards with DIRECT INLINE PLAYBACK (No Modal Popup) */}
+        {/* 1. Real Video Cards with DIRECT INLINE PLAYBACK - Responsive Snap-Carousel */}
         {(activeTab === 'all' || activeTab === 'videos') && (
           <div className="mb-12">
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#70757A] mb-4">
               {currentLang === 'ar' ? 'مقاطع الفيديو الموثقة (تشغيل مباشر)' : 'Vidéos authentiques de nos locaux (Lecture directe)'}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-5 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
               {videos.map((vid) => {
                 const isPlaying = playingVideoId === vid.id;
 
                 return (
                   <div
                     key={vid.id}
-                    className="google-card overflow-hidden bg-white flex flex-col justify-between"
+                    className="google-card overflow-hidden bg-white flex flex-col justify-between min-w-[285px] sm:min-w-[320px] md:min-w-0 snap-start"
                   >
                     <div className="relative aspect-video bg-[#111] overflow-hidden">
                       {isPlaying ? (
@@ -295,18 +295,18 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
           </div>
         )}
 
-        {/* 2. Real Photo Cards */}
+        {/* 2. Real Photo Cards - Responsive Snap-Carousel */}
         {(activeTab === 'all' || activeTab === 'photos') && (
           <div className="mb-12">
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#70757A] mb-4">
               {currentLang === 'ar' ? 'الصور الفوتوغرافية الرسمية' : 'Photographies réelles des locaux et dossiers'}
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-5 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
               {photos.map((photo) => (
                 <div
                   key={photo.id}
                   onClick={() => setActivePhoto(photo)}
-                  className="google-card group cursor-pointer overflow-hidden bg-white"
+                  className="google-card group cursor-pointer overflow-hidden bg-white min-w-[260px] sm:min-w-0 snap-start"
                 >
                   <div className="relative h-48 bg-[#F1F3F4] overflow-hidden">
                     <img
@@ -384,35 +384,35 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
       {/* Photo Lightbox */}
       {activePhoto && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
-          <div className="bg-white rounded-lg max-w-3xl w-full overflow-hidden shadow-2xl">
-            <div className="p-3 border-b border-[#DADCE0] flex items-center justify-between">
-              <span className="text-xs font-bold text-[#202124]">{activePhoto.title}</span>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-xs animate-fadeIn">
+          <div className="bg-white rounded-xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div className="p-3 border-b border-[#DADCE0] flex items-center justify-between bg-[#F8F9FA]">
+              <span className="text-xs font-bold text-[#202124] line-clamp-1">{activePhoto.title}</span>
               <button
                 onClick={() => setActivePhoto(null)}
-                className="p-1 text-[#5F6368] hover:text-[#202124] rounded-full"
+                className="p-1.5 text-[#5F6368] hover:text-[#202124] hover:bg-[#E8EAED] rounded-full transition-colors cursor-pointer"
                 aria-label="Fermer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="max-h-[65vh] bg-[#202124] flex items-center justify-center p-2">
+            <div className="bg-[#1F2023] flex-1 flex items-center justify-center p-2 overflow-hidden min-h-[250px] max-h-[50vh] sm:max-h-[60vh]">
               <img
                 src={activePhoto.imageUrl}
                 alt={activePhoto.title}
-                className="max-h-[60vh] max-w-full object-contain"
+                className="max-h-full max-w-full object-contain"
               />
             </div>
-            <div className="p-4 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <p className="text-xs text-[#5F6368]">📍 {activePhoto.location}</p>
-                <p className="text-xs text-[#202124] font-medium mt-0.5">{activePhoto.description}</p>
+            <div className="p-4 bg-white border-t border-[#DADCE0] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
+              <div className="space-y-0.5">
+                <p className="text-xs text-[#1A73E8] font-semibold">📍 {activePhoto.location}</p>
+                <p className="text-xs text-[#5F6368] leading-relaxed">{activePhoto.description}</p>
               </div>
               <button
                 onClick={() => setActivePhoto(null)}
-                className="btn-google-secondary text-xs py-1.5 px-4 self-end sm:self-auto"
+                className="btn-google-primary text-xs py-2 px-5 self-stretch sm:self-auto text-center cursor-pointer"
               >
-                Fermer
+                {currentLang === 'ar' ? 'إغلاق' : 'Fermer'}
               </button>
             </div>
           </div>
