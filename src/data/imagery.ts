@@ -2,7 +2,7 @@ export const imagery = {
   // Real Agency Assets & Photography from Visado Service
   realAgency: {
     logo: "/logo.png",
-    schengenVisaPassport: "/images/visado_schengen_visa_passport_1789153466844.jpg",
+    schengenVisaPassport: "/images/visado_passport_schengen_card_1789171561863.jpg",
     appointmentFiles: "/images/visado_appointment_files_1789153496388.jpg",
     agencyInterior: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
     storefrontOran: "/images/visado_storefront_oran_1789153512649.jpg",
@@ -44,19 +44,19 @@ export const imagery = {
   },
   intro: {
     texture: "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&w=1800&q=80", // Airplane window soft dawn
-    traveler: "/images/visado_schengen_visa_passport_1789153466844.jpg" // Real approved Spain Schengen visa on passport
+    traveler: "/images/visado_passport_schengen_card_1789171561863.jpg" // Real approved Spain Schengen visa on passport
   },
   services: {
     schengen: "/images/visado_appointment_files_1789153496388.jpg", // Real appointment files & European/Algerian flags
     canada: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1600&q=80", // Canadian turquoise lake and mountain peaks
-    dossier: "/images/visado_schengen_visa_passport_1789153466844.jpg", // Real Spain Schengen visa issued on passport with Visado card
+    dossier: "/images/visado_passport_schengen_card_1789171561863.jpg", // Real Spain Schengen visa issued on passport with Visado card
     conseil: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg", // Real Visado Service consulting desk in Oran from YouTube
     billetterie: "/images/visado_billetterie_officielle.jpg" // Real Billetterie Internationale Air Algérie & Air France poster
   },
   europe: {
     france: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80", // Paris
     italy: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80", // Rome Colosseum warm light
-    spain: "/images/visado_schengen_visa_passport_1789153466844.jpg", // Real approved Spain Schengen visa on passport
+    spain: "/images/visado_passport_schengen_card_1789171561863.jpg", // Real approved Spain Schengen visa on passport
     germany: "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1200&q=80", // Berlin
     belgium: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1200&q=80", // Brussels
     malta: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1200&q=80" // Malta Valletta

@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Phone, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
 import { siteConfig } from '../data/config';
 import { translations } from '../data/translations';
+import { imagery } from '../data/imagery';
 import { Language } from '../types';
 
 interface HeroProps {
@@ -91,9 +92,10 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="google-card p-4 sm:p-5 bg-white">
               <div className="relative rounded overflow-hidden aspect-[4/3] bg-[#F1F3F4] mb-4">
                 <img
-                  src="/images/visado_schengen_visa_passport_1789153466844.jpg"
+                  src={imagery.realAgency.schengenVisaPassport}
                   alt="Dossier et visa traité par Visado Service"
                   className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute bottom-2 left-2 bg-[#202124]/80 text-white text-[11px] font-medium px-2.5 py-1 rounded backdrop-blur-xs">
                   {currentLang === 'ar' ? 'تأشيرات وملفات حقيقية' : 'Passeport & Visa officiel'}

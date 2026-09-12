@@ -195,18 +195,14 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                     <div className="relative aspect-video bg-[#111] overflow-hidden">
                       {isPlaying ? (
                         <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center">
-                          {/* Cropped YouTube iframe hiding 100% of YouTube top header (title/channel/avatar/settings) and bottom branding */}
+                          {/* High-zoom YouTube iframe to cleanly fill container without any YouTube UI elements */}
                           <iframe
                             src={`https://www.youtube-nocookie.com/embed/${vid.youtubeId}?autoplay=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&loop=1&playlist=${vid.youtubeId}`}
                             title={vid.title}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[185%] max-w-none border-0 select-none pointer-events-auto"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] h-[250%] max-w-none border-0 select-none pointer-events-auto"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           />
-                          
-                          {/* Protective top and bottom mask bars */}
-                          <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-black via-black/90 to-transparent pointer-events-none z-10" />
-                          <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-10" />
                           
                           {/* Clean minimal overlay badges */}
                           <button
