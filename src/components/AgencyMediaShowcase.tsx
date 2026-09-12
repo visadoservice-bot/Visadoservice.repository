@@ -11,11 +11,10 @@ interface AgencyMediaShowcaseProps {
 
 interface VideoItem {
   id: string;
+  youtubeId: string;
   title: string;
   subtitle: string;
   tag: string;
-  youtubeEmbedUrl: string;
-  youtubeShortsUrl: string;
   thumbnail: string;
 }
 
@@ -40,29 +39,26 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
   const videos: VideoItem[] = [
     {
       id: "video-1",
+      youtubeId: "30VIItLvrUI",
       title: currentLang === 'ar' ? "جولة داخلية حقيقية في مكاتبنا بوهران" : "Visite Réelle des Locaux à Oran",
       subtitle: currentLang === 'ar' ? "فضاء استقبال عصري ومريح ومكاتب استشارة" : "Espaces de consultation modernes et accueil soigné",
       tag: "Locaux Oran",
-      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/30VIItLvrUI?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&controls=1&showinfo=0",
-      youtubeShortsUrl: "https://www.youtube.com/shorts/30VIItLvrUI",
       thumbnail: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg"
     },
     {
       id: "video-2",
+      youtubeId: "Q7CLYUX4Tew",
       title: currentLang === 'ar' ? "معالجة ملفات التأشيرة والخدمات الرسمية" : "Traitement des Dossiers & Prestations",
       subtitle: currentLang === 'ar' ? "مراجعة دقيقة لملفات التأشيرة وحجز المواعيد" : "Vérification rigoureuse et constitution des dossiers",
       tag: "Dossiers & Visas",
-      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/Q7CLYUX4Tew?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&controls=1&showinfo=0",
-      youtubeShortsUrl: "https://www.youtube.com/shorts/Q7CLYUX4Tew",
       thumbnail: "https://img.youtube.com/vi/Q7CLYUX4Tew/hqdefault.jpg"
     },
     {
       id: "video-3",
+      youtubeId: "_94n5bV3q6g",
       title: currentLang === 'ar' ? "مرافقة وإرشادات شاملة للتأشيرات" : "Conseil & Accompagnement Visa",
       subtitle: currentLang === 'ar' ? "نصائح وإرشادات مخصصة لنجاح طلبات التأشيرة" : "Accompagnement individualisé selon votre profil",
       tag: "Conseil Visa",
-      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/_94n5bV3q6g?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&controls=1&showinfo=0",
-      youtubeShortsUrl: "https://www.youtube.com/shorts/_94n5bV3q6g",
       thumbnail: "https://img.youtube.com/vi/_94n5bV3q6g/hqdefault.jpg"
     }
   ];
@@ -196,15 +192,38 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                     key={vid.id}
                     className="google-card overflow-hidden bg-white flex flex-col justify-between"
                   >
-                    <div className="relative aspect-video bg-[#202124] overflow-hidden">
+                    <div className="relative aspect-video bg-[#111] overflow-hidden">
                       {isPlaying ? (
-                        <iframe
-                          src={vid.youtubeEmbedUrl}
-                          title={vid.title}
-                          className="w-full h-full"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
+                        <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center">
+                          {/* Cropped YouTube iframe hiding 100% of YouTube top header (title/channel/avatar/settings) and bottom branding */}
+                          <iframe
+                            src={`https://www.youtube-nocookie.com/embed/${vid.youtubeId}?autoplay=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&loop=1&playlist=${vid.youtubeId}`}
+                            title={vid.title}
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[185%] max-w-none border-0 select-none pointer-events-auto"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                          
+                          {/* Protective top and bottom mask bars */}
+                          <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-black via-black/90 to-transparent pointer-events-none z-10" />
+                          <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-10" />
+                          
+                          {/* Clean minimal overlay badges */}
+                          <button
+                            onClick={() => setPlayingVideoId(null)}
+                            className="absolute top-2.5 right-2.5 z-20 bg-black/85 hover:bg-black text-white text-[11px] font-medium px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 transition-all border border-white/10"
+                            aria-label="Fermer la vidéo"
+                          >
+                            <span>✕</span>
+                            <span>Fermer</span>
+                          </button>
+                          
+                          <div className="absolute top-2.5 left-2.5 z-20 pointer-events-none">
+                            <span className="text-[10px] font-semibold bg-[#1A73E8] text-white px-2 py-0.5 rounded shadow-xs">
+                              {vid.tag}
+                            </span>
+                          </div>
+                        </div>
                       ) : (
                         <div
                           onClick={() => setPlayingVideoId(vid.id)}
