@@ -76,7 +76,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     </span>
                     <a
                       href={`tel:${siteConfig.phoneRaw}`}
-                      className="font-bold text-[#1A73E8] hover:underline text-sm sm:text-base block"
+                      className="font-bold text-[#1A73E8] hover:underline text-sm sm:text-base inline-block"
+                      dir="ltr"
                     >
                       {siteConfig.phone}
                     </a>
@@ -84,6 +85,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                       <a
                         href="tel:+213555778460"
                         className="text-xs text-[#5F6368] hover:text-[#202124] block mt-0.5"
+                        dir="ltr"
                       >
                         {siteConfig.phoneSecondary} (Standard)
                       </a>
@@ -104,7 +106,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                       href={defaultWhatsAppUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-bold text-[#1E8E3E] hover:underline text-sm block"
+                      className="font-bold text-[#1E8E3E] hover:underline text-sm inline-block"
+                      dir="ltr"
                     >
                       {siteConfig.whatsapp}
                     </a>
@@ -136,8 +139,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     <span className="text-[11px] text-[#5F6368] font-medium block">
                       {currentLang === 'ar' ? 'العنوان' : 'Adresse physique'}
                     </span>
-                    <p className="font-semibold text-[#202124]">
-                      {siteConfig.address}
+                    <p className="font-semibold text-[#202124]" dir="ltr">
+                      14, Rue Capitaine Hadri Mohamed, Oran
                     </p>
                   </div>
                 </div>

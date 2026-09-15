@@ -354,9 +354,23 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   : 'Réservation de billets d\'avion vers le monde entier'}
               </h3>
               <p className="text-xs text-[#5F6368]">
-                {currentLang === 'ar'
-                  ? 'اتصلوا مباشرة بمسؤول الحجوزات على 0557 42 67 84 للحصول على أفضل الأسعار والتأكيدات الفورية.'
-                  : 'Ligne directe billetterie au 0557 42 67 84 pour obtenir les meilleurs tarifs et confirmations immédiates.'}
+                {currentLang === 'ar' ? (
+                  <>
+                    اتصلوا مباشرة بمسؤول الحجوزات على{' '}
+                    <span dir="ltr" className="font-semibold text-[#202124] inline-block">
+                      0557426784
+                    </span>{' '}
+                    للحصول على أفضل الأسعار والتأكيدات الفورية.
+                  </>
+                ) : (
+                  <>
+                    Ligne directe billetterie au{' '}
+                    <span dir="ltr" className="font-semibold text-[#202124] inline-block">
+                      0557426784
+                    </span>{' '}
+                    pour obtenir les meilleurs tarifs et confirmations immédiates.
+                  </>
+                )}
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
@@ -365,7 +379,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 className="btn-google-primary flex-1 sm:flex-initial text-center flex items-center justify-center gap-1.5 text-xs py-2 px-4"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>{siteConfig.phone}</span>
+                <span dir="ltr">{siteConfig.phone}</span>
               </a>
               <a
                 href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent("Bonjour Visado Service, je souhaite réserver un billet d'avion.")}`}

@@ -117,8 +117,8 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang }) => {
                   : 'Nous vous accueillons du samedi au jeudi pour étudier vos pièces, procéder aux réservations officielles et déposer vos demandes en toute sérénité.'}
               </p>
               <div className="pt-1 flex flex-wrap gap-4 text-xs font-medium text-[#3C4043]">
-                <span>📍 14 Rue Capitaine Hadri Mohamed, Oran</span>
-                <span>📞 {siteConfig.phone}</span>
+                <span dir="ltr">📍 14, Rue Capitaine Hadri Mohamed, Oran</span>
+                <span dir="ltr">📞 {siteConfig.phone}</span>
                 <span>✉️ {siteConfig.email}</span>
               </div>
             </div>

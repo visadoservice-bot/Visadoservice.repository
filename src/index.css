@@ -64,24 +64,23 @@
   transform: scale(0.98);
 }
 
-/* Discreet scrollbar */
+/* Masquer la barre de défilement verticale tout en conservant le défilement */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE et Edge */
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #F1F3F4;
-}
-::-webkit-scrollbar-thumb {
-  background: #BDC1C6;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #1A73E8;
+  display: none;
+  width: 0px;
+  height: 0px;
 }
 
 /* Hide scrollbar utility for mobile snap carousels */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+  width: 0px;
+  height: 0px;
 }
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */

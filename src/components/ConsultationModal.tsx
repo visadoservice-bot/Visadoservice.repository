@@ -73,7 +73,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             >
               <Phone className="w-5 h-5 text-[#1A73E8] mb-1" />
               <span className="text-xs font-bold">Appel Téléphonique</span>
-              <span className="text-[11px] text-[#5F6368]">{siteConfig.phone}</span>
+              <span className="text-[11px] text-[#5F6368]" dir="ltr">{siteConfig.phone}</span>
             </a>
           </div>
 

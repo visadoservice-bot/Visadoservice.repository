@@ -26,16 +26,18 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Main Editorial Text (Google Sites Style) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Minimal Google Business Badge */}
+            {/* Minimal Google Business Badge with Official Agency Name & Branding */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#DADCE0] rounded-full text-xs font-medium text-[#3C4043] shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-[#1A73E8]" />
+              <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
+              <span className="font-bold text-[#002A79]">Visado Service</span>
+              <span className="text-[#DADCE0]">•</span>
               <span>{currentLang === 'ar' ? 'وكالة معتمدة ومرافقة تأشيرات في وهران' : currentLang === 'en' ? 'Visa Advisory & Travel Agency in Oran' : 'Agence de préparation de dossiers Visa & Billetterie à Oran'}</span>
             </div>
 
             {/* Clear Main Heading */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#202124] tracking-tight leading-[1.2]">
               {currentLang === 'ar' 
-                ? 'مرافقة احترافية لإعداد ملفات التأشيرة وحجز التذاكر' 
+                ? 'مرافقة احترافية في جميع مراحل معالجة ملفات التأشيرة وحجز التذاكر و مواعيد شنغن ومتابعة الإجراءات' 
                 : currentLang === 'en' 
                 ? 'Expert Visa File Preparation & International Ticketing in Oran' 
                 : 'Accompagnement et préparation de vos dossiers de visa à Oran'}
@@ -96,10 +98,13 @@ export const Hero: React.FC<HeroProps> = ({
                   alt="Dossier et visa traité par Visado Service"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('visado_passport_schengen_card')) {
+                      target.src = '/images/visado_passport_schengen_card_1789171561863.jpg';
+                    }
+                  }}
                 />
-                <div className="absolute bottom-2 left-2 bg-[#202124]/80 text-white text-[11px] font-medium px-2.5 py-1 rounded backdrop-blur-xs">
-                  {currentLang === 'ar' ? 'تأشيرات وملفات حقيقية' : 'Passeport & Visa officiel'}
-                </div>
               </div>
 
               <div className="space-y-2">
@@ -110,8 +115,8 @@ export const Hero: React.FC<HeroProps> = ({
                     {currentLang === 'ar' ? 'مفتوح اليوم' : 'Ouvert de 09h à 17h'}
                   </span>
                 </div>
-                <p className="text-xs text-[#5F6368]">
-                  14 Rue Capitaine Hadri Mohamed, Oran 31000
+                <p className="text-xs text-[#5F6368]" dir="ltr">
+                  14, Rue Capitaine Hadri Mohamed, Oran
                 </p>
                 <div className="pt-2 flex gap-2">
                   <a

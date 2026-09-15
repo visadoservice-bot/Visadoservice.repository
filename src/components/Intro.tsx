@@ -47,7 +47,7 @@ export const Intro: React.FC<IntroProps> = ({ currentLang }) => {
                 <Compass className="w-5 h-5 text-[#C7A76C] mt-1 shrink-0" />
                 <div>
                   <span className="block text-sm font-semibold text-white tracking-wide">Oran, Algérie</span>
-                  <span className="text-xs text-[#E9ECEF]/60">14 Rue Capitaine Hadri Mohamed</span>
+                  <span className="text-xs text-[#E9ECEF]/60" dir="ltr">14, Rue Capitaine Hadri Mohamed</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">

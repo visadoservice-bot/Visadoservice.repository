@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Clock, ExternalLink, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Logo } from './Logo';
 import { siteConfig } from '../data/config';
 import { Language } from '../types';
@@ -9,10 +9,6 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const navLinks = [
     { label: currentLang === 'ar' ? 'الرئيسية' : 'Accueil', href: "#hero" },
     { label: currentLang === 'ar' ? 'الخدمات' : 'Nos Services', href: "#services" },
@@ -23,42 +19,41 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
   ];
 
   return (
-    <footer className="bg-[#202124] text-[#BDC1C6] border-t border-[#3C4043] pt-12 pb-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+    <footer className="bg-gradient-to-b from-[#08152E] via-[#0A1A3A] to-[#050D1C] text-[#9FB3C8] border-t border-[#00A3E0]/30 pt-9 pb-6 relative overflow-hidden">
+      {/* Subtle brand glow in background */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00A3E0]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#002A79]/20 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-[#3C4043]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-10 pb-8 border-b border-white/10">
           
           {/* Col 1: Brand & Address */}
-          <div className="space-y-3 md:col-span-1">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded bg-[#1A73E8] text-white flex items-center justify-center font-bold text-sm">
-                V
-              </div>
-              <span className="font-bold text-white text-base tracking-tight">Visado Service</span>
-            </div>
-            <p className="text-xs text-[#9AA0A6] leading-relaxed">
+          <div className="space-y-3.5 md:col-span-1">
+            <Logo variant="footer" />
+            <p className="text-xs text-[#8DA6C6] leading-relaxed">
               {currentLang === 'ar'
-                ? 'وكالة متخصصة في مرافقة وتجهيز ملفات التأشيرة، حجز المواعيد والرحلات الجوية بوهران.'
-                : 'Accompagnement administratif visa, prise de rendez-vous officiels et billetterie à Oran.'}
+                ? 'وكالة متخصصة في مرافقة وتجهيز ملفات التأشيرة، حجز المواعيد الرسمية والرحلات الجوية بوهران.'
+                : 'Agence spécialisée dans l\'accompagnement et la constitution de dossiers visa, rendez-vous officiels et billetterie à Oran.'}
             </p>
-            <div className="text-xs text-[#9AA0A6] flex items-start gap-1.5 pt-1">
-              <MapPin className="w-3.5 h-3.5 text-[#8AB4F8] shrink-0 mt-0.5" />
-              <span>14 Rue Capitaine Hadri Mohamed, Oran 31000, Algérie</span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs text-[#C5D7EC]">
+              <MapPin className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
+              <span dir="ltr" className="font-medium">14, Rue Capitaine Hadri Mohamed, Oran</span>
             </div>
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="space-y-2">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
               {currentLang === 'ar' ? 'روابط سريعة' : 'Navigation'}
             </h4>
-            <ul className="space-y-1.5 text-xs">
+            <ul className="space-y-2 text-xs">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="hover:text-[#8AB4F8] transition-colors"
+                    className="text-[#9FB3C8] hover:text-[#00A3E0] transition-colors inline-block"
                   >
                     {link.label}
                   </a>
@@ -67,97 +62,108 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
             </ul>
           </div>
 
-          {/* Col 3: Contact & Hours */}
-          <div className="space-y-2">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-              {currentLang === 'ar' ? 'الاتصال والمواعيد' : 'Contact & Horaires'}
+          {/* Col 3: Contact & Direct Lines */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
+              {currentLang === 'ar' ? 'الاتصال المباشر' : 'Lignes Directes'}
             </h4>
-            <div className="space-y-2 text-xs">
+            <div className="space-y-2.5 text-xs">
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="hover:text-[#8AB4F8] transition-colors flex items-center gap-2 text-white font-medium"
+                className="group flex items-center gap-2.5 p-2 rounded-lg bg-white/[0.03] hover:bg-[#00A3E0]/15 border border-white/[0.06] hover:border-[#00A3E0]/40 transition-all text-white font-medium"
               >
-                <Phone className="w-3.5 h-3.5 text-[#8AB4F8] shrink-0" />
-                <span>{siteConfig.phone}</span>
+                <div className="w-7 h-7 rounded-md bg-[#00A3E0]/20 text-[#00A3E0] flex items-center justify-center shrink-0 group-hover:bg-[#00A3E0] group-hover:text-white transition-colors">
+                  <Phone className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="block text-[10px] text-[#8DA6C6] uppercase font-semibold tracking-wider">
+                    {currentLang === 'ar' ? 'الهاتف' : 'Téléphone'}
+                  </span>
+                  <span dir="ltr" className="text-sm font-bold text-white group-hover:text-[#00A3E0] transition-colors">
+                    {siteConfig.phone}
+                  </span>
+                </div>
               </a>
+
               <a
                 href={`https://wa.me/${siteConfig.whatsappRaw}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#81C995] transition-colors flex items-center gap-2 text-[#81C995]"
+                className="group flex items-center gap-2.5 p-2 rounded-lg bg-white/[0.03] hover:bg-[#25D366]/15 border border-white/[0.06] hover:border-[#25D366]/40 transition-all text-[#4ADE80] font-medium"
               >
-                <MessageCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>WhatsApp: {siteConfig.whatsapp}</span>
+                <div className="w-7 h-7 rounded-md bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                  <MessageCircle className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="block text-[10px] text-[#8DA6C6] uppercase font-semibold tracking-wider">
+                    WhatsApp
+                  </span>
+                  <span dir="ltr" className="text-sm font-bold text-[#4ADE80] group-hover:text-[#86EFAC] transition-colors">
+                    {siteConfig.whatsapp}
+                  </span>
+                </div>
               </a>
+
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="hover:text-[#8AB4F8] transition-colors flex items-center gap-2 break-all"
+                className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#00A3E0] transition-colors pt-1 break-all"
               >
-                <Mail className="w-3.5 h-3.5 text-[#8AB4F8] shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
                 <span>{siteConfig.email}</span>
               </a>
-              <div className="flex items-center gap-2 text-[#9AA0A6] pt-1">
-                <Clock className="w-3.5 h-3.5 shrink-0" />
-                <span>Sam - Jeu : 09h00 - 17h00</span>
-              </div>
             </div>
           </div>
 
-          {/* Col 4: Socials & Back to Top */}
-          <div className="space-y-2">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-              {currentLang === 'ar' ? 'تابعونا' : 'Réseaux sociaux'}
+          {/* Col 4: Socials */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
+              {currentLang === 'ar' ? 'شبكات التواصل' : 'Réseaux Sociaux'}
             </h4>
-            <div className="flex flex-col space-y-1.5 text-xs">
+            <div className="flex flex-col space-y-2 text-xs">
               <a
                 href={siteConfig.tiktokUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors flex items-center gap-1.5"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#00A3E0]/40 text-white transition-all"
               >
-                <span>TikTok @visadoservice</span>
-                <ExternalLink className="w-3 h-3 text-[#8AB4F8]" />
+                <span className="font-medium text-xs">TikTok @visadoservice</span>
+                <span className="text-[11px] text-[#00A3E0] font-bold">@</span>
               </a>
               <a
                 href={siteConfig.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors flex items-center gap-1.5"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#00A3E0]/40 text-white transition-all"
               >
-                <span>Instagram</span>
-                <ExternalLink className="w-3 h-3 text-[#8AB4F8]" />
+                <span className="font-medium text-xs">Instagram @visadoservice</span>
+                <span className="text-[11px] text-[#00A3E0] font-bold">IG</span>
               </a>
               <a
                 href={siteConfig.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors flex items-center gap-1.5"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#00A3E0]/40 text-white transition-all"
               >
-                <span>Facebook</span>
-                <ExternalLink className="w-3 h-3 text-[#8AB4F8]" />
+                <span className="font-medium text-xs">Facebook Visado Service</span>
+                <span className="text-[11px] text-[#00A3E0] font-bold">FB</span>
               </a>
-            </div>
-
-            <div className="pt-3">
-              <button
-                onClick={scrollToTop}
-                className="text-xs text-[#8AB4F8] hover:underline flex items-center gap-1"
-              >
-                <ArrowUp className="w-3.5 h-3.5" />
-                <span>{currentLang === 'ar' ? 'العودة للأعلى' : 'Haut de page'}</span>
-              </button>
             </div>
           </div>
 
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#9AA0A6] gap-2">
-          <div>
-            © {new Date().getFullYear()} Visado Service Oran. Tous droits réservés.
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#7A93B0] gap-3">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
+            <span>© {new Date().getFullYear()} Visado Service Oran. Tous droits réservés.</span>
           </div>
-          <div>
-            Établissement privé d'assistance et de conseil aux démarches de visas.
+          <div className="text-center sm:text-right text-[#7A93B0]">
+            {currentLang === 'ar' 
+              ? 'مكتب استشارات ومرافقة في ملفات التأشيرة وحجز تذاكر الطيران بوهران.'
+              : 'Établissement d\'assistance, préparation de dossiers de visa et billetterie à Oran.'}
           </div>
         </div>
 
@@ -165,3 +171,4 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
     </footer>
   );
 };
+

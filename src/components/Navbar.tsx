@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-3 sm:gap-4">
             <a href={`tel:${siteConfig.phoneRaw}`} className="hidden sm:flex hover:text-[#1A73E8] font-medium items-center gap-1">
               <Phone className="w-3 h-3 text-[#1A73E8]" />
-              <span>{siteConfig.phone}</span>
+              <span dir="ltr">{siteConfig.phone}</span>
             </a>
             {/* Simple Language Switcher using logical properties for perfect LTR/RTL spacing */}
             <div className="flex items-center gap-1.5 border-s border-[#DADCE0] ps-2 sm:ps-3">
@@ -147,6 +147,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           
           {/* Drawer content panel */}
           <div className="absolute top-0 inset-x-0 bg-white border-b border-[#DADCE0] px-5 py-6 space-y-5 shadow-2xl max-h-[80vh] overflow-y-auto flex flex-col justify-between">
+            <div className="pb-3 border-b border-[#E8EAED] flex items-center justify-between">
+              <Logo variant="drawer" />
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-1.5 text-[#5F6368] hover:text-[#202124] rounded-full hover:bg-[#F1F3F4]"
+                aria-label="Fermer le menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
             <nav className="space-y-1.5">
               {navLinks.map((link) => (
                 <a
