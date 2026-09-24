@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Trust } from './components/Trust';
 import { Services } from './components/Services';
 import { WhyUs } from './components/WhyUs';
 import { AgencyMediaShowcase } from './components/AgencyMediaShowcase';
@@ -55,6 +56,13 @@ export default function App() {
           currentLang={currentLang}
           onOpenConsultation={() => setIsConsultationModalOpen(true)}
           onExploreServices={() => handleNavigateToSection('services')}
+        />
+
+        {/* 2.5 Section de confiance & Proximité (Agence physique Oran, Avis Google, Contact direct) */}
+        <Trust
+          currentLang={currentLang}
+          onOpenConsultation={() => setIsConsultationModalOpen(true)}
+          onNavigateToSection={handleNavigateToSection}
         />
 
         {/* 3. Services (Grille 4 services épurés) */}
