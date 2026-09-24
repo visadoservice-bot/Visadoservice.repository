@@ -65,7 +65,40 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
   const photos: PhotoItem[] = [
     {
-      id: "photo-1",
+      id: "photo-exterieur",
+      title: currentLang === 'ar' ? "الواجهة الخارجية الرسمية لوكالة Visado Service" : "Façade Extérieure Officielle de l'Agence",
+      category: "agency",
+      location: "14, Rue Hadri Mohamed, Oran",
+      description: currentLang === 'ar' 
+        ? "الواجهة الخارجية الحقيقية لوكالتنا بوهران مع لافتات التأشيرات والخدمات المعتمدة."
+        : "Vue extérieure authentique de notre agence à Oran, 14 Rue Hadri Mohamed.",
+      imageUrl: "/images/Exterieur.png",
+      tag: currentLang === 'ar' ? "الواجهة الخارجية" : "Façade Extérieure"
+    },
+    {
+      id: "photo-interieur",
+      title: currentLang === 'ar' ? "الفضاء الداخلي ومكاتب الاستقبال والاستشارة" : "Intérieur & Bureaux d'Accueil Visado Service",
+      category: "agency",
+      location: "Visado Service • Oran",
+      description: currentLang === 'ar'
+        ? "المقر الداخلي المجهز لاستقبالكم ودراسة ملفاتكم بكل احترافية وراحة تامة."
+        : "Espace intérieur moderne et chaleureux dédié à l'accueil des clients et à l'analyse des dossiers.",
+      imageUrl: "/images/interieur.png",
+      tag: currentLang === 'ar' ? "المقر من الداخل" : "Locaux Intérieurs"
+    },
+    {
+      id: "photo-rdv",
+      title: currentLang === 'ar' ? "خدمة حجز مواعيد BLS Spain الرسمية" : "Service & Confirmation Rendez-Vous BLS Espagne",
+      category: "visas",
+      location: "Centre BLS • Dossiers Vérifiés",
+      description: currentLang === 'ar'
+        ? "مرافقة وإتمام حجوزات المواعيد الرسمية لمركز BLS International إسبانيا والتحقق الشامل من الوثائق."
+        : "Prise en charge officielle des rendez-vous BLS International Espagne et constitution conforme du dossier.",
+      imageUrl: "/images/rdv.png",
+      tag: currentLang === 'ar' ? "مواعيد BLS" : "RDV BLS Espagne"
+    },
+    {
+      id: "photo-schengen",
       title: currentLang === 'ar' ? "تأشيرة شنغن إسبانيا صادرة وجواز سفر" : "Visa Schengen Espagne Délivré & Passeport",
       category: "visas",
       location: "Visado Service • Oran",
@@ -73,51 +106,18 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
         ? "جواز سفر حقيقي بتأشيرة شنغن إسبانيا سارية مع بطاقة العمل الرسمية لوكالة Visado Service."
         : "Passeport avec vignette visa Schengen Espagne officielle et carte de visite Visado Service.",
       imageUrl: imagery.realAgency.schengenVisaPassport,
-      tag: "Visa Délivré"
+      tag: currentLang === 'ar' ? "تأشيرة مقبولة" : "Visa Délivré"
     },
     {
-      id: "photo-2",
-      title: currentLang === 'ar' ? "ملفات ومواعيد BLS إسبانيا الرسمية" : "Dossiers & Confirmations BLS Espagne",
-      category: "visas",
-      location: "Bureau de Consultation • Oran",
-      description: currentLang === 'ar'
-        ? "تأكيدات حجز المواعيد الرسمية لمركز BLS إسبانيا محققة وموثقة على مكتب الاستشارة."
-        : "Confirmations officielles de rendez-vous BLS Spain vérifiées et classées.",
-      imageUrl: imagery.realAgency.appointmentFiles,
-      tag: "Rendez-vous BLS"
-    },
-    {
-      id: "photo-3",
-      title: currentLang === 'ar' ? "فضاء الاستقبال وخريطة العالم المضيئة" : "Espace d'Accueil & Planisphère Mural",
-      category: "agency",
-      location: "14 Rue Capitaine Hadri, Oran",
-      description: currentLang === 'ar'
-        ? "منظر داخلي للمكتب الرئيسي مع الجدار الأزرق وخريطة العالم المجهزة لاستقبالكم."
-        : "Vue intérieure de l'agence principale à Oran avec planisphère mural et bureaux.",
-      imageUrl: imagery.realAgency.agencyInterior,
-      tag: "Locaux Réels"
-    },
-    {
-      id: "photo-4",
-      title: currentLang === 'ar' ? "الواجهة الخارجية وموقع الوكالة" : "Façade & Entrée de l'Agence",
-      category: "agency",
-      location: "14 Rue Capitaine Hadri, Oran",
-      description: currentLang === 'ar'
-        ? "واجهة الوكالة بواجهة حجرية مميزة وواجهات زجاجية تعرض كافة خدمات التأشيرة بوهران."
-        : "Façade en pierre et enseigne vitrée pour accueillir nos voyageurs à Oran.",
-      imageUrl: imagery.realAgency.storefrontOran,
-      tag: "Adresse Oran"
-    },
-    {
-      id: "photo-5",
-      title: currentLang === 'ar' ? "ملصق حجز تذاكر الطيران الدولية" : "Affiche Billetterie & Vols Internationaux",
+      id: "photo-billetterie",
+      title: currentLang === 'ar' ? "حجوزات وتذاكر الطيران الرسمية" : "Billetterie & Vols Internationaux",
       category: "ticketing",
-      location: "Air Algérie & Air France",
+      location: "Air Algérie & Compagnies Internationales",
       description: currentLang === 'ar'
-        ? "حجوزات طيران وتذاكر دولية لكافة الوجهات عبر خط الخدمة المباشر 0557 42 67 84."
-        : "Billetterie officielle vers toutes les destinations avec Air Algérie & Air France.",
+        ? "إصدار تذاكر طيران وحجوزات فندقية مؤكدة لجميع الوجهات العالمية."
+        : "Billetterie officielle vers toutes les destinations avec Air Algérie & compagnies mondiales.",
       imageUrl: imagery.realAgency.ticketingPoster,
-      tag: "Billetterie"
+      tag: currentLang === 'ar' ? "تذاكر طيران" : "Billetterie"
     }
   ];
 

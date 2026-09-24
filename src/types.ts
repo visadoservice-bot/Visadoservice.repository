@@ -74,6 +74,11 @@ export interface TestimonialItem {
   year: string;
   quote: string;
   visaType: string;
+  rating?: number;
+  city?: string;
+  verified?: boolean;
+  avatarColor?: string;
+  date?: string;
 }
 
 export interface FaqItem {

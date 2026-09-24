@@ -14,6 +14,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
     { label: currentLang === 'ar' ? 'الخدمات' : 'Nos Services', href: "#services" },
     { label: currentLang === 'ar' ? 'لماذا تختارنا' : 'Pourquoi nous choisir', href: "#why-us" },
     { label: currentLang === 'ar' ? 'الصور والفيديو' : 'Galerie Photos & Vidéos', href: "#media-gallery" },
+    { label: currentLang === 'ar' ? 'آراء العملاء' : 'Avis Clients', href: "#testimonials" },
     { label: currentLang === 'ar' ? 'الأسئلة الشائعة' : 'FAQ', href: "#faq" },
     { label: currentLang === 'ar' ? 'اتصل بنا' : 'Contact & Devis', href: "#contact" },
   ];
@@ -36,10 +37,17 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
                 ? 'وكالة متخصصة في مرافقة وتجهيز ملفات التأشيرة، حجز المواعيد الرسمية والرحلات الجوية بوهران.'
                 : 'Agence spécialisée dans l\'accompagnement et la constitution de dossiers visa, rendez-vous officiels et billetterie à Oran.'}
             </p>
-            <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs text-[#C5D7EC]">
-              <MapPin className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
+            <a
+              href={siteConfig.googleMapsShareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-[#00A3E0]/50 text-xs text-[#C5D7EC] hover:text-white transition-all group"
+              title="Ouvrir sur Google Maps"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#00A3E0] group-hover:scale-110 transition-transform shrink-0" />
               <span dir="ltr" className="font-medium">14, Rue Capitaine Hadri Mohamed, Oran</span>
-            </div>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00A3E0]/20 text-[#00A3E0] font-bold group-hover:bg-[#00A3E0] group-hover:text-white transition-colors">Maps ↗</span>
+            </a>
           </div>
 
           {/* Col 2: Navigation Links */}
@@ -111,6 +119,16 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
               >
                 <Mail className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
                 <span>{siteConfig.email}</span>
+              </a>
+
+              <a
+                href={siteConfig.googleMapsShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#00A3E0] transition-colors pt-0.5"
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#EA4335] shrink-0" />
+                <span>{currentLang === 'ar' ? 'موقعنا على Google Maps' : 'Accès Google Maps (Oran)'}</span>
               </a>
             </div>
           </div>

@@ -123,21 +123,21 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang }) => {
               </div>
             </div>
 
-            {/* Right: Short Video Embed of the Agency */}
+            {/* Right: Real Agency Visual / Video */}
             <div className="md:col-span-5">
               <div className="relative rounded overflow-hidden aspect-video bg-[#202124] border border-[#DADCE0] shadow-2xs">
                 {!isPlayingTour ? (
                   <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlayingTour(true)}>
                     <img
-                      src="https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg"
-                      alt="Aperçu des locaux Visado Service Oran"
+                      src="/images/interieur.png"
+                      alt="Intérieur des locaux Visado Service Oran"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
                     <div className="absolute inset-0 bg-[#202124]/40 flex flex-col items-center justify-center gap-2">
                       <div className="w-12 h-12 rounded-full bg-[#1A73E8] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                         <Play className="w-5 h-5 ml-0.5 fill-current" />
                       </div>
-                      <span className="text-[11px] font-semibold text-white bg-black/60 px-2 py-0.5 rounded">
+                      <span className="text-[11px] font-semibold text-white bg-black/60 px-2.5 py-0.5 rounded backdrop-blur-xs">
                         {currentLang === 'ar' ? 'شاهد فيديو المقر' : 'Vidéo de nos locaux'}
                       </span>
                     </div>

@@ -36,10 +36,12 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
         
         {/* Modal Top Bar */}
         <div className="p-4 bg-[#F8F9FA] border-b border-[#DADCE0] flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded bg-[#1A73E8] text-white flex items-center justify-center font-bold text-xs">
-              V
-            </div>
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/images/LOGO.png"
+              alt="Visado Service"
+              className="w-7 h-7 object-contain rounded-md bg-white border border-[#DADCE0] p-0.5"
+            />
             <span className="font-bold text-sm text-[#202124]">
               {currentLang === 'ar' ? 'طلب استشارة سريعة' : 'Demander un devis ou une consultation'}
             </span>

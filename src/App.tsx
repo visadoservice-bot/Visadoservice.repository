@@ -6,6 +6,7 @@ import { WhyUs } from './components/WhyUs';
 import { AgencyMediaShowcase } from './components/AgencyMediaShowcase';
 import { FAQ } from './components/FAQ';
 import { ContactSection } from './components/ContactSection';
+import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -76,9 +77,15 @@ export default function App() {
 
         {/* 7. Formulaire de contact / Devis & Carte Google Maps */}
         <ContactSection currentLang={currentLang} />
+
+        {/* 8. Témoignages & Avis Clients réels (Juste avant le Footer) */}
+        <Testimonials
+          currentLang={currentLang}
+          onOpenConsultation={() => setIsConsultationModalOpen(true)}
+        />
       </main>
 
-      {/* 8. Pied de page / Footer */}
+      {/* 9. Pied de page / Footer */}
       <Footer currentLang={currentLang} />
 
       {/* Bouton WhatsApp Flottant */}

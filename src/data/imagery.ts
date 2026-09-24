@@ -1,11 +1,12 @@
 export const imagery = {
   // Real Agency Assets & Photography from Visado Service
   realAgency: {
-    logo: "/logo.png",
+    logo: "/images/LOGO.png",
     schengenVisaPassport: "/images/IMG_0070.JPG",
-    appointmentFiles: "/images/visado_appointment_files_1789153496388.jpg",
-    agencyInterior: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
-    storefrontOran: "/images/visado_storefront_oran_1789153512649.jpg",
+    appointmentFiles: "/images/rdv.png",
+    agencyInterior: "/images/interieur.png",
+    storefrontOran: "/images/Exterieur.png",
+    blsAppointment: "/images/rdv.png",
     ticketingPoster: "/images/visado_billetterie_officielle.jpg",
     youtubeOfficeTour: "https://www.youtube.com/embed/30VIItLvrUI",
     youtubeOfficeShortsUrl: "https://www.youtube.com/shorts/30VIItLvrUI",
@@ -47,7 +48,7 @@ export const imagery = {
     traveler: "/images/IMG_0070.JPG" // Real approved Spain Schengen visa on passport
   },
   services: {
-    schengen: "/images/visado_appointment_files_1789153496388.jpg", // Real appointment files & European/Algerian flags
+    schengen: "/images/IMG_0070.JPG", // Real Spain Schengen visa on passport
     canada: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1600&q=80", // Canadian turquoise lake and mountain peaks
     dossier: "/images/IMG_0070.JPG", // Real Spain Schengen visa issued on passport with Visado card
     conseil: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg", // Real Visado Service consulting desk in Oran from YouTube
@@ -66,7 +67,8 @@ export const imagery = {
     nature: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1800&q=85" // Canadian Rockies
   },
   agency: {
-    oranStreet: "/images/visado_storefront_oran_1789153512649.jpg", // Real storefront at 14 Rue Hadri Mohamed
-    desk: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg" // Real consultation office from YouTube
+    oranStreet: "/images/Exterieur.png", // Real storefront at 14 Rue Hadri Mohamed
+    interior: "/images/interieur.png", // Real interior premises in Oran
+    desk: "/images/interieur.png" // Real consultation office
   }
 };

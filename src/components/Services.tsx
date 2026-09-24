@@ -155,6 +155,48 @@ export const Services: React.FC<ServicesProps> = ({
           })}
         </div>
 
+        {/* BLS Appointment & Document Assistance Focus Banner with Real Proof */}
+        <div className="mt-8 google-card p-5 sm:p-6 bg-gradient-to-r from-[#F8F9FA] to-white border border-[#DADCE0]">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="md:col-span-8 space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E8F0FE] text-[#1A73E8] text-xs font-semibold">
+                <span className="w-2 h-2 rounded-full bg-[#1A73E8]" />
+                <span>{currentLang === 'ar' ? 'خدمة حجز مواعيد BLS Espagne بوهران' : 'Assistance Rendez-Vous BLS Espagne Officiel'}</span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-[#202124]">
+                {currentLang === 'ar' 
+                  ? 'حجز وتأكيد مواعيد مركز BLS إسبانيا ومراجعة كافة وثائق الملف' 
+                  : 'Prise de rendez-vous BLS Espagne & préparation rigoureuse des justificatifs'}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#5F6368] leading-relaxed">
+                {currentLang === 'ar'
+                  ? 'نوفر لكم متابعة مستمرة وتأكيداً رسمياً للمواعيد مع فحص شامل لجواز السفر، شهادات العمل، كشوف الحسابات، والتأمين الدولي.'
+                  : 'Visado Service vous assiste pour l\'obtention des créneaux de rendez-vous BLS International et audite chaque pièce de votre dossier avant votre dépôt au centre.'}
+              </p>
+              <div className="pt-2 flex flex-wrap gap-3">
+                <button
+                  onClick={onOpenConsultation}
+                  className="px-4 py-2 bg-[#1A73E8] hover:bg-[#1557B0] text-white text-xs font-semibold rounded-md shadow-xs transition-colors cursor-pointer"
+                >
+                  {currentLang === 'ar' ? 'طلب موعد BLS' : 'Demander mon RDV BLS'}
+                </button>
+              </div>
+            </div>
+            <div className="md:col-span-4 flex justify-center">
+              <div className="relative rounded-lg overflow-hidden border border-[#DADCE0] shadow-sm max-w-[200px] group cursor-pointer" onClick={onOpenConsultation}>
+                <img
+                  src="/images/rdv.png"
+                  alt="Confirmation officielle de rendez-vous BLS Espagne"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white text-[10px] font-medium py-1 px-2 text-center backdrop-blur-xs">
+                  {currentLang === 'ar' ? 'نموذج موعد BLS معتمد' : 'Récépissé BLS vérifié'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Global Bottom Prompt */}
         <div className="mt-10 p-5 bg-[#F8F9FA] border border-[#DADCE0] rounded-lg flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-start">

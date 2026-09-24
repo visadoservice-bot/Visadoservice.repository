@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Phone, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
+import { ArrowRight, Phone, CheckCircle2, ShieldCheck, MapPin, ExternalLink } from 'lucide-react';
 import { siteConfig } from '../data/config';
 import { translations } from '../data/translations';
 import { imagery } from '../data/imagery';
@@ -115,15 +115,26 @@ export const Hero: React.FC<HeroProps> = ({
                     {currentLang === 'ar' ? 'مفتوح اليوم' : 'Ouvert de 09h à 17h'}
                   </span>
                 </div>
-                <p className="text-xs text-[#5F6368]" dir="ltr">
-                  14, Rue Capitaine Hadri Mohamed, Oran
-                </p>
+                <a
+                  href={siteConfig.googleMapsShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#5F6368] hover:text-[#1A73E8] flex items-center gap-1 transition-colors"
+                  dir="ltr"
+                >
+                  <MapPin className="w-3 h-3 text-[#EA4335] shrink-0" />
+                  <span>14, Rue Capitaine Hadri Mohamed, Oran</span>
+                </a>
                 <div className="pt-2 flex gap-2">
                   <a
-                    href="#contact"
-                    className="flex-1 text-center py-2 text-xs font-semibold text-[#1A73E8] bg-[#E8F0FE] hover:bg-[#D2E3FC] rounded transition-colors"
+                    href={siteConfig.googleMapsShareUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 px-1 text-xs font-semibold text-[#1A73E8] bg-[#E8F0FE] hover:bg-[#D2E3FC] rounded transition-colors flex items-center justify-center gap-1"
                   >
-                    {currentLang === 'ar' ? 'معلومات الاتصال' : 'Itinéraire & Horaires'}
+                    <MapPin className="w-3.5 h-3.5 text-[#EA4335]" />
+                    <span>{currentLang === 'ar' ? 'خرائط Google' : 'Google Maps'}</span>
+                    <ExternalLink className="w-3 h-3 opacity-70" />
                   </a>
                   <button
                     onClick={onOpenConsultation}
