@@ -314,11 +314,6 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                       alt={photo.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
-                    <div className="absolute top-2.5 left-2.5">
-                      <span className="text-[10px] font-semibold bg-white/90 text-[#202124] px-2 py-0.5 rounded shadow-xs">
-                        {photo.tag}
-                      </span>
-                    </div>
                     <div className="absolute top-2.5 right-2.5 p-1.5 rounded bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity">
                       <Maximize2 className="w-3.5 h-3.5" />
                     </div>
