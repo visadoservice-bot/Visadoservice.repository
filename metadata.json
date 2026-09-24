@@ -1,6 +1,6 @@
 {
-  "name": "Visado Service | Agence Visa à Oran",
-  "description": "Visado Service à Oran vous accompagne dans vos démarches de visa Schengen, Canada et autres destinations avec un service professionnel et personnalisé.",
+  "name": "Visado Service | Agence Visa à Oran (Schengen, Canada & Billetterie)",
+  "description": "Visado Service : agence visa et voyages à Oran (14 Rue Hadri Mohamed). Rendez-vous visa Schengen (Espagne, France, Italie), visa Canada & billetterie officielle.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

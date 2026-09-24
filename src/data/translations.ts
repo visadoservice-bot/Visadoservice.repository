@@ -1,8 +1,8 @@
 export const translations = {
   fr: {
     meta: {
-      title: "Visado Service | Agence Visa à Oran",
-      description: "Visado Service à Oran vous accompagne dans vos démarches de visa Schengen, Canada et autres destinations avec un service professionnel et personnalisé."
+      title: "Visado Service | Agence Visa à Oran (Schengen, Canada & Billetterie)",
+      description: "Visado Service : agence visa et voyages à Oran (14 Rue Hadri Mohamed). Rendez-vous visa Schengen (Espagne, France, Italie), visa Canada & billetterie officielle."
     },
     nav: {
       home: "Accueil",
@@ -395,8 +395,8 @@ export const translations = {
 
   ar: {
     meta: {
-      title: "Visado Service | وكالة التأشيرات في وهران",
-      description: "خدمة احترافية لمرافقتكم في إجراءات التأشيرة مع Visado Service بوهران: تأشيرات شنغن، كندا ومختلف الوجهات مع متابعة شخصية دقيقة."
+      title: "وكالة فيزادو سيرفيس وهران | تأشيرات شنغن، كندا، مواعيد وحجوزات طيران",
+      description: "وكالة Visado Service بوهران (14 نهج حادري محمد) : مرافقة وتجهيز ملفات تأشيرة شنغن (إسبانيا، فرنسا، إيطاليا)، تأشيرة كندا، حجز المواعيد والرحلات الجوية."
     },
     nav: {
       home: "الرئيسية",
@@ -611,7 +611,7 @@ export const translations = {
         },
         {
           title: "قرب من العميل",
-          description: "وكالة حقيقية في وهران بشارع النقيب حادري محمد، يسهل التواصل معها وزيارتها."
+          description: "وكالة حقيقية في وهران بشارع حضري محمد، يسهل التواصل معها وزيارتها."
         },
         {
           title: "خدمة سريعة ومنظمة",
@@ -687,7 +687,7 @@ export const translations = {
           verified: true,
           avatarColor: "bg-[#1E8E3E]",
           date: "منذ شهر",
-          quote: "وكالة متميزة في 14 نهج القبطان حيدري محمد. تنظيم متقن لموعد VFS فرنسا وحجز تذاكر الخطوط الجوية الجزائرية في عين المكان. التزام تام بالمواعيد وشفافية كاملة في الأسعار."
+          quote: "وكالة متميزة في 14، شارع حضري محمد وهران. تنظيم متقن لموعد VFS فرنسا وحجز تذاكر الخطوط الجوية الجزائرية في عين المكان. التزام تام بالمواعيد وشفافية كاملة في الأسعار."
         },
         {
           id: "t4",
@@ -727,12 +727,12 @@ export const translations = {
         {
           id: "faq-4",
           question: "كيف يمكنني حجز موعد مع Visado Service؟",
-          answer: "يمكنكم الاتصال بنا مباشرة على الرقم 0555 77 84 60، أو عبر الواتساب على +213 555 77 84 60، أو ملء استمارة الموقع، أو زيارة مقرنا الكائن بـ 14 شارع النقيب حادري محمد بوهران."
+          answer: "يمكنكم الاتصال بنا مباشرة على الرقم 0555 77 84 60، أو عبر الواتساب على +213 555 77 84 60، أو ملء استمارة الموقع، أو زيارة مقرنا الكائن بـ 14، شارع حضري محمد بوهران."
         },
         {
           id: "faq-5",
           question: "أين يقع مقر وكالتكم؟",
-          answer: "تقع وكالتنا في موقع مركزي بوسط مدينة وهران: 14 شارع النقيب حادري محمد، وهران، الجزائر، الرمز البريدي 31000. نستقبلكم بكل ترحيب من السبت إلى الخميس."
+          answer: "تقع وكالتنا في موقع مركزي بوسط مدينة وهران: 14، شارع حضري محمد، وهران، الجزائر، الرمز البريدي 31000. نستقبلكم بكل ترحيب من السبت إلى الخميس."
         },
         {
           id: "faq-6",

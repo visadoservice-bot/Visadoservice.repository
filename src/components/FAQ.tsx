@@ -54,15 +54,18 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                   }`}
                 >
                   <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full text-start px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 focus:outline-hidden cursor-pointer text-slate-900 group"
+                    type="button"
+                    id={`faq-btn-${item.id}`}
+                    aria-controls={`faq-answer-${item.id}`}
                     aria-expanded={isOpen}
+                    onClick={() => toggleAccordion(index)}
+                    className="w-full text-start px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 cursor-pointer text-slate-900 group"
                   >
                     <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
                       <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isOpen ? 'bg-blue-600 text-white shadow-xs' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100/70'
                       }`}>
-                        <HelpCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        <HelpCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
                       </div>
                       <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
                         {item.question}
@@ -72,12 +75,16 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                       className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
                         isOpen ? 'rotate-180 bg-blue-50 text-blue-600' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200/70'
                       }`}
+                      aria-hidden="true"
                     >
                       <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300" />
                     </div>
                   </button>
 
                   <div
+                    id={`faq-answer-${item.id}`}
+                    role="region"
+                    aria-labelledby={`faq-btn-${item.id}`}
                     className={`grid transition-all duration-300 ease-out ${
                       isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                     }`}

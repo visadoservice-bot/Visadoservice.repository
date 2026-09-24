@@ -66,7 +66,7 @@ export const Trust: React.FC<TrustProps> = ({
 
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
               {isArabic
-                ? 'نستقبلكم في مقرنا بالشارع التجاري بشارع حادري محمد لدراسة ملفاتكم شخصياً، مراجعة كل وثيقة وتقديم استشارات واضحة دون وسطاء.'
+                ? 'نستقبلكم في مقرنا بشارع حضري محمد لدراسة ملفاتكم شخصياً، مراجعة كل وثيقة وتقديم استشارات واضحة دون وسطاء.'
                 : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour examiner vos documents, répondre à vos questions et structurer votre demande en toute transparence.'}
             </p>
           </div>

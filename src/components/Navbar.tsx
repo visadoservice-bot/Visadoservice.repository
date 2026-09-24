@@ -49,10 +49,20 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent background scroll when mobile menu is open
+  // Prevent background scroll when mobile menu is open & listen for Escape key
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setIsMobileMenuOpen(false);
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
     } else {
       document.body.style.overflow = '';
     }
@@ -117,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <span className="font-semibold text-slate-800 truncate">
               {isArabic 
-                ? 'مقرنا مفتوح بوهران • 14 نهج حادري محمد' 
+                ? 'مقرنا مفتوح بوهران • 14، شارع حضري محمد' 
                 : 'Agence ouverte à Oran • 14, Rue Hadri Mohamed'}
             </span>
             <a
@@ -253,12 +263,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Hamburger button with clean tap target */}
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100/90 hover:bg-slate-200/80 border border-slate-200 text-slate-800 active:scale-95 transition-all cursor-pointer"
-            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100/90 hover:bg-slate-200/80 border border-slate-200 text-slate-800 active:scale-95 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            aria-label={isMobileMenuOpen ? (isArabic ? "إغلاق القائمة" : "Fermer le menu") : (isArabic ? "فتح القائمة" : "Ouvrir le menu")}
             aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu-drawer"
           >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
           </button>
         </div>
 
@@ -268,12 +280,19 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* MODERN SLIDE-DOWN LUXURY MOBILE DRAWER                                   */}
       {/* ========================================================================= */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden flex flex-col justify-start">
+        <div 
+          id="mobile-menu-drawer"
+          role="dialog"
+          aria-modal="true"
+          aria-label={isArabic ? 'قائمة التصفح' : 'Menu de navigation'}
+          className="fixed inset-0 z-50 md:hidden flex flex-col justify-start"
+        >
           
           {/* Backdrop with soft blur */}
           <div 
             className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity animate-fadeIn"
             onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
           />
 
           {/* Drawer sheet container */}
@@ -285,27 +304,30 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <div className="flex items-center gap-2">
                 {/* Languages in drawer */}
-                <div className="flex items-center gap-0.5 p-0.5 rounded-lg bg-slate-200/70 border border-slate-200">
+                <div className="flex items-center gap-0.5 p-0.5 rounded-lg bg-slate-200/70 border border-slate-200" role="group" aria-label="Langues">
                   <button
+                    type="button"
                     onClick={() => onLanguageChange('fr')}
-                    className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
-                      currentLang === 'fr' ? 'bg-white text-blue-700 shadow-2xs' : 'text-slate-600'
+                    className={`px-2 py-0.5 rounded-md text-[10px] font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                      currentLang === 'fr' ? 'bg-white text-blue-700 shadow-2xs' : 'text-slate-700 hover:text-slate-900'
                     }`}
                   >
                     FR
                   </button>
                   <button
+                    type="button"
                     onClick={() => onLanguageChange('ar')}
-                    className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
-                      currentLang === 'ar' ? 'bg-white text-blue-700 shadow-2xs' : 'text-slate-600'
+                    className={`px-2 py-0.5 rounded-md text-[10px] font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                      currentLang === 'ar' ? 'bg-white text-blue-700 shadow-2xs' : 'text-slate-700 hover:text-slate-900'
                     }`}
                   >
                     عربي
                   </button>
                   <button
+                    type="button"
                     onClick={() => onLanguageChange('en')}
-                    className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
-                      currentLang === 'en' ? 'bg-white text-blue-700 shadow-2xs' : 'text-slate-600'
+                    className={`px-2 py-0.5 rounded-md text-[10px] font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                      currentLang === 'en' ? 'bg-white text-blue-700 shadow-2xs' : 'text-slate-700 hover:text-slate-900'
                     }`}
                   >
                     EN
@@ -313,11 +335,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-9 h-9 rounded-full bg-slate-200/60 hover:bg-slate-300 text-slate-700 flex items-center justify-center active:scale-95 transition-all cursor-pointer"
-                  aria-label="Fermer le menu"
+                  className="w-9 h-9 rounded-full bg-slate-200/60 hover:bg-slate-300 text-slate-700 flex items-center justify-center active:scale-95 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                  aria-label={isArabic ? "إغلاق القائمة" : "Fermer le menu"}
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -351,7 +374,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </div>
                   <div className="text-start">
                     <p className="text-xs font-bold text-slate-900">
-                      {isArabic ? '14، نهج حادري محمد، وهران' : '14, Rue Hadri Mohamed, Oran'}
+                      {isArabic ? '14، شارع حضري محمد، وهران' : '14, Rue Hadri Mohamed, Oran'}
                     </p>
                     <p className="text-[11px] text-slate-500 flex items-center gap-1">
                       <Star className="w-3 h-3 text-amber-400 fill-current" />

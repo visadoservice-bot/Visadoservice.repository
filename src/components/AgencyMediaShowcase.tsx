@@ -70,11 +70,11 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       titleFr: "Façade officielle de l'agence Visado Service à Oran",
       titleAr: "الواجهة الخارجية الرسمية لوكالة Visado Service بوهران",
       subtitleFr: "14, Rue Hadri Mohamed • Centre-ville d'Oran",
-      subtitleAr: "14، نهج حادري محمد • وسط مدينة وهران",
+      subtitleAr: "14، شارع حضري محمد • وسط مدينة وهران",
       badgeFr: "Siège Officiel",
       badgeAr: "المقر الرئيسي",
       locationFr: "14, Rue Hadri Mohamed, Oran, Algérie",
-      locationAr: "14، نهج حادري محمد، وهران، الجزائر",
+      locationAr: "14، شارع حضري محمد، وهران، الجزائر",
       descriptionFr: "Notre agence physique avec enseigne officielle pignon sur rue. Située au cœur d'Oran, nous accueillons nos clients dans un cadre professionnel et sécurisé pour l'ensemble des démarches de visa et de voyage.",
       descriptionAr: "المقر الميداني لوكالتنا بلافتة رسمية واضحة في قلب مدينة وهران. نستقبلكم في أجواء راقية وآمنة لمعالجة كافة ملفات التأشيرات والأسفار الدولية.",
       highlightFr: "Agence avec pignon sur rue",
@@ -327,49 +327,61 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
             </div>
 
             {/* Category Filter Tabs */}
-            <div className="flex items-center gap-1.5 p-1.5 bg-white border border-slate-200 rounded-2xl shadow-xs self-start lg:self-auto overflow-x-auto max-w-full">
+            <div className="flex items-center gap-1.5 p-1.5 bg-white border border-slate-200 rounded-2xl shadow-xs self-start lg:self-auto overflow-x-auto max-w-full" role="tablist" aria-label="Filtres de la galerie">
               <button
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === 'all'}
                 onClick={() => setActiveFilter('all')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap active:scale-[0.98] ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                   activeFilter === 'all'
                     ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
                 {currentLang === 'ar' ? 'كافة الوسائط (6)' : 'Tous les visuels (6)'}
               </button>
 
               <button
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === 'agency'}
                 onClick={() => setActiveFilter('agency')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                   activeFilter === 'agency'
                     ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
                 <span>{currentLang === 'ar' ? 'المقر والواجهة (3)' : 'Locaux & Agence (3)'}</span>
               </button>
 
               <button
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === 'visas'}
                 onClick={() => setActiveFilter('visas')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                   activeFilter === 'visas'
                     ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
                 <span>{currentLang === 'ar' ? 'التأشيرات والملفات (2)' : 'Visas & Dossiers (2)'}</span>
               </button>
 
               <button
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === 'video'}
                 onClick={() => setActiveFilter('video')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                   activeFilter === 'video'
                     ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
-                <Play className="w-3 h-3 fill-current" />
+                <Play className="w-3 h-3 fill-current" aria-hidden="true" />
                 <span>{currentLang === 'ar' ? 'فيديو المقر (1)' : 'Vidéo Agence (1)'}</span>
               </button>
             </div>
@@ -391,6 +403,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   src={mediaItems[0].imageUrl}
                   alt={currentLang === 'ar' ? mediaItems[0].titleAr : mediaItems[0].titleFr}
                   className="absolute inset-0 w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Dark Editorial Gradient Overlay */}
@@ -473,6 +487,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                       src={mediaItems[1].imageUrl}
                       alt={currentLang === 'ar' ? mediaItems[1].titleAr : mediaItems[1].titleFr}
                       className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
                     />
 
                     {/* Gradient overlay */}
@@ -528,6 +544,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   src={mediaItems[2].imageUrl}
                   alt={currentLang === 'ar' ? mediaItems[2].titleAr : mediaItems[2].titleFr}
                   className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
@@ -566,6 +584,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   src={mediaItems[3].imageUrl}
                   alt={currentLang === 'ar' ? mediaItems[3].titleAr : mediaItems[3].titleFr}
                   className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
@@ -601,6 +621,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   src={mediaItems[4].imageUrl}
                   alt={currentLang === 'ar' ? mediaItems[4].titleAr : mediaItems[4].titleFr}
                   className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
@@ -635,6 +657,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   src={mediaItems[5].imageUrl}
                   alt={currentLang === 'ar' ? mediaItems[5].titleAr : mediaItems[5].titleFr}
                   className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
@@ -676,6 +700,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                       src={item.imageUrl}
                       alt={currentLang === 'ar' ? item.titleAr : item.titleFr}
                       className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
                     />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-slate-950/15" />
@@ -723,7 +749,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
                   {currentLang === 'ar'
-                    ? '14، نهج حادري محمد، وهران — استشارات مباشرة دون موعد'
+                    ? '14، شارع حضري محمد، وهران — استشارات مباشرة دون موعد'
                     : '14, Rue Hadri Mohamed, Oran — Accueil direct sans rendez-vous'}
                 </h3>
 

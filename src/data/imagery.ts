@@ -39,32 +39,32 @@ export const imagery = {
     }
   },
   hero: {
-    main: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2400&q=85", // Airplane wing floating over golden hour clouds
-    fallback: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg",
-    alt: "Voyage en avion au-dessus des nuages à l'aube"
+    main: "/images/interieur.png",
+    fallback: "/images/interieur.png",
+    alt: "Locaux intérieurs de l'agence Visado Service à Oran"
   },
   intro: {
-    texture: "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&w=1800&q=80", // Airplane window soft dawn
+    texture: "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&w=1000&q=75", // Airplane window soft dawn
     traveler: "/images/IMG_0070.JPG" // Real approved Spain Schengen visa on passport
   },
   services: {
     schengen: "/images/IMG_0070.JPG", // Real Spain Schengen visa on passport
-    canada: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1600&q=80", // Canadian turquoise lake and mountain peaks
+    canada: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=800&q=75", // Canadian turquoise lake and mountain peaks
     dossier: "/images/IMG_0070.JPG", // Real Spain Schengen visa issued on passport with Visado card
     conseil: "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg", // Real Visado Service consulting desk in Oran from YouTube
     billetterie: "/images/visado_billetterie_officielle.jpg" // Real Billetterie Internationale Air Algérie & Air France poster
   },
   europe: {
-    france: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80", // Paris
-    italy: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80", // Rome Colosseum warm light
+    france: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=75", // Paris
+    italy: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=75", // Rome Colosseum warm light
     spain: "/images/IMG_0070.JPG", // Real approved Spain Schengen visa on passport
-    germany: "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1200&q=80", // Berlin
-    belgium: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1200&q=80", // Brussels
-    malta: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1200&q=80" // Malta Valletta
+    germany: "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=600&q=75", // Berlin
+    belgium: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=600&q=75", // Brussels
+    malta: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=600&q=75" // Malta Valletta
   },
   canada: {
-    panorama: "https://images.unsplash.com/photo-1517935703635-2717090c2226?auto=format&fit=crop&w=2200&q=85", // Toronto skyline & Lake Ontario
-    nature: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1800&q=85" // Canadian Rockies
+    panorama: "https://images.unsplash.com/photo-1517935703635-2717090c2226?auto=format&fit=crop&w=1200&q=80", // Toronto skyline & Lake Ontario
+    nature: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80" // Canadian Rockies
   },
   agency: {
     oranStreet: "/images/Exterieur.png", // Real storefront at 14 Rue Hadri Mohamed

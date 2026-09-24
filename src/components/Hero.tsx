@@ -162,12 +162,17 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Main Professional Travel Photograph Frame */}
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/5] bg-slate-900 shadow-xl shadow-slate-900/10 border border-slate-200/90 group">
                 
-                {/* High-End Travel Atmosphere Image (Aircraft cruising above golden dawn / clouds) */}
+                {/* Real Agency Interior Photo */}
                 <img
-                  src={imagery.hero.main}
-                  alt="Voyage international et accompagnement visa Visado Service"
+                  src={imagery.realAgency.agencyInterior}
+                  alt={currentLang === 'ar' ? 'المقر الداخلي لوكالة Visado Service بوهران' : 'Locaux intérieurs de l\'agence Visado Service à Oran'}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   referrerPolicy="no-referrer"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  width={600}
+                  height={750}
                 />
 
                 {/* Subtle refined gradient overlay for editorial depth */}

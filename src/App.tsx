@@ -19,16 +19,36 @@ export default function App() {
   const [currentLang, setCurrentLang] = useState<Language>('ar');
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
-  // Synchronize document language and text direction (RTL for Arabic)
+  // Synchronize document language, text direction (RTL for Arabic), and SEO metadata
   useEffect(() => {
     const isRtl = currentLang === 'ar';
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
     document.documentElement.lang = currentLang;
     
-    // Update page title dynamically
+    // Update page title and meta description dynamically
     const t = translations[currentLang];
     if (t?.meta?.title) {
       document.title = t.meta.title;
+      
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && t.meta.description) {
+        metaDesc.setAttribute('content', t.meta.description);
+      }
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute('content', t.meta.title);
+      }
+
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc && t.meta.description) {
+        ogDesc.setAttribute('content', t.meta.description);
+      }
+
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogLocale) {
+        ogLocale.setAttribute('content', currentLang === 'ar' ? 'ar_DZ' : 'fr_FR');
+      }
     }
   }, [currentLang]);
 
