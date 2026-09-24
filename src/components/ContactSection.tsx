@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Clock, ExternalLink, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Clock, ExternalLink, Send, CheckCircle2, ShieldCheck, Zap, Sparkles } from 'lucide-react';
 import { siteConfig, WHATSAPP_DEFAULT_MESSAGE } from '../data/config';
 import { translations } from '../data/translations';
+import { Reveal } from './ScrollReveal';
 import { Language, ContactFormData } from '../types';
 
 interface ContactSectionProps {
@@ -14,84 +15,130 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     fullName: '',
     phone: '',
     email: '',
-    destination: '',
-    visaType: '',
+    destination: 'Espagne (BLS)',
+    visaType: 'Visa Touristique (Court séjour)',
+    profile: 'Salarié(e)',
     message: ''
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const formattedWhatsAppText = encodeURIComponent(
-    `*Nouvelle demande via le site Visado Service :*\n` +
-    `👤 *Nom :* ${formData.fullName || 'Non spécifié'}\n` +
-    `📞 *Téléphone :* ${formData.phone || 'Non renseigné'}\n` +
-    `📍 *Destination :* ${formData.destination || 'Non spécifiée'}\n` +
-    `📄 *Type de visa :* ${formData.visaType || 'Non précisé'}\n` +
-    `💬 *Message :* ${formData.message || 'Demande de devis & étude de dossier'}`
-  );
+  // Destinations rapides
+  const quickDestinations = [
+    { label: '🇪🇸 Espagne (BLS)', value: 'Espagne (BLS)' },
+    { label: '🇫🇷 France (TLS)', value: 'France (TLS)' },
+    { label: '🇮🇹 Italie', value: 'Italie' },
+    { label: '🇨🇦 Canada', value: 'Canada' },
+    { label: '🇬🇧 Royaume-Uni', value: 'Royaume-Uni' },
+    { label: '✈️ Billetterie vols seule', value: 'Billetterie / Réservation vol' },
+  ];
 
+  // Profils professionnels (critique pour les dossiers en Algérie)
+  const quickProfiles = [
+    { label: currentLang === 'ar' ? '💼 موظف / أجير' : '💼 Salarié(e)', value: 'Salarié(e)' },
+    { label: currentLang === 'ar' ? '🏬 تاجر / C20' : '🏬 Commerçant(e) (C20)', value: 'Commerçant(e) (C20)' },
+    { label: currentLang === 'ar' ? '🩺 مهنة حرة' : '🩺 Profession libérale', value: 'Profession libérale' },
+    { label: currentLang === 'ar' ? '🎓 طالب' : '🎓 Étudiant(e)', value: 'Étudiant(e)' },
+    { label: currentLang === 'ar' ? '🧓 متقاعد' : '🧓 Retraité(e)', value: 'Retraité(e)' },
+  ];
+
+  const buildWhatsAppMessage = () => {
+    return (
+      `*Demande de devis & étude de dossier — Visado Service*\n\n` +
+      `👤 *Nom & Prénom :* ${formData.fullName.trim() || 'Non précisé'}\n` +
+      `📞 *Téléphone :* ${formData.phone.trim() || 'Non renseigné'}\n` +
+      `📍 *Destination souhaitée :* ${formData.destination || 'Non précisée'}\n` +
+      `💼 *Statut professionnel :* ${formData.profile || 'Non spécifié'}\n` +
+      `📄 *Type de démarche :* ${formData.visaType || 'Préparation de dossier'}\n` +
+      (formData.message.trim() ? `💬 *Précisions :* ${formData.message.trim()}\n` : '') +
+      `\n_Message envoyé depuis le site web Visado Service Oran_`
+    );
+  };
+
+  const formattedWhatsAppText = encodeURIComponent(buildWhatsAppMessage());
   const customWhatsAppUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${formattedWhatsAppText}`;
   const defaultWhatsAppUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`;
 
   const mailtoUrl = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
     `Demande de devis - ${formData.fullName || 'Client'} (${formData.destination || 'Visa'})`
   )}&body=${encodeURIComponent(
-    `Bonjour l'équipe Visado Service,\n\nVoici les détails de la demande envoyée depuis le site web :\n- Nom : ${formData.fullName}\n- Téléphone : ${formData.phone}\n- Destination : ${formData.destination}\n- Type de visa / service : ${formData.visaType || 'Non précisé'}\n- Message : ${formData.message || 'Aucun message'}\n\nEnvoyé depuis le site web Visado Service Oran (https://visadoservice.dz).`
+    `Bonjour l'équipe Visado Service,\n\nVoici les détails de la demande envoyée depuis le site web :\n` +
+    `- Nom : ${formData.fullName}\n` +
+    `- Téléphone : ${formData.phone}\n` +
+    `- Destination : ${formData.destination}\n` +
+    `- Statut : ${formData.profile}\n` +
+    `- Type de visa / service : ${formData.visaType}\n` +
+    `- Précisions : ${formData.message || 'Aucun message'}\n\n` +
+    `Envoyé depuis le site web Visado Service Oran (${siteConfig.address}).`
   )}`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.fullName.trim() || !formData.phone.trim()) {
+      return;
+    }
     setIsSubmitted(true);
-    // Redirection directe vers WhatsApp officiel pour réception instantanée
+    // Open WhatsApp directly with prefilled message
     if (typeof window !== 'undefined') {
       window.open(customWhatsAppUrl, '_blank');
     }
   };
 
+  const handleStandardSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.fullName.trim() || !formData.phone.trim()) {
+      return;
+    }
+    setIsSubmitted(true);
+  };
+
   return (
-    <section id="contact" className="py-16 sm:py-20 bg-white border-b border-[#DADCE0]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="contact" className="py-14 sm:py-24 bg-white border-b border-slate-200/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs uppercase font-semibold tracking-wider text-[#1A73E8] bg-[#E8F0FE] px-3 py-1 rounded-full inline-block mb-3">
-            {currentLang === 'ar' ? 'تواصل معنا' : 'Contact & Devis'}
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#202124] tracking-tight">
-            {currentLang === 'ar' ? 'طلب استشارة أو تسعيرة مجانية' : 'Demander un devis ou nous contacter'}
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#5F6368]">
-            {currentLang === 'ar'
-              ? 'فريقنا متاح للإجابة على كافة استفساراتكم ومرافقتكم في مقرنا بوهران أو عن بعد.'
-              : 'Remplissez le formulaire ci-dessous ou contactez nos conseillers directement par téléphone et WhatsApp.'}
-          </p>
-        </div>
+        <Reveal direction="up" delay={0}>
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <span className="text-xs uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-100/60 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
+              {currentLang === 'ar' ? 'تواصل معنا' : 'Contact & Devis'}
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              {currentLang === 'ar' ? 'طلب استشارة أو تسعيرة مجانية' : 'Demander un devis ou nous contacter'}
+            </h2>
+            <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
+              {currentLang === 'ar'
+                ? 'فريقنا متاح للإجابة على كافة استفساراتكم ومرافقتكم في مقرنا بوهران أو عن بعد.'
+                : 'Remplissez le formulaire ci-dessous ou contactez nos conseillers directement par téléphone et WhatsApp.'}
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Left Column: Coordonnées & Google Maps */}
-          <div className="lg:col-span-5 space-y-6">
+          <Reveal direction="up" delay={0} className="lg:col-span-5">
+            <div className="space-y-6">
             
             {/* Contact Details Card */}
-            <div className="google-card p-6 bg-[#F8F9FA] space-y-5">
-              <h3 className="text-base sm:text-lg font-bold text-[#202124] pb-3 border-b border-[#DADCE0]">
+            <div className="bg-slate-50/70 rounded-2xl border border-slate-200/80 p-5 sm:p-7 space-y-5 shadow-xs">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 pb-3 border-b border-slate-200/80">
                 {currentLang === 'ar' ? 'معلومات الاتصال المباشرة' : 'Coordonnées de l\'agence'}
               </h3>
 
               <div className="space-y-4 text-xs sm:text-sm">
                 
                 {/* Telephone */}
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#E8F0FE] text-[#1A73E8] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-blue-100/70 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-[#5F6368] font-medium block">
+                    <span className="text-xs text-slate-500 font-medium block">
                       {currentLang === 'ar' ? 'الهاتف المباشر & التذاكر' : 'Téléphone & Billetterie'}
                     </span>
                     <a
                       href={`tel:${siteConfig.phoneRaw}`}
-                      className="font-bold text-[#1A73E8] hover:underline text-sm sm:text-base inline-block"
+                      className="font-bold text-blue-600 hover:text-blue-700 hover:underline text-base inline-block tracking-tight"
                       dir="ltr"
                     >
                       {siteConfig.phone}
@@ -99,7 +146,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     {siteConfig.phoneSecondary && (
                       <a
                         href="tel:+213555778460"
-                        className="text-xs text-[#5F6368] hover:text-[#202124] block mt-0.5"
+                        className="text-xs text-slate-500 hover:text-slate-800 block mt-0.5"
                         dir="ltr"
                       >
                         {siteConfig.phoneSecondary} (Standard)
@@ -109,19 +156,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                 </div>
 
                 {/* WhatsApp */}
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#E6F4EA] text-[#1E8E3E] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <MessageCircle className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-[#5F6368] font-medium block">
+                    <span className="text-xs text-slate-500 font-medium block">
                       {currentLang === 'ar' ? 'واتساب متاح 7/7' : 'Assistance WhatsApp'}
                     </span>
                     <a
                       href={defaultWhatsAppUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-bold text-[#1E8E3E] hover:underline text-sm inline-block"
+                      className="font-bold text-emerald-700 hover:text-emerald-800 hover:underline text-sm inline-block"
                       dir="ltr"
                     >
                       {siteConfig.whatsapp}
@@ -130,15 +177,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#E8F0FE] text-[#1A73E8] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-blue-100/70 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-[#5F6368] font-medium block">Email</span>
+                    <span className="text-xs text-slate-500 font-medium block">Email</span>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="font-semibold text-[#202124] hover:text-[#1A73E8] break-all block"
+                      className="font-semibold text-slate-800 hover:text-blue-600 break-all block"
                     >
                       {siteConfig.email}
                     </a>
@@ -146,30 +193,30 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#FEF7E0] text-[#F9AB00] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-amber-100/70 text-amber-700 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-[#5F6368] font-medium block">
+                    <span className="text-xs text-slate-500 font-medium block">
                       {currentLang === 'ar' ? 'العنوان' : 'Adresse physique'}
                     </span>
-                    <p className="font-semibold text-[#202124]" dir="ltr">
+                    <p className="font-semibold text-slate-800" dir="ltr">
                       14, Rue Capitaine Hadri Mohamed, Oran
                     </p>
                   </div>
                 </div>
 
                 {/* Hours */}
-                <div className="flex items-start gap-3 pt-2 border-t border-[#DADCE0]">
-                  <div className="w-8 h-8 rounded-full bg-[#F1F3F4] text-[#5F6368] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5 pt-3 border-t border-slate-200/80">
+                  <div className="w-9 h-9 rounded-xl bg-slate-200/60 text-slate-600 flex items-center justify-center shrink-0 mt-0.5">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-[#5F6368] font-medium block">
+                    <span className="text-xs text-slate-500 font-medium block">
                       {currentLang === 'ar' ? 'أوقات العمل' : 'Horaires d\'ouverture'}
                     </span>
-                    <p className="text-xs text-[#202124] font-medium">
+                    <p className="text-xs text-slate-800 font-semibold">
                       {t.contact.hoursValue || "Samedi – Jeudi : 09h00 – 17h00"}
                     </p>
                   </div>
@@ -179,41 +226,41 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
             </div>
 
             {/* Agency Storefront Real Photo */}
-            <div className="google-card overflow-hidden bg-white mb-6">
-              <div className="relative aspect-[16/9] bg-[#F1F3F4] overflow-hidden group">
+            <div className="rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs mb-6">
+              <div className="relative aspect-[16/9] bg-slate-100 overflow-hidden group">
                 <img
                   src="/images/Exterieur.png"
                   alt="Façade extérieure Visado Service Oran"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-md flex items-center gap-1.5">
-                  <MapPin className="w-3 h-3 text-[#EA4335]" />
+                <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-semibold px-3 py-1 rounded-lg flex items-center gap-1.5 border border-white/10">
+                  <MapPin className="w-3.5 h-3.5 text-red-400" />
                   <span>{currentLang === 'ar' ? 'المقر بالواجهة الخارجية' : 'Façade Extérieure de l\'Agence'}</span>
                 </div>
-                <div className="absolute bottom-2.5 right-2.5 bg-white/95 text-[#202124] text-[10px] font-bold px-2 py-0.5 rounded shadow-xs" dir="ltr">
+                <div className="absolute bottom-3 right-3 bg-white/95 text-slate-900 text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs" dir="ltr">
                   14 Rue Hadri Mohamed, Oran
                 </div>
               </div>
             </div>
 
             {/* Google Map Card */}
-            <div className="google-card overflow-hidden bg-white">
-              <div className="p-3 bg-[#F8F9FA] border-b border-[#DADCE0] flex items-center justify-between">
-                <span className="text-xs font-bold text-[#202124] flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#EA4335]" />
+            <div className="rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs">
+              <div className="p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                  <MapPin className="w-4 h-4 text-red-500" />
                   <span>Visado Service sur Google Maps</span>
                 </span>
                 <a
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[11px] text-[#1A73E8] font-semibold flex items-center gap-1 hover:underline"
+                  className="text-xs text-blue-600 font-semibold flex items-center gap-1 hover:underline"
                 >
                   <span>Itinéraire</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
-              <div className="h-52 w-full bg-[#E8EAED]">
+              <div className="h-56 w-full bg-slate-200">
                 <iframe
                   title="Visado Service Google Maps"
                   src={siteConfig.googleMapsEmbedUrl}
@@ -225,46 +272,106 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <div className="p-3 bg-[#F8F9FA] border-t border-[#DADCE0] flex items-center justify-between gap-2">
-                <span className="text-xs text-[#5F6368] truncate" dir="ltr">
+              <div className="p-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+                <span className="text-xs text-slate-600 truncate font-medium" dir="ltr">
                   📍 14, Rue Capitaine Hadri Mohamed, Oran
                 </span>
                 <a
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-bold text-white bg-[#1A73E8] hover:bg-[#1557B0] rounded-md transition-colors flex items-center gap-1.5 shadow-2xs shrink-0"
+                  className="px-3.5 py-1.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs shrink-0"
                 >
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>{currentLang === 'ar' ? 'فتح في Google Maps' : 'Ouvrir sur Google Maps'}</span>
+                  <span>{currentLang === 'ar' ? 'Google Maps' : 'Google Maps'}</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
 
-          </div>
+            </div>
+          </Reveal>
 
-          {/* Right Column: Clean Simple Quote Form */}
-          <div className="lg:col-span-7">
-            <div className="google-card p-6 sm:p-8 bg-white h-full flex flex-col justify-between">
+          {/* Right Column: High-Converting Express Quote Form */}
+          <Reveal direction="up" delay={80} className="lg:col-span-7">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-9 shadow-sm hover:shadow-md transition-shadow">
               
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-[#202124]">
-                      {currentLang === 'ar' ? 'استمارة طلب تسعيرة أو موعد' : 'Formulaire de demande de devis'}
-                    </h3>
-                    <p className="text-xs text-[#5F6368] mt-1">
+                <form onSubmit={handleWhatsAppSubmit} className="space-y-4 sm:space-y-5">
+                  <div className="border-b border-slate-100 pb-3">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span>{currentLang === 'ar' ? 'طلب دراسة ملف أو تسعيرة' : 'Demande d\'étude de dossier & devis'}</span>
+                        <Sparkles className="w-4 h-4 text-amber-500" />
+                      </h3>
+                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
+                        <Zap className="w-3 h-3 text-emerald-600" />
+                        <span>{currentLang === 'ar' ? 'إجابة في أقل من 15 دقيقة' : 'Réponse sous 15 min'}</span>
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 mt-1">
                       {currentLang === 'ar'
-                        ? 'أدخل بياناتك وسنتصل بك في أقل من ساعتين خلال أوقات العمل.'
-                        : 'Réponse rapide garantie par nos conseillers d\'Oran.'}
+                        ? 'اختر وجهتك وصفتك المهنية، ثم اضغط على زر الواتساب لإرسال بياناتك مباشرة إلى مستشارينا.'
+                        : 'Complétez vos coordonnées pour que nos conseillers d\'Oran analysent vos pièces et vous répondent immédiatement.'}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Full Name */}
+                  {/* 1. Quick Destination Selection */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-800 mb-1.5">
+                      {currentLang === 'ar' ? '1. الوجهة المطلوبة *' : '1. Destination ou service souhaité *'}
+                    </label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      {quickDestinations.map((dest) => {
+                        const isSelected = formData.destination === dest.value;
+                        return (
+                          <button
+                            type="button"
+                            key={dest.value}
+                            onClick={() => setFormData({ ...formData, destination: dest.value })}
+                            className={`px-3 py-2 rounded-xl text-xs font-semibold text-start border transition-all cursor-pointer ${
+                              isSelected
+                                ? 'bg-blue-50 border-blue-600 text-blue-700 ring-1 ring-blue-600 shadow-2xs'
+                                : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
+                            }`}
+                          >
+                            {dest.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 2. Applicant Profile (Critical for Visa Dossiers) */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-800 mb-1.5">
+                      {currentLang === 'ar' ? '2. صفتكم المهنية (مهم جداً لتحديد وثائق الملف) *' : '2. Votre statut professionnel (détermine vos pièces justificatives) *'}
+                    </label>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {quickProfiles.map((prof) => {
+                        const isSelected = formData.profile === prof.value;
+                        return (
+                          <button
+                            type="button"
+                            key={prof.value}
+                            onClick={() => setFormData({ ...formData, profile: prof.value })}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
+                              isSelected
+                                ? 'bg-emerald-50 border-emerald-600 text-emerald-800 ring-1 ring-emerald-600 shadow-2xs'
+                                : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
+                            }`}
+                          >
+                            {prof.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 3. Name & Phone */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-[#202124] mb-1">
+                      <label className="block text-xs font-bold text-slate-800 mb-1.5">
                         {currentLang === 'ar' ? 'الاسم واللقب *' : 'Nom et Prénom *'}
                       </label>
                       <input
@@ -273,14 +380,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                         placeholder="Ex: Karim Benali"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
+                        className="w-full px-3.5 py-3 text-base sm:text-sm bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-3 focus:ring-blue-100 focus:outline-hidden text-slate-900 transition-all placeholder:text-slate-400"
                       />
                     </div>
 
-                    {/* Phone */}
                     <div>
-                      <label className="block text-xs font-semibold text-[#202124] mb-1">
-                        {currentLang === 'ar' ? 'رقم الهاتف *' : 'Numéro de téléphone *'}
+                      <label className="block text-xs font-bold text-slate-800 mb-1.5">
+                        {currentLang === 'ar' ? 'رقم الهاتف (واتساب) *' : 'Numéro de téléphone *'}
                       </label>
                       <input
                         type="tel"
@@ -288,164 +394,144 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                         placeholder="Ex: 0550 12 34 56"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
+                        className="w-full px-3.5 py-3 text-base sm:text-sm bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-3 focus:ring-blue-100 focus:outline-hidden text-slate-900 transition-all placeholder:text-slate-400"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Destination */}
-                    <div>
-                      <label className="block text-xs font-semibold text-[#202124] mb-1">
-                        {currentLang === 'ar' ? 'البلد / الوجهة *' : 'Destination souhaitée *'}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Ex: Espagne, France, Canada..."
-                        value={formData.destination}
-                        onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
-                      />
-                    </div>
-
-                    {/* Visa Type */}
-                    <div>
-                      <label className="block text-xs font-semibold text-[#202124] mb-1">
-                        {currentLang === 'ar' ? 'نوع التأشيرة أو الخدمة' : 'Type de visa ou service'}
-                      </label>
-                      <select
-                        value={formData.visaType}
-                        onChange={(e) => setFormData({ ...formData, visaType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124]"
-                      >
-                        <option value="">Sélectionnez un type...</option>
-                        <option value="Visa Touristique (Court séjour)">Visa Touristique (Court séjour)</option>
-                        <option value="Visa Études / Campus France / Canada">Visa Études / Campus France / Canada</option>
-                        <option value="Visa Affaires / Professionnel">Visa Affaires / Professionnel</option>
-                        <option value="Prise de Rendez-vous BLS / TLS / VFS">Prise de Rendez-vous BLS / TLS / VFS</option>
-                        <option value="Billetterie & Réservation d'Avion">Billetterie & Réservation d'Avion</option>
-                        <option value="Assurance Voyage & Réservations d'Hôtel">Assurance Voyage & Réservations</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Message */}
+                  {/* 4. Optional message */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#202124] mb-1">
-                      {currentLang === 'ar' ? 'تفاصيل إضافية أو رسالة' : 'Précisions ou message'}
+                    <label className="block text-xs font-bold text-slate-800 mb-1.5">
+                      {currentLang === 'ar' ? 'سؤال أو تفاصيل إضافية (اختياري)' : 'Précisions ou questions (facultatif)'}
                     </label>
                     <textarea
-                      rows={3}
-                      placeholder="Précisez votre situation ou vos questions..."
+                      rows={2}
+                      placeholder={currentLang === 'ar' ? 'هل لديك سجل تجاري، كشف بنكي، أول سفر أو رفض سابق؟' : 'Ex: Premier voyage en Europe, besoin de rendez-vous BLS rapide, relevés bancaires...'}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#F8F9FA] border border-[#DADCE0] rounded focus:bg-white focus:border-[#1A73E8] focus:outline-hidden text-[#202124] resize-none"
+                      className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-3 focus:ring-blue-100 focus:outline-hidden text-slate-900 transition-all resize-none placeholder:text-slate-400"
                     />
                   </div>
 
-                  {/* Submit buttons */}
-                  <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                  {/* 5. Primary CTA Action - Opens WhatsApp with prefilled data */}
+                  <div className="pt-2 space-y-2.5">
                     <button
                       type="submit"
-                      className="flex-1 bg-[#1A73E8] hover:bg-[#1557B0] active:bg-[#104892] text-white font-semibold text-xs sm:text-sm py-3 px-5 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 transform active:scale-[0.99] border border-[#1A73E8]"
+                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-md shadow-emerald-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
                     >
-                      <Send className="w-3.5 h-3.5" />
-                      <span>{currentLang === 'ar' ? 'إرسال الطلب' : 'Envoyer ma demande'}</span>
+                      <MessageCircle className="w-5 h-5 fill-current shrink-0" />
+                      <span>{currentLang === 'ar' ? 'إرسال الطلب عبر واتساب مع البيانات' : 'Envoyer ma demande via WhatsApp'}</span>
                     </button>
 
-                    <a
-                      href={customWhatsAppUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-center shadow-xs"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      <span>{currentLang === 'ar' ? 'إرسال عبر واتساب' : 'Envoyer par WhatsApp'}</span>
-                    </a>
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1">
+                      <button
+                        type="button"
+                        onClick={handleStandardSubmit}
+                        className="text-xs text-slate-600 hover:text-blue-700 underline font-medium cursor-pointer"
+                      >
+                        {currentLang === 'ar' ? 'أو إرسال الطلب عبر الموقع مباشرة' : 'Ou valider par formulaire web sans WhatsApp'}
+                      </button>
+
+                      <a
+                        href={`tel:${siteConfig.phoneRaw}`}
+                        className="text-xs text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-1"
+                      >
+                        <Phone className="w-3 h-3" />
+                        <span>{currentLang === 'ar' ? `اتصال مباشر : ${siteConfig.phone}` : `Appel direct : ${siteConfig.phone}`}</span>
+                      </a>
+                    </div>
                   </div>
 
-                  {/* Destination explanation note */}
-                  <div className="text-[11px] text-[#5F6368] text-center pt-2 flex items-center justify-center gap-1.5 flex-wrap">
-                    <span className="font-medium text-[#202124]">
-                      {currentLang === 'ar'
-                        ? 'تصلنا رسالتك مباشرة على:'
-                        : 'Réception directe sur :'}
+                  {/* Reassurance Micro-Copy */}
+                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 flex-wrap gap-2">
+                    <span className="flex items-center gap-1 text-emerald-700 font-semibold">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <span>{currentLang === 'ar' ? 'بياناتكم محمية وسرية 100%' : 'Données confidentielles'}</span>
                     </span>
-                    <span className="text-[#1E8E3E] font-semibold">WhatsApp 0550 56 66 66</span>
-                    <span>&</span>
-                    <span className="text-[#1A73E8] font-semibold">visadoservice@gmail.com</span>
+                    <span>{currentLang === 'ar' ? 'استشارة مجانية وبدون التزام' : '0% engagement • Devis gratuit'}</span>
+                    <span className="text-slate-600" dir="ltr">📍 14 Rue Hadri, Oran</span>
                   </div>
                 </form>
               ) : (
-                <div className="py-10 text-center space-y-5">
-                  <div className="w-16 h-16 bg-[#E6F4EA] text-[#1E8E3E] rounded-full flex items-center justify-center mx-auto shadow-sm ring-4 ring-[#E6F4EA]/60">
+                <div className="py-8 text-center space-y-5">
+                  <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-xs ring-8 ring-emerald-50">
                     <CheckCircle2 className="w-9 h-9" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-[#202124]">
-                      {currentLang === 'ar' ? 'تم تحضير وإرسال طلبكم بنجاح !' : 'Demande transmise avec succès !'}
+                    <h4 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+                      {currentLang === 'ar' ? 'تم تجهيز وإرسال معلومات طلبكم !' : 'Informations prêtes pour WhatsApp !'}
                     </h4>
-                    <p className="text-xs sm:text-sm text-[#5F6368] max-w-md mx-auto mt-2">
+                    <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
                       {currentLang === 'ar'
-                        ? 'شكراً لكم. طلبكم موجه مباشرة إلى مستشاري وكالة Visado Service بوهران على الواتساب والبريد الإلكتروني.'
-                        : 'Votre demande a été structurée pour l\'équipe Visado Service Oran. Vous pouvez la valider sur WhatsApp ou par Email ci-dessous :'}
+                        ? 'تم تنسيق بيانات طلبكم لإرسالها مباشرة إلى مستشاري وكالة Visado Service بوهران.'
+                        : 'Vos données ont été préremplies pour notre équipe. Si WhatsApp ne s\'est pas ouvert automatiquement, cliquez sur le bouton ci-dessous :'}
                     </p>
                   </div>
 
-                  {/* Reassurance channels box */}
-                  <div className="bg-[#F8F9FA] border border-[#DADCE0] rounded-xl p-4 max-w-md mx-auto text-xs text-start space-y-2">
-                    <div className="font-bold text-[#202124] pb-1 border-b border-[#DADCE0]">
-                      {currentLang === 'ar' ? 'وجهة استلام الطلب :' : 'Canaux de réception de votre agence :'}
-                    </div>
-                    <div className="flex items-center justify-between text-[#3C4043]">
-                      <span>📱 WhatsApp officiel :</span>
-                      <strong className="text-[#1E8E3E]" dir="ltr">+213 550 56 66 66</strong>
-                    </div>
-                    <div className="flex items-center justify-between text-[#3C4043]">
-                      <span>✉️ Email officiel :</span>
-                      <strong className="text-[#1A73E8]">visadoservice@gmail.com</strong>
-                    </div>
-                    <div className="flex items-center justify-between text-[#3C4043]">
-                      <span>📍 Agence physique :</span>
-                      <span>14, Rue Hadri Mohamed, Oran</span>
-                    </div>
-                  </div>
-
+                  {/* Direct Action Link on Success */}
                   <div className="pt-2 flex flex-col sm:flex-row justify-center gap-3">
                     <a
                       href={customWhatsAppUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs py-2.5 px-5 rounded-lg shadow-xs inline-flex items-center justify-center gap-2"
+                      className="bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-xs inline-flex items-center justify-center gap-2"
                     >
-                      <MessageCircle className="w-4 h-4" />
-                      <span>{currentLang === 'ar' ? 'فتح المحادثة على واتساب' : 'Ouvrir sur WhatsApp'}</span>
+                      <MessageCircle className="w-4 h-4 fill-current" />
+                      <span>{currentLang === 'ar' ? 'فتح المحادثة على واتساب الآن' : 'Ouvrir sur WhatsApp maintenant'}</span>
                     </a>
 
                     <a
-                      href={mailtoUrl}
-                      className="bg-[#1A73E8] hover:bg-[#1557B0] text-white font-semibold text-xs py-2.5 px-4 rounded-lg shadow-xs inline-flex items-center justify-center gap-2"
+                      href={`tel:${siteConfig.phoneRaw}`}
+                      className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-xs sm:text-sm py-3.5 px-5 rounded-xl shadow-xs inline-flex items-center justify-center gap-2"
                     >
-                      <Mail className="w-4 h-4" />
-                      <span>{currentLang === 'ar' ? 'إرسال نسخة عبر الإيميل' : 'Envoyer par Email'}</span>
+                      <Phone className="w-4 h-4" />
+                      <span>{currentLang === 'ar' ? `اتصال : ${siteConfig.phone}` : `Appeler le ${siteConfig.phone}`}</span>
                     </a>
+                  </div>
 
+                  {/* Reassurance channels box */}
+                  <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 max-w-md mx-auto text-xs text-start space-y-2">
+                    <div className="font-bold text-slate-900 pb-1.5 border-b border-slate-200">
+                      {currentLang === 'ar' ? 'معلومات الوكالة الرسمية :' : 'Coordonnées officielles Visado Service :'}
+                    </div>
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span>📱 WhatsApp :</span>
+                      <strong className="text-emerald-700" dir="ltr">{siteConfig.phone}</strong>
+                    </div>
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span>✉️ Email :</span>
+                      <strong className="text-blue-600">{siteConfig.email}</strong>
+                    </div>
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span>📍 Adresse :</span>
+                      <span>14, Rue Hadri Mohamed, Oran</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-1">
                     <button
                       onClick={() => {
                         setIsSubmitted(false);
-                        setFormData({ fullName: '', phone: '', email: '', destination: '', visaType: '', message: '' });
+                        setFormData({
+                          fullName: '',
+                          phone: '',
+                          email: '',
+                          destination: 'Espagne (BLS)',
+                          visaType: 'Visa Touristique (Court séjour)',
+                          profile: 'Salarié(e)',
+                          message: ''
+                        });
                       }}
-                      className="btn-google-secondary text-xs py-2.5 px-4"
+                      className="py-2.5 px-4 text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors cursor-pointer"
                     >
-                      {currentLang === 'ar' ? 'طلب جديد' : 'Nouveau message'}
+                      {currentLang === 'ar' ? 'طلب استشارة جديدة' : 'Remplir une autre demande'}
                     </button>
                   </div>
                 </div>
               )}
 
             </div>
-          </div>
+          </Reveal>
 
         </div>
 

@@ -9,6 +9,7 @@ import { ContactSection } from './components/ContactSection';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { MobileBottomBar } from './components/MobileBottomBar';
 import { ConsultationModal } from './components/ConsultationModal';
 import { Language } from './types';
 import { translations } from './data/translations';
@@ -64,7 +65,10 @@ export default function App() {
         />
 
         {/* 4. Pourquoi nous choisir / À propos (Rapidité, Simplicité, Support, Prix transparents) */}
-        <WhyUs currentLang={currentLang} />
+        <WhyUs 
+          currentLang={currentLang} 
+          onOpenConsultation={() => setIsConsultationModalOpen(true)}
+        />
 
         {/* 5. Galerie Photos & Vidéos authentiques (Locaux à Oran, Visas délivrés, Billetterie) */}
         <AgencyMediaShowcase
@@ -73,7 +77,10 @@ export default function App() {
         />
 
         {/* 6. Foire Aux Questions (FAQ Accordéon) */}
-        <FAQ currentLang={currentLang} />
+        <FAQ 
+          currentLang={currentLang} 
+          onOpenConsultation={() => setIsConsultationModalOpen(true)}
+        />
 
         {/* 7. Formulaire de contact / Devis & Carte Google Maps */}
         <ContactSection currentLang={currentLang} />
@@ -88,8 +95,14 @@ export default function App() {
       {/* 9. Pied de page / Footer */}
       <Footer currentLang={currentLang} />
 
-      {/* Bouton WhatsApp Flottant */}
+      {/* Bouton WhatsApp Flottant sur Desktop */}
       <WhatsAppFloat currentLang={currentLang} />
+
+      {/* Barre CTA Fixe Mobile (WhatsApp / Appeler / Prendre RDV) */}
+      <MobileBottomBar
+        currentLang={currentLang}
+        onOpenConsultation={() => setIsConsultationModalOpen(true)}
+      />
 
       {/* Modal Devis / Consultation */}
       <ConsultationModal

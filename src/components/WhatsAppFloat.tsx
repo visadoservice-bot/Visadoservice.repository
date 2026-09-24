@@ -15,7 +15,7 @@ export const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ currentLang }) => 
   return (
     <aside
       aria-label="Assistance WhatsApp instantanée"
-      className="fixed bottom-4 end-4 sm:bottom-6 sm:end-6 z-50 flex items-center gap-2.5 group pointer-events-auto select-none"
+      className="hidden md:flex fixed bottom-6 end-6 z-50 items-center gap-2.5 group pointer-events-auto select-none"
     >
       {/* Tooltip badge (high-contrast pill for all backgrounds) */}
       <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111827] text-white text-xs font-medium shadow-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none translate-x-1 group-hover:translate-x-0 rtl:-translate-x-1 rtl:group-hover:translate-x-0">

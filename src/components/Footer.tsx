@@ -20,17 +20,17 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-[#08152E] via-[#0A1A3A] to-[#050D1C] text-[#9FB3C8] border-t border-[#00A3E0]/30 pt-9 pb-6 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#08152E] via-[#0A1A3A] to-[#050D1C] text-[#9FB3C8] border-t border-[#00A3E0]/30 pt-8 pb-24 md:pb-8 relative overflow-hidden">
       {/* Subtle brand glow in background */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00A3E0]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#002A79]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-10 pb-8 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7 md:gap-8 lg:gap-10 pb-8 border-b border-white/10">
           
           {/* Col 1: Brand & Address */}
-          <div className="space-y-3.5 md:col-span-1">
+          <div className="space-y-3.5 sm:col-span-2 md:col-span-1">
             <Logo variant="footer" />
             <p className="text-xs text-[#8DA6C6] leading-relaxed">
               {currentLang === 'ar'
@@ -41,12 +41,12 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
               href={siteConfig.googleMapsShareUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-[#00A3E0]/50 text-xs text-[#C5D7EC] hover:text-white transition-all group"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-[#00A3E0]/50 text-xs text-[#C5D7EC] hover:text-white transition-all group max-w-full"
               title="Ouvrir sur Google Maps"
             >
               <MapPin className="w-3.5 h-3.5 text-[#00A3E0] group-hover:scale-110 transition-transform shrink-0" />
-              <span dir="ltr" className="font-medium">14, Rue Capitaine Hadri Mohamed, Oran</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00A3E0]/20 text-[#00A3E0] font-bold group-hover:bg-[#00A3E0] group-hover:text-white transition-colors">Maps ↗</span>
+              <span dir="ltr" className="font-medium text-[11px] sm:text-xs truncate">14, Rue Capitaine Hadri Mohamed, Oran</span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00A3E0]/20 text-[#00A3E0] font-bold group-hover:bg-[#00A3E0] group-hover:text-white transition-colors shrink-0">Maps ↗</span>
             </a>
           </div>
 

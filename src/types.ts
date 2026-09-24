@@ -94,5 +94,6 @@ export interface ContactFormData {
   email: string;
   destination: string;
   visaType: string;
+  profile?: string;
   message: string;
 }

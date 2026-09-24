@@ -16,33 +16,29 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
   const t = translations[currentLang];
 
   return (
-    <section id="canada" className="relative py-28 sm:py-36 bg-[#071A2F] text-white overflow-hidden">
+    <section id="canada" className="relative py-24 sm:py-32 bg-slate-950 text-white overflow-hidden border-t border-slate-800">
       
-      {/* Background panoramic image with subtle darkening and luxury vignette */}
+      {/* Background panoramic image with subtle darkening */}
       <div className="absolute inset-0 z-0">
         <img
           src={imagery.canada.panorama}
           alt="Canada paysage et métropole"
-          className="w-full h-full object-cover object-center opacity-30 scale-105"
+          className="w-full h-full object-cover object-center opacity-25 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071A2F] via-[#071A2F]/80 to-[#071A2F]" />
-        <div className="absolute inset-0 bg-radial from-transparent via-[#071A2F]/60 to-[#071A2F]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/85 to-slate-950" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Editorial Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-8 bg-[#C7A76C]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C7A76C] font-semibold">
-              {t.canada.overline}
-            </span>
-          </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight mb-4">
+          <span className="text-xs uppercase font-bold tracking-wider text-blue-400 bg-blue-500/15 border border-blue-400/20 px-3.5 py-1 rounded-full inline-block mb-3.5">
+            {t.canada.overline}
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
             {t.canada.heading}
           </h2>
-          <p className="text-base sm:text-lg text-[#E9ECEF]/90 font-light leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
             {t.canada.description}
           </p>
         </div>
@@ -50,8 +46,8 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
         {/* 5-Step Canada Pathway */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-8">
-            <Compass className="w-4 h-4 text-[#C7A76C]" />
-            <h3 className="text-xs uppercase tracking-[0.2em] text-[#E9ECEF]/80 font-bold">
+            <Compass className="w-4 h-4 text-blue-400" />
+            <h3 className="text-xs uppercase tracking-wider text-slate-400 font-bold">
               {t.canada.stepsTitle}
             </h3>
           </div>
@@ -60,20 +56,20 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
             {t.canada.steps.map((step) => (
               <div
                 key={step.number}
-                className="luxury-glass p-6 rounded-sm border border-white/10 hover:border-[#C7A76C]/40 transition-all duration-300 group flex flex-col justify-between h-full"
+                className="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-blue-400/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full hover:-translate-y-1"
               >
                 <div>
-                  <span className="font-serif-luxury text-2xl lg:text-3xl text-[#C7A76C] font-light block mb-3">
+                  <span className="font-mono text-2xl lg:text-3xl text-blue-400 font-bold block mb-3">
                     {step.number}
                   </span>
-                  <h4 className="text-base font-semibold text-white mb-2 leading-snug">
+                  <h4 className="text-base font-bold text-white mb-2 leading-snug">
                     {step.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#E9ECEF]/75 font-light leading-relaxed">
+                  <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed">
                     {step.text}
                   </p>
                 </div>
-                <div className="w-full h-0.5 bg-white/10 group-hover:bg-[#C7A76C] transition-colors mt-6" />
+                <div className="w-full h-1 bg-white/10 group-hover:bg-blue-500 rounded-full transition-colors mt-6" />
               </div>
             ))}
           </div>
@@ -86,17 +82,17 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
           <div>
             <button
               onClick={onOpenConsultation}
-              className="px-8 py-4 bg-[#C7A76C] hover:bg-[#b89658] text-[#071A2F] text-xs sm:text-sm font-bold uppercase tracking-[0.16em] rounded-sm shadow-xl transition-all duration-300 flex items-center gap-3 group"
+              className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-blue-600/25 transition-all duration-300 flex items-center gap-2.5 group cursor-pointer active:scale-[0.98]"
             >
               <span>{t.canada.cta}</span>
-              <ArrowRight className="w-4 h-4 text-[#071A2F] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform rtl:rotate-180" />
             </button>
           </div>
 
           {/* Legal Notice */}
-          <div className="max-w-xl flex items-start gap-3 bg-white/5 border border-white/10 p-4 rounded-sm">
-            <AlertCircle className="w-4 h-4 text-[#C7A76C] shrink-0 mt-0.5" />
-            <p className="text-xs text-[#E9ECEF]/70 leading-relaxed font-light">
+          <div className="max-w-xl flex items-start gap-3 bg-white/5 border border-white/10 p-5 rounded-2xl">
+            <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <p className="text-xs text-slate-400 leading-relaxed">
               {t.canada.legalNotice}
             </p>
           </div>

@@ -3,12 +3,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #FFFFFF;
-    color: #202124;
+    background-color: #FAFAFA;
+    color: #0F172A;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   [dir="rtl"] {
@@ -20,60 +24,57 @@
   font-family: 'Cairo', system-ui, -apple-system, sans-serif;
 }
 
-/* Minimalist Google Sites Card Styles */
-.google-card {
+/* Premium Travel Agency Card Styles */
+.google-card, .travel-card {
   background-color: #FFFFFF;
-  border: 1px solid #DADCE0;
-  border-radius: 8px;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.google-card:hover {
-  border-color: #BDC1C6;
-  box-shadow: 0 2px 8px rgba(60, 64, 67, 0.08);
+.google-card:hover, .travel-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
-/* Material Design style buttons */
-.btn-google-primary {
-  background-color: #1A73E8;
+/* Premium High-End Buttons */
+.btn-google-primary, .btn-primary {
+  background-color: #1A56DB;
   color: #FFFFFF;
   font-weight: 600;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  border-radius: 10px;
+  padding: 0.625rem 1.25rem;
+  box-shadow: 0 1px 2px 0 rgba(26, 86, 219, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-google-primary:hover {
-  background-color: #1557B0;
+.btn-google-primary:hover, .btn-primary:hover {
+  background-color: #1E40AF;
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.25);
+  transform: translateY(-1px);
 }
-.btn-google-primary:active {
-  transform: scale(0.98);
+.btn-google-primary:active, .btn-primary:active {
+  transform: translateY(0) scale(0.98);
 }
 
-.btn-google-secondary {
+.btn-google-secondary, .btn-secondary {
   background-color: #FFFFFF;
-  color: #1A73E8;
+  color: #1E293B;
   font-weight: 600;
-  border: 1px solid #DADCE0;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 0.625rem 1.25rem;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-google-secondary:hover {
-  background-color: #F8F9FA;
-  border-color: #BDC1C6;
+.btn-google-secondary:hover, .btn-secondary:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+  color: #0F172A;
+  transform: translateY(-1px);
 }
-.btn-google-secondary:active {
-  transform: scale(0.98);
-}
-
-/* Masquer la barre de défilement verticale tout en conservant le défilement */
-html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE et Edge */
-}
-
-::-webkit-scrollbar {
-  display: none;
-  width: 0px;
-  height: 0px;
+.btn-google-secondary:active, .btn-secondary:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* Hide scrollbar utility for mobile snap carousels */
@@ -83,6 +84,92 @@ html, body {
   height: 0px;
 }
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+/* Fast subtle editorial hero animations */
+@keyframes heroEditorialFade {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-pop {
+  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hero-fade {
+  animation: heroEditorialFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hero-fade-delayed {
+  animation: heroEditorialFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.animate-hero-fade-late {
+  animation: heroEditorialFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+
+/* Premium micro-interactions and card lift */
+.card-hover-lift {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.img-subtle-zoom {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .img-subtle-zoom {
+  transform: scale(1.035);
+}
+
+/* Accessible reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card-hover-lift:hover {
+    transform: none !important;
+  }
+  .group:hover .img-subtle-zoom {
+    transform: none !important;
+  }
+}
+

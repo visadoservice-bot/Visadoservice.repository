@@ -40,58 +40,53 @@ export const Navbar: React.FC<NavbarProps> = ({
   const directWhatsAppUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(WHATSAPP_CONSULTANT_MESSAGE)}`;
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-[#DADCE0] shadow-xs">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-2xs transition-all">
       {/* Top micro bar for quick business status */}
-      <div className="bg-[#F8F9FA] border-b border-[#E8EAED] text-xs text-[#5F6368] py-1.5 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#1E8E3E] animate-pulse"></span>
-            <span className="font-medium text-[#3C4043] text-[11px] sm:text-xs">
+      <div className="bg-slate-50/90 border-b border-slate-100 text-xs text-slate-500 py-1.5 px-3 sm:px-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+            <span className="font-semibold text-slate-800 text-[11px] sm:text-xs truncate">
               {currentLang === 'ar' 
-                ? 'مكتبنا مفتوح الآن بوهران' 
+                ? 'مكتبنا مفتوح بوهران' 
                 : currentLang === 'en' 
                 ? 'Agency open in Oran' 
-                : (
-                  <>
-                    <span className="hidden sm:inline">Agence ouverte à Oran (14 Rue Capitaine Hadri)</span>
-                    <span className="inline sm:hidden">Ouvert à Oran</span>
-                  </>
-                )}
+                : 'Ouvert à Oran (14 Rue Hadri)'}
             </span>
             <a
               href={siteConfig.googleMapsShareUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-semibold text-[#1A73E8] bg-[#E8F0FE] hover:bg-[#D2E3FC] transition-colors"
+              className="hidden min-[380px]:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 transition-colors shrink-0"
               title="Ouvrir sur Google Maps"
             >
-              <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#EA4335] shrink-0" />
-              <span>{currentLang === 'ar' ? 'خرائط جوجل' : 'Google Maps'}</span>
+              <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-red-500 shrink-0" />
+              <span>{currentLang === 'ar' ? 'خرائط جوجل' : 'Maps'}</span>
               <ExternalLink className="w-2.5 h-2.5 opacity-70" />
             </a>
           </div>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <a href={`tel:${siteConfig.phoneRaw}`} className="hidden sm:flex hover:text-[#1A73E8] font-medium items-center gap-1">
-              <Phone className="w-3 h-3 text-[#1A73E8]" />
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+            <a href={`tel:${siteConfig.phoneRaw}`} className="hidden md:flex hover:text-blue-600 font-semibold items-center gap-1.5 transition-colors text-slate-700">
+              <Phone className="w-3 h-3 text-blue-600" />
               <span dir="ltr">{siteConfig.phone}</span>
             </a>
-            {/* Simple Language Switcher using logical properties for perfect LTR/RTL spacing */}
-            <div className="flex items-center gap-1.5 border-s border-[#DADCE0] ps-2 sm:ps-3">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 border-s border-slate-200 ps-2 sm:ps-3">
               <button
                 onClick={() => onLanguageChange('fr')}
-                className={`px-1.5 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold transition-colors ${currentLang === 'fr' ? 'bg-[#1A73E8] text-white' : 'text-[#5F6368] hover:text-[#202124]'}`}
+                className={`px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${currentLang === 'fr' ? 'bg-blue-600 text-white shadow-2xs' : 'text-slate-500 hover:text-slate-800'}`}
               >
                 FR
               </button>
               <button
                 onClick={() => onLanguageChange('ar')}
-                className={`px-1.5 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold transition-colors ${currentLang === 'ar' ? 'bg-[#1A73E8] text-white' : 'text-[#5F6368] hover:text-[#202124]'}`}
+                className={`px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${currentLang === 'ar' ? 'bg-blue-600 text-white shadow-2xs' : 'text-slate-500 hover:text-slate-800'}`}
               >
                 عربي
               </button>
               <button
                 onClick={() => onLanguageChange('en')}
-                className={`px-1.5 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold transition-colors ${currentLang === 'en' ? 'bg-[#1A73E8] text-white' : 'text-[#5F6368] hover:text-[#202124]'}`}
+                className={`px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${currentLang === 'en' ? 'bg-blue-600 text-white shadow-2xs' : 'text-slate-500 hover:text-slate-800'}`}
               >
                 EN
               </button>
@@ -101,20 +96,20 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Header Bar */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
         {/* Brand Logo & Name */}
-        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2 transition-transform active:scale-95">
+        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2 transition-transform active:scale-95 shrink-0">
           <Logo variant="header" />
         </a>
 
         {/* Center Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="px-3 py-1.5 text-sm font-medium text-[#3C4043] hover:text-[#1A73E8] hover:bg-[#F1F3F4] rounded-md transition-colors"
+              className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg transition-all"
             >
               {link.label}
             </a>
@@ -125,24 +120,25 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="hidden sm:flex items-center gap-2.5">
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-[#1A73E8] border border-[#DADCE0] hover:bg-[#F8F9FA] rounded-md transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-blue-600 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 rounded-xl transition-all shadow-2xs"
           >
-            <Phone className="w-3.5 h-3.5" />
+            <Phone className="w-3.5 h-3.5 text-blue-600" />
             <span>{currentLang === 'ar' ? 'اتصال مباشر' : currentLang === 'en' ? 'Call Now' : 'Appeler'}</span>
           </a>
           <button
             onClick={onOpenConsultation}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-[#1A73E8] hover:bg-[#1557B0] rounded-md shadow-xs transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-xs hover:shadow-md hover:shadow-blue-600/20 active:scale-[0.98] transition-all cursor-pointer"
           >
             <span>{currentLang === 'ar' ? 'طلب موعد / تسعيرة' : currentLang === 'en' ? 'Get a Quote' : 'Demander un devis'}</span>
           </button>
         </div>
 
-        {/* Mobile Menu Button - Styled larger for easy tap */}
+        {/* Mobile Menu Button - min 44x44px touch target */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2.5 text-[#202124] hover:bg-[#F1F3F4] rounded-full active:scale-95 transition-all"
-          aria-label="Menu"
+          className="md:hidden w-11 h-11 flex items-center justify-center text-slate-700 hover:bg-slate-100 active:bg-slate-200 rounded-xl transition-all cursor-pointer"
+          aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu de navigation"}
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -150,70 +146,85 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Premium Full-Screen Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[90px] sm:top-[100px] z-50 md:hidden animate-fadeIn">
+        <div className="fixed inset-0 z-50 md:hidden animate-fadeIn flex flex-col">
           {/* Backdrop Blur overlay */}
           <div 
-            className="absolute inset-0 bg-[#202124]/40 backdrop-blur-md"
+            className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs transition-opacity"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           
           {/* Drawer content panel */}
-          <div className="absolute top-0 inset-x-0 bg-white border-b border-[#DADCE0] px-5 py-6 space-y-5 shadow-2xl max-h-[80vh] overflow-y-auto flex flex-col justify-between">
-            <div className="pb-3 border-b border-[#E8EAED] flex items-center justify-between">
+          <div className="relative z-10 bg-white w-full max-h-[92vh] overflow-y-auto flex flex-col justify-between shadow-2xl border-b border-slate-200 rounded-b-2xl">
+            {/* Drawer Header */}
+            <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
               <Logo variant="drawer" />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-1.5 text-[#5F6368] hover:text-[#202124] rounded-full hover:bg-[#F1F3F4]"
+                className="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-slate-900 rounded-xl hover:bg-slate-200/60 active:scale-95 transition-all cursor-pointer"
                 aria-label="Fermer le menu"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <nav className="space-y-1.5">
+
+            {/* Navigation Links */}
+            <nav className="p-4 space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="flex items-center justify-between px-4 py-3.5 text-base font-semibold text-[#202124] hover:text-[#1A73E8] hover:bg-[#F8F9FA] rounded-lg active:bg-[#E8F0FE] transition-colors"
+                  className="flex items-center justify-between px-4 py-3.5 text-sm sm:text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/60 rounded-xl active:bg-blue-100 transition-colors"
                 >
                   <span>{link.label}</span>
-                  <span className="text-[#BDC1C6] text-lg font-mono">→</span>
+                  <span className="text-slate-400 text-base rtl:rotate-180">→</span>
                 </a>
               ))}
             </nav>
 
-            {/* Micro-bar for mobile drawer with quick action buttons */}
-            <div className="pt-4 border-t border-[#E8EAED] space-y-3">
+            {/* Bottom Actions inside drawer */}
+            <div className="p-4 border-t border-slate-100 space-y-3 bg-slate-50/50">
+              {/* Direct Maps */}
               <a
                 href={siteConfig.googleMapsShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-[#1A73E8] bg-[#E8F0FE] hover:bg-[#D2E3FC] rounded-xl transition-colors border border-[#DADCE0]"
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors border border-blue-200/60"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#EA4335] shrink-0" />
-                <span dir="ltr">14, Rue Capitaine Hadri, Oran • Google Maps</span>
-                <ExternalLink className="w-3 h-3 opacity-70" />
+                <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                <span dir="ltr" className="truncate">14, Rue Capitaine Hadri, Oran (Google Maps)</span>
+                <ExternalLink className="w-3 h-3 opacity-70 shrink-0" />
               </a>
               
-              <div className="grid grid-cols-2 gap-3">
+              {/* Buttons: Call & WhatsApp & Quote */}
+              <div className="grid grid-cols-2 gap-2.5">
                 <a
                   href={`tel:${siteConfig.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold text-[#1A73E8] bg-[#F8F9FA] active:bg-[#E8F0FE] border border-[#DADCE0] rounded-xl transition-all"
+                  className="flex items-center justify-center gap-2 py-3 px-3 text-xs font-bold text-slate-800 bg-white active:bg-slate-100 border border-slate-200 rounded-xl transition-all shadow-2xs"
                 >
-                  <Phone className="w-4 h-4 shrink-0" />
+                  <Phone className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>{currentLang === 'ar' ? 'اتصال مباشر' : 'Appeler'}</span>
                 </a>
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    onOpenConsultation();
-                  }}
-                  className="flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold text-white bg-[#1A73E8] active:bg-[#1557B0] rounded-xl shadow-md transition-all"
+                <a
+                  href={directWhatsAppUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-3 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] rounded-xl transition-all shadow-2xs"
                 >
-                  <span>{currentLang === 'ar' ? 'طلب تسعيرة' : 'Demander un devis'}</span>
-                </button>
+                  <MessageCircle className="w-4 h-4 fill-current shrink-0" />
+                  <span>WhatsApp</span>
+                </a>
               </div>
+
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onOpenConsultation();
+                }}
+                className="w-full flex items-center justify-center gap-2 py-3.5 px-4 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-xl shadow-md shadow-blue-600/25 transition-all cursor-pointer"
+              >
+                <span>{currentLang === 'ar' ? 'طلب موعد / تسعيرة مجانية' : 'Demander un devis / RDV'}</span>
+              </button>
             </div>
           </div>
         </div>
