@@ -402,7 +402,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 <img
                   src={mediaItems[0].imageUrl}
                   alt={currentLang === 'ar' ? mediaItems[0].titleAr : mediaItems[0].titleFr}
-                  className="absolute inset-0 w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                  style={{ objectPosition: '22% center' }}
                   loading="lazy"
                   decoding="async"
                 />

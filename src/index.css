@@ -135,6 +135,35 @@
   animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Mobile Drawer Sheet Animation */
+@keyframes slideDownSheet {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-down-sheet {
+  animation: slideDownSheet 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile menu scrollbar hiding while maintaining touch scrolling */
+.mobile-menu-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-menu-scroll::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
 .animate-modal-pop {
   animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

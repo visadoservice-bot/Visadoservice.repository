@@ -264,7 +264,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                 <img
                   src="/images/Exterieur.png"
                   alt="Façade extérieure Visado Service Oran"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover scale-[1.24] origin-[25%_48%] group-hover:scale-[1.29] transition-transform duration-500 ease-out"
+                  style={{ objectPosition: '20% 48%' }}
                   loading="lazy"
                   decoding="async"
                 />

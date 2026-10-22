@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Zap, CheckCheck, Headphones, CircleDollarSign, MapPin, Play, Phone, MessageCircle, Calendar } from 'lucide-react';
 import { siteConfig } from '../data/config';
 import { Reveal } from './ScrollReveal';
@@ -11,6 +11,56 @@ interface WhyUsProps {
 
 export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation }) => {
   const [isPlayingTour, setIsPlayingTour] = useState(false);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  // Stop video playback and reset state cleanly
+  const handleStopTour = useCallback(() => {
+    if (iframeRef.current?.contentWindow) {
+      try {
+        iframeRef.current.contentWindow.postMessage(
+          JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }),
+          '*'
+        );
+        iframeRef.current.contentWindow.postMessage(
+          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+          '*'
+        );
+      } catch {
+        // ignore cross-origin error
+      }
+    }
+    setIsPlayingTour(false);
+  }, []);
+
+  // Automatically stop and close the video whenever the user scrolls away from this section/video
+  useEffect(() => {
+    if (!isPlayingTour) return;
+
+    const target = videoContainerRef.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // When the video container is no longer visible in the viewport
+          if (!entry.isIntersecting) {
+            handleStopTour();
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isPlayingTour, handleStopTour]);
 
   const pillars = [
     {
@@ -172,7 +222,10 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
 
               {/* Right: Real Agency Visual / Video */}
               <div className="md:col-span-5">
-                <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-900 border border-slate-200/80 shadow-md">
+                <div 
+                  ref={videoContainerRef}
+                  className="relative rounded-2xl overflow-hidden aspect-video bg-slate-900 border border-slate-200/80 shadow-md"
+                >
                   {!isPlayingTour ? (
                     <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlayingTour(true)}>
                       <img
@@ -192,7 +245,8 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
                   ) : (
                     <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center">
                       <iframe
-                        src="https://www.youtube-nocookie.com/embed/30VIItLvrUI?autoplay=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&loop=1&playlist=30VIItLvrUI"
+                        ref={iframeRef}
+                        src="https://www.youtube-nocookie.com/embed/30VIItLvrUI?enablejsapi=1&autoplay=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&loop=1&playlist=30VIItLvrUI"
                         title="Visado Service Oran Locaux"
                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] h-[250%] max-w-none border-0 select-none pointer-events-auto"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -200,11 +254,11 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
                       />
                       
                       <button
-                        onClick={() => setIsPlayingTour(false)}
-                        className="absolute top-3 right-3 bg-black/85 hover:bg-black text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5 z-20 transition-all border border-white/20"
+                        onClick={handleStopTour}
+                        className="absolute top-3 right-3 bg-black/85 hover:bg-black text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5 z-20 transition-all border border-white/20 cursor-pointer"
                       >
                         <span>✕</span>
-                        <span>Fermer</span>
+                        <span>{currentLang === 'ar' ? 'إغلاق' : 'Fermer'}</span>
                       </button>
                     </div>
                   )}
