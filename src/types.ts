@@ -12,6 +12,8 @@ export interface SiteConfig {
   whatsapp: string;
   whatsappRaw: string;
   email: string;
+  emailSecondary?: string;
+  adminEmails?: string[];
   instagramHandle: string;
   instagramUrl: string;
   tiktokHandle: string;

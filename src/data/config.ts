@@ -12,6 +12,8 @@ export const siteConfig: SiteConfig = {
   whatsapp: "0557426784",
   whatsappRaw: "213557426784",
   email: "visado273@gmail.com",
+  emailSecondary: "visadoservice@gmail.com",
+  adminEmails: ["visado273@gmail.com", "visadoservice@gmail.com"],
   instagramHandle: "@visadoservice",
   instagramUrl: "https://www.instagram.com/visadoservice",
   tiktokHandle: "@visadoservice",

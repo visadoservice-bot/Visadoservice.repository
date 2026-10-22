@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X, MessageCircle, Phone, CheckCircle2, Send } from 'lucide-react';
 import { siteConfig, WHATSAPP_CONSULTANT_MESSAGE } from '../data/config';
 import { Language } from '../types';
+import { sendLeadNotification } from '../services/leadNotification';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -52,6 +53,15 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
+
+    // Send lead notification to visado273@gmail.com and visadoservice@gmail.com
+    sendLeadNotification({
+      fullName: name,
+      phone: phone,
+      destination: destination,
+      source: 'Modale Consultation Rapide'
+    });
+
     setIsSent(true);
     if (typeof window !== 'undefined') {
       window.open(directWhatsAppUrl, '_blank');
@@ -198,12 +208,12 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 <CheckCircle2 className="w-8 h-8" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">
-                {currentLang === 'ar' ? 'تم تجهيز طلبكم على واتساب !' : 'Demande préparée pour WhatsApp !'}
+                {currentLang === 'ar' ? 'تم تسجيل طلبكم بنجاح !' : 'Demande transmise avec succès !'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 max-w-xs mx-auto leading-relaxed">
                 {currentLang === 'ar'
-                  ? 'إذا لم يفتح الواتساب تلقائياً، يرجى الضغط على الزر أدناه لإرسال رسالتكم مباشرة.'
-                  : 'Si la conversation ne s\'est pas ouverte automatiquement, cliquez ci-dessous :'}
+                  ? 'تم إرسال طلبكم بالبريد الإلكتروني إلى مستشارينا، ومحادثة واتساب جاهزة للإرسال المباشر.'
+                  : 'Votre demande a été transmise par e-mail à nos conseillers. Vous pouvez aussi continuer directement sur WhatsApp :'}
               </p>
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
                 <a

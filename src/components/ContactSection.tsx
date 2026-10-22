@@ -4,6 +4,7 @@ import { siteConfig, WHATSAPP_DEFAULT_MESSAGE } from '../data/config';
 import { translations } from '../data/translations';
 import { Reveal } from './ScrollReveal';
 import { Language, ContactFormData } from '../types';
+import { sendLeadNotification } from '../services/leadNotification';
 
 interface ContactSectionProps {
   currentLang: Language;
@@ -77,8 +78,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     if (!formData.fullName.trim() || !formData.phone.trim()) {
       return;
     }
+    // 1. Dispatch email notification automatically to visado273@gmail.com and visadoservice@gmail.com
+    sendLeadNotification({
+      fullName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      destination: formData.destination,
+      profile: formData.profile,
+      visaType: formData.visaType,
+      message: formData.message,
+      source: 'Formulaire devis & contact (Bouton WhatsApp)'
+    });
+
     setIsSubmitted(true);
-    // Open WhatsApp directly with prefilled message
+    // 2. Open WhatsApp directly with prefilled message
     if (typeof window !== 'undefined') {
       window.open(customWhatsAppUrl, '_blank');
     }
@@ -89,6 +102,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     if (!formData.fullName.trim() || !formData.phone.trim()) {
       return;
     }
+    // Dispatch email notification to visado273@gmail.com and visadoservice@gmail.com
+    sendLeadNotification({
+      fullName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      destination: formData.destination,
+      profile: formData.profile,
+      visaType: formData.visaType,
+      message: formData.message,
+      source: 'Formulaire devis & contact (Sans WhatsApp)'
+    });
+
     setIsSubmitted(true);
   };
 
@@ -189,6 +214,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     >
                       {siteConfig.email}
                     </a>
+                    {siteConfig.emailSecondary && (
+                      <a
+                        href={`mailto:${siteConfig.emailSecondary}`}
+                        className="text-xs text-slate-600 hover:text-blue-600 break-all block mt-0.5"
+                      >
+                        {siteConfig.emailSecondary}
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -466,12 +499,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   </div>
                   <div>
                     <h4 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                      {currentLang === 'ar' ? 'تم تجهيز وإرسال معلومات طلبكم !' : 'Informations prêtes pour WhatsApp !'}
+                      {currentLang === 'ar' ? 'تم تسجيل وإرسال طلبكم بنجاح !' : 'Demande transmise avec succès !'}
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
                       {currentLang === 'ar'
-                        ? 'تم تنسيق بيانات طلبكم لإرسالها مباشرة إلى مستشاري وكالة Visado Service بوهران.'
-                        : 'Vos données ont été préremplies pour notre équipe. Si WhatsApp ne s\'est pas ouvert automatiquement, cliquez sur le bouton ci-dessous :'}
+                        ? 'تم إرسال بياناتكم إلى البريد الإلكتروني لمستشاري الوكالة وتجهيزها لمحادثة واتساب الفورية.'
+                        : 'Votre dossier a été transmis par e-mail à nos conseillers. Vous pouvez également engager la discussion directe sur WhatsApp pour une prise en charge immédiate :'}
                     </p>
                   </div>
 

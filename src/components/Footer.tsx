@@ -121,6 +121,16 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
                 <span>{siteConfig.email}</span>
               </a>
 
+              {siteConfig.emailSecondary && (
+                <a
+                  href={`mailto:${siteConfig.emailSecondary}`}
+                  className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#00A3E0] transition-colors break-all"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
+                  <span>{siteConfig.emailSecondary}</span>
+                </a>
+              )}
+
               <a
                 href={siteConfig.googleMapsShareUrl}
                 target="_blank"
