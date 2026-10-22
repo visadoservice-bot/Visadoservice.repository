@@ -248,67 +248,15 @@ export const translations = {
       ]
     },
     testimonials: {
-      overline: "AVIS CLIENTS VÉRIFIÉS",
-      heading: "Ils nous ont fait confiance à Oran",
-      subheading: "Découvrez les retours d'expérience authentiques de voyageurs accompagnés par Visado Service pour leurs démarches de visa et billetterie.",
-      googleRatingText: "Note Google Maps 4.9/5 basée sur plus de 120 avis vérifiés",
-      badgeVerified: "Avis vérifié en agence",
-      viewOnMaps: "Voir tous les avis sur Google Maps",
-      leaveReview: "Déposer un avis Google",
-      items: [
-        {
-          id: "t1",
-          clientName: "Karim Benali",
-          city: "Oran",
-          destination: "Espagne (Schengen)",
-          year: "Septembre 2026",
-          visaType: "Visa Court Séjour BLS",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#1A73E8]",
-          date: "Il y a 2 semaines",
-          quote: "Service très professionnel à l'agence d'Oran. Mon dossier a été préparé au millimètre pour le centre BLS Espagne : vérification rigoureuse des relevés bancaires, réservation de vol et assurance conformes. Visa accordé sans encombre. Un grand merci à toute l'équipe !"
-        },
-        {
-          id: "t2",
-          clientName: "Amina Mansouri",
-          city: "Mostaganem",
-          destination: "Canada (Visiteur)",
-          year: "Août 2026",
-          visaType: "Visa Touristique & Biométrie",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#E37400]",
-          date: "Il y a 3 semaines",
-          quote: "J'avais beaucoup d'appréhension pour ma demande de visa visiteur Canada. L'équipe de Visado Service a pris le temps de remplir minutieusement les formulaires en ligne du portail IRCC et de structurer mes preuves d'attaches. Accueil chaleureux et explications très claires."
-        },
-        {
-          id: "t3",
-          clientName: "Sofiane Tlemçani",
-          city: "Oran",
-          destination: "France (Schengen)",
-          year: "Septembre 2026",
-          visaType: "Visa Affaires VFS Global",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#1E8E3E]",
-          date: "Il y a 1 mois",
-          quote: "Excellente agence située au 14 Rue Hadri Mohamed. Prise en charge rapide pour mon rendez-vous VFS France avec constitution complète du dossier et réservation du billet d'avion Air Algérie sur place. Ponctualité, sérieux et transparence totale sur les tarifs."
-        },
-        {
-          id: "t4",
-          clientName: "Dr. Yacine Dahmani",
-          city: "Sidi Bel Abbès",
-          destination: "Italie & Espace Schengen",
-          year: "Récemment",
-          visaType: "Visa Conférence & Tourisme",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#9334E6]",
-          date: "Il y a 1 mois",
-          quote: "La meilleure adresse pour vos démarches visa dans l'ouest algérien. Pas de fausses promesses ni de blabla : un diagnostic honnête de vos pièces justificatives et un suivi rigoureux jusqu'au dépôt. Je recommande les yeux fermés."
-        }
-      ]
+      overline: "AVIS VÉRIFIÉS GOOGLE MAPS",
+      heading: "Transparence & Confiance : nos avis réels sur Google Maps",
+      subheading: "Parce que votre projet de voyage mérite une confiance absolue, Visado Service ne publie aucun faux avis. Tous les retours d'expérience et notes sont certifiés et consultables en direct sur notre fiche Google Maps officielle.",
+      googleRatingText: "Note 4.9/5 sur notre fiche officielle Google Maps",
+      badgeVerified: "Fiche d'établissement vérifiée",
+      viewOnMaps: "Consulter tous nos avis sur Google Maps",
+      leaveReview: "Déposer un avis sur Google",
+      transparencyNotice: "Transparence garantie : nous ne publions aucun avis fictif. Tous les témoignages de nos clients sont déposés publiquement par de vrais demandeurs sur Google.",
+      items: []
     },
     faq: {
       overline: "QUESTIONS FRÉQUENTES",
@@ -642,67 +590,15 @@ export const translations = {
       ]
     },
     testimonials: {
-      overline: "آراء وتقييمات العملاء",
-      heading: "تجارب حقيقية وثقة متجددة بوهران",
-      subheading: "اكتشفوا انطباعات مسافرين رافقناهم في وكالة فيزادو سيرفيس لتجهيز ملفات التأشيرة وحجز المواعيد والرحلات الجوية.",
-      googleRatingText: "تقييم 4.9/5 على خرائط Google بناءً على أكثر من 120 تقييم معتمد",
-      badgeVerified: "تقييم معتمد بالوكالة",
-      viewOnMaps: "مشاهدة التقييمات على خرائط Google",
-      leaveReview: "إضافة تقييم على Google",
-      items: [
-        {
-          id: "t1",
-          clientName: "كريم بن علي",
-          city: "وهران",
-          destination: "إسبانيا (شنغن)",
-          year: "سبتمبر 2026",
-          visaType: "تأشيرة إقامة قصيرة BLS",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#1A73E8]",
-          date: "منذ أسبوعين",
-          quote: "خدمة في قمة الاحترافية بوكالة وهران. تم ترتيب وتدقيق ملفي بدقة متناهية لمركز BLS إسبانيا، مع حجز تذكرة وتأمين سفر معتمد. استلمت التأشيرة بدون أي تعقيدات، شكراً جزيلاً للطاقم."
-        },
-        {
-          id: "t2",
-          clientName: "أمينة منصوري",
-          city: "مستغانم",
-          destination: "كندا (تأشيرة زائر)",
-          year: "أوت 2026",
-          visaType: "تأشيرة سياحية وبيومترية",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#E37400]",
-          date: "منذ 3 أسابيع",
-          quote: "كنت مترددة جداً بشأن تأشيرة كندا نظراً لتعقيد الاستمارات. فريق Visado Service تكفل بملء كل خانة على بوابة الهجرة الكندية بدقة وتوضيح روابط الملف. استقبال محترم ووضوح تام."
-        },
-        {
-          id: "t3",
-          clientName: "سفيان تلمساني",
-          city: "وهران",
-          destination: "فرنسا (شنغن)",
-          year: "سبتمبر 2026",
-          visaType: "تأشيرة أعمال VFS Global",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#1E8E3E]",
-          date: "منذ شهر",
-          quote: "وكالة متميزة في 14، شارع حضري محمد وهران. تنظيم متقن لموعد VFS فرنسا وحجز تذاكر الخطوط الجوية الجزائرية في عين المكان. التزام تام بالمواعيد وشفافية كاملة في الأسعار."
-        },
-        {
-          id: "t4",
-          clientName: "د. ياسين دحماني",
-          city: "سيدي بلعباس",
-          destination: "إيطاليا وفضاء شنغن",
-          year: "مؤخراً",
-          visaType: "تأشيرة مؤتمرات وسياحة",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#9334E6]",
-          date: "منذ شهر",
-          quote: "أفضل وكالة لخدمات التأشيرة بالجهة الغربية. مصداقية عالية ودراسة حقيقية للوثائق دون وعود واهية. مرافقة راقية وجادة حتى يوم إيداع الملف."
-        }
-      ]
+      overline: "تقييمات معتمدة على خرائط GOOGLE",
+      heading: "الشفافية الكاملة : تجارب وآراء عملائنا الحقيقية",
+      subheading: "لأن مشروع سفركم يستحق الثقة والوضوح التام، لا تنشر وكالة فيزادو سيرفيس أي تقييم وهمي أو غير حقيقي. جميع تقييمات وتجارب المسافرين موثقة ومتاحة مباشرة عبر صفحتنا الرسمية على خرائط Google.",
+      googleRatingText: "تقييم 4.9/5 على صفحتنا الرسمية بخرائط Google",
+      badgeVerified: "نشاط تجاري رسمي موثق",
+      viewOnMaps: "مشاهدة جميع التقييمات على خرائط Google",
+      leaveReview: "إضافة تقييمكم على Google",
+      transparencyNotice: "شفافية ومصداقية مضمونة : لا نضع أي تقييم وهمي. تجدون تجارب العملاء منشورة علناً وبكل مصداقية عبر صفحتنا على Google Maps.",
+      items: []
     },
     faq: {
       overline: "الأسئلة الشائعة",
@@ -1036,67 +932,15 @@ export const translations = {
       ]
     },
     testimonials: {
-      overline: "VERIFIED CLIENT REVIEWS",
-      heading: "Real Experiences from Our Applicants in Oran",
-      subheading: "Discover genuine feedback from travelers guided by Visado Service for visa processing, appointments, and international flight bookings.",
-      googleRatingText: "Google Maps Rating 4.9/5 based on over 120 verified reviews",
-      badgeVerified: "Verified Agency Client",
+      overline: "VERIFIED GOOGLE MAPS REVIEWS",
+      heading: "Total Transparency: Real Client Reviews on Google Maps",
+      subheading: "Because trust cannot be purchased through artificial feedback, Visado Service publishes zero mock reviews. All applicant experiences and ratings are verified and viewable in real time on our official Google Maps listing.",
+      googleRatingText: "Rating 4.9/5 on our official Google Maps profile",
+      badgeVerified: "Verified Business Profile",
       viewOnMaps: "View all reviews on Google Maps",
       leaveReview: "Leave a Google Review",
-      items: [
-        {
-          id: "t1",
-          clientName: "Karim Benali",
-          city: "Oran",
-          destination: "Spain (Schengen)",
-          year: "September 2026",
-          visaType: "Short Stay Visa BLS",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#1A73E8]",
-          date: "2 weeks ago",
-          quote: "Top-tier professional service at the Oran office. My documents were meticulously assembled for BLS Spain, including bank statement validation, compliant flights, and travel insurance. Visa granted smoothly!"
-        },
-        {
-          id: "t2",
-          clientName: "Amina Mansouri",
-          city: "Mostaganem",
-          destination: "Canada (Visitor)",
-          year: "August 2026",
-          visaType: "Tourist Visa & Biometrics",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#E37400]",
-          date: "3 weeks ago",
-          quote: "I was anxious about my Canadian visitor visa application. The Visado Service team took time to accurately complete all IRCC online forms and structure my ties documents. Very warm reception and transparent advice."
-        },
-        {
-          id: "t3",
-          clientName: "Sofiane Tlemçani",
-          city: "Oran",
-          destination: "France (Schengen)",
-          year: "September 2026",
-          visaType: "Business Visa VFS Global",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#1E8E3E]",
-          date: "1 month ago",
-          quote: "Exceptional agency located at 14 Rue Hadri Mohamed. Fast preparation for my VFS France appointment with full folder audit and Air Algérie ticket reservations on site. Punctuality and clear pricing."
-        },
-        {
-          id: "t4",
-          clientName: "Dr. Yacine Dahmani",
-          city: "Sidi Bel Abbès",
-          destination: "Italy & Schengen Area",
-          year: "Recently",
-          visaType: "Conference & Tourism Visa",
-          rating: 5,
-          verified: true,
-          avatarColor: "bg-[#9334E6]",
-          date: "1 month ago",
-          quote: "The premier visa agency in western Algeria. No empty claims or false guarantees: just thorough document screening and structured support until the submission date. Highly recommended."
-        }
-      ]
+      transparencyNotice: "Guaranteed authenticity: we do not publish fictional reviews. All client feedback is publicly submitted by verified travelers on our Google profile.",
+      items: []
     },
     faq: {
       overline: "FREQUENT QUESTIONS",
