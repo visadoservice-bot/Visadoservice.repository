@@ -24,10 +24,10 @@ export const Services: React.FC<ServicesProps> = ({
       title: currentLang === 'ar' ? 'تأشيرات شنغن وأوروبا' : currentLang === 'en' ? 'Schengen & European Visas' : 'Visa Schengen & Europe',
       subtitle: currentLang === 'ar' ? 'فرنسا، إسبانيا، إيطاليا وكافة دول أوروبا' : currentLang === 'en' ? 'France, Spain, Italy & Schengen Area' : 'France, Espagne, Italie & Espace Schengen',
       description: currentLang === 'ar'
-        ? 'مرافقة شاملة لإعداد الملف، حجز المواعيد (TLScontact, BLS, VFS)، التأمين الدولي، والتحقق الدقيق من الوثائق.'
+        ? 'مرافقة شاملة ومتابعة دقيقة للملف، حجز المواعيد (TLScontact, BLS, VFS)، التأمين الدولي، والتحقق الدقيق من الوثائق.'
         : currentLang === 'en'
-        ? 'Comprehensive application file preparation, appointment assistance (TLScontact, BLS, VFS), travel insurance, and consular document verification.'
-        : 'Assistance complète pour le montage de dossier, prise de rendez-vous consulaires (TLScontact, BLS, VFS), assurance voyage et conformité des pièces.',
+        ? 'Comprehensive file tracking and guidance, appointment assistance (TLScontact, BLS, VFS), travel insurance, and consular document verification.'
+        : 'Assistance complète pour le suivi et la vérification du dossier, prise de rendez-vous (TLScontact, BLS, VFS), assurance voyage et conformité des pièces.',
       features: currentLang === 'ar' 
         ? ['حجز وتتبع المواعيد', 'تدقيق كامل للوثائق', 'تأمين سفر دولي معتمد']
         : ['Assistance prise de RDV', 'Audit minutieux des pièces', 'Assurance voyage certifiée']
@@ -53,16 +53,36 @@ export const Services: React.FC<ServicesProps> = ({
       icon: FileCheck2,
       iconColor: "text-[#1E8E3E]",
       iconBg: "bg-[#E6F4EA]",
-      title: currentLang === 'ar' ? 'إعداد ومراجعة الملفات' : currentLang === 'en' ? 'File Auditing & Verification' : 'Traitement & Audit de Dossier',
-      subtitle: currentLang === 'ar' ? 'ضمان اكتمال الوثائق وتفادي الرفض' : currentLang === 'en' ? 'Prevent errors & maximize success' : 'Éviter les erreurs & maximiser l\'accord',
+      title: currentLang === 'ar' ? 'متابعة ومراجعة ملف التأشيرة' : currentLang === 'en' ? 'Visa Dossier Review & Tracking' : 'Suivi & Vérification du Dossier',
+      subtitle: currentLang === 'ar' ? 'متابعة وتدقيق لضمان جاهزية الملف' : currentLang === 'en' ? 'Compliance check & guidance' : 'Contrôle de conformité & accompagnement',
       description: currentLang === 'ar'
-        ? 'فحص شامل وتدقيق دقيق لشهادات العمل، السجلات التجارية، كشوف الحسابات البنكية وحجوزات الفنادق.'
+        ? 'متابعة دقيقة لملفك والتأكد من جاهزيته قبل تقديمه، مع مراجعة الوثائق والتنبيه إلى أي نقص أو خطأ قد يؤثر على الملف.'
         : currentLang === 'en'
-        ? 'Rigorous pre-submission audit of employment records, trade registers, bank statements, and confirmed accommodation.'
-        : 'Examen rigoureux et structuration méthodique des justificatifs professionnels, fiches de paie, relevés bancaires et hébergements.',
+        ? 'Diligent tracking of your application and readiness check before submission, reviewing supporting documents and highlighting any potential omissions.'
+        : 'Suivi rigoureux de votre dossier et vérification de sa conformité avant le dépôt officiel, avec contrôle des pièces et détection de tout manque ou erreur.',
       features: currentLang === 'ar'
-        ? ['تصحيح الثغرات والنقائص', 'ترتيب منطقي ومقنع للملف', 'مطابقة معايير القنصليات']
-        : ['Détection des anomalies', 'Classement optimal des pièces', 'Conformité consulaire stricte']
+        ? [
+            'مراجعة الوثائق والتأكد من اكتمالها',
+            'التنبيه إلى النقائص والأخطاء وتصحيحها',
+            'تنظيم الوثائق بشكل واضح ومنطقي',
+            'التحقق من توافق الملف مع المتطلبات المطلوبة',
+            'متابعة الملف وتقديم التوجيهات اللازمة'
+          ]
+        : currentLang === 'en'
+        ? [
+            'Document completeness verification',
+            'Detection and correction of errors',
+            'Clear and logical document organization',
+            'Compliance with official requirements',
+            'Ongoing follow-up and expert guidance'
+          ]
+        : [
+            'Vérification des pièces et de leur complétude',
+            'Signalement des erreurs et corrections nécessaires',
+            'Organisation claire et logique des documents',
+            'Conformité du dossier avec les exigences requises',
+            'Suivi du dossier et orientation continue'
+          ]
     },
     {
       id: "billetterie",
@@ -101,8 +121,8 @@ export const Services: React.FC<ServicesProps> = ({
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'حلول موثوقة ومخصصة لجميع احتياجاتكم من إعداد الملف حتى السفر.'
-                : 'Une prise en charge personnalisée de votre dossier du premier conseil jusqu’à l’obtention.'}
+                ? 'حلول موثوقة ومخصصة لمرافقة ومتابعة ملفكم وتدقيقه حتى السفر.'
+                : 'Une prise en charge personnalisée pour le suivi et la conformité de votre dossier jusqu’au voyage.'}
             </p>
           </div>
         </Reveal>
@@ -143,9 +163,9 @@ export const Services: React.FC<ServicesProps> = ({
                     {/* Bullet features */}
                     <ul className="space-y-1.5 sm:space-y-2 border-t border-slate-100 pt-3.5 mb-4">
                       {service.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="text-xs text-slate-700 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0 group-hover:scale-125 transition-transform" />
-                          <span>{feat}</span>
+                        <li key={fIdx} className="text-xs text-slate-700 flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0 mt-1.5 group-hover:scale-125 transition-transform" />
+                          <span className="leading-relaxed">{feat}</span>
                         </li>
                       ))}
                     </ul>

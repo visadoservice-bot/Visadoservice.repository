@@ -60,11 +60,17 @@ export const translations = {
         {
           id: "dossier",
           number: "03",
-          title: "Préparation de Dossier",
-          subtitle: "Organisation méthodique",
-          description: "Une assistance méthodique pour organiser, vérifier et préparer votre dossier selon les exigences applicables à votre démarche.",
-          highlights: ["Checklist exhaustive", "Vérification de cohérence", "Classement rigoureux"],
-          cta: "Préparer mon dossier",
+          title: "Suivi & Vérification du Dossier",
+          subtitle: "Contrôle de conformité & accompagnement",
+          description: "Suivi rigoureux de votre dossier et vérification de sa conformité avant le dépôt officiel, avec contrôle minutieux des justificatifs et détection de tout manque ou erreur.",
+          highlights: [
+            "Vérification des pièces et de leur complétude",
+            "Signalement des erreurs et recommandations de correction",
+            "Organisation claire et logique des documents",
+            "Contrôle de conformité avec les exigences requises",
+            "Suivi du dossier et orientation continue"
+          ],
+          cta: "Demander un suivi de dossier",
           targetSection: "contact"
         },
         {
@@ -402,11 +408,17 @@ export const translations = {
         {
           id: "dossier",
           number: "03",
-          title: "تحضير ملفات التأشيرة",
-          subtitle: "تنظيم منهجي ودقيق",
-          description: "مساعدة منهجية لتنظيم وتدقيق وتجهيز ملفكم وفق الشروط والمواصفات المعتمدة للإجراء المطلوب.",
-          highlights: ["قائمة دقيقة للوثائق", "التأكد من التناسق والمطابقة", "ترتيب احترافي منظم"],
-          cta: "جهّز ملفك معنا",
+          title: "متابعة ومراجعة ملف التأشيرة",
+          subtitle: "متابعة دقيقة ومراجعة الوثائق",
+          description: "متابعة دقيقة لملفك والتأكد من جاهزيته قبل تقديمه، مع مراجعة الوثائق والتنبيه إلى أي نقص أو خطأ قد يؤثر على الملف.",
+          highlights: [
+            "مراجعة الوثائق والتأكد من اكتمالها",
+            "التنبيه إلى النقائص والأخطاء وتصحيحها",
+            "تنظيم الوثائق بشكل واضح ومنطقي",
+            "التحقق من توافق الملف مع المتطلبات المطلوبة",
+            "متابعة الملف وتقديم التوجيهات اللازمة"
+          ],
+          cta: "طلب مراجعة ومتابعة الملف",
           targetSection: "contact"
         },
         {
@@ -744,11 +756,17 @@ export const translations = {
         {
           id: "dossier",
           number: "03",
-          title: "Dossier Preparation",
-          subtitle: "Methodical Organization",
-          description: "Methodical assistance to curate, verify, and present your documentary package in strict alignment with applicable standards.",
-          highlights: ["Exhaustive checklist", "Coherence review", "Organized indexing"],
-          cta: "Prepare my file",
+          title: "Visa Dossier Review & Tracking",
+          subtitle: "Compliance check & pre-submission guidance",
+          description: "Diligent tracking of your application and readiness check before submission, reviewing supporting documents and highlighting any potential omissions.",
+          highlights: [
+            "Comprehensive document completeness check",
+            "Identification of errors and corrective guidance",
+            "Clear and logical document structuring",
+            "Verification against official requirements",
+            "Continuous follow-up and guidance"
+          ],
+          cta: "Request dossier review",
           targetSection: "contact"
         },
         {
