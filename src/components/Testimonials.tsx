@@ -263,13 +263,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
               <div>
                 <h3 className="text-base font-bold text-slate-900">
                   {currentLang === 'ar'
-                    ? 'هل استفدتم من خدمات Visado Service بوهران؟'
-                    : 'Vous avez voyagé ou obtenu votre visa avec Visado Service ?'}
+                    ? 'هل استفدتم من خدمات وتوجيهات Visado Service بوهران؟'
+                    : 'Vous avez voyagé ou fait appel à nos services chez Visado Service ?'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
                   {currentLang === 'ar'
                     ? 'شاركونا تجربتكم وتقييمكم على خرائط Google لمساعدة المسافرين الآخرين.'
-                    : 'Partagez votre avis sur notre fiche Google Maps pour aider d\'autres demandeurs.'}
+                    : 'Partagez votre avis sur notre fiche Google Maps pour aider d\'autres voyageurs.'}
                 </p>
               </div>
             </div>
@@ -292,7 +292,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                   onClick={onOpenConsultation}
                   className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-semibold transition-all shadow-xs cursor-pointer active:scale-[0.98]"
                 >
-                  <span>{currentLang === 'ar' ? 'طلب دراسة ملف أو موعد' : 'Étudier mon dossier'}</span>
+                  <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
                 </button>
               )}
             </div>

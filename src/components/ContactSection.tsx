@@ -45,12 +45,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
 
   const buildWhatsAppMessage = () => {
     return (
-      `*Demande de devis & étude de dossier — Visado Service*\n\n` +
+      `*Demande d'information & orientation voyage — Visado Service*\n\n` +
       `👤 *Nom & Prénom :* ${formData.fullName.trim() || 'Non précisé'}\n` +
       `📞 *Téléphone :* ${formData.phone.trim() || 'Non renseigné'}\n` +
-      `📍 *Destination souhaitée :* ${formData.destination || 'Non précisée'}\n` +
-      `💼 *Statut professionnel :* ${formData.profile || 'Non spécifié'}\n` +
-      `📄 *Type de démarche :* ${formData.visaType || 'Préparation de dossier'}\n` +
+      `📍 *Destination / Service :* ${formData.destination || 'Non précisée'}\n` +
+      `💼 *Statut :* ${formData.profile || 'Non spécifié'}\n` +
+      `✈️ *Prestation :* ${formData.visaType || 'Conseil & Accompagnement voyage'}\n` +
       (formData.message.trim() ? `💬 *Précisions :* ${formData.message.trim()}\n` : '') +
       `\n_Message envoyé depuis le site web Visado Service Oran_`
     );
@@ -125,15 +125,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-100/60 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
-              {currentLang === 'ar' ? 'تواصل معنا' : 'Contact & Devis'}
+              {currentLang === 'ar' ? 'تواصل مع الوكالة' : 'Échanger avec nos conseillers'}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              {currentLang === 'ar' ? 'طلب استشارة أو تسعيرة مجانية' : 'Demander un devis ou nous contacter'}
+              {currentLang === 'ar' ? 'تحدث مع مستشار أو تفضل بزيارة وكالتنا' : 'Parler à un conseiller ou visiter notre agence'}
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'فريقنا متاح للإجابة على كافة استفساراتكم ومرافقتكم في مقرنا بوهران أو عن بعد.'
-                : 'Remplissez le formulaire ci-dessous ou contactez nos conseillers directement par téléphone et WhatsApp.'}
+                ? 'فريقنا متاح لتوجيهكم، الإجابة على كافة استفساراتكم واستقبالكم في مقرنا بوهران.'
+                : 'Notre équipe est à votre écoute pour vous conseiller, vous orienter et vous accueillir dans notre agence à Oran.'}
             </p>
           </div>
         </Reveal>
@@ -336,25 +336,25 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   <div className="border-b border-slate-100 pb-3">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
                       <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
-                        <span>{currentLang === 'ar' ? 'طلب دراسة ملف أو تسعيرة' : 'Demande d\'étude de dossier & devis'}</span>
+                        <span>{currentLang === 'ar' ? 'تحدث مع مستشار الوكالة' : 'Échanger avec un conseiller'}</span>
                         <Sparkles className="w-4 h-4 text-amber-500" />
                       </h3>
                       <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">
                         <Zap className="w-3 h-3 text-emerald-600" />
-                        <span>{currentLang === 'ar' ? 'إجابة في أقل من 15 دقيقة' : 'Réponse sous 15 min'}</span>
+                        <span>{currentLang === 'ar' ? 'إجابة سريعة وتوجيه مباشر' : 'Conseil & Réponse rapide'}</span>
                       </span>
                     </div>
                     <p className="text-xs sm:text-sm text-slate-600 mt-1">
                       {currentLang === 'ar'
-                        ? 'اختر وجهتك وصفتك المهنية، ثم اضغط على زر الواتساب لإرسال بياناتك مباشرة إلى مستشارينا.'
-                        : 'Complétez vos coordonnées pour que nos conseillers d\'Oran analysent vos pièces et vous répondent immédiatement.'}
+                        ? 'اختر وجهتك وصفتك، ثم أرسل بياناتك للتواصل المباشر مع مستشارينا في وهران.'
+                        : 'Précisez votre projet et vos coordonnées pour échanger rapidement avec un conseiller de notre agence.'}
                     </p>
                   </div>
 
                   {/* 1. Quick Destination Selection */}
                   <div>
                     <label id="dest-label" className="block text-xs font-bold text-slate-800 mb-1.5">
-                      {currentLang === 'ar' ? '1. الوجهة المطلوبة *' : '1. Destination ou service souhaité *'}
+                      {currentLang === 'ar' ? '1. الوجهة أو الخدمة المطلوبة *' : '1. Destination ou service souhaité *'}
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2" role="group" aria-labelledby="dest-label">
                       {quickDestinations.map((dest) => {
@@ -378,10 +378,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     </div>
                   </div>
 
-                  {/* 2. Applicant Profile (Critical for Visa Dossiers) */}
+                  {/* 2. Applicant Profile */}
                   <div>
                     <label id="profile-label" className="block text-xs font-bold text-slate-800 mb-1.5">
-                      {currentLang === 'ar' ? '2. صفتكم المهنية (مهم جداً لتحديد وثائق الملف) *' : '2. Votre statut professionnel (détermine vos pièces justificatives) *'}
+                      {currentLang === 'ar' ? '2. صفتكم المهنية *' : '2. Votre statut professionnel *'}
                     </label>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2" role="group" aria-labelledby="profile-label">
                       {quickProfiles.map((prof) => {
@@ -446,7 +446,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     <textarea
                       id="contact-message"
                       rows={2}
-                      placeholder={currentLang === 'ar' ? 'هل لديك سجل تجاري، كشف بنكي، أول سفر أو رفض سابق؟' : 'Ex: Premier voyage en Europe, besoin de rendez-vous BLS rapide, relevés bancaires...'}
+                      placeholder={currentLang === 'ar' ? 'صف باختصار مشروع سفركم، التواريخ المرغوبة أو استفساراتكم...' : 'Ex: Projet de voyage, dates prévues, questions sur les démarches ou réservations...'}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-slate-50/70 border border-slate-300 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-3 focus:ring-blue-100 focus-visible:outline-none text-slate-900 transition-all resize-none placeholder:text-slate-500"
@@ -460,7 +460,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                       className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-md shadow-emerald-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                     >
                       <MessageCircle className="w-5 h-5 fill-current shrink-0" aria-hidden="true" />
-                      <span>{currentLang === 'ar' ? 'إرسال الطلب عبر واتساب مع البيانات' : 'Envoyer ma demande via WhatsApp'}</span>
+                      <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
                     </button>
 
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1">

@@ -122,36 +122,36 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       id: "visa-schengen-proof",
       type: "photo",
       imageUrl: imagery.realAgency.schengenVisaPassport, // "/images/IMG_0070.JPG"
-      titleFr: "Preuve de Visa Schengen Espagne délivré & Carte Visado",
-      titleAr: "تأشيرة شنغن إسبانيا صادرة وجواز سفر الزبون مع بطاقة الوكالة",
-      subtitleFr: "Consulat Général d'Espagne • BLS Oran",
-      subtitleAr: "القنصلية العامة لإسبانيا بوهران • مركز BLS",
-      badgeFr: "Visa Accordé",
-      badgeAr: "تأشيرة مقبولة",
-      locationFr: "Consulat d'Espagne • Traitement Visado Service",
-      locationAr: "قنصلية إسبانيا • معالجة Visado Service",
-      descriptionFr: "Exemple authentique de passeport d'un client avec vignette de visa Schengen Espagne délivrée, photographiée avec la carte de visite officielle de Visado Service.",
-      descriptionAr: "توثيق ميداني حقيقي لجواز سفر أحد زبائننا حاملاً تأشيرة شنغن إسبانيا السارية مع بطاقة العمل الرسمية لوكالة Visado Service.",
-      highlightFr: "Preuve concrète de résultat",
-      highlightAr: "دليل ونتيجة ملموسة لزبائننا",
+      titleFr: "Exemple de Visa Schengen Espagne délivré & Carte Visado",
+      titleAr: "نموذج تأشيرة شنغن إسبانيا وجواز سفر مع بطاقة الوكالة",
+      subtitleFr: "Conseil & Orientation • Espagne & Europe",
+      subtitleAr: "توجيه واستشارات • إسبانيا وأوروبا",
+      badgeFr: "Visas & Voyages",
+      badgeAr: "سفر وتأشيرات",
+      locationFr: "Visado Service • Oran",
+      locationAr: "Visado Service • وهران",
+      descriptionFr: "Exemple concret illustrant notre savoir-faire dans l'orientation des voyageurs et la vérification soignée des dossiers.",
+      descriptionAr: "نموذج توضيحي يجسد خبرتنا الميدانية في مرافقة وتوجيه المسافرين نحو مختلف الوجهات الأوروبية.",
+      highlightFr: "Expérience & Conseil",
+      highlightAr: "خبرة وتوجيه دقيق",
       category: "visas"
     },
     {
       id: "bls-appointment-file",
       type: "photo",
       imageUrl: imagery.realAgency.blsAppointment, // "/images/rdv.png"
-      titleFr: "Dossier physique & Confirmation de Rendez-Vous BLS",
-      titleAr: "الملف الورقي واستمارة الموعد الرسمي بمركز BLS",
+      titleFr: "Rendez-Vous officiel & Vérification rigoureuse",
+      titleAr: "الموعد الرسمي ومراجعة وتدقيق الوثائق",
       subtitleFr: "Centre BLS International Oran • Espagne",
       subtitleAr: "مركز BLS الدولي بوهران • تأشيرة إسبانيا",
-      badgeFr: "Dossier BLS",
-      badgeAr: "ملف موعد BLS",
+      badgeFr: "Vérification & RDV",
+      badgeAr: "مراجعة ومواعيد",
       locationFr: "Centre BLS International • Oran",
       locationAr: "مركز BLS International • وهران",
-      descriptionFr: "Préparation rigoureuse et vérification méticuleuse de chaque pièce justificative avant le dépôt officiel au centre BLS International Espagne.",
-      descriptionAr: "إعداد شامل ودقيق لجميع الوثائق المطلوبة ومطابقتها قبل التوجه للإيداع الرسمي بمركز BLS International إسبانيا.",
-      highlightFr: "Dossier 100% conforme",
-      highlightAr: "ملف مطابق للشروط القنصلية",
+      descriptionFr: "Vérification rigoureuse, organisation et contrôle attentif des pièces justificatives avant votre démarche au centre officiel.",
+      descriptionAr: "مراجعة دقيقة، تنظيم وتأكد من جاهزية الوثائق والتوجيه السليم قبل التوجه للمركز الرسمي.",
+      highlightFr: "Dossier soigné & vérifié",
+      highlightAr: "ملف منظم ومراجع بعناية",
       category: "visas"
     },
     {
@@ -166,10 +166,10 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       badgeAr: "حجز تذاكر الطيران",
       locationFr: "Visado Service • Agréé Billetterie",
       locationAr: "Visado Service • حجز معتمد",
-      descriptionFr: "Émission instantanée de billets d'avion garantis (Air Algérie, Air France, etc.), réservations de vols pour dossiers de visas et assurances voyage internationales.",
-      descriptionAr: "إصدار فوري لتذاكر الطيران المعتمدة (الخطوط الجوية الجزائرية والشركات الدولية)، وحجوزات الطيران المؤكدة للملفات وتأمين السفر.",
-      highlightFr: "Partenariats IATA & Compagnies",
-      highlightAr: "تأكيدات فورية وأسعار مدروسة",
+      descriptionFr: "Émission instantanée de billets d'avion confirmés (Air Algérie, Air France, etc.), réservations d'hôtels et assurances voyage internationales.",
+      descriptionAr: "إصدار وحجز تذاكر الطيران المؤكدة (الخطوط الجوية الجزائرية والشركات الدولية)، وحجوزات الفنادق المعتمدة وتأمينات السفر الدولية.",
+      highlightFr: "Partenariats & Compagnies",
+      highlightAr: "تأكيدات سريعة وأسعار مدروسة",
       category: "agency"
     }
   ];
@@ -298,7 +298,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
                 <Camera className="w-3.5 h-3.5" />
-                <span>{currentLang === 'ar' ? 'معرض الوكالة والتوثيق الميداني' : 'Galerie Immersive & Preuves Réelles'}</span>
+                <span>{currentLang === 'ar' ? 'معرض الوكالة والتوثيق الميداني' : 'Visite de l\'agence & Locaux'}</span>
               </div>
               
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -309,8 +309,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
               <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
                 {currentLang === 'ar'
-                  ? 'صور وفيديوهات حقيقية 100% توثق مقرنا بالشارع، مكاتب الاستقبال الفردية، ملفات المواعيد المنجزة ونماذج التأشيرات الصادرة.'
-                  : "Explorez nos véritables locaux au 14 Rue Hadri Mohamed, nos bureaux d'accueil, nos dossiers BLS finalisés et nos preuves de visas obtenus."}
+                  ? 'صور وفيديوهات حقيقية توثق مقرنا بالشارع، مكاتب الاستقبال، وخدمات السفر وحجز الطيران المعتمدة.'
+                  : "Explorez nos véritables locaux au 14 Rue Hadri Mohamed, nos bureaux d'accueil et nos services de réservation et conseils de voyage."}
               </p>
 
               {/* Physical trust indicators */}
@@ -367,7 +367,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                     : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
-                <span>{currentLang === 'ar' ? 'التأشيرات والملفات (2)' : 'Visas & Dossiers (2)'}</span>
+                <span>{currentLang === 'ar' ? 'خدمات السفر والمتابعة (2)' : 'Services & Conseils (2)'}</span>
               </button>
 
               <button

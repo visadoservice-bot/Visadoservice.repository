@@ -83,7 +83,7 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
                     <div className="flex items-center gap-2">
                       {dest.id === 'es' && (
                         <span className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold shadow-md">
-                          Visa Réel Délivré
+                          {currentLang === 'ar' ? 'وجهة شائعة' : 'Destination Populaire'}
                         </span>
                       )}
                       <span className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg bg-white/15 text-white backdrop-blur-xs border border-white/15">
@@ -150,10 +150,10 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-3 flex items-center justify-between">
                   <span className="text-xs text-blue-400 font-semibold">
-                    Cas Réel • Visa Schengen Espagne Délivré
+                    {currentLang === 'ar' ? 'مرافقة وإجراءات السفر إلى إسبانيا' : 'Formalités & Conseils Voyage Espagne'}
                   </span>
                   <span className="text-[11px] text-white/80 font-mono">
-                    Passeport client & Carte Visado
+                    Visado Service · Oran
                   </span>
                 </div>
               </div>
@@ -179,18 +179,18 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
-                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(`Bonjour Visado Service, je souhaite avoir des informations pour un visa destination ${selectedDest.name} (${selectedDest.city}).`)}`}
+                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(`Bonjour Visado Service, je souhaite avoir des conseils pour un voyage vers ${selectedDest.name} (${selectedDest.city}).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white text-center text-xs font-semibold rounded-xl transition-all shadow-md active:scale-[0.98]"
               >
-                Consulter sur WhatsApp
+                {currentLang === 'ar' ? 'تواصل عبر واتساب' : 'Échanger sur WhatsApp'}
               </a>
               <button
                 onClick={() => { setSelectedDest(null); onOpenConsultation(); }}
                 className="flex-1 py-3 px-5 bg-white/10 hover:bg-white/15 text-white text-center text-xs font-semibold rounded-xl border border-white/15 transition-all cursor-pointer"
               >
-                Prendre rendez-vous agence
+                {currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}
               </button>
             </div>
           </div>

@@ -1,8 +1,8 @@
 export const translations = {
   fr: {
     meta: {
-      title: "Visado Service | Agence Visa à Oran (Schengen, Canada & Billetterie)",
-      description: "Visado Service : agence visa et voyages à Oran (14 Rue Hadri Mohamed). Rendez-vous visa Schengen (Espagne, France, Italie), visa Canada & billetterie officielle."
+      title: "Visado Service | Agence de Voyages, Conseils & Billetterie à Oran",
+      description: "Visado Service : agence de services liés au voyage à Oran (14 Rue Hadri Mohamed). Billetterie aérienne officielle, rendez-vous visa Schengen & Canada, conseils et accompagnement personnalisé."
     },
     nav: {
       home: "Accueil",
@@ -19,30 +19,30 @@ export const translations = {
     },
     hero: {
       smallLabel: "VISADO SERVICE — ORAN",
-      title: "Votre prochain voyage commence ici.",
-      subtitle: "Un accompagnement professionnel pour vos démarches de visa, de la préparation de votre dossier au suivi de votre demande.",
+      title: "Expertise et professionnalisme pour vous accompagner dans vos voyages.",
+      subtitle: "Votre agence à Oran pour vous orienter, réserver vos billets et vous accompagner avec rigueur dans vos démarches de voyage, en toute transparence.",
       ctaPrimary: "Parler à un conseiller",
       ctaSecondary: "Découvrir nos services",
-      scrollPrompt: "SCROLL TO EXPLORE"
+      scrollPrompt: "DÉCOUVRIR L'AGENCE"
     },
     intro: {
-      overline: "VISION ÉDITORIALE",
-      heading: "Plus qu'une démarche.\nUn projet de voyage.",
-      paragraph1: "Chez Visado Service, nous savons qu'une demande de visa représente bien plus qu'un simple dossier. C'est souvent le début d'un projet, d'une découverte ou d'un moment important.",
-      paragraph2: "Notre rôle est de vous accompagner avec méthode, attention et professionnalisme à chaque étape de votre démarche."
+      overline: "VOTRE PARTENAIRE DE VOYAGE",
+      heading: "Plus qu'une démarche.\nUn véritable projet de voyage.",
+      paragraph1: "Chez Visado Service, nous savons qu'un voyage représente bien plus qu'une simple formalité. C'est le début d'un projet, d'une découverte ou de retrouvailles importantes.",
+      paragraph2: "Notre équipe vous accueille au cœur d'Oran pour vous écouter, vous conseiller et vous accompagner à chaque étape avec clarté, disponibilité et professionnalisme."
     },
     services: {
-      overline: "SAVOIR-FAIRE & RIGUEUR",
-      heading: "Nos expertises",
-      subheading: "Un accompagnement pensé autour de votre projet.",
-      viewDetails: "Explorer ce service",
+      overline: "SERVICES & CONSEILS",
+      heading: "Nos prestations de voyage",
+      subheading: "Vos réservations, votre itinéraire et votre sérénité : un accompagnement pensé pour vous.",
+      viewDetails: "Découvrir ce service",
       items: [
         {
           id: "schengen",
           number: "01",
-          title: "Rendez-vous Visa Schengen",
+          title: "Rendez-vous & Démarches Visa Schengen",
           subtitle: "Europe & Espace Schengen",
-          description: "Nous vous accompagnons dans les démarches liées aux rendez-vous visa pour différentes destinations européennes avec une attention particulière portée aux spécificités de chaque consulat.",
+          description: "Nous vous accompagnons dans les démarches liées aux rendez-vous visa pour différentes destinations européennes, avec une attention particulière portée aux spécificités de chaque consulat.",
           highlights: ["France", "Italie", "Espagne", "Allemagne", "Belgique", "Malte et autres pays européens"],
           cta: "Explorer les destinations",
           targetSection: "europe"
@@ -51,8 +51,8 @@ export const translations = {
           id: "canada",
           number: "02",
           title: "Visa Touristique Canada",
-          subtitle: "Projets touristiques & visites",
-          description: "Nous vous accompagnons dans la préparation de votre dossier de visa touristique pour le Canada et dans le suivi des différentes étapes de votre démarche.",
+          subtitle: "Projets touristiques & visites familiales",
+          description: "Nous vous accompagnons dans la préparation de votre demande de visa touristique pour le Canada et dans le suivi des différentes étapes de votre démarche.",
           highlights: ["Structuration du dossier", "Conformité des formulaires", "Suivi des étapes officielles"],
           cta: "Découvrir le parcours Canada",
           targetSection: "canada"
@@ -76,19 +76,19 @@ export const translations = {
         {
           id: "conseil",
           number: "04",
-          title: "Conseil & Accompagnement",
+          title: "Conseils & Orientation Voyage",
           subtitle: "Écoute personnalisée",
-          description: "Un accompagnement personnalisé selon votre projet, votre destination et votre situation personnelle ou professionnelle.",
-          highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue"],
+          description: "Un accompagnement sur-mesure selon votre destination, votre projet et vos besoins pour aborder votre voyage en toute confiance et clarté.",
+          highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue en agence"],
           cta: "Prendre conseil",
           targetSection: "contact"
         },
         {
           id: "billetterie",
           number: "05",
-          title: "Billetterie Internationale & Vols",
+          title: "Billetterie Vols & Réservations",
           subtitle: "Voyagez partout dans le monde",
-          description: "Réservation et émission de billets d'avion vers toutes les destinations avec les meilleures offres de vol partenaires (Air Algérie, Air France et compagnies internationales).",
+          description: "Réservation et émission de billets d'avion vers toutes les destinations avec les meilleures options des compagnies aériennes partenaires (Air Algérie, Air France et compagnies internationales).",
           highlights: ["Billets vers tous les pays", "Meilleures offres Air Algérie & Air France", "Assistance directe au 0557 42 67 84"],
           cta: "Réserver un vol",
           targetSection: "contact"
@@ -97,8 +97,8 @@ export const translations = {
     },
     europe: {
       overline: "DESTINATIONS EUROPÉENNES",
-      heading: "L'Europe vous attend.",
-      subheading: "Une expertise dédiée à vos rendez-vous et à la constitution de vos demandes pour les principales capitales et États membres.",
+      heading: "L'Europe à votre portée.",
+      subheading: "Une expertise dédiée pour vous orienter, suivre vos rendez-vous et préparer vos démarches de voyage pour les principales capitales européennes.",
       exploreAction: "En savoir plus",
       typicalTitle: "Démarche type :",
       destinations: [
@@ -107,7 +107,7 @@ export const translations = {
           number: "01",
           name: "France",
           city: "Paris",
-          description: "Accompagnement rigoureux pour la prise de rendez-vous et la vérification des justificatifs de séjour.",
+          description: "Accompagnement attentif pour la prise de rendez-vous et la vérification des justificatifs de séjour.",
           highlights: ["Tourisme & Affaires", "Visite familiale", "Court séjour Schengen"]
         },
         {
@@ -115,23 +115,23 @@ export const translations = {
           number: "02",
           name: "Italie",
           city: "Rome",
-          description: "Orientation ciblée pour vos demandes vers l'Italie et le respect scrupuleux des critères consulaires.",
-          highlights: ["Dossier touristique", "Invitation & hébergement", "Couverture voyage"]
+          description: "Orientation ciblée pour vos demandes vers l'Italie et le respect des critères consulaires.",
+          highlights: ["Séjour touristique", "Invitation & hébergement", "Couverture voyage"]
         },
         {
           id: "es",
           number: "03",
           name: "Espagne",
           city: "Madrid",
-          description: "Assistance sur-mesure pour vos créneaux et la conformité intégrale des pièces administratives requises.",
-          highlights: ["Suivi des créneaux", "Dossiers loisirs & pros", "Cohérence des preuves"]
+          description: "Assistance sur-mesure pour vos créneaux et l'organisation claire des pièces administratives requises.",
+          highlights: ["Suivi des créneaux", "Séjours loisirs & professionnels", "Organisation documentaire"]
         },
         {
           id: "de",
           number: "04",
           name: "Allemagne",
           city: "Berlin",
-          description: "Préparation pointue répondant aux critères stricts des représentations consulaires allemandes.",
+          description: "Préparation rigoureuse répondant aux critères des représentations consulaires allemandes.",
           highlights: ["Rigueur documentaire", "Fiches professionnelles", "Plan de voyage"]
         },
         {
@@ -140,7 +140,7 @@ export const translations = {
           name: "Belgique",
           city: "Bruxelles",
           description: "Organisation claire pour vos voyages privés, familiaux ou d'affaires vers le cœur de l'Europe.",
-          highlights: ["Vérification des liens", "Justificatifs financiers", "Assurance certifiée"]
+          highlights: ["Voyages privés & pros", "Organisation des pièces", "Assurance certifiée"]
         },
         {
           id: "mt",
@@ -154,18 +154,18 @@ export const translations = {
     },
     canada: {
       overline: "AMÉRIQUE DU NORD",
-      heading: "Un projet au Canada ?",
-      description: "Préparez votre projet touristique avec un accompagnement professionnel pour votre démarche de visa.",
+      heading: "Un projet de voyage au Canada ?",
+      description: "Préparez votre projet touristique ou visite familiale avec un accompagnement attentif et professionnel pour votre démarche de visa.",
       stepsTitle: "Le parcours d'accompagnement :",
       steps: [
-        { number: "01", title: "Analyse de votre projet", text: "Étude globale de votre profil, de vos attaches et des motifs de votre voyage." },
-        { number: "02", title: "Préparation du dossier", text: "Collecte exhaustive et structuration des justificatifs requis." },
-        { number: "03", title: "Vérification des documents", text: "Examen méticuleux de chaque pièce pour assurer clarté et conformité." },
-        { number: "04", title: "Accompagnement administratif", text: "Assistance méthodique pour renseigner les formulaires officiels." },
+        { number: "01", title: "Analyse de votre projet", text: "Étude globale de vos souhaits de voyage, des motifs et du calendrier prévu." },
+        { number: "02", title: "Collecte & organisation", text: "Structuration méthodique des justificatifs nécessaires à votre demande." },
+        { number: "03", title: "Vérification des documents", text: "Examen attentif de chaque pièce pour assurer clarté et cohérence." },
+        { number: "04", title: "Assistance aux formulaires", text: "Accompagnement pour renseigner les formulaires officiels requis." },
         { number: "05", title: "Suivi de la démarche", text: "Suivi attentif de l'évolution de la demande jusqu'à l'issue du dossier." }
       ],
       cta: "Parler à un conseiller Canada",
-      legalNotice: "Visado Service propose un service d'accompagnement administratif. La décision finale concernant l'octroi d'un visa appartient exclusivement aux autorités compétentes."
+      legalNotice: "Visado Service est une agence de services liés au voyage et d'accompagnement administratif. La décision finale d'octroi d'un visa appartient exclusivement aux autorités consulaires compétentes. Aucune agence ne peut garantir l'obtention d'un visa."
     },
     approach: {
       overline: "MÉTHODE & TRANSPARENCE",
@@ -207,49 +207,49 @@ export const translations = {
     whyUs: {
       overline: "EXCELLENCE & PROXIMITÉ",
       heading: "Pourquoi Visado Service ?",
-      subheading: "L'exigence d'un service premium alliée à la proximité d'une agence ancrée à Oran.",
+      subheading: "L'exigence d'un service de voyage rigoureux alliée à la proximité d'une agence ancrée à Oran.",
       pillars: [
         {
           title: "EXPÉRIENCE",
-          description: "Une connaissance pratique des démarches liées aux visas et des critères appliqués par les centres officiels."
+          description: "Une solide connaissance pratique du domaine du voyage, des démarches consulaires et de la billetterie."
         },
         {
           title: "PROFESSIONNALISME",
-          description: "Une approche sérieuse, structurée et attentive où chaque détail documentaire compte."
+          description: "Une approche sérieuse, transparente et méthodique, loin des promesses exagérées du secteur."
         },
         {
           title: "ACCOMPAGNEMENT",
-          description: "Un suivi adapté à votre projet sans formules préfabriquées ni démarches standardisées."
+          description: "Un suivi adapté à votre profil et à votre projet de voyage, avec une écoute attentive."
         },
         {
           title: "PROXIMITÉ",
-          description: "Une agence physique basée à Oran, facile d'accès au 14 Rue Capitaine Hadri Mohamed."
+          description: "Une véritable agence physique à Oran, facile d'accès au 14 Rue Capitaine Hadri Mohamed."
         },
         {
           title: "DISPONIBILITÉ",
-          description: "Une équipe accessible, à l'écoute et réactive par téléphone, WhatsApp ou directement en agence."
+          description: "Une équipe accessible et réactive par téléphone, WhatsApp ou directement en agence."
         }
       ]
     },
     trust: {
       overline: "NOTRE ENGAGEMENT",
-      heading: "Votre projet mérite une attention particulière.",
-      subheading: "Nous privilégions une approche claire, professionnelle et personnalisée pour vous accompagner dans vos démarches.",
+      heading: "Votre projet de voyage mérite une attention particulière.",
+      subheading: "Nous privilégions une approche claire, humaine et transparente pour vous orienter dans vos réservations et vos démarches.",
       pillars: [
         {
           title: "CLARTÉ",
           description: "Des informations compréhensibles.",
-          detail: "Aucun jargon administratif inutile : vous comprenez exactement chaque exigence et chaque pièce requise."
+          detail: "Une communication simple et transparente : vous comprenez exactement chaque étape sans mauvaise surprise."
         },
         {
           title: "RIGUEUR",
-          description: "Une préparation organisée.",
-          detail: "Une méthode de contrôle minutieuse pour éviter les omissions et garantir l'ordre scrupuleux du dossier."
+          description: "Une préparation soignée.",
+          detail: "Une méthode attentive pour vérifier la cohérence de vos éléments avant toute démarche officielle."
         },
         {
           title: "PROXIMITÉ",
-          description: "Un interlocuteur à votre écoute.",
-          detail: "Un échange direct avec un conseiller dédié qui suit votre situation du début à la fin de la démarche."
+          description: "Un conseiller dédié à votre écoute.",
+          detail: "Un échange direct avec une équipe disponible qui vous accueille et vous accompagne personnellement."
         }
       ]
     },
@@ -267,45 +267,45 @@ export const translations = {
     faq: {
       overline: "QUESTIONS FRÉQUENTES",
       heading: "Tout ce que vous devez savoir.",
-      subheading: "Des réponses transparentes et précises sur notre fonctionnement et vos démarches.",
+      subheading: "Des réponses transparentes et précises sur notre agence et nos services de voyage.",
       items: [
         {
           id: "faq-1",
           question: "Quels pays européens accompagnez-vous ?",
-          answer: "Nous accompagnons nos clients pour les principales destinations de l'espace Schengen : France, Italie, Espagne, Allemagne, Belgique, Malte, ainsi que pour d'autres pays européens selon votre projet."
+          answer: "Nous accompagnons nos clients pour les principales destinations de l'espace Schengen : France, Italie, Espagne, Allemagne, Belgique, Malte, ainsi que pour d'autres pays européens selon vos projets de voyage."
         },
         {
           id: "faq-2",
           question: "Quels documents dois-je préparer ?",
-          answer: "La liste exacte dépend de votre destination et de votre statut (salarié, commerçant, profession libérale, retraité, étudiant). Lors de notre premier échange, nous vous transmettons une liste personnalisée et détaillée des pièces justificatives à fournir (passeport, relevés bancaires, justificatifs professionnels, assurance voyage, etc.)."
+          answer: "La liste dépend de votre destination et de votre statut. Lors de notre échange en agence ou à distance, nous vous remettons une orientation claire et personnalisée sur les éléments à réunir."
         },
         {
           id: "faq-3",
           question: "Proposez-vous un accompagnement pour le Canada ?",
-          answer: "Oui. Nous vous accompagnons spécifiquement dans la préparation de votre dossier de visa touristique pour le Canada : analyse de votre profil, vérification méthodique des documents, assistance sur les formulaires et suivi des étapes de votre démarche."
+          answer: "Oui. Nous vous accompagnons dans la préparation de votre demande de visa touristique ou visite familiale pour le Canada : orientation sur les pièces, assistance aux formulaires et suivi des étapes."
         },
         {
           id: "faq-4",
-          question: "Comment prendre rendez-vous avec Visado Service ?",
-          answer: "Vous pouvez nous contacter directement par téléphone au 0555 77 84 60, via WhatsApp au +213 555 77 84 60, par le formulaire du site ou en vous rendant à notre agence située au 14 Rue Capitaine Hadri Mohamed à Oran."
+          question: "Comment contacter ou rencontrer l'équipe de Visado Service ?",
+          answer: "Vous pouvez nous appeler directement au 0555 77 84 60, nous écrire sur WhatsApp au +213 555 77 84 60, ou venir directement à notre agence située au 14 Rue Capitaine Hadri Mohamed à Oran."
         },
         {
           id: "faq-5",
-          question: "Où se trouve votre agence ?",
-          answer: "Notre agence est idéalement située en plein cœur d'Oran, au 14 Rue Capitaine Hadri Mohamed, Oran, Algérie, 31000. Notre équipe vous accueille du samedi au jeudi pour étudier votre dossier."
+          question: "Où se trouve votre agence à Oran ?",
+          answer: "Notre agence a pignon sur rue en plein centre d'Oran, au 14 Rue Capitaine Hadri Mohamed (31000). Notre équipe vous accueille du samedi au jeudi de 09h00 à 17h00."
         },
         {
           id: "faq-6",
-          question: "Est-ce que Visado Service garantit l'obtention du visa ?",
-          answer: "Non. La décision finale appartient aux autorités consulaires ou aux autorités compétentes. Visado Service intervient dans l'accompagnement, la préparation et le suivi de la démarche avec le plus haut niveau de rigueur et de professionnalisme."
+          question: "Visado Service garantit-il l'obtention du visa ?",
+          answer: "Non, formellement. La décision finale d'octroi ou de refus d'un visa appartient exclusivement et souverainement aux autorités consulaires. Notre agence intervient dans le conseil, la vérification, la prise de rendez-vous et la réservation de vos titres de transport avec le plus haut niveau de professionnalisme."
         }
       ]
     },
     contact: {
       overline: "PRENONS CONTACT",
-      heading: "Parlons de votre prochain projet.",
-      subtitle: "Vous avez une question concernant votre destination ou votre démarche ? Notre équipe est à votre disposition.",
-      formTitle: "Demande d'accompagnement",
+      heading: "Parlons de votre prochain voyage.",
+      subtitle: "Une question sur une destination, une réservation de vol ou une démarche ? Notre équipe à Oran est à votre écoute.",
+      formTitle: "Demande d'accompagnement & contact",
       formSubtitle: "Remplissez ce formulaire et notre conseiller vous recontactera rapidement.",
       fullName: "Nom complet",
       fullNamePlaceholder: "Ex. Mohamed Benali",
@@ -315,8 +315,8 @@ export const translations = {
       emailPlaceholder: "Ex. contact@exemple.com",
       destination: "Destination souhaitée",
       destinationPlaceholder: "Choisissez une destination",
-      visaType: "Type de visa",
-      visaTypePlaceholder: "Ex. Touristique, Affaires, Famille...",
+      visaType: "Type de démarche ou voyage",
+      visaTypePlaceholder: "Ex. Tourisme, Billetterie vol, Famille...",
       message: "Message ou précision",
       messagePlaceholder: "Décrivez brièvement votre projet ou vos dates souhaitées...",
       submitButton: "Envoyer ma demande",
@@ -335,10 +335,10 @@ export const translations = {
       formSuccessMessage: "Merci pour votre message. Notre équipe va étudier votre demande et vous recontacter dans les plus brefs délais."
     },
     footer: {
-      tagline: "Votre partenaire pour vos démarches de visa et vos projets de voyage.",
+      tagline: "Votre agence de voyages, billetterie et accompagnement personnalisé à Oran.",
       quickLinks: "Navigation",
       contactTitle: "Nous contacter",
-      legalNotice: "Visado Service propose un service d'accompagnement administratif. Les décisions relatives aux demandes de visa sont prises exclusivement par les autorités compétentes.",
+      legalNotice: "Visado Service est une agence de services liés au voyage et d'accompagnement administratif. L'octroi d'un visa relève exclusivement de la compétence souveraine des autorités consulaires compétentes. Aucune agence ne peut garantir l'obtention d'un visa.",
       copyright: "© 2026 Visado Service. Tous droits réservés."
     },
     whatsapp: {
@@ -349,8 +349,8 @@ export const translations = {
 
   ar: {
     meta: {
-      title: "وكالة فيزادو سيرفيس وهران | تأشيرات شنغن، كندا، مواعيد وحجوزات طيران",
-      description: "وكالة Visado Service بوهران (14 نهج حادري محمد) : مرافقة وتجهيز ملفات تأشيرة شنغن (إسبانيا، فرنسا، إيطاليا)، تأشيرة كندا، حجز المواعيد والرحلات الجوية."
+      title: "وكالة فيزادو سيرفيس وهران | خدمات السفر، الاستشارات وحجوزات الطيران",
+      description: "وكالة Visado Service بوهران (14 نهج حادري محمد) : خدمات السفر، استشارات وإرشادات للمسافرين، حجز المواعيد الرسمية وتذاكر الطيران الدولية."
     },
     nav: {
       home: "الرئيسية",
@@ -367,30 +367,30 @@ export const translations = {
     },
     hero: {
       smallLabel: "VISADO SERVICE — وهران",
-      title: "رحلتكم القادمة تبدأ من هنا.",
-      subtitle: "خدمة احترافية لمرافقتكم في إجراءات التأشيرة، من تحضير الملف إلى متابعة الإجراءات بكل دقة وتنظيم.",
+      title: "خبرة واحترافية لمرافقتكم في عالم السفر",
+      subtitle: "نضع خبرتنا في خدمتكم لمرافقتكم وتوجيهكم في مختلف خدمات وإجراءات السفر، من حجز التذاكر والاستشارات إلى المتابعة الدقيقة لرحلتكم بكل شفافية واحترافية.",
       ctaPrimary: "تحدث مع مستشار",
       ctaSecondary: "اكتشف خدماتنا",
-      scrollPrompt: "مرر للأسفل لاكتشاف المزيد"
+      scrollPrompt: "اكتشف الوكالة وخدماتنا"
     },
     intro: {
-      overline: "رؤيتنا المهنية",
-      heading: "أكثر من مجرد إجراء إداري.\nمشروع رحلة واكتشاف.",
-      paragraph1: "مع Visado Service ندرك تماماً أن طلب التأشيرة يمثل أكثر بكثير من مجرد ملف ورقي. إنه بداية لمشروع، لاكتشاف جديد أو لخطوة مهمة في حياتكم.",
-      paragraph2: "دورنا يتمثل في مرافقتكم بمنهجية واضحة، واهتمام فائق واحترافية عالية في كل مرحلة من مراحل طلبكم."
+      overline: "شريككم في السفر",
+      heading: "أكثر من مجرد إجراء.\nمشروع سفر وطموح حقيقي.",
+      paragraph1: "مع Visado Service ندرك تماماً أن السفر يمثل أكثر بكثير من مجرد معاملات ورقية. إنه انطلاق لمشروع، اكتشاف لآفاق جديدة أو خطوة مهمة في حياتكم.",
+      paragraph2: "دورنا يتمثل في مرافقتكم بمنهجية واضحة، إصغاء شخصي واحترافية عالية في كل مرحلة من مراحل رحلتكم."
     },
     services: {
-      overline: "خبرة واحترافية",
-      heading: "مجالات خبرتنا",
-      subheading: "مرافقة مدروسة خصيصاً لملاءمة مشروع سفركم.",
+      overline: "خدمات واستشارات",
+      heading: "خدمات سفر مصممة لتسهيل رحلتكم",
+      subheading: "حجوزاتكم، رحلتكم، وجهتكم وراحتكم : مرافقة شخصية مدروسة لأجلكم.",
       viewDetails: "تفاصيل الخدمة",
       items: [
         {
           id: "schengen",
           number: "01",
-          title: "حجز مواعيد شنغن",
+          title: "مواعيد وإجراءات تأشيرة شنغن",
           subtitle: "أوروبا ومنطقة شنغن",
-          description: "نرافقكم في الإجراءات المتعلقة بحجز مواعيد التأشيرة لمختلف الوجهات الأوروبية مع مراعاة المعايير الخاصة بكل قنصلية.",
+          description: "نرافقكم في الإجراءات المتعلقة بحجز مواعيد التأشيرة لمختلف الوجهات الأوروبية مع مراعاة المتطلبات الخاصة بكل قنصلية.",
           highlights: ["فرنسا", "إيطاليا", "إسبانيا", "ألمانيا", "بلجيكا", "مالطا وبلدان أوروبية أخرى"],
           cta: "اكتشف الوجهات الأوروبية",
           targetSection: "europe"
@@ -398,9 +398,9 @@ export const translations = {
         {
           id: "canada",
           number: "02",
-          title: "تأشيرة السياحة إلى كندا",
-          subtitle: "رحلات سياحية وزيارات",
-          description: "هل ترغب في زيارة كندا؟ نرافقك في تحضير ملفك ومختلف مراحل إجراءات طلب التأشيرة السياحية ومتابعة خطواتها بكل عناية.",
+          title: "توجيه ومرافقة تأشيرة كندا",
+          subtitle: "رحلات سياحية وزيارات عائلية",
+          description: "نرافقكم في خطوات طلب التأشيرة السياحية إلى كندا ومتابعة مختلف المراحل الإدارية بكل عناية.",
           highlights: ["تنظيم الملف وتجهيزه", "مطابقة الاستمارات الرسمية", "متابعة المراحل الإدارية"],
           cta: "مسار تأشيرة كندا",
           targetSection: "canada"
@@ -424,17 +424,17 @@ export const translations = {
         {
           id: "conseil",
           number: "04",
-          title: "المرافقة والاستشارة",
-          subtitle: "استشارة فردية متخصصة",
-          description: "مرافقة مخصصة بحسب مشروعكم، وجهتكم ووضعكم المهني والشخصي لضمان الوضوح والاطمئنان.",
-          highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر ومتاح"],
+          title: "استشارات وإرشادات السفر",
+          subtitle: "إصغاء وتوجيه مخصص",
+          description: "توجيه واستشارة مخصصة بحسب وجهتكم، ظروفكم ومشروع رحلتكم لتسافروا بكل اطمئنان ووضوح.",
+          highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر في الوكالة"],
           cta: "طلب استشارة",
           targetSection: "contact"
         },
         {
           id: "billetterie",
           number: "05",
-          title: "حجز تذاكر الطيران الدولية",
+          title: "حجز تذاكر الطيران والرحلات",
           subtitle: "سافروا إلى كافة أنحاء العالم",
           description: "حجز وإصدار تذاكر الطيران لجميع دول العالم بأفضل الأسعار مع الخطوط الجوية الجزائرية والخطوط الفرنسية وكبرى الشركات الدولية.",
           highlights: ["تذاكر لجميع دول العالم", "أفضل عروض Air Algérie & Air France", "حجز فوري عبر 0557 42 67 84"],
@@ -445,8 +445,8 @@ export const translations = {
     },
     europe: {
       overline: "الوجهات الأوروبية",
-      heading: "أوروبا في انتظاركم.",
-      subheading: "خبرة متخصصة لحجز المواعيد وإعداد الملفات المتكاملة لأهم العواصم والدول الأوروبية.",
+      heading: "أوروبا بين يديكم.",
+      subheading: "مرافقة دقيقة لتتبع المواعيد وإرشادات السفر نحو أهم العواصم والبلدان الأوروبية.",
       exploreAction: "المزيد من التفاصيل",
       typicalTitle: "مسار المعاملة :",
       destinations: [
@@ -455,7 +455,7 @@ export const translations = {
           number: "01",
           name: "فرنسا",
           city: "باريس",
-          description: "مرافقة دقيقة لمواعيد التأشيرة وتدقيق كافة إثباتات الإقامة والشروط المطلوبة.",
+          description: "مرافقة دقيقة لمواعيد التأشيرة وترتيب إثباتات الإقامة والشروط المطلوبة.",
           highlights: ["سياحة وأعمال", "زيارات عائلية", "إقامة قصيرة شنغن"]
         },
         {
@@ -464,15 +464,15 @@ export const translations = {
           name: "إيطاليا",
           city: "روما",
           description: "توجيه منظم لطلبات السفر نحو إيطاليا مع احترام كافة المتطلبات القنصلية الرسمية.",
-          highlights: ["ملف سياحي متكامل", "دعوات واستضافة", "تأمين سفر معتمد"]
+          highlights: ["إقامة سياحية", "دعوات واستضافة", "تأمين سفر معتمد"]
         },
         {
           id: "es",
           number: "03",
           name: "إسبانيا",
           city: "مدريد",
-          description: "مساعدة مخصصة لتتبع المواعيد وضمان مطابقة جميع المستندات الإدارية بدقة.",
-          highlights: ["متابعة المواعيد", "ملفات شخصية ومهنية", "تناسق المستندات"]
+          description: "مساعدة مخصصة لتتبع المواعيد والترتيب الواضح للمستندات المطلوبة.",
+          highlights: ["متابعة المواعيد", "رحلات ترفيهية ومهنية", "تناسق المستندات"]
         },
         {
           id: "de",
@@ -480,7 +480,7 @@ export const translations = {
           name: "ألمانيا",
           city: "برلين",
           description: "تحضير صارم يتوافق مع المعايير والشروط الصادرة عن الممثليات القنصلية الألمانية.",
-          highlights: ["دقة متناهية", "إثباتات مهنية", "برنامج سفر واضح"]
+          highlights: ["دقة في التنظيم", "إثباتات مهنية", "برنامج سفر واضح"]
         },
         {
           id: "be",
@@ -488,7 +488,7 @@ export const translations = {
           name: "بلجيكا",
           city: "بروكسل",
           description: "تنظيم شامل للرحلات الخاصة أو العائلية أو المهنية إلى قلب أوروبا.",
-          highlights: ["تأكيد الروابط", "الإثباتات المالية", "ملف منظم"]
+          highlights: ["رحلات خاصة ومهنية", "ترتيب المستندات", "تأمين معتمد"]
         },
         {
           id: "mt",
@@ -496,53 +496,53 @@ export const translations = {
           name: "مالطا",
           city: "فاليتا",
           description: "مرافقة مخصصة لرحلات الاستجمام أو الدراسة في الأرخبيل المتوسطي.",
-          highlights: ["دراسة لغات", "رحلات سياحية", "ملف مفحوص بدقة"]
+          highlights: ["دراسة لغات", "رحلات سياحية", "ملف منظم بعناية"]
         }
       ]
     },
     canada: {
       overline: "أمريكا الشمالية",
-      heading: "هل ترغب في زيارة كندا؟",
-      description: "نرافقك في تحضير ملفك ومختلف مراحل إجراءات طلب التأشيرة السياحية بمستوى احترافي عالٍ.",
+      heading: "هل تخططون لرحلة إلى كندا ؟",
+      description: "نرافقكم في تحضير وتتبع طلب التأشيرة السياحية أو الزيارة العائلية بمستوى مهني عالٍ.",
       stepsTitle: "مسار المرافقة الشامل :",
       steps: [
-        { number: "01", title: "تحليل مشروعكم", text: "دراسة شاملة لملفكم ومبررات السفر وروابط الاستقرار." },
-        { number: "02", title: "تحضير وتجهيز الملف", text: "جمع المستندات اللازمة وترتيبها حسب المعايير المطلوبة." },
-        { number: "03", title: "تدقيق المستندات", text: "فحص دقيق ومفصل لكل وثيقة لضمان وضوحها ومصداقيتها." },
-        { number: "04", title: "المرافقة الإدارية", text: "مساعدتكم في ملء الاستمارات الرسمية بالمعلومات الصحيحة." },
-        { number: "05", title: "متابعة الإجراءات", text: "مواكبة خطوات المعاملة حتى استكمال كافة الإجراءات الإدارية." }
+        { number: "01", title: "تحليل مشروعكم", text: "دراسة شاملة لأهداف رحلتكم وتواريخ السفر المرغوبة." },
+        { number: "02", title: "ترتيب المستندات المطلوبة", text: "تنظيم المستندات الداعمة لطلبكم وفق معايير واضحة." },
+        { number: "03", title: "مراجعة المعطيات وتدقيقها", text: "فحص دقيق للتأكد من وضوح كافة البيانات وتناسقها." },
+        { number: "04", title: "المساعدة في الاستمارات", text: "مساعدتكم في تعبئة الاستمارات الرسمية بالمعلومات الصحيحة." },
+        { number: "05", title: "متابعة المراحل الإدارية", text: "مواكبة خطوات المعاملة حتى استكمال كافة الإجراءات الإدارية." }
       ],
       cta: "تحدث مع مستشار تأشيرة كندا",
-      legalNotice: "تقدم Visado Service خدمة مرافقة إدارية واستشارية. القرار النهائي بمنح التأشيرة يعود حصراً للسلطات الرسمية المختصة."
+      legalNotice: "وكالة Visado Service هي وكالة خدمات سفر ومرافقة إدارية واستشارية. القرار النهائي بمنح أو رفض التأشيرة يعود حصراً وسيادياً للسلطات القنصلية المختصة. لا يمكن لأي وكالة ضمان الحصول على التأشيرة."
     },
     approach: {
       overline: "المنهجية والشفافية",
       heading: "نهج بسيط.\nمرافقة إنسانية واضحة.",
-      subheading: "كل ملف يحظى باهتمام خاص. نعتمد منهجية واضحة ومريحة تبدأ من أول اتصال وحتى نهاية الإجراءات.",
+      subheading: "كل رحلة تحظى باهتمام خاص. نعتمد منهجية واضحة ومريحة تبدأ من أول اتصال وحتى نهاية الإجراءات.",
       steps: [
         {
           number: "01",
           title: "الإصغاء",
           subtitle: "فهم مشروعكم والوجهة المستهدفة.",
-          detail: "نخصص الوقت الكافي للاستماع لأهداف رحلتكم وظروفكم المهنية والشخصية."
+          detail: "نخصص الوقت الكافي للاستماع لأهداف رحلتكم وتواريخ سفركم المفضلة."
         },
         {
           number: "02",
           title: "التحليل",
           subtitle: "تحديد الاحتياجات الدقيقة للطلب.",
-          detail: "كل قنصلية تضع متطلبات واضحة؛ نحدد المتطلبات الملائمة لحالتكم بدقة."
+          detail: "كل وجهة تضع شروطاً معينة؛ نحدد المتطلبات الملائمة لرحلتكم بدقة."
         },
         {
           number: "03",
-          title: "التحضير",
-          subtitle: "مرافقتكم في بناء وتدقيق الملف.",
-          detail: "تنظيم منهجي لكافة الأوراق والمستندات لتقديم ملف واضح ومكتمل."
+          title: "الترتيب والمراجعة",
+          subtitle: "مرافقتكم في تنظيم وتدقيق المعطيات.",
+          detail: "تنظيم منهجي لكافة الأوراق لإعداد ملف واضح ومرتب."
         },
         {
           number: "04",
           title: "المتابعة",
-          subtitle: "مرافقتكم في مختلف خطوات المعاملة.",
-          detail: "توجيه خطوة بخطوة لكل المراحل والإجراءات الإدارية المطلوبة."
+          subtitle: "مرافقتكم في مختلف خطوات الرحلة.",
+          detail: "توجيه مستمر ومتابعة للمواعيد والإجراءات حتى استكمال المعاملة."
         },
         {
           number: "05",
@@ -554,45 +554,45 @@ export const translations = {
     },
     whyUs: {
       overline: "التميز والقرب",
-      heading: "لماذا Visado Service؟",
-      subheading: "دقة الخدمة الراقية ممزوجة بقرب وكالة ذات مقر حقيقي وموثوق بوهران.",
+      heading: "لماذا Visado Service ؟",
+      subheading: "خدمة سفر راقية وموثوقة ممزوجة بقرب وكالة حقيقية في قلب وهران.",
       pillars: [
         {
-          title: "خبرة واحترافية",
-          description: "معرفة عملية دقيقة بالإجراءات والمعايير المعتمدة لدى مراكز التأشيرات."
+          title: "خبرة في مجال السفر",
+          description: "معرفة عملية دقيقة بإجراءات السفر، تتبع المواعيد وحجوزات الطيران."
+        },
+        {
+          title: "احترافية وشفافية",
+          description: "تعامل صادق وشفاف دون وعود مبالغ فيها أو إيهام بما لا نملكه."
         },
         {
           title: "مرافقة شخصية",
-          description: "متابعة تراعي خصوصية كل شخص ومشروع سفر بعيداً عن النماذج الجاهزة."
+          description: "متابعة تراعي خصوصية كل مسافر واحتياجات رحلته بعيداً عن القوالب الجاهزة."
         },
         {
-          title: "متابعة دقيقة",
-          description: "حرص كبير على أدق التفاصيل في مراجعة وتجهيز الوثائق الإدارية."
+          title: "قرب ومقر حقيقي",
+          description: "وكالة حقيقية في وهران بشارع حضري محمد، ترحب بكم دائماً للاستشارة والاستقبال."
         },
         {
-          title: "قرب من العميل",
-          description: "وكالة حقيقية في وهران بشارع حضري محمد، يسهل التواصل معها وزيارتها."
-        },
-        {
-          title: "خدمة سريعة ومنظمة",
+          title: "سهولة التواصل",
           description: "فريق متعاون ومتاح للإجابة عن استفساراتكم عبر الهاتف أو الواتساب أو في مقر الوكالة."
         }
       ]
     },
     trust: {
       overline: "التزامنا تجاهكم",
-      heading: "مشروعكم يستحق اهتماماً وعناية فائقة.",
-      subheading: "نعتمد نهجاً مبنياً على الشفافية والوضوح والجدية لمرافقتكم في كافة الإجراءات.",
+      heading: "مشروع سفركم يستحق اهتماماً وعناية فائقة.",
+      subheading: "نعتمد نهجاً مبنياً على الشفافية والوضوح والجدية لمرافقتكم في كافة ترتيبات سفركم.",
       pillars: [
         {
           title: "الوضوح",
           description: "معلومات مفهومة ودقيقة.",
-          detail: "شرح مبسط ومباشر يوضح لكم كافة الشروط المطلوبة دون تعقيدات."
+          detail: "شرح مبسط ومباشر يوضح لكم كافة الشروط والإجراءات دون تعقيدات."
         },
         {
           title: "الدقة",
-          description: "تحضير منظم باحترافية.",
-          detail: "منهج تدقيق وفحص لتفادي النواقص وتنظيم الملف بأعلى درجات الترتيب."
+          description: "تنظيم مهني باحترافية.",
+          detail: "منهج فحص دقيق لتنظيم المعطيات ومراجعة التناسق قبل الإيداع الرسمي."
         },
         {
           title: "القرب",
@@ -609,51 +609,51 @@ export const translations = {
       badgeVerified: "نشاط تجاري رسمي موثق",
       viewOnMaps: "مشاهدة جميع التقييمات على خرائط Google",
       leaveReview: "إضافة تقييمكم على Google",
-      transparencyNotice: "شفافية ومصداقية مضمونة : لا نضع أي تقييم وهمي. تجدون تجارب العملاء منشورة علناً وبكل مصداقية عبر صفحتنا على Google Maps.",
+      transparencyNotice: "شفافية ومصداقية تامة : لا نضع أي تقييم وهمي. تجدون تجارب العملاء منشورة علناً وبكل مصداقية عبر صفحتنا على Google Maps.",
       items: []
     },
     faq: {
       overline: "الأسئلة الشائعة",
       heading: "كل ما تودون معرفته.",
-      subheading: "إجابات واضحة ودقيقة حول خدماتنا وإجراءات التأشيرة.",
+      subheading: "إجابات واضحة ودقيقة حول خدمات وكالتنا وإجراءات السفر.",
       items: [
         {
           id: "faq-1",
-          question: "ما هي الدول الأوروبية التي تقدمون مرافقة بشأنها؟",
-          answer: "نرافق عملاءنا في أهم وجهات منطقة شنغن: فرنسا، إيطاليا، إسبانيا، ألمانيا، بلجيكا، مالطا، بالإضافة إلى وجهات أوروبية أخرى بحسب مشروع سفركم."
+          question: "ما هي الوجهات التي تقدمون مرافقة بشأنها ؟",
+          answer: "نرافق عملاءنا في أهم وجهات منطقة شنغن (فرنسا، إسبانيا، إيطاليا، ألمانيا، بلجيكا، مالطا...)، كندا، بالإضافة إلى حجوزات الطيران نحو كافة دول العالم."
         },
         {
           id: "faq-2",
-          question: "ما هي الوثائق التي ينبغي عليّ تجهيزها؟",
-          answer: "تختلف القائمة حسب الوجهة ووضعكم المهني (موظف، تاجر، صاحب مهنة حرة، متقاعد، طالب). في أول اتصال أو زيارة، نقدم لكم قائمة مفصلة ودقيقة مخصصة لحالتكم."
+          question: "ما هي المستندات التي ينبغي عليّ تجهيزها ؟",
+          answer: "تختلف القائمة حسب الوجهة ونوع الرحلة. في أول اتصال أو زيارة لوكالتنا، نقدم لكم توجيهاً دقيقاً ومخصصاً بحسب وضعكم."
         },
         {
           id: "faq-3",
-          question: "هل تقدمون مرافقة خاصة بتأشيرة كندا؟",
-          answer: "نعم. نقدم مرافقة متكاملة لإعداد ملف التأشيرة السياحية إلى كندا: دراسة الملف، التحقق الدقيق من الوثائق، المساعدة في ملء الاستمارات الرسمية ومواكبة كافة المراحل."
+          question: "هل تقدمون مرافقة خاصة بتأشيرة كندا ؟",
+          answer: "نعم. نقدم مرافقة متكاملة لطلبات التأشيرة السياحية والزيارة العائلية إلى كندا : دراسة الطلب، التحقق من الوثائق، المساعدة في ملء الاستمارات الرسمية ومواكبة كافة المراحل."
         },
         {
           id: "faq-4",
-          question: "كيف يمكنني حجز موعد مع Visado Service؟",
-          answer: "يمكنكم الاتصال بنا مباشرة على الرقم 0555 77 84 60، أو عبر الواتساب على +213 555 77 84 60، أو ملء استمارة الموقع، أو زيارة مقرنا الكائن بـ 14، شارع حضري محمد بوهران."
+          question: "كيف يمكنني التواصل مع مستشاري Visado Service ؟",
+          answer: "يمكنكم الاتصال بنا مباشرة على الرقم 0555 77 84 60، أو عبر الواتساب على +213 555 77 84 60، أو زيارة مقرنا الكائن بـ 14، شارع حضري محمد بوهران."
         },
         {
           id: "faq-5",
-          question: "أين يقع مقر وكالتكم؟",
-          answer: "تقع وكالتنا في موقع مركزي بوسط مدينة وهران: 14، شارع حضري محمد، وهران، الجزائر، الرمز البريدي 31000. نستقبلكم بكل ترحيب من السبت إلى الخميس."
+          question: "أين يقع مقر وكالتكم في وهران ؟",
+          answer: "تقع وكالتنا في موقع مركزي بوسط مدينة وهران: 14، شارع حضري محمد، وهران، الجزائر، الرمز البريدي 31000. نستقبلكم بكل ترحيب من السبت إلى الخميس (09:00 - 17:00)."
         },
         {
           id: "faq-6",
-          question: "هل تضمن Visado Service الحصول على التأشيرة؟",
-          answer: "لا. القرار النهائي يعود حصراً للسلطات القنصلية والجهات المختصة. تتدخل Visado Service في المرافقة والتحضير الدقيق للملف والمتابعة الإدارية بأعلى درجات المهنية."
+          question: "هل تضمن Visado Service الحصول على التأشيرة ؟",
+          answer: "لا نهائياً وبكل شفافية. القرار النهائي يعود حصراً وسيادياً للسلطات القنصلية والسفارات المعنية. تتدخل وكالتنا في الاستشارة، حجز المواعيد الرسمية، مراجعة وتدقيق المستندات وحجز تذاكر الطيران بأعلى درجات المهنية."
         }
       ]
     },
     contact: {
       overline: "تواصل معنا",
-      heading: "لنتحدث حول مشروع سفركم القادم.",
-      subtitle: "هل لديكم استفسار بخصوص وجهتكم أو إجراءاتكم؟ فريقنا في وهران رهن إشارتكم.",
-      formTitle: "طلب مرافقة واستشارة",
+      heading: "لنتحدث حول رحلتكم القادمة.",
+      subtitle: "هل لديكم استفسار بخصوص وجهتكم أو حجز رحلتكم؟ فريقنا في وهران رهن إشارتكم.",
+      formTitle: "طلب استشارة وتوجيه",
       formSubtitle: "املأ هذا النموذج وسيتواصل معكم أحد مستشارينا في أقرب وقت.",
       fullName: "الاسم الكامل",
       fullNamePlaceholder: "مثال: محمد بن علي",
@@ -663,10 +663,10 @@ export const translations = {
       emailPlaceholder: "مثال: contact@example.com",
       destination: "الوجهة المطلوبة",
       destinationPlaceholder: "اختر الوجهة",
-      visaType: "نوع التأشيرة",
-      visaTypePlaceholder: "مثال: سياحية، أعمال، عائلية...",
-      message: "تفاصيل أو رسالة",
-      messagePlaceholder: "صف باختصار مشروع سفركم أو المواعيد المقترحة...",
+      visaType: "نوع الرحلة أو الخدمة",
+      visaTypePlaceholder: "مثال: سياحة، حجز طيران، عائلية...",
+      message: "تفاصيل أو استفسار",
+      messagePlaceholder: "صف باختصار مشروع سفركم أو المواعيد المرغوبة...",
       submitButton: "إرسال طلبي",
       continueWhatsApp: "المتابعة عبر الواتساب",
       directContact: "بيانات الاتصال بالوكالة",
@@ -683,10 +683,10 @@ export const translations = {
       formSuccessMessage: "شكراً لرسالتكم. سيقوم فريقنا بدراسة طلبكم والتواصل معكم في أقرب وقت ممكن."
     },
     footer: {
-      tagline: "شريككم لمرافقة إجراءات التأشيرة ومشاريع السفر بكل ثقة واحترافية.",
+      tagline: "وكالتكم في وهران لخدمات السفر، الاستشارات، المواعيد وحجوزات الطيران الدولية.",
       quickLinks: "تصفح الموقع",
       contactTitle: "الاتصال بنا",
-      legalNotice: "تقدم Visado Service خدمة مرافقة إدارية واستشارية. القرارات المتعلقة بطلبات التأشيرة تصدر حصرياً عن السلطات المختصة.",
+      legalNotice: "وكالة Visado Service هي وكالة خدمات سفر ومرافقة إدارية. القرارات المتعلقة بطلبات التأشيرة تصدر حصرياً وسيادياً عن السلطات القنصلية المختصة. لا تضمن الوكالة قبول أي تأشيرة.",
       copyright: "© 2026 Visado Service. جميع الحقوق محفوظة."
     },
     whatsapp: {
@@ -697,8 +697,8 @@ export const translations = {
 
   en: {
     meta: {
-      title: "Visado Service | Visa Consultancy Agency in Oran",
-      description: "Visado Service in Oran provides premium administrative guidance for Schengen, Canada, and international visa applications with high-end personalized attention."
+      title: "Visado Service | Travel Services, Advisory & Ticketing in Oran",
+      description: "Visado Service in Oran (14 Rue Hadri Mohamed): Official flight ticketing, Schengen & Canada appointment guidance, and personalized travel consultation."
     },
     nav: {
       home: "Home",
@@ -715,30 +715,30 @@ export const translations = {
     },
     hero: {
       smallLabel: "VISADO SERVICE — ORAN",
-      title: "Your next journey begins here.",
-      subtitle: "Professional guidance for your visa applications, from file preparation to diligent administrative follow-up.",
+      title: "Expertise and dedication to accompany your travels.",
+      subtitle: "A trusted physical travel agency in Oran providing flight ticketing, appointment procedures, personalized advisory, and journey guidance with complete transparency.",
       ctaPrimary: "Speak to an Advisor",
       ctaSecondary: "Discover Our Services",
-      scrollPrompt: "SCROLL TO EXPLORE"
+      scrollPrompt: "DISCOVER THE AGENCY"
     },
     intro: {
-      overline: "EDITORIAL PERSPECTIVE",
-      heading: "More than a procedure.\nA travel endeavor.",
-      paragraph1: "At Visado Service, we believe that applying for a visa is far more than processing paperwork. It often marks the inception of an ambition, a discovery, or a meaningful milestone.",
-      paragraph2: "Our role is to accompany you with methodology, acute care, and rigorous professionalism across every stage of your application."
+      overline: "YOUR TRAVEL PARTNER",
+      heading: "More than a procedure.\nA true journey endeavor.",
+      paragraph1: "At Visado Service, we believe that traveling represents far more than administrative paperwork. It marks the inception of a project, a discovery, or meaningful family reunions.",
+      paragraph2: "Our team welcomes you at our physical agency in central Oran to listen, advise, and accompany every step of your journey with clarity and dedication."
     },
     services: {
-      overline: "PRECISION & EXPERTISE",
-      heading: "Our Expertise",
-      subheading: "Bespoke guidance articulated around your travel aspirations.",
+      overline: "SERVICES & GUIDANCE",
+      heading: "Travel services designed for your peace of mind",
+      subheading: "Your bookings, your itinerary, and your destination: a personalized accompaniment tailored to you.",
       viewDetails: "Explore service",
       items: [
         {
           id: "schengen",
           number: "01",
-          title: "Schengen Visa Appointments",
+          title: "Schengen Visa Appointments & Procedures",
           subtitle: "Europe & Schengen Zone",
-          description: "We guide you through the appointment booking procedures and documentation requirements for major European destinations with careful attention to consular guidelines.",
+          description: "We guide you through the appointment booking procedures and documentation alignment for major European destinations with careful attention to consular guidelines.",
           highlights: ["France", "Italy", "Spain", "Germany", "Belgium", "Malta and other European destinations"],
           cta: "Explore European destinations",
           targetSection: "europe"
@@ -746,9 +746,9 @@ export const translations = {
         {
           id: "canada",
           number: "02",
-          title: "Canada Tourist Visa",
+          title: "Canada Visitor Visa Guidance",
           subtitle: "Tourism & Family Visits",
-          description: "We guide you through the preparation of your Canadian tourist visa file and assist you across each official submission milestone.",
+          description: "We guide you through the preparation of your Canadian visitor visa application and assist you across each official submission milestone.",
           highlights: ["Dossier structuring", "Form conformity", "Administrative tracking"],
           cta: "Discover Canada pathway",
           targetSection: "canada"
@@ -772,10 +772,10 @@ export const translations = {
         {
           id: "conseil",
           number: "04",
-          title: "Advisory & Guidance",
+          title: "Travel Advisory & Guidance",
           subtitle: "Personalized Consultation",
-          description: "Tailored strategic guidance formulated around your travel profile, destination, and personal or corporate circumstance.",
-          highlights: ["Custom orientation", "Step-by-step clarity", "Continuous availability"],
+          description: "Tailored strategic guidance formulated around your destination, profile, and travel schedule to ensure complete clarity.",
+          highlights: ["Custom orientation", "Step-by-step clarity", "In-agency availability"],
           cta: "Get expert advice",
           targetSection: "contact"
         },
@@ -794,7 +794,7 @@ export const translations = {
     europe: {
       overline: "EUROPEAN DESTINATIONS",
       heading: "Europe awaits.",
-      subheading: "Dedicated guidance for appointments and comprehensive dossier assembly across premier European capitals.",
+      subheading: "Dedicated guidance for appointments, travel documentation, and verified bookings across premier European destinations.",
       exploreAction: "Learn more",
       typicalTitle: "Procedure highlights:",
       destinations: [
@@ -811,15 +811,15 @@ export const translations = {
           number: "02",
           name: "Italy",
           city: "Rome",
-          description: "Targeted orientation for Italian visa submissions upholding strict consular criteria.",
-          highlights: ["Tourist dossier", "Invitations & lodging", "Certified travel insurance"]
+          description: "Targeted orientation for Italian visa submissions upholding official consular criteria.",
+          highlights: ["Tourist stays", "Invitations & lodging", "Certified travel insurance"]
         },
         {
           id: "es",
           number: "03",
           name: "Spain",
           city: "Madrid",
-          description: "Custom assistance for appointment monitoring and full compliance of submitted files.",
+          description: "Custom assistance for appointment monitoring and clear organization of submitted records.",
           highlights: ["Slot tracking", "Leisure & corporate files", "Proof consistency"]
         },
         {
@@ -827,7 +827,7 @@ export const translations = {
           number: "04",
           name: "Germany",
           city: "Berlin",
-          description: "Rigorous preparation satisfying the strict evidentiary standards of German consular authorities.",
+          description: "Rigorous preparation satisfying the standards of German consular authorities.",
           highlights: ["Document precision", "Professional records", "Structured travel plan"]
         },
         {
@@ -835,8 +835,8 @@ export const translations = {
           number: "05",
           name: "Belgium",
           city: "Brussels",
-          description: "Clear organization for private, family, or business travel into the diplomatic core of Europe.",
-          highlights: ["Ties verification", "Financial guarantees", "Certified compliance"]
+          description: "Clear organization for private, family, or business travel into the heart of Europe.",
+          highlights: ["Private & business trips", "Organized records", "Certified insurance"]
         },
         {
           id: "mt",
@@ -851,22 +851,22 @@ export const translations = {
     canada: {
       overline: "NORTH AMERICA",
       heading: "Planning a journey to Canada?",
-      description: "Prepare your tourist travel ambition with elevated administrative accompaniment.",
+      description: "Prepare your tourist or family visit ambition with elevated accompaniment and attentive advice.",
       stepsTitle: "Our accompaniment pathway:",
       steps: [
-        { number: "01", title: "Project analysis", text: "Thorough appraisal of your travel intentions, background, and ties." },
-        { number: "02", title: "Dossier preparation", text: "Exhaustive gathering and structured compilation of needed proofs." },
-        { number: "03", title: "Document verification", text: "Meticulous review of every record to guarantee clarity and alignment." },
-        { number: "04", title: "Administrative guidance", text: "Methodical support filling out official portal declarations." },
-        { number: "05", title: "Process follow-up", text: "Attentive follow-through until final administrative resolution." }
+        { number: "01", title: "Project analysis", text: "Thorough appraisal of your travel intentions and target departure dates." },
+        { number: "02", title: "Document structuring", text: "Methodical gathering and organized compilation of needed proofs." },
+        { number: "03", title: "Information verification", text: "Careful review of every element to guarantee clarity and alignment." },
+        { number: "04", title: "Portal form assistance", text: "Methodical support filling out official portal declarations." },
+        { number: "05", title: "Procedure tracking", text: "Attentive follow-through across each administrative milestone." }
       ],
       cta: "Speak to a Canada Advisor",
-      legalNotice: "Visado Service provides an administrative accompaniment service. The final determination regarding the issuance of a visa belongs exclusively to the competent official authorities."
+      legalNotice: "Visado Service is a travel service and administrative accompaniment agency. Final decisions on visa applications are rendered solely and sovereignly by competent consular authorities. No agency can guarantee visa issuance."
     },
     approach: {
       overline: "METHODOLOGY & TRANSPARENCY",
       heading: "A clear methodology.\nA human-centric accompaniment.",
-      subheading: "Every applicant brings a distinct story. We uphold an uncomplicated and reassuring approach from initial conversation to completion.",
+      subheading: "Every applicant brings a distinct journey. We uphold an uncomplicated and reassuring approach from initial contact to completion.",
       steps: [
         {
           number: "01",
@@ -903,19 +903,19 @@ export const translations = {
     whyUs: {
       overline: "EXCELLENCE & PROXIMITY",
       heading: "Why Visado Service?",
-      subheading: "The distinction of premium service harmonized with an established physical agency in Oran.",
+      subheading: "The distinction of a dedicated travel service harmonized with an established physical agency in Oran.",
       pillars: [
         {
           title: "EXPERIENCE",
-          description: "Practical and in-depth familiarity with visa procedures and consular expectations."
+          description: "Practical and in-depth familiarity with travel logistics, appointment tracking, and ticketing."
         },
         {
           title: "PROFESSIONALISM",
-          description: "A structured, earnest, and detail-oriented standard where every paper matters."
+          description: "A structured, honest, and transparent approach, far from exaggerated promises."
         },
         {
           title: "ACCOMPANIMENT",
-          description: "Guidance curated to your unique journey, free of generic automated templates."
+          description: "Guidance curated to your unique journey with attentive, personal listening."
         },
         {
           title: "PROXIMITY",
@@ -930,12 +930,12 @@ export const translations = {
     trust: {
       overline: "OUR COMMITMENT",
       heading: "Your journey deserves singular care.",
-      subheading: "We emphasize transparency, rigor, and customized dedication throughout your journey.",
+      subheading: "We emphasize transparency, human connection, and customized dedication throughout your journey.",
       pillars: [
         {
           title: "CLARITY",
           description: "Comprehensible insights.",
-          detail: "No convoluted jargon: you understand every exact document requirement clearly."
+          detail: "Straightforward communication: you understand every exact step with no surprises."
         },
         {
           title: "RIGOR",
@@ -943,7 +943,7 @@ export const translations = {
           detail: "Thorough cross-checking preventing omissions and upholding immaculate presentation."
         },
         {
-          title: "PROXIMITY",
+          title: "PROXIMITÉ",
           description: "A dedicated advisor by your side.",
           detail: "Direct interaction with a seasoned consultant who cares about your application from day one."
         }
@@ -963,45 +963,45 @@ export const translations = {
     faq: {
       overline: "FREQUENT QUESTIONS",
       heading: "Everything you need to know.",
-      subheading: "Clear and transparent answers regarding our scope and your visa procedures.",
+      subheading: "Clear and transparent answers regarding our agency and travel services.",
       items: [
         {
           id: "faq-1",
-          question: "Which European countries do you cover?",
-          answer: "We assist applicants across premier Schengen zone states including France, Italy, Spain, Germany, Belgium, Malta, as well as other European destinations according to your travel plans."
+          question: "Which destinations do you cover?",
+          answer: "We assist travelers across premier Schengen destinations (France, Spain, Italy, Germany, Belgium, Malta...), Canada, and provide worldwide flight ticketing."
         },
         {
           id: "faq-2",
           question: "Which documents should I prepare?",
-          answer: "The precise checklist varies by destination and your professional status (employee, merchant, freelance, retiree, student). During our initial assessment, we provide an exhaustive, tailor-made inventory."
+          answer: "Checklists vary by destination and traveler profile. During our in-agency consultation or phone assessment, we provide clear, customized guidance on necessary items."
         },
         {
           id: "faq-3",
           question: "Do you offer accompaniment for Canadian visas?",
-          answer: "Yes. We provide comprehensive guidance for Canadian visitor visas: profile review, methodical record validation, portal form assistance, and step-by-step progress tracking."
+          answer: "Yes. We assist with Canadian visitor and tourist visa applications: guidance on proofs, official portal form assistance, and milestone follow-through."
         },
         {
           id: "faq-4",
-          question: "How can I book an appointment with Visado Service?",
-          answer: "You can reach us directly by phone at 0555 77 84 60, via WhatsApp at +213 555 77 84 60, through the contact form, or by visiting our office at 14 Rue Capitaine Hadri Mohamed in Oran."
+          question: "How can I contact or visit Visado Service?",
+          answer: "You can reach us directly by phone at 0555 77 84 60, via WhatsApp at +213 555 77 84 60, or by visiting our office at 14 Rue Capitaine Hadri Mohamed in Oran."
         },
         {
           id: "faq-5",
           question: "Where is your agency located?",
-          answer: "Our office is centrally located in Oran at 14 Rue Capitaine Hadri Mohamed, Oran, Algeria, 31000. We welcome visitors Saturday through Thursday."
+          answer: "Our office is centrally located in Oran at 14 Rue Capitaine Hadri Mohamed, Oran, Algeria, 31000. We welcome visitors Saturday through Thursday from 09:00 to 17:00."
         },
         {
           id: "faq-6",
           question: "Does Visado Service guarantee the granting of a visa?",
-          answer: "No. The final determination rests solely with the consular and competent official authorities. Visado Service operates in preparing, organizing, and monitoring your application with utmost diligence and care."
+          answer: "No, formally and transparently. Final visa determination belongs solely and sovereignly to consular authorities. Our agency provides advisory, document verification, appointment assistance, and ticketing with the highest standard of professionalism."
         }
       ]
     },
     contact: {
       overline: "GET IN TOUCH",
       heading: "Let's discuss your next journey.",
-      subtitle: "Have questions about your destination or procedure? Our team in Oran is ready to assist.",
-      formTitle: "Request Consultation",
+      subtitle: "Have questions about a destination, flight booking, or travel procedure? Our team in Oran is ready to assist.",
+      formTitle: "Request Guidance & Consultation",
       formSubtitle: "Complete this inquiry form and an advisor will connect with you promptly.",
       fullName: "Full Name",
       fullNamePlaceholder: "E.g. Mohamed Benali",
@@ -1011,9 +1011,9 @@ export const translations = {
       emailPlaceholder: "E.g. contact@example.com",
       destination: "Desired Destination",
       destinationPlaceholder: "Select a destination",
-      visaType: "Visa Category",
-      visaTypePlaceholder: "E.g. Tourist, Business, Family...",
-      message: "Message or Details",
+      visaType: "Trip Category or Service",
+      visaTypePlaceholder: "E.g. Tourist, Flight booking, Family...",
+      message: "Message or Inquiries",
       messagePlaceholder: "Briefly outline your travel intent or target dates...",
       submitButton: "Send My Request",
       continueWhatsApp: "Continue on WhatsApp",
@@ -1031,10 +1031,10 @@ export const translations = {
       formSuccessMessage: "Thank you for reaching out. Our team will review your inquiry and contact you shortly."
     },
     footer: {
-      tagline: "Your dedicated partner for visa procedures and international travel aspirations.",
+      tagline: "Your travel agency in Oran for flight ticketing, advisory, and dedicated journey accompaniment.",
       quickLinks: "Navigation",
       contactTitle: "Contact Us",
-      legalNotice: "Visado Service provides an administrative accompaniment service. Final decisions on visa applications are rendered solely by competent government authorities.",
+      legalNotice: "Visado Service is a travel service and administrative accompaniment agency. Final decisions on visa applications are rendered solely by competent government authorities. No agency can guarantee visa issuance.",
       copyright: "© 2026 Visado Service. All rights reserved."
     },
     whatsapp: {
@@ -1043,3 +1043,4 @@ export const translations = {
     }
   }
 };
+

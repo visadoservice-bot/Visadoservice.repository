@@ -34,8 +34,8 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
             <Logo variant="footer" />
             <p className="text-xs text-[#8DA6C6] leading-relaxed">
               {currentLang === 'ar'
-                ? 'وكالة متخصصة في مرافقة وتجهيز ملفات التأشيرة، حجز المواعيد الرسمية والرحلات الجوية بوهران.'
-                : 'Agence spécialisée dans l\'accompagnement et la constitution de dossiers visa, rendez-vous officiels et billetterie à Oran.'}
+                ? 'وكالة خدمات سفر ومرافقة شخصية للمسافرين، حجز تذاكر الطيران وتوجيه دقيق لمشاريع السفر بوهران.'
+                : 'Agence de services liés au voyage : billetterie aérienne, réservations, conseils personnalisés et accompagnement à Oran.'}
             </p>
             <a
               href={siteConfig.googleMapsShareUrl}
@@ -190,8 +190,8 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
           </div>
           <div className="text-center sm:text-right text-[#7A93B0]">
             {currentLang === 'ar' 
-              ? 'مكتب استشارات ومرافقة في ملفات التأشيرة وحجز تذاكر الطيران بوهران.'
-              : 'Établissement d\'assistance, préparation de dossiers de visa et billetterie à Oran.'}
+              ? 'وكالة خدمات سفر، مرافقة وتوجيه للمسافرين وحجز تذاكر الطيران بوهران.'
+              : 'Agence de services liés au voyage, orientation et billetterie à Oran.'}
           </div>
         </div>
 

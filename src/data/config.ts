@@ -2,7 +2,7 @@ import { SiteConfig } from '../types';
 
 export const siteConfig: SiteConfig = {
   name: "Visado Service",
-  tagline: "Accompagnement d'excellence pour vos démarches de visa",
+  tagline: "Services liés au voyage, billetterie et accompagnement à Oran",
   agencyCity: "Oran, Algérie",
   address: "14, Rue Capitaine Hadri Mohamed, Oran",
   postalCode: "31000",
@@ -27,5 +27,5 @@ export const siteConfig: SiteConfig = {
   googleMapsShareUrl: "https://maps.app.goo.gl/PUcAubAdHqLz2p5D6",
 };
 
-export const WHATSAPP_DEFAULT_MESSAGE = "Bonjour Visado Service, je souhaite avoir des informations sur vos services.";
-export const WHATSAPP_CONSULTANT_MESSAGE = "Bonjour Visado Service, je souhaite parler à un conseiller concernant mon projet de visa.";
+export const WHATSAPP_DEFAULT_MESSAGE = "Bonjour Visado Service, je souhaite avoir des informations sur vos services de voyage.";
+export const WHATSAPP_CONSULTANT_MESSAGE = "Bonjour Visado Service, je souhaite échanger avec un conseiller concernant mes démarches et services de voyage.";

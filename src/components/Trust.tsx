@@ -60,14 +60,14 @@ export const Trust: React.FC<TrustProps> = ({
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {isArabic 
-                ? 'وكالة فيزا حقيقية ومقر معتمد في قلب وهران' 
-                : 'Une agence physique à Oran, un contact direct et un suivi rigoureux'}
+                ? 'وكالة خدمات سفر واستشارات حقيقية في قلب وهران' 
+                : 'Une agence de voyage et services à Oran, un contact direct et un suivi rigoureux'}
             </h2>
 
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
               {isArabic
-                ? 'نستقبلكم في مقرنا بشارع حضري محمد لدراسة ملفاتكم شخصياً، مراجعة كل وثيقة وتقديم استشارات واضحة دون وسطاء.'
-                : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour examiner vos documents, répondre à vos questions et structurer votre demande en toute transparence.'}
+                ? 'نستقبلكم في مقرنا بشارع حضري محمد لمرافقتكم وتوجيهكم في كافة إجراءات وحجوزات سفركم بكل شفافية واحترافية.'
+                : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour vous orienter, préparer vos démarches et assurer vos réservations de voyage en toute sérénité.'}
             </p>
           </div>
         </Reveal>
@@ -283,28 +283,28 @@ export const Trust: React.FC<TrustProps> = ({
                 </div>
 
                 <h3 className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                  {isArabic ? 'مرافقة شاملة حسب ملفك' : 'Accompagnement Rigoureux'}
+                  {isArabic ? 'مرافقة شاملة لرحلتكم' : 'Accompagnement Rigoureux'}
                 </h3>
 
                 <p className="mt-1.5 text-xs text-slate-500 font-semibold">
-                  {isArabic ? 'شنغن، كندا والرحلات الدولية' : 'Schengen, Canada & Billetterie'}
+                  {isArabic ? 'حجوزات طيران، مواعيد واستشارات' : 'Billetterie, Rendez-vous & Conseils'}
                 </p>
 
                 <p className="mt-3 text-xs text-slate-600 leading-relaxed">
                   {isArabic
-                    ? 'تدقيق وفحص لكافة الوثائق الرسمية، حجز مواعيد BLS Spain وTLScontact، وتأكيدات الطيران للملفات.'
-                    : 'Analyse méthodique selon votre statut (salarié, commerçant, profession libérale, étudiant) et conformité stricte aux exigences consulaires.'}
+                    ? 'استشارات شخصية، متابعة المواعيد المتاحة، وإصدار تذاكر الطيران المعتمدة مع كبرى الشركات.'
+                    : 'Conseils personnalisés selon votre destination, suivi de vos créneaux et émission de billets d\'avion officiels.'}
                 </p>
 
                 {/* 3 bullet micro perks */}
                 <div className="mt-3.5 space-y-1.5 text-[11px] text-slate-700">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>{isArabic ? 'تدقيق دقيق للوثائق والاستمارات' : 'Vérification pointilleuse de chaque pièce'}</span>
+                    <span>{isArabic ? 'استشارات وإرشادات مخصصة' : 'Conseils et orientation sur-mesure'}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>{isArabic ? 'حجوزات طيران وفنادق مؤكدة' : 'Billetterie & réservations confirmées'}</span>
+                    <span>{isArabic ? 'حجوزات طيران وتذاكر معتمدة' : 'Billetterie & réservations confirmées'}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
@@ -320,7 +320,7 @@ export const Trust: React.FC<TrustProps> = ({
                   className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-[0.98]"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>{isArabic ? 'طلب دراسة واستشارة' : 'Prendre un rendez-vous'}</span>
+                  <span>{isArabic ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
                 </button>
 
                 <button

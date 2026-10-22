@@ -92,7 +92,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               className="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-lg bg-white border border-slate-200 p-0.5"
             />
             <h2 id="consultation-modal-title" className="font-bold text-xs sm:text-sm text-slate-900 truncate">
-              {currentLang === 'ar' ? 'طلب استشارة سريعة' : 'Demander un devis ou une consultation'}
+              {currentLang === 'ar' ? 'تحدث مع مستشار الوكالة' : 'Parler à un conseiller'}
             </h2>
           </div>
           <button
@@ -195,11 +195,11 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-xs transition-all cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                 >
                   <MessageCircle className="w-4 h-4 fill-current" aria-hidden="true" />
-                  <span>{currentLang === 'ar' ? 'إرسال الطلب عبر واتساب' : 'Envoyer ma demande sur WhatsApp'}</span>
+                  <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
                 </button>
               </div>
               <p className="text-[11px] text-slate-500 text-center pt-1">
-                {currentLang === 'ar' ? 'يفتح تطبيق واتساب برسالة جاهزة بالإرسال' : 'Ouvre WhatsApp avec vos données prêtes à être envoyées'}
+                {currentLang === 'ar' ? 'يفتح تطبيق واتساب برسالة جاهزة بالإرسال' : 'Ouvre WhatsApp avec vos coordonnées pré-remplies'}
               </p>
             </form>
           ) : (
@@ -212,8 +212,8 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 max-w-xs mx-auto leading-relaxed">
                 {currentLang === 'ar'
-                  ? 'تم إرسال طلبكم بالبريد الإلكتروني إلى مستشارينا، ومحادثة واتساب جاهزة للإرسال المباشر.'
-                  : 'Votre demande a été transmise par e-mail à nos conseillers. Vous pouvez aussi continuer directement sur WhatsApp :'}
+                  ? 'تم إرسال طلبكم إلى مستشارينا، ويمكنكم أيضاً بدء المحادثة مباشرة عبر واتساب :'
+                  : 'Votre demande a été transmise à nos conseillers. Vous pouvez également échanger directement sur WhatsApp :'}
               </p>
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
                 <a

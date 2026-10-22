@@ -114,15 +114,15 @@ export const Services: React.FC<ServicesProps> = ({
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {currentLang === 'ar' 
-                ? 'خدمات شاملة لمرافقة التأشيرات والسفر' 
+                ? 'خدمات سفر مصممة لتسهيل رحلتكم' 
                 : currentLang === 'en' 
-                ? 'Comprehensive Visa & Travel Services' 
-                : 'Des démarches claires, structurées et sans stress'}
+                ? 'Travel services designed for your peace of mind' 
+                : 'Des prestations pensées pour faciliter votre voyage'}
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'حلول موثوقة ومخصصة لمرافقة ومتابعة ملفكم وتدقيقه حتى السفر.'
-                : 'Une prise en charge personnalisée pour le suivi et la conformité de votre dossier jusqu’au voyage.'}
+                ? 'نرافقكم في رحلتكم بخبرة واحترافية : استشارات، تذاكر طيران، ومتابعة دقيقة لمختلف الإجراءات.'
+                : 'Accompagnement, billetterie d\'avion et suivi personnalisé par votre agence à Oran.'}
             </p>
           </div>
         </Reveal>
@@ -176,7 +176,7 @@ export const Services: React.FC<ServicesProps> = ({
                     onClick={onOpenConsultation}
                     className="w-full mt-2 py-2.5 px-3.5 text-xs font-semibold text-slate-700 hover:text-blue-600 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98] group/btn"
                   >
-                    <span>{currentLang === 'ar' ? 'طلب الخدمة' : 'Demander ce service'}</span>
+                    <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Demander conseil'}</span>
                     <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180 text-blue-600 group-hover/btn:translate-x-1 rtl:group-hover/btn:-translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -185,31 +185,31 @@ export const Services: React.FC<ServicesProps> = ({
           })}
         </div>
 
-        {/* BLS Appointment & Document Assistance Focus Banner with Real Proof */}
+        {/* Focus Banner */}
         <Reveal direction="up" delay={120}>
           <div className="mt-8 sm:mt-12 bg-gradient-to-br from-slate-50 via-white to-blue-50/40 rounded-2xl p-5 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
               <div className="md:col-span-8 space-y-3">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/70 text-blue-800 text-xs font-semibold">
                   <span className="w-2 h-2 rounded-full bg-blue-600" />
-                  <span>{currentLang === 'ar' ? 'خدمة حجز مواعيد BLS Espagne بوهران' : 'Assistance Rendez-Vous BLS Espagne Officiel'}</span>
+                  <span>{currentLang === 'ar' ? 'متابعة المواعيد الرسمية بوهران' : 'Assistance Rendez-Vous & Démarches'}</span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
                   {currentLang === 'ar' 
-                    ? 'حجز وتأكيد مواعيد مركز BLS إسبانيا ومراجعة كافة وثائق الملف' 
-                    : 'Prise de rendez-vous BLS Espagne & préparation rigoureuse des justificatifs'}
+                    ? 'مرافقة متكاملة لإجراءات المواعيد وتوجيه المسافرين' 
+                    : 'Prise de rendez-vous & accompagnement attentif des voyageurs'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {currentLang === 'ar' 
-                    ? 'نوفر لكم متابعة مستمرة وتأكيداً رسمياً للمواعيد مع فحص شامل لجواز السفر، شهادات العمل، كشوف الحسابات، والتأمين الدولي.'
-                    : 'Visado Service vous assiste pour l\'obtention des créneaux de rendez-vous BLS International et audite chaque pièce de votre dossier avant votre dépôt au centre.'}
+                    ? 'فريق وكالتنا بوهران في خدمتكم لتوجيهكم بوضوح، تتبع المواعيد المتاحة، والإجابة عن جميع استفساراتكم بكل مهنية وشفافية.' 
+                    : 'Visado Service vous oriente pour vos rendez-vous et vous accompagne dans l\'organisation de votre séjour avec rigueur et disponibilité.'}
                 </p>
                 <div className="pt-1 flex flex-wrap gap-3">
                   <button
                     onClick={onOpenConsultation}
                     className="w-full sm:w-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-xs hover:shadow-md hover:shadow-blue-600/20 active:scale-[0.98] transition-all cursor-pointer text-center"
                   >
-                    {currentLang === 'ar' ? 'طلب موعد BLS' : 'Demander mon RDV BLS'}
+                    {currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}
                   </button>
                 </div>
               </div>
@@ -235,15 +235,15 @@ export const Services: React.FC<ServicesProps> = ({
             <div className="text-center lg:text-start space-y-1">
               <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-blue-700 bg-blue-100/60 px-2.5 py-0.5 rounded-md">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>{currentLang === 'ar' ? 'تدقيق احترافي قبل الإيداع' : 'Audit avant dépôt consulaire'}</span>
+                <span>{currentLang === 'ar' ? 'استشارة ومرافقة مخصصة' : 'Conseil & orientation personnalisée'}</span>
               </span>
               <h4 className="text-base sm:text-lg font-bold text-slate-900">
-                {currentLang === 'ar' ? 'تريد التأكد من اكتمال ملفك ومطابقته قبل إيداعه؟' : 'Vous préparez un dossier pour l\'Espagne, la France ou le Canada ?'}
+                {currentLang === 'ar' ? 'هل تخططون لرحلتكم القادمة وتحتاجون إلى التوجيه ؟' : 'Vous préparez votre prochain voyage et souhaitez être guidé ?'}
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
                 {currentLang === 'ar' 
-                  ? 'تجنب أسباب الرفض الشائعة (نقص الوثائق، عدم تطابق كشف الحساب). يقوم مستشارونا بمراجعة شاملة لملفكم.'
-                  : 'Évitez les motifs de refus évitables. Nos conseillers vérifient la conformité de chaque pièce selon votre statut (salarié, commerçant, profession libérale, étudiant).'}
+                  ? 'نضع خبرتنا بين أيديكم لمساعدتكم في فهم الخطوات، مراجعة جاهزية عناصر رحلتكم، وحجز تذاكر الطيران بكل هدوء.'
+                  : 'Bénéficiez de conseils clairs et d\'un suivi attentif pour préparer votre séjour, vos réservations de transport et vos démarches en toute sérénité.'}
               </p>
             </div>
 
@@ -252,17 +252,17 @@ export const Services: React.FC<ServicesProps> = ({
                 onClick={onOpenConsultation}
                 className="w-full sm:w-auto px-5 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold rounded-xl whitespace-nowrap shadow-xs hover:shadow-md hover:shadow-blue-600/20 active:scale-[0.98] transition-all cursor-pointer text-center"
               >
-                {currentLang === 'ar' ? 'طلب دراسة ملف' : 'Demander une étude de dossier'}
+                {currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}
               </button>
 
               <a
-                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, je prépare un dossier de visa et je souhaite parler à un conseiller.')}`}
+                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, je prépare un voyage et je souhaite parler à un conseiller.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-4 py-3 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white text-xs sm:text-sm font-bold rounded-xl whitespace-nowrap shadow-xs active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-current shrink-0" />
-                <span>{currentLang === 'ar' ? 'استشارة عبر واتساب' : 'Parler à un conseiller'}</span>
+                <span>{currentLang === 'ar' ? 'تواصل عبر واتساب' : 'Écrire sur WhatsApp'}</span>
               </a>
             </div>
           </div>

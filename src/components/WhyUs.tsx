@@ -28,12 +28,12 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
       icon: CheckCheck,
       color: "text-[#1E8E3E]",
       bg: "bg-[#E6F4EA]",
-      title: currentLang === 'ar' ? 'البساطة وراحة البال' : currentLang === 'en' ? 'Simplicity & Peace of Mind' : 'Simplicité & Zéro Stress',
+      title: currentLang === 'ar' ? 'الوضوح وراحة البال' : currentLang === 'en' ? 'Simplicity & Peace of Mind' : 'Simplicité & Zéro Stress',
       desc: currentLang === 'ar'
-        ? 'نتكفل بكافة التعقيدات الإدارية من ترجمة، حجز فنادق، وتأمين حتى يكون ملفكم جاهزاً 100%.'
+        ? 'نساعدكم في تبسيط الإجراءات من الاستشارة وتأمين السفر إلى حجز تذاكر الطيران بكل هدوء.'
         : currentLang === 'en'
-        ? 'We take care of the paperwork, verified bookings, and travel insurance for a smooth process.'
-        : 'Nous nous occupons des démarches complexes : conformité des justificatifs, réservations officielles et assurances valides.'
+        ? 'We assist you in organizing your journey, verified bookings, and travel insurance for a smooth process.'
+        : 'Nous vous assistons dans l\'organisation de votre séjour : orientation, réservations officielles et assurances valides.'
     },
     {
       icon: Headphones,
@@ -71,13 +71,15 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {currentLang === 'ar'
-                ? 'خبرة واحترافية لضمان أفضل فرصة لقبول ملفكم'
-                : 'Une méthode rigoureuse au service de votre projet de voyage'}
+                ? 'خبرة واحترافية لمرافقتكم في عالم السفر'
+                : currentLang === 'en'
+                ? 'Expertise and dedication for your travel aspirations'
+                : 'Une agence à votre écoute pour organiser votre voyage'}
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'مكتبنا يوفر لكم راحة البال والضمان عبر معايير عمل صارمة.'
-                : 'Découvrez les engagements qui font la réputation de Visado Service à Oran.'}
+                ? 'نرافقكم خطوة بخطوة بكل شفافية، من الاستشارة وحجز التذاكر إلى المتابعة الدقيقة.'
+                : 'Découvrez les engagements de confiance et de proximité qui font l\'identité de Visado Service à Oran.'}
             </p>
           </div>
         </Reveal>
@@ -145,17 +147,17 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
                     className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-2xs hover:shadow-sm active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Calendar className="w-3.5 h-3.5" />
-                    <span>{currentLang === 'ar' ? 'حجز موعد في الوكالة' : 'Prendre rendez-vous à l\'agence'}</span>
+                    <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
                   </button>
 
                   <a
-                    href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, je souhaite passer à votre agence à Oran pour étudier mon dossier.')}`}
+                    href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, je souhaite avoir des conseils pour préparer mon voyage.')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-1.5"
                   >
                     <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                    <span>{currentLang === 'ar' ? 'واتساب الوكالة' : 'Nous contacter sur WhatsApp'}</span>
+                    <span>{currentLang === 'ar' ? 'تواصل عبر واتساب' : 'Écrire sur WhatsApp'}</span>
                   </a>
 
                   <a

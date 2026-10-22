@@ -59,7 +59,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
         >
           <Calendar className="w-5 h-5 text-white" />
           <span className="text-[11px] font-bold mt-1 text-white leading-tight">
-            {currentLang === 'ar' ? 'حجز موعد' : 'Prendre RDV'}
+            {currentLang === 'ar' ? 'تحدث مع مستشار' : 'Conseiller'}
           </span>
         </button>
 

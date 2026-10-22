@@ -248,7 +248,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-1.5 px-4 sm:px-5 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-full shadow-xs hover:shadow-md hover:shadow-blue-600/20 active:scale-95 transition-all cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>{isArabic ? 'طلب استشارة / موعد' : 'Prendre rendez-vous'}</span>
+            <span>{isArabic ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
           </button>
         </div>
 
@@ -432,7 +432,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-600/25 active:scale-95 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
-              <span>{isArabic ? 'طلب استشارة وموعد رسمي' : 'Prendre un rendez-vous à l\'agence'}</span>
+              <span>{isArabic ? 'تحدث مع مستشار الوكالة' : 'Parler à un conseiller'}</span>
             </button>
           </div>
 
