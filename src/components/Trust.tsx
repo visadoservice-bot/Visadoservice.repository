@@ -55,19 +55,19 @@ export const Trust: React.FC<TrustProps> = ({
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
               <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-              <span>{isArabic ? 'ثقة وشفافية • مقر حقيقي بوهران' : 'Agence Réelle • Proximité & Transparence'}</span>
+              <span>{isArabic ? 'ثقة وشفافية • وهران' : 'Confiance, Rigueur & Transparence'}</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {isArabic 
-                ? 'وكالة خدمات سفر واستشارات حقيقية في قلب وهران' 
-                : 'Une agence de voyage et services à Oran, un contact direct et un suivi rigoureux'}
+                ? 'خدمات سفر ومرافقة متكاملة في قلب وهران' 
+                : 'Services et accompagnement de voyage à Oran'}
             </h2>
 
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
               {isArabic
-                ? 'نستقبلكم في مقرنا بشارع حضري محمد لمرافقتكم وتوجيهكم في كافة إجراءات وحجوزات سفركم بكل شفافية واحترافية.'
-                : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour vous orienter, préparer vos démarches et assurer vos réservations de voyage en toute sérénité.'}
+                ? 'نستقبلكم في مكاتبنا بشارع حضري محمد لمرافقتكم وتوجيهكم في كافة إجراءات وحجوزات سفركم بكل شفافية واحترافية.'
+                : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour vous orienter, préparer vos démarches et vous accompagner dans vos réservations en toute sérénité.'}
             </p>
           </div>
         </Reveal>
@@ -75,7 +75,7 @@ export const Trust: React.FC<TrustProps> = ({
         {/* 4 Trust Pillars (Bento Grid) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           
-          {/* Pillar 1: Agence Physique & Adresse à Oran */}
+          {/* Pillar 1: Adresse à Oran */}
           <Reveal direction="up" delay={0} className="h-full">
             <div className="bg-slate-50/80 hover:bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 hover:border-blue-300 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
               <div>
@@ -84,12 +84,12 @@ export const Trust: React.FC<TrustProps> = ({
                     <Building2 className="w-5 h-5" />
                   </div>
                   <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-100/70 text-blue-800">
-                    {isArabic ? 'مقر رسمي' : 'Pignon sur rue'}
+                    {isArabic ? 'مقر رسمي' : 'Adresse officielle'}
                   </span>
                 </div>
 
                 <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {isArabic ? 'وكالة معتمدة بوهران' : 'Agence Physique à Oran'}
+                  {isArabic ? 'مكاتبنا المفتوحة بوهران' : 'Nos bureaux à Oran'}
                 </h3>
 
                 <p className="mt-1.5 text-xs text-slate-500 font-semibold flex items-start gap-1">
@@ -99,8 +99,8 @@ export const Trust: React.FC<TrustProps> = ({
 
                 <p className="mt-3 text-xs text-slate-600 leading-relaxed">
                   {isArabic
-                    ? 'فضاء استقبال ومكاتب استشارة مكيفة ومهيأة لاستقبالكم مباشرة لمراجعة الوثائق وإيداع الملفات.'
-                    : 'Bureaux d\'accueil et de consultation au centre-ville d\'Oran pour déposer vos pièces et échanger en toute confidentialité.'}
+                    ? 'فضاء استقبال ومكاتب استشارة مكيفة ومهيأة لاستقبالكم مباشرة لمراجعة الوثائق والتوجيه في الإجراءات.'
+                    : 'Bureaux d\'accueil et de consultation au centre-ville d\'Oran pour examiner vos pièces et échanger en toute confidentialité.'}
                 </p>
 
                 <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center gap-2 text-[11px] text-slate-500">
@@ -166,15 +166,15 @@ export const Trust: React.FC<TrustProps> = ({
 
                 <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                   {isArabic
-                    ? 'أكثر من 120 تقييم حقيقي لمسافرين رافقتهم وكالتنا في ملفات تأشيرة إسبانيا، فرنسا، كندا وحجز التذاكر.'
-                    : 'Plus de 120 retours d\'expérience de voyageurs accompagnés pour leurs dossiers de visa Schengen et Canada.'}
+                    ? 'أكثر من 120 تقييم حقيقي لمسافرين رافقناهم في ملفات تأشيرة إسبانيا، فرنسا، كندا وحجوزات السفر.'
+                    : 'Plus de 120 retours d\'expérience de voyageurs accompagnés pour leurs dossiers de visa Schengen, Canada et réservations.'}
                 </p>
 
                 {/* Micro quote */}
                 <div className="mt-3.5 p-2.5 rounded-xl bg-amber-50/70 border border-amber-200/50 text-[11px] text-slate-700 italic">
                   {isArabic
                     ? '«خدمة في قمة الاحترافية بوهران، تدقيق ممتاز للملف قبل الإيداع»'
-                    : '« Service soigné en agence et vérification minutieuse avant le dépôt officiel. »'}
+                    : '« Service soigné et vérification minutieuse avant le dépôt officiel. »'}
                 </div>
               </div>
 
@@ -287,13 +287,13 @@ export const Trust: React.FC<TrustProps> = ({
                 </h3>
 
                 <p className="mt-1.5 text-xs text-slate-500 font-semibold">
-                  {isArabic ? 'حجوزات طيران، مواعيد واستشارات' : 'Billetterie, Rendez-vous & Conseils'}
+                  {isArabic ? 'مرافقة، مواعيد واستشارات' : 'Réservations, Rendez-vous & Conseils'}
                 </p>
 
                 <p className="mt-3 text-xs text-slate-600 leading-relaxed">
                   {isArabic
-                    ? 'استشارات شخصية، متابعة المواعيد المتاحة، وإصدار تذاكر الطيران المعتمدة مع كبرى الشركات.'
-                    : 'Conseils personnalisés selon votre destination, suivi de vos créneaux et émission de billets d\'avion officiels.'}
+                    ? 'استشارات شخصية، متابعة المواعيد المتاحة، ومساعدة في حجوزات السفر عبر المنصات المعتمدة.'
+                    : 'Conseils personnalisés selon votre destination, suivi de vos créneaux et assistance aux réservations officielles.'}
                 </p>
 
                 {/* 3 bullet micro perks */}
@@ -304,7 +304,7 @@ export const Trust: React.FC<TrustProps> = ({
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>{isArabic ? 'حجوزات طيران وتذاكر معتمدة' : 'Billetterie & réservations confirmées'}</span>
+                    <span>{isArabic ? 'مساعدة في حجوزات الطيران والإقامة' : 'Assistance aux réservations de voyage'}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />

@@ -1,8 +1,8 @@
 export const translations = {
   fr: {
     meta: {
-      title: "Visado Service | Agence de Voyages, Conseils & Billetterie à Oran",
-      description: "Visado Service : agence de services liés au voyage à Oran (14 Rue Hadri Mohamed). Billetterie aérienne officielle, rendez-vous visa Schengen & Canada, conseils et accompagnement personnalisé."
+      title: "Visado Service | Services de Voyage, Conseils & Réservations à Oran",
+      description: "Visado Service : services liés au voyage à Oran (14 Rue Hadri Mohamed). Réservations de vols, démarches de visa Schengen & Canada, conseils et accompagnement personnalisé."
     },
     nav: {
       home: "Accueil",
@@ -20,10 +20,10 @@ export const translations = {
     hero: {
       smallLabel: "VISADO SERVICE — ORAN",
       title: "Expertise et professionnalisme pour vous accompagner dans vos voyages.",
-      subtitle: "Votre agence à Oran pour vous orienter, réserver vos billets et vous accompagner avec rigueur dans vos démarches de voyage, en toute transparence.",
+      subtitle: "À Oran pour vous orienter, assister vos réservations et vous accompagner avec rigueur dans vos démarches de voyage, en toute transparence.",
       ctaPrimary: "Parler à un conseiller",
       ctaSecondary: "Découvrir nos services",
-      scrollPrompt: "DÉCOUVRIR L'AGENCE"
+      scrollPrompt: "DÉCOUVRIR NOS SERVICES"
     },
     intro: {
       overline: "VOTRE PARTENAIRE DE VOYAGE",
@@ -79,17 +79,17 @@ export const translations = {
           title: "Conseils & Orientation Voyage",
           subtitle: "Écoute personnalisée",
           description: "Un accompagnement sur-mesure selon votre destination, votre projet et vos besoins pour aborder votre voyage en toute confiance et clarté.",
-          highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue en agence"],
+          highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue à nos bureaux"],
           cta: "Prendre conseil",
           targetSection: "contact"
         },
         {
           id: "billetterie",
           number: "05",
-          title: "Billetterie Vols & Réservations",
+          title: "Assistance Billetterie & Réservations de Vols",
           subtitle: "Voyagez partout dans le monde",
-          description: "Réservation et émission de billets d'avion vers toutes les destinations avec les meilleures options des compagnies aériennes partenaires (Air Algérie, Air France et compagnies internationales).",
-          highlights: ["Billets vers tous les pays", "Meilleures offres Air Algérie & Air France", "Assistance directe au 0557 42 67 84"],
+          description: "Assistance et réservation de billets d'avion vers toutes les destinations avec les meilleures options des compagnies aériennes (Air Algérie, Air France et compagnies internationales).",
+          highlights: ["Billets vers tous les pays", "Offres Air Algérie & Air France", "Assistance directe au +213 557 42 67 84"],
           cta: "Réserver un vol",
           targetSection: "contact"
         }
@@ -165,7 +165,7 @@ export const translations = {
         { number: "05", title: "Suivi de la démarche", text: "Suivi attentif de l'évolution de la demande jusqu'à l'issue du dossier." }
       ],
       cta: "Parler à un conseiller Canada",
-      legalNotice: "Visado Service est une agence de services liés au voyage et d'accompagnement administratif. La décision finale d'octroi d'un visa appartient exclusivement aux autorités consulaires compétentes. Aucune agence ne peut garantir l'obtention d'un visa."
+      legalNotice: "Visado Service propose des prestations de conseil et d'accompagnement aux démarches de voyage. La décision finale d'octroi d'un visa appartient exclusivement aux autorités consulaires compétentes. Aucun prestataire ne peut garantir l'obtention d'un visa."
     },
     approach: {
       overline: "MÉTHODE & TRANSPARENCE",
@@ -207,11 +207,11 @@ export const translations = {
     whyUs: {
       overline: "EXCELLENCE & PROXIMITÉ",
       heading: "Pourquoi Visado Service ?",
-      subheading: "L'exigence d'un service de voyage rigoureux alliée à la proximité d'une agence ancrée à Oran.",
+      subheading: "L'exigence d'un service de voyage rigoureux alliée à la proximité de nos bureaux au cœur d'Oran.",
       pillars: [
         {
           title: "EXPÉRIENCE",
-          description: "Une solide connaissance pratique du domaine du voyage, des démarches consulaires et de la billetterie."
+          description: "Une solide connaissance pratique du domaine du voyage, des démarches consulaires et des réservations."
         },
         {
           title: "PROFESSIONNALISME",
@@ -223,11 +223,11 @@ export const translations = {
         },
         {
           title: "PROXIMITÉ",
-          description: "Une véritable agence physique à Oran, facile d'accès au 14 Rue Capitaine Hadri Mohamed."
+          description: "Des bureaux accessibles au 14 Rue Capitaine Hadri Mohamed, en plein centre d'Oran."
         },
         {
           title: "DISPONIBILITÉ",
-          description: "Une équipe accessible et réactive par téléphone, WhatsApp ou directement en agence."
+          description: "Une équipe accessible et réactive par téléphone, WhatsApp ou directement à nos bureaux."
         }
       ]
     },
@@ -267,7 +267,7 @@ export const translations = {
     faq: {
       overline: "QUESTIONS FRÉQUENTES",
       heading: "Tout ce que vous devez savoir.",
-      subheading: "Des réponses transparentes et précises sur notre agence et nos services de voyage.",
+      subheading: "Des réponses transparentes et précises sur nos prestations et nos services de voyage.",
       items: [
         {
           id: "faq-1",
@@ -277,7 +277,7 @@ export const translations = {
         {
           id: "faq-2",
           question: "Quels documents dois-je préparer ?",
-          answer: "La liste dépend de votre destination et de votre statut. Lors de notre échange en agence ou à distance, nous vous remettons une orientation claire et personnalisée sur les éléments à réunir."
+          answer: "La liste dépend de votre destination et de votre statut. Lors de notre échange à nos bureaux ou à distance, nous vous remettons une orientation claire et personnalisée sur les éléments à réunir."
         },
         {
           id: "faq-3",
@@ -287,17 +287,17 @@ export const translations = {
         {
           id: "faq-4",
           question: "Comment contacter ou rencontrer l'équipe de Visado Service ?",
-          answer: "Vous pouvez nous appeler directement au 0555 77 84 60, nous écrire sur WhatsApp au +213 555 77 84 60, ou venir directement à notre agence située au 14 Rue Capitaine Hadri Mohamed à Oran."
+          answer: "Vous pouvez nous appeler directement au +213 557 42 67 84 ou au +213 555 77 84 60, nous écrire sur WhatsApp au +213 557 42 67 84, ou venir directement à nos bureaux situés au 14 Rue Capitaine Hadri Mohamed à Oran."
         },
         {
           id: "faq-5",
-          question: "Où se trouve votre agence à Oran ?",
-          answer: "Notre agence a pignon sur rue en plein centre d'Oran, au 14 Rue Capitaine Hadri Mohamed (31000). Notre équipe vous accueille du samedi au jeudi de 09h00 à 17h00."
+          question: "Où se trouvent vos bureaux à Oran ?",
+          answer: "Nos bureaux ont pignon sur rue en plein centre d'Oran, au 14 Rue Capitaine Hadri Mohamed (31000). Notre équipe vous accueille du samedi au jeudi de 09h00 à 17h00."
         },
         {
           id: "faq-6",
-          question: "Visado Service garantit-il l'obtention du visa ?",
-          answer: "Non, formellement. La décision finale d'octroi ou de refus d'un visa appartient exclusivement et souverainement aux autorités consulaires. Notre agence intervient dans le conseil, la vérification, la prise de rendez-vous et la réservation de vos titres de transport avec le plus haut niveau de professionnalisme."
+          question: "Visado Service garantit-il l'obtention du visa ou un rendez-vous consulaire ?",
+          answer: "Non, en toute transparence. Les rendez-vous dépendent de leur disponibilité sur les plateformes officielles et ne peuvent être garantis. En cas d'indisponibilité, nous vous orientons vers le dépôt d'une demande écrite auprès de l'organisme concerné. Quant à la décision d'octroi du visa, elle relève exclusivement des autorités consulaires."
         }
       ]
     },
@@ -321,11 +321,11 @@ export const translations = {
       messagePlaceholder: "Décrivez brièvement votre projet ou vos dates souhaitées...",
       submitButton: "Envoyer ma demande",
       continueWhatsApp: "Continuer sur WhatsApp",
-      directContact: "Coordonnées de l'agence",
+      directContact: "Nos coordonnées",
       phoneLabel: "Téléphone direct",
       whatsappLabel: "WhatsApp officiel",
       emailLabel: "Courriel électronique",
-      addressLabel: "Adresse physique",
+      addressLabel: "Adresse de nos bureaux",
       hoursLabel: "Heures d'ouverture",
       hoursValue: "Samedi – Jeudi : 09h00 – 17h00",
       serviceZoneLabel: "Zone de service",
@@ -335,10 +335,10 @@ export const translations = {
       formSuccessMessage: "Merci pour votre message. Notre équipe va étudier votre demande et vous recontacter dans les plus brefs délais."
     },
     footer: {
-      tagline: "Votre agence de voyages, billetterie et accompagnement personnalisé à Oran.",
+      tagline: "Services liés au voyage, réservations de vols et accompagnement personnalisé à Oran.",
       quickLinks: "Navigation",
       contactTitle: "Nous contacter",
-      legalNotice: "Visado Service est une agence de services liés au voyage et d'accompagnement administratif. L'octroi d'un visa relève exclusivement de la compétence souveraine des autorités consulaires compétentes. Aucune agence ne peut garantir l'obtention d'un visa.",
+      legalNotice: "Visado Service propose des prestations de services liés au voyage et d'assistance aux démarches. L'octroi d'un visa relève exclusivement de la compétence souveraine des autorités consulaires compétentes. Aucun prestataire ne peut garantir l'obtention d'un visa.",
       copyright: "© 2026 Visado Service. Tous droits réservés."
     },
     whatsapp: {
@@ -349,8 +349,8 @@ export const translations = {
 
   ar: {
     meta: {
-      title: "وكالة فيزادو سيرفيس وهران | خدمات السفر، الاستشارات وحجوزات الطيران",
-      description: "وكالة Visado Service بوهران (14 نهج حادري محمد) : خدمات السفر، استشارات وإرشادات للمسافرين، حجز المواعيد الرسمية وتذاكر الطيران الدولية."
+      title: "Visado Service وهران | خدمات السفر، الاستشارات وحجوزات الطيران",
+      description: "خدمات Visado Service بوهران (14 نهج حادري محمد) : خدمات ومرافقة السفر، استشارات وإرشادات للمسافرين، مساعدة في المواعيد الرسمية وحجوزات الطيران الدولية."
     },
     nav: {
       home: "الرئيسية",
@@ -371,7 +371,7 @@ export const translations = {
       subtitle: "نضع خبرتنا في خدمتكم لمرافقتكم وتوجيهكم في مختلف خدمات وإجراءات السفر، من حجز التذاكر والاستشارات إلى المتابعة الدقيقة لرحلتكم بكل شفافية واحترافية.",
       ctaPrimary: "تحدث مع مستشار",
       ctaSecondary: "اكتشف خدماتنا",
-      scrollPrompt: "اكتشف الوكالة وخدماتنا"
+      scrollPrompt: "اكتشف خدماتنا ومكاتبنا"
     },
     intro: {
       overline: "شريككم في السفر",
@@ -427,17 +427,17 @@ export const translations = {
           title: "استشارات وإرشادات السفر",
           subtitle: "إصغاء وتوجيه مخصص",
           description: "توجيه واستشارة مخصصة بحسب وجهتكم، ظروفكم ومشروع رحلتكم لتسافروا بكل اطمئنان ووضوح.",
-          highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر في الوكالة"],
+          highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر في مكاتبنا"],
           cta: "طلب استشارة",
           targetSection: "contact"
         },
         {
           id: "billetterie",
           number: "05",
-          title: "حجز تذاكر الطيران والرحلات",
+          title: "المساعدة في حجز تذاكر الطيران والرحلات",
           subtitle: "سافروا إلى كافة أنحاء العالم",
-          description: "حجز وإصدار تذاكر الطيران لجميع دول العالم بأفضل الأسعار مع الخطوط الجوية الجزائرية والخطوط الفرنسية وكبرى الشركات الدولية.",
-          highlights: ["تذاكر لجميع دول العالم", "أفضل عروض Air Algérie & Air France", "حجز فوري عبر 0557 42 67 84"],
+          description: "المساعدة في حجز وإصدار تذاكر الطيران لجميع دول العالم بأفضل الأسعار مع الخطوط الجوية الجزائرية والخطوط الفرنسية ومختلف الشركات الدولية.",
+          highlights: ["تذاكر لجميع دول العالم", "أفضل عروض Air Algérie & Air France", "مساعدة فورية عبر +213 557 42 67 84"],
           cta: "حجز تذكرة طيران",
           targetSection: "contact"
         }
@@ -513,7 +513,7 @@ export const translations = {
         { number: "05", title: "متابعة المراحل الإدارية", text: "مواكبة خطوات المعاملة حتى استكمال كافة الإجراءات الإدارية." }
       ],
       cta: "تحدث مع مستشار تأشيرة كندا",
-      legalNotice: "وكالة Visado Service هي وكالة خدمات سفر ومرافقة إدارية واستشارية. القرار النهائي بمنح أو رفض التأشيرة يعود حصراً وسيادياً للسلطات القنصلية المختصة. لا يمكن لأي وكالة ضمان الحصول على التأشيرة."
+      legalNotice: "تقدم Visado Service خدمات المساعدة والمرافقة في إجراءات السفر. القرار النهائي بمنح أو رفض التأشيرة يعود حصراً وسيادياً للسلطات القنصلية المختصة. لا يمكن لأي جهة ضمان الحصول على التأشيرة."
     },
     approach: {
       overline: "المنهجية والشفافية",
@@ -555,7 +555,7 @@ export const translations = {
     whyUs: {
       overline: "التميز والقرب",
       heading: "لماذا Visado Service ؟",
-      subheading: "خدمة سفر راقية وموثوقة ممزوجة بقرب وكالة حقيقية في قلب وهران.",
+      subheading: "خدمة سفر راقية وموثوقة ممزوجة بقرب وتواجد مكاتبنا في قلب وهران.",
       pillars: [
         {
           title: "خبرة في مجال السفر",
@@ -570,12 +570,12 @@ export const translations = {
           description: "متابعة تراعي خصوصية كل مسافر واحتياجات رحلته بعيداً عن القوالب الجاهزة."
         },
         {
-          title: "قرب ومقر حقيقي",
-          description: "وكالة حقيقية في وهران بشارع حضري محمد، ترحب بكم دائماً للاستشارة والاستقبال."
+          title: "قرب ومقر رسمي",
+          description: "مكاتب رسمية في وهران بشارع حضري محمد، ترحب بكم دائماً للاستشارة والاستقبال."
         },
         {
           title: "سهولة التواصل",
-          description: "فريق متعاون ومتاح للإجابة عن استفساراتكم عبر الهاتف أو الواتساب أو في مقر الوكالة."
+          description: "فريق متعاون ومتاح للإجابة عن استفساراتكم عبر الهاتف أو الواتساب أو في مكاتبنا."
         }
       ]
     },
@@ -604,9 +604,9 @@ export const translations = {
     testimonials: {
       overline: "تقييمات معتمدة على خرائط GOOGLE",
       heading: "الشفافية الكاملة : تجارب وآراء عملائنا الحقيقية",
-      subheading: "لأن مشروع سفركم يستحق الثقة والوضوح التام، لا تنشر وكالة فيزادو سيرفيس أي تقييم وهمي أو غير حقيقي. جميع تقييمات وتجارب المسافرين موثقة ومتاحة مباشرة عبر صفحتنا الرسمية على خرائط Google.",
+      subheading: "لأن مشروع سفركم يستحق الثقة والوضوح التام، لا تنشر Visado Service أي تقييم وهمي أو غير حقيقي. جميع تقييمات وتجارب المسافرين موثقة ومتاحة مباشرة عبر صفحتنا الرسمية على خرائط Google.",
       googleRatingText: "تقييم 4.9/5 على صفحتنا الرسمية بخرائط Google",
-      badgeVerified: "نشاط تجاري رسمي موثق",
+      badgeVerified: "نشاط رسمي موثق",
       viewOnMaps: "مشاهدة جميع التقييمات على خرائط Google",
       leaveReview: "إضافة تقييمكم على Google",
       transparencyNotice: "شفافية ومصداقية تامة : لا نضع أي تقييم وهمي. تجدون تجارب العملاء منشورة علناً وبكل مصداقية عبر صفحتنا على Google Maps.",
@@ -615,7 +615,7 @@ export const translations = {
     faq: {
       overline: "الأسئلة الشائعة",
       heading: "كل ما تودون معرفته.",
-      subheading: "إجابات واضحة ودقيقة حول خدمات وكالتنا وإجراءات السفر.",
+      subheading: "إجابات واضحة ودقيقة حول خدماتنا وإجراءات السفر.",
       items: [
         {
           id: "faq-1",
@@ -625,7 +625,7 @@ export const translations = {
         {
           id: "faq-2",
           question: "ما هي المستندات التي ينبغي عليّ تجهيزها ؟",
-          answer: "تختلف القائمة حسب الوجهة ونوع الرحلة. في أول اتصال أو زيارة لوكالتنا، نقدم لكم توجيهاً دقيقاً ومخصصاً بحسب وضعكم."
+          answer: "تختلف القائمة حسب الوجهة ونوع الرحلة. في أول اتصال أو زيارة لمكاتبنا، نقدم لكم توجيهاً دقيقاً ومخصصاً بحسب وضعكم."
         },
         {
           id: "faq-3",
@@ -635,17 +635,17 @@ export const translations = {
         {
           id: "faq-4",
           question: "كيف يمكنني التواصل مع مستشاري Visado Service ؟",
-          answer: "يمكنكم الاتصال بنا مباشرة على الرقم 0555 77 84 60، أو عبر الواتساب على +213 555 77 84 60، أو زيارة مقرنا الكائن بـ 14، شارع حضري محمد بوهران."
+          answer: "يمكنكم الاتصال بنا مباشرة على الرقم +213 557 42 67 84 أو +213 555 77 84 60، أو عبر الواتساب على +213 557 42 67 84، أو زيارة مقرنا الكائن بـ 14، شارع حضري محمد بوهران."
         },
         {
           id: "faq-5",
-          question: "أين يقع مقر وكالتكم في وهران ؟",
-          answer: "تقع وكالتنا في موقع مركزي بوسط مدينة وهران: 14، شارع حضري محمد، وهران، الجزائر، الرمز البريدي 31000. نستقبلكم بكل ترحيب من السبت إلى الخميس (09:00 - 17:00)."
+          question: "أين تقع مكاتبكم في وهران ؟",
+          answer: "تقع مكاتبنا في موقع مركزي بوسط مدينة وهران: 14، شارع حضري محمد، وهران، الجزائر، الرمز البريدي 31000. نستقبلكم بكل ترحيب من السبت إلى الخميس (09:00 - 17:00)."
         },
         {
           id: "faq-6",
-          question: "هل تضمن Visado Service الحصول على التأشيرة ؟",
-          answer: "لا نهائياً وبكل شفافية. القرار النهائي يعود حصراً وسيادياً للسلطات القنصلية والسفارات المعنية. تتدخل وكالتنا في الاستشارة، حجز المواعيد الرسمية، مراجعة وتدقيق المستندات وحجز تذاكر الطيران بأعلى درجات المهنية."
+          question: "هل تضمن Visado Service الحصول على التأشيرة أو موعد قنصلي؟",
+          answer: "لا، بكل شفافية. المواعيد مرتبطة بتوفرها على المنصات الرسمية ولا يمكن ضمانها. في حال عدم توفرها، نوجّهكم إلى تقديم طلب خطي لدى الجهة المعنية. أما قرار منح التأشيرة، فيعود حصريًا للسلطات القنصلية."
         }
       ]
     },
@@ -669,11 +669,11 @@ export const translations = {
       messagePlaceholder: "صف باختصار مشروع سفركم أو المواعيد المرغوبة...",
       submitButton: "إرسال طلبي",
       continueWhatsApp: "المتابعة عبر الواتساب",
-      directContact: "بيانات الاتصال بالوكالة",
+      directContact: "بيانات الاتصال المباشرة",
       phoneLabel: "الهاتف المباشر",
       whatsappLabel: "الواتساب الرسمي",
       emailLabel: "البريد الإلكتروني",
-      addressLabel: "العنوان بالوكالة",
+      addressLabel: "العنوان ومقر الاستقبال",
       hoursLabel: "أوقات العمل",
       hoursValue: "السبت – الخميس : 09:00 – 17:00",
       serviceZoneLabel: "منطقة الخدمة",
@@ -683,10 +683,10 @@ export const translations = {
       formSuccessMessage: "شكراً لرسالتكم. سيقوم فريقنا بدراسة طلبكم والتواصل معكم في أقرب وقت ممكن."
     },
     footer: {
-      tagline: "وكالتكم في وهران لخدمات السفر، الاستشارات، المواعيد وحجوزات الطيران الدولية.",
+      tagline: "خدمات السفر، الاستشارات، مساعدة المواعيد وحجوزات الطيران الدولية بوهران.",
       quickLinks: "تصفح الموقع",
       contactTitle: "الاتصال بنا",
-      legalNotice: "وكالة Visado Service هي وكالة خدمات سفر ومرافقة إدارية. القرارات المتعلقة بطلبات التأشيرة تصدر حصرياً وسيادياً عن السلطات القنصلية المختصة. لا تضمن الوكالة قبول أي تأشيرة.",
+      legalNotice: "تقدم Visado Service خدمات المرافقة والمساعدة في إجراءات السفر. القرارات المتعلقة بطلبات التأشيرة تصدر حصرياً وسيادياً عن السلطات القنصلية المختصة. لا تضمن أي جهة قبول أي تأشيرة.",
       copyright: "© 2026 Visado Service. جميع الحقوق محفوظة."
     },
     whatsapp: {
@@ -697,8 +697,8 @@ export const translations = {
 
   en: {
     meta: {
-      title: "Visado Service | Travel Services, Advisory & Ticketing in Oran",
-      description: "Visado Service in Oran (14 Rue Hadri Mohamed): Official flight ticketing, Schengen & Canada appointment guidance, and personalized travel consultation."
+      title: "Visado Service | Travel Services, Advisory & Flight Bookings in Oran",
+      description: "Visado Service in Oran (14 Rue Hadri Mohamed): Flight bookings, Schengen & Canada appointment guidance, and personalized travel consultation."
     },
     nav: {
       home: "Home",
@@ -716,16 +716,16 @@ export const translations = {
     hero: {
       smallLabel: "VISADO SERVICE — ORAN",
       title: "Expertise and dedication to accompany your travels.",
-      subtitle: "A trusted physical travel agency in Oran providing flight ticketing, appointment procedures, personalized advisory, and journey guidance with complete transparency.",
+      subtitle: "Located in Oran to provide flight booking assistance, appointment procedures, personalized advisory, and journey guidance with complete transparency.",
       ctaPrimary: "Speak to an Advisor",
       ctaSecondary: "Discover Our Services",
-      scrollPrompt: "DISCOVER THE AGENCY"
+      scrollPrompt: "EXPLORE OUR SERVICES"
     },
     intro: {
       overline: "YOUR TRAVEL PARTNER",
       heading: "More than a procedure.\nA true journey endeavor.",
       paragraph1: "At Visado Service, we believe that traveling represents far more than administrative paperwork. It marks the inception of a project, a discovery, or meaningful family reunions.",
-      paragraph2: "Our team welcomes you at our physical agency in central Oran to listen, advise, and accompany every step of your journey with clarity and dedication."
+      paragraph2: "Our team welcomes you at our offices in central Oran to listen, advise, and accompany every step of your journey with clarity and dedication."
     },
     services: {
       overline: "SERVICES & GUIDANCE",
@@ -775,17 +775,17 @@ export const translations = {
           title: "Travel Advisory & Guidance",
           subtitle: "Personalized Consultation",
           description: "Tailored strategic guidance formulated around your destination, profile, and travel schedule to ensure complete clarity.",
-          highlights: ["Custom orientation", "Step-by-step clarity", "In-agency availability"],
+          highlights: ["Custom orientation", "Step-by-step clarity", "In-office consultation and guidance"],
           cta: "Get expert advice",
           targetSection: "contact"
         },
         {
           id: "billetterie",
           number: "05",
-          title: "International Flight Ticketing",
+          title: "Flight Bookings & Ticketing Assistance",
           subtitle: "Travel Anywhere Worldwide",
-          description: "Flight reservation and ticketing worldwide with exclusive partner fares (Air Algérie, Air France, and international carriers).",
-          highlights: ["Flights to all destinations worldwide", "Best partner offers Air Algérie & Air France", "Direct assistance at 0557 42 67 84"],
+          description: "Assistance with flight reservations and bookings worldwide with leading carriers (Air Algérie, Air France, and international airlines).",
+          highlights: ["Flights to all destinations worldwide", "Best partner offers Air Algérie & Air France", "Direct assistance at +213 557 42 67 84"],
           cta: "Book a flight",
           targetSection: "contact"
         }
@@ -861,7 +861,7 @@ export const translations = {
         { number: "05", title: "Procedure tracking", text: "Attentive follow-through across each administrative milestone." }
       ],
       cta: "Speak to a Canada Advisor",
-      legalNotice: "Visado Service is a travel service and administrative accompaniment agency. Final decisions on visa applications are rendered solely and sovereignly by competent consular authorities. No agency can guarantee visa issuance."
+      legalNotice: "Visado Service provides travel services and administrative accompaniment. Final decisions on visa applications are rendered solely and sovereignly by competent consular authorities. No entity can guarantee visa issuance."
     },
     approach: {
       overline: "METHODOLOGY & TRANSPARENCY",
@@ -903,11 +903,11 @@ export const translations = {
     whyUs: {
       overline: "EXCELLENCE & PROXIMITY",
       heading: "Why Visado Service?",
-      subheading: "The distinction of a dedicated travel service harmonized with an established physical agency in Oran.",
+      subheading: "The distinction of a dedicated travel service harmonized with established welcoming offices in Oran.",
       pillars: [
         {
           title: "EXPERIENCE",
-          description: "Practical and in-depth familiarity with travel logistics, appointment tracking, and ticketing."
+          description: "Practical and in-depth familiarity with travel logistics, appointment tracking, and reservations."
         },
         {
           title: "PROFESSIONALISM",
@@ -923,7 +923,7 @@ export const translations = {
         },
         {
           title: "AVAILABILITY",
-          description: "An accessible, responsive team ready via direct phone, WhatsApp, or in person."
+          description: "An accessible, responsive team ready via direct phone, WhatsApp, or in person at our offices."
         }
       ]
     },
@@ -963,7 +963,7 @@ export const translations = {
     faq: {
       overline: "FREQUENT QUESTIONS",
       heading: "Everything you need to know.",
-      subheading: "Clear and transparent answers regarding our agency and travel services.",
+      subheading: "Clear and transparent answers regarding our travel services and procedures.",
       items: [
         {
           id: "faq-1",
@@ -973,7 +973,7 @@ export const translations = {
         {
           id: "faq-2",
           question: "Which documents should I prepare?",
-          answer: "Checklists vary by destination and traveler profile. During our in-agency consultation or phone assessment, we provide clear, customized guidance on necessary items."
+          answer: "Checklists vary by destination and traveler profile. During our in-office consultation or phone assessment, we provide clear, customized guidance on necessary items."
         },
         {
           id: "faq-3",
@@ -983,17 +983,17 @@ export const translations = {
         {
           id: "faq-4",
           question: "How can I contact or visit Visado Service?",
-          answer: "You can reach us directly by phone at 0555 77 84 60, via WhatsApp at +213 555 77 84 60, or by visiting our office at 14 Rue Capitaine Hadri Mohamed in Oran."
+          answer: "You can reach us directly by phone at +213 557 42 67 84 or +213 555 77 84 60, via WhatsApp at +213 557 42 67 84, or by visiting our office at 14 Rue Capitaine Hadri Mohamed in Oran."
         },
         {
           id: "faq-5",
-          question: "Where is your agency located?",
+          question: "Where are your offices located in Oran?",
           answer: "Our office is centrally located in Oran at 14 Rue Capitaine Hadri Mohamed, Oran, Algeria, 31000. We welcome visitors Saturday through Thursday from 09:00 to 17:00."
         },
         {
           id: "faq-6",
-          question: "Does Visado Service guarantee the granting of a visa?",
-          answer: "No, formally and transparently. Final visa determination belongs solely and sovereignly to consular authorities. Our agency provides advisory, document verification, appointment assistance, and ticketing with the highest standard of professionalism."
+          question: "Does Visado Service guarantee obtaining a visa or a consular appointment?",
+          answer: "No, in full transparency. Appointments depend on availability on official platforms and cannot be guaranteed. If unavailable, we guide you to submit a written request to the relevant authority. As for the visa granting decision, it belongs exclusively to consular authorities."
         }
       ]
     },
@@ -1017,11 +1017,11 @@ export const translations = {
       messagePlaceholder: "Briefly outline your travel intent or target dates...",
       submitButton: "Send My Request",
       continueWhatsApp: "Continue on WhatsApp",
-      directContact: "Agency Coordinates",
+      directContact: "Direct Coordinates",
       phoneLabel: "Direct Phone",
       whatsappLabel: "Official WhatsApp",
       emailLabel: "Electronic Mail",
-      addressLabel: "Physical Office",
+      addressLabel: "Office Address",
       hoursLabel: "Opening Hours",
       hoursValue: "Saturday – Thursday: 09:00 – 17:00",
       serviceZoneLabel: "Service Zone",
@@ -1031,10 +1031,10 @@ export const translations = {
       formSuccessMessage: "Thank you for reaching out. Our team will review your inquiry and contact you shortly."
     },
     footer: {
-      tagline: "Your travel agency in Oran for flight ticketing, advisory, and dedicated journey accompaniment.",
+      tagline: "Travel services, flight reservations, and dedicated journey accompaniment in Oran.",
       quickLinks: "Navigation",
       contactTitle: "Contact Us",
-      legalNotice: "Visado Service is a travel service and administrative accompaniment agency. Final decisions on visa applications are rendered solely by competent government authorities. No agency can guarantee visa issuance.",
+      legalNotice: "Visado Service is a provider of travel services and administrative accompaniment. Final decisions on visa applications are rendered solely by competent government authorities. No provider can guarantee visa issuance.",
       copyright: "© 2026 Visado Service. All rights reserved."
     },
     whatsapp: {

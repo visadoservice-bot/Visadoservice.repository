@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({
                   <span className="block font-normal text-slate-600 text-2xl sm:text-3xl lg:text-[34px] mb-1 font-serif italic">
                     Expertise et sérénité pour votre voyage.
                   </span>
-                  <span className="text-[#002A79]">Agence de voyage</span>, conseils et billetterie à Oran.
+                  <span className="text-[#002A79]">Services de voyage</span>, assistance aux démarches et réservations à Oran.
                 </>
               )}
             </h1>
@@ -75,10 +75,10 @@ export const Hero: React.FC<HeroProps> = ({
             {/* 3. Sous-titre court et rassurant */}
             <p className="animate-hero-fade-delayed text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mb-6 sm:mb-8">
               {currentLang === 'ar'
-                ? 'نضع خبرتنا في خدمتكم لمرافقتكم وتوجيهكم في مختلف خدمات وإجراءات السفر، من حجز التذاكر والاستشارات إلى المتابعة الدقيقة لرحلتكم بكل شفافية واحترافية.'
+                ? 'نضع خبرتنا في خدمتكم لمرافقتكم وتوجيهكم في مختلف خدمات وإجراءات السفر، والاستشارات والمتابعة الدقيقة بكل شفافية واحترافية.'
                 : currentLang === 'en'
-                ? 'Visado Service welcomes you at its physical office in central Oran for travel consultation, flight ticketing, official appointments, and personalized journey accompaniment.'
-                : 'Visado Service vous accueille dans son agence physique à Oran pour vous orienter, préparer vos démarches de voyage, réserver vos billets et assurer un suivi personnalisé en toute transparence.'}
+                ? 'Visado Service welcomes you at 14 Rue Hadri Mohamed in Oran for travel guidance, official appointments support, and personalized journey assistance.'
+                : 'Visado Service vous accueille au 14, Rue Hadri Mohamed à Oran pour vous orienter, préparer vos démarches de voyage, vous assister dans vos réservations et assurer un suivi personnalisé en toute transparence.'}
             </p>
 
             {/* 4. Action Buttons (CTA Principal + CTA Secondaire + Appel direct) */}
@@ -117,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="animate-hero-fade-late flex flex-wrap items-center gap-y-2 gap-x-3 text-xs text-slate-500 pt-1">
               <span className="flex items-center gap-1.5 font-medium text-slate-700">
                 <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                <span>{currentLang === 'ar' ? 'وكالة ذات مقر حقيقي بوهران' : 'Agence physique à Oran'}</span>
+                <span>14, Rue Hadri Mohamed, Oran</span>
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>
               <span className="flex items-center gap-1.5 font-medium text-slate-700">
@@ -127,7 +127,7 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="text-slate-300" aria-hidden="true">·</span>
               <span className="flex items-center gap-1.5 font-medium text-slate-700">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#002A79] shrink-0" />
-                <span>{currentLang === 'ar' ? 'حجوزات طيران وتذاكر معتمدة' : 'Billetterie & réservations'}</span>
+                <span>{currentLang === 'ar' ? 'مساعدة في حجوزات السفر' : 'Assistance aux réservations'}</span>
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>
               <span className="text-emerald-700 font-semibold">

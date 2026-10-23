@@ -78,7 +78,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     if (!formData.fullName.trim() || !formData.phone.trim()) {
       return;
     }
-    // 1. Dispatch email notification automatically to visado273@gmail.com and visadoservice@gmail.com
+    // Dispatch email notification to official email
     sendLeadNotification({
       fullName: formData.fullName,
       phone: formData.phone,
@@ -91,30 +91,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     });
 
     setIsSubmitted(true);
-    // 2. Open WhatsApp directly with prefilled message
+    // Open WhatsApp directly with prefilled message
     if (typeof window !== 'undefined') {
       window.open(customWhatsAppUrl, '_blank');
     }
-  };
-
-  const handleStandardSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.fullName.trim() || !formData.phone.trim()) {
-      return;
-    }
-    // Dispatch email notification to visado273@gmail.com and visadoservice@gmail.com
-    sendLeadNotification({
-      fullName: formData.fullName,
-      phone: formData.phone,
-      email: formData.email,
-      destination: formData.destination,
-      profile: formData.profile,
-      visaType: formData.visaType,
-      message: formData.message,
-      source: 'Formulaire devis & contact (Sans WhatsApp)'
-    });
-
-    setIsSubmitted(true);
   };
 
   return (
@@ -125,15 +105,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-100/60 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
-              {currentLang === 'ar' ? 'تواصل مع الوكالة' : 'Échanger avec nos conseillers'}
+              {currentLang === 'ar' ? 'تواصل معنا' : 'Échanger avec nos conseillers'}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              {currentLang === 'ar' ? 'تحدث مع مستشار أو تفضل بزيارة وكالتنا' : 'Parler à un conseiller ou visiter notre agence'}
+              {currentLang === 'ar' ? 'تحدث مع مستشار أو تفضل بزيارة مكاتبنا' : 'Parler à un conseiller ou nous rendre visite'}
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'فريقنا متاح لتوجيهكم، الإجابة على كافة استفساراتكم واستقبالكم في مقرنا بوهران.'
-                : 'Notre équipe est à votre écoute pour vous conseiller, vous orienter et vous accueillir dans notre agence à Oran.'}
+                ? 'فريقنا متاح لتوجيهكم، الإجابة على كافة استفساراتكم واستقبالكم في مكاتبنا بوهران.'
+                : 'Notre équipe est à votre écoute pour vous conseiller, vous orienter et vous accueillir dans nos bureaux à Oran.'}
             </p>
           </div>
         </Reveal>
@@ -147,7 +127,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
             {/* Contact Details Card */}
             <div className="bg-slate-50/70 rounded-2xl border border-slate-200/80 p-5 sm:p-7 space-y-5 shadow-xs">
               <h3 className="text-base sm:text-lg font-bold text-slate-900 pb-3 border-b border-slate-200/80">
-                {currentLang === 'ar' ? 'معلومات الاتصال المباشرة' : 'Coordonnées de l\'agence'}
+                {currentLang === 'ar' ? 'معلومات الاتصال المباشرة' : 'Coordonnées directes'}
               </h3>
 
               <div className="space-y-4 text-xs sm:text-sm">
@@ -159,7 +139,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 font-medium block">
-                      {currentLang === 'ar' ? 'الهاتف المباشر & التذاكر' : 'Téléphone & Billetterie'}
+                      {currentLang === 'ar' ? 'الهاتف المباشر & الحجوزات' : 'Téléphone & Réservations'}
                     </span>
                     <a
                       href={`tel:${siteConfig.phoneRaw}`}
@@ -214,14 +194,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     >
                       {siteConfig.email}
                     </a>
-                    {siteConfig.emailSecondary && (
-                      <a
-                        href={`mailto:${siteConfig.emailSecondary}`}
-                        className="text-xs text-slate-600 hover:text-blue-600 break-all block mt-0.5"
-                      >
-                        {siteConfig.emailSecondary}
-                      </a>
-                    )}
                   </div>
                 </div>
 
@@ -348,7 +320,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     <p className="text-xs sm:text-sm text-slate-600 mt-1">
                       {currentLang === 'ar'
                         ? 'اختر وجهتك وصفتك، ثم أرسل بياناتك للتواصل المباشر مع مستشارينا في وهران.'
-                        : 'Précisez votre projet et vos coordonnées pour échanger rapidement avec un conseiller de notre agence.'}
+                        : 'Précisez votre projet et vos coordonnées pour échanger rapidement avec un conseiller.'}
                     </p>
                   </div>
 
@@ -464,21 +436,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                       <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
                     </button>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1">
-                      <button
-                        type="button"
-                        onClick={handleStandardSubmit}
-                        className="text-xs text-slate-600 hover:text-blue-700 underline font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm"
-                      >
-                        {currentLang === 'ar' ? 'أو إرسال الطلب عبر الموقع مباشرة' : 'Ou valider par formulaire web sans WhatsApp'}
-                      </button>
-
+                    <div className="flex items-center justify-center pt-1.5">
                       <a
                         href={`tel:${siteConfig.phoneRaw}`}
-                        className="text-xs text-blue-700 hover:text-blue-900 font-semibold inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm"
+                        className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold inline-flex items-center justify-center gap-2 border border-slate-200 transition-all active:scale-[0.98]"
                       >
-                        <Phone className="w-3 h-3" aria-hidden="true" />
-                        <span>{currentLang === 'ar' ? `اتصال مباشر : ${siteConfig.phone}` : `Appel direct : ${siteConfig.phone}`}</span>
+                        <Phone className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
+                        <span dir="ltr">{siteConfig.phone}</span>
+                        <span className="text-[11px] text-slate-500 font-medium">({currentLang === 'ar' ? 'اتصال مباشر' : 'Appel direct'})</span>
                       </a>
                     </div>
                   </div>
@@ -500,12 +465,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   </div>
                   <div>
                     <h4 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                      {currentLang === 'ar' ? 'تم تسجيل وإرسال طلبكم بنجاح !' : 'Demande transmise avec succès !'}
+                      {currentLang === 'ar' ? 'تم تجهيز طلبكم بنجاح !' : 'Demande prête à être transmise !'}
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
                       {currentLang === 'ar'
-                        ? 'تم إرسال بياناتكم إلى البريد الإلكتروني لمستشاري الوكالة وتجهيزها لمحادثة واتساب الفورية.'
-                        : 'Votre dossier a été transmis par e-mail à nos conseillers. Vous pouvez également engager la discussion directe sur WhatsApp pour une prise en charge immédiate :'}
+                        ? 'تفضلوا ببدء المحادثة المباشرة عبر واتساب أو الاتصال بنا هاتفياً لمتابعة طلبكم فوراً :'
+                        : 'Vous pouvez échanger directement sur WhatsApp ou nous contacter par téléphone pour un traitement immédiat :'}
                     </p>
                   </div>
 
@@ -533,7 +498,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   {/* Reassurance channels box */}
                   <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 max-w-md mx-auto text-xs text-start space-y-2">
                     <div className="font-bold text-slate-900 pb-1.5 border-b border-slate-200">
-                      {currentLang === 'ar' ? 'معلومات الوكالة الرسمية :' : 'Coordonnées officielles Visado Service :'}
+                      {currentLang === 'ar' ? 'بيانات التواصل الرسمية :' : 'Coordonnées directes Visado Service :'}
                     </div>
                     <div className="flex items-center justify-between text-slate-700">
                       <span>📱 WhatsApp :</span>

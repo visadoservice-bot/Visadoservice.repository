@@ -17,9 +17,8 @@ export interface LeadSubmissionResult {
 }
 
 /**
- * Sends lead information simultaneously to:
+ * Sends lead information directly to:
  * 1. visado273@gmail.com
- * 2. visadoservice@gmail.com (via CC)
  * And records the lead locally for offline resilience.
  */
 export async function sendLeadNotification(payload: LeadSubmissionPayload): Promise<LeadSubmissionResult> {
@@ -44,17 +43,15 @@ export async function sendLeadNotification(payload: LeadSubmissionPayload): Prom
     console.warn('Local lead backup error:', err);
   }
 
-  // 2. Dispatch email notification to both inboxes via FormSubmit AJAX API
+  // 2. Dispatch email notification to official inbox via FormSubmit AJAX API
   try {
     const primaryEmail = siteConfig.email; // visado273@gmail.com
-    const secondaryEmail = siteConfig.emailSecondary || 'visadoservice@gmail.com'; // visadoservice@gmail.com
 
     const emailFormData = {
       _subject: `[Nouvelle Demande] ${payload.fullName.trim() || 'Client'} — ${payload.destination}`,
-      _cc: secondaryEmail,
       _template: 'table',
       _captcha: 'false',
-      _replyto: payload.email?.trim() || secondaryEmail,
+      _replyto: payload.email?.trim() || primaryEmail,
       'Nom_et_Prenom': payload.fullName.trim() || 'Non précisé',
       'Telephone_WhatsApp': payload.phone.trim() || 'Non renseigné',
       'Destination_Demandee': payload.destination || 'Non spécifiée',

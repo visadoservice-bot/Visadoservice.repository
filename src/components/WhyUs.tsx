@@ -78,12 +78,12 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
       icon: CheckCheck,
       color: "text-[#1E8E3E]",
       bg: "bg-[#E6F4EA]",
-      title: currentLang === 'ar' ? 'الوضوح وراحة البال' : currentLang === 'en' ? 'Simplicity & Peace of Mind' : 'Simplicité & Zéro Stress',
+      title: currentLang === 'ar' ? 'الوضوح وراحة البال' : currentLang === 'en' ? 'Simplicity & Peace of Mind' : 'Simplicité & Sérénité',
       desc: currentLang === 'ar'
-        ? 'نساعدكم في تبسيط الإجراءات من الاستشارة وتأمين السفر إلى حجز تذاكر الطيران بكل هدوء.'
+        ? 'نساعدكم في تيسير إجراءاتكم من الاستشارة والتوجيه إلى المساعدة في حجوزات السفر بكل هدوء.'
         : currentLang === 'en'
-        ? 'We assist you in organizing your journey, verified bookings, and travel insurance for a smooth process.'
-        : 'Nous vous assistons dans l\'organisation de votre séjour : orientation, réservations officielles et assurances valides.'
+        ? 'We assist you in organizing your journey, verified bookings, and travel orientation for a smooth process.'
+        : 'Nous vous assistons dans l\'organisation de votre séjour : orientation, assistance aux réservations et démarches sereines.'
     },
     {
       icon: Headphones,
@@ -91,10 +91,10 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
       bg: "bg-[#F3E8FD]",
       title: currentLang === 'ar' ? 'متابعة ودعم مستمر' : currentLang === 'en' ? 'Dedicated Customer Support' : 'Support Client & Conseil Dédié',
       desc: currentLang === 'ar'
-        ? 'مستشار خاص يجيب على أسئلتكم عبر الهاتف، واتساب، أو مباشرة في مقرنا بوهران.'
+        ? 'مستشار خاص يجيب على أسئلتكم عبر الهاتف، واتساب، أو مباشرة في مكاتبنا بوهران.'
         : currentLang === 'en'
-        ? 'A dedicated visa advisor available by phone, WhatsApp, or directly at our physical office in Oran.'
-        : 'Un conseiller à votre écoute par téléphone, WhatsApp ou directement au sein de notre agence à Oran.'
+        ? 'A dedicated advisor available by phone, WhatsApp, or directly at our office in Oran.'
+        : 'Un conseiller à votre écoute par téléphone, WhatsApp ou directement au sein de nos bureaux à Oran.'
     },
     {
       icon: CircleDollarSign,
@@ -124,11 +124,11 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
                 ? 'خبرة واحترافية لمرافقتكم في عالم السفر'
                 : currentLang === 'en'
                 ? 'Expertise and dedication for your travel aspirations'
-                : 'Une agence à votre écoute pour organiser votre voyage'}
+                : 'Une équipe à votre écoute pour organiser votre voyage'}
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'نرافقكم خطوة بخطوة بكل شفافية، من الاستشارة وحجز التذاكر إلى المتابعة الدقيقة.'
+                ? 'نرافقكم خطوة بخطوة بكل شفافية، من الاستشارة والمساعدة في الحجوزات إلى المتابعة الدقيقة.'
                 : 'Découvrez les engagements de confiance et de proximité qui font l\'identité de Visado Service à Oran.'}
             </p>
           </div>
@@ -174,7 +174,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
               <div className="md:col-span-7 space-y-3 sm:space-y-4">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/60 px-3 py-1 rounded-full">
                   <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>{currentLang === 'ar' ? 'وكالة معتمدة ومسجلة بوهران' : 'Établissement physique vérifié à Oran'}</span>
+                  <span>{currentLang === 'ar' ? 'مقرنا الرسمي في وهران' : 'Nos bureaux situés à Oran'}</span>
                 </div>
                 <h3 className="text-lg sm:text-2xl font-bold text-slate-900 leading-snug">
                   {currentLang === 'ar' ? 'مقرنا في قلب مدينة وهران في خدمتكم' : 'Visitez nos locaux au 14 Rue Capitaine Hadri à Oran'}
@@ -186,7 +186,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
                 </p>
                 <div className="pt-1 flex flex-wrap gap-2 sm:gap-3 text-xs font-semibold text-slate-600">
                   <span className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs" dir="ltr">📍 14, Rue Capitaine Hadri Mohamed, Oran</span>
-                  <span className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs" dir="ltr">📞 {siteConfig.phone}</span>
+                  <a href={`tel:${siteConfig.phoneRaw}`} className="flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs text-blue-700 hover:underline font-bold" dir="ltr">📞 {siteConfig.phone}</a>
                   <span className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs">✉️ {siteConfig.email}</span>
                 </div>
 

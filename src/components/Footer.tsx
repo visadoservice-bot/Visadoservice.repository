@@ -6,9 +6,10 @@ import { Language } from '../types';
 
 interface FooterProps {
   currentLang: Language;
+  onOpenLegalModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
+export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal }) => {
   const navLinks = [
     { label: currentLang === 'ar' ? 'الرئيسية' : 'Accueil', href: "#hero" },
     { label: currentLang === 'ar' ? 'الخدمات' : 'Nos Services', href: "#services" },
@@ -34,8 +35,8 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
             <Logo variant="footer" />
             <p className="text-xs text-[#8DA6C6] leading-relaxed">
               {currentLang === 'ar'
-                ? 'وكالة خدمات سفر ومرافقة شخصية للمسافرين، حجز تذاكر الطيران وتوجيه دقيق لمشاريع السفر بوهران.'
-                : 'Agence de services liés au voyage : billetterie aérienne, réservations, conseils personnalisés et accompagnement à Oran.'}
+                ? 'خدمات ومرافقة شخصية للمسافرين، مساعدة في حجز تذاكر الطيران وتوجيه دقيق لمشاريع السفر بوهران.'
+                : 'Prestations de services liés au voyage : réservations de vols & hôtels, conseils personnalisés et accompagnement à Oran.'}
             </p>
             <a
               href={siteConfig.googleMapsShareUrl}
@@ -121,16 +122,6 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
                 <span>{siteConfig.email}</span>
               </a>
 
-              {siteConfig.emailSecondary && (
-                <a
-                  href={`mailto:${siteConfig.emailSecondary}`}
-                  className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#00A3E0] transition-colors break-all"
-                >
-                  <Mail className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
-                  <span>{siteConfig.emailSecondary}</span>
-                </a>
-              )}
-
               <a
                 href={siteConfig.googleMapsShareUrl}
                 target="_blank"
@@ -183,15 +174,29 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#7A93B0] gap-3">
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-[#7A93B0] gap-3">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
             <span>© {new Date().getFullYear()} Visado Service Oran. Tous droits réservés.</span>
           </div>
-          <div className="text-center sm:text-right text-[#7A93B0]">
+
+          {/* Legal Notice & Privacy Policy button */}
+          {onOpenLegalModal && (
+            <button
+              type="button"
+              onClick={onOpenLegalModal}
+              className="text-slate-300 hover:text-[#00A3E0] underline-offset-4 hover:underline transition-colors font-semibold cursor-pointer py-1 px-2 rounded-md hover:bg-white/5"
+            >
+              {currentLang === 'ar' 
+                ? 'شروط الموقع والخصوصية' 
+                : 'Conditions du site & Confidentialité'}
+            </button>
+          )}
+
+          <div className="text-center md:text-right text-[#7A93B0]">
             {currentLang === 'ar' 
-              ? 'وكالة خدمات سفر، مرافقة وتوجيه للمسافرين وحجز تذاكر الطيران بوهران.'
-              : 'Agence de services liés au voyage, orientation et billetterie à Oran.'}
+              ? 'خدمات ومرافقة مشاريع السفر والإجراءات المرتبطة به بوهران.'
+              : 'Services et accompagnement pour vos projets de voyage et démarches associées à Oran.'}
           </div>
         </div>
 

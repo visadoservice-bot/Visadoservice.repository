@@ -54,7 +54,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
 
-    // Send lead notification to visado273@gmail.com and visadoservice@gmail.com
+    // Send lead notification to official email
     sendLeadNotification({
       fullName: name,
       phone: phone,
@@ -92,7 +92,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               className="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-lg bg-white border border-slate-200 p-0.5"
             />
             <h2 id="consultation-modal-title" className="font-bold text-xs sm:text-sm text-slate-900 truncate">
-              {currentLang === 'ar' ? 'تحدث مع مستشار الوكالة' : 'Parler à un conseiller'}
+              {currentLang === 'ar' ? 'تحدث مع مستشار معتمد' : 'Parler à un conseiller'}
             </h2>
           </div>
           <button

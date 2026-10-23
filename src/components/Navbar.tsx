@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       label: isArabic ? 'الرئيسية' : 'Accueil', 
       href: "#hero",
       icon: Sparkles,
-      badge: isArabic ? 'الوكالة' : 'Visado',
+      badge: isArabic ? 'الرئيسية' : 'Visado',
     },
     { 
       id: 'services',
@@ -100,10 +100,10 @@ export const Navbar: React.FC<NavbarProps> = ({
     },
     { 
       id: 'trust',
-      label: isArabic ? 'الضمانات والاعتماد' : 'Confiance & Agence', 
+      label: isArabic ? 'الضمانات والشفافية' : 'Confiance & Garanties', 
       href: "#trust",
       icon: ShieldCheck,
-      badge: isArabic ? 'معتمدة' : 'Agrée',
+      badge: isArabic ? 'موثوق' : 'Sécurisé',
     },
     { 
       id: 'media-gallery',
@@ -158,8 +158,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               <span className="font-semibold text-slate-800 truncate">
                 {isArabic 
-                  ? 'مقرنا مفتوح بوهران • 14، شارع حضري محمد' 
-                  : 'Agence ouverte à Oran • 14, Rue Hadri Mohamed'}
+                  ? 'مكاتبنا مفتوحة بوهران • 14، شارع حضري محمد' 
+                  : 'Bureaux ouverts à Oran • 14, Rue Hadri Mohamed'}
               </span>
               <a
                 href={siteConfig.googleMapsShareUrl}
@@ -470,7 +470,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-bold shadow-md shadow-blue-600/25 active:scale-98 transition-all cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4 text-amber-300 fill-current" />
-                  <span>{isArabic ? 'تحدث مع مستشار الوكالة' : 'Parler à un conseiller'}</span>
+                  <span>{isArabic ? 'تحدث مع مستشار معتمد' : 'Parler à un conseiller'}</span>
                 </button>
               </div>
 
@@ -479,7 +479,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Micro Footer Badge inside Drawer */}
             <div className="py-2.5 px-4 bg-slate-100/80 border-t border-slate-200/80 text-center text-[11px] text-slate-500 font-medium shrink-0 flex items-center justify-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>{isArabic ? 'وكالة معتمدة ومسجلة بوهران' : 'Agence agréée & enregistrée à Oran'}</span>
+              <span>{isArabic ? 'مقر رسمي وخدمات موثوقة بوهران' : 'Établissement officiel & déclaré à Oran'}</span>
             </div>
 
           </div>

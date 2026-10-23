@@ -40,13 +40,13 @@ export const Services: React.FC<ServicesProps> = ({
       title: currentLang === 'ar' ? 'تأشيرات كندا والدول الدولية' : currentLang === 'en' ? 'Canada & Global Visas' : 'Visa Canada & International',
       subtitle: currentLang === 'ar' ? 'تأشيرة زائر، دراسة، وسياحة' : currentLang === 'en' ? 'Visitor, Study & Tourism Visas' : 'Visiteur, Tourisme & Études',
       description: currentLang === 'ar'
-        ? 'إعداد الحساب الإلكتروني الرسمي لكندا، صياغة رسائل الشرح المتقنة، وترتيب الوثائق المالية والمهنية.'
+        ? 'المساعدة في فتح الحساب الرسمي لكندا، صياغة رسائل الشرح المتقنة، وترتيب الوثائق والملف الداعم.'
         : currentLang === 'en'
-        ? 'Official online portal submissions, customized purpose-of-travel explanation letters, and financial backing organization.'
-        : 'Création et téléversement sur le portail officiel canadien, rédaction soignée des lettres explicatives et structuration des garanties financières.',
+        ? 'Assistance with official IRCC online portal procedures, explanatory letters, and supporting document preparation.'
+        : 'Assistance aux démarches sur le portail officiel canadien, rédaction des lettres explicatives et structuration des justificatifs requis.',
       features: currentLang === 'ar'
         ? ['تعبئة الاستمارات الرسمية', 'رسائل دافع متقنة', 'تنسيق البصمات والمتابعة']
-        : ['Formulaires en ligne IRCC', 'Lettres explicatives solides', 'Suivi étape par étape']
+        : ['Formulaires en ligne IRCC', 'Lettres explicatives soignées', 'Suivi étape par étape']
     },
     {
       id: "dossier",
@@ -89,16 +89,16 @@ export const Services: React.FC<ServicesProps> = ({
       icon: Plane,
       iconColor: "text-[#F9AB00]",
       iconBg: "bg-[#FEF7E0]",
-      title: currentLang === 'ar' ? 'حجز التذاكر والفنادق' : currentLang === 'en' ? 'Flight & Hotel Ticketing' : 'Billetterie & Réservations',
+      title: currentLang === 'ar' ? 'المساعدة في حجوزات الطيران والفنادق' : currentLang === 'en' ? 'Flight & Hotel Booking Assistance' : 'Assistance Réservations de Vols & Hôtels',
       subtitle: currentLang === 'ar' ? 'الخطوط الجوية الجزائرية والشركات العالمية' : currentLang === 'en' ? 'Air Algérie, Air France & Global Airlines' : 'Air Algérie, Air France & Vols Mondiaux',
       description: currentLang === 'ar'
-        ? 'إصدار تذاكر الطيران الرسمية وحجوزات الفنادق المؤكدة الصالحة للتقديم في ملفات التأشيرات والسفر.'
+        ? 'المساعدة في البحث واختيار تذاكر الطيران وحجوزات الفنادق المؤكدة عبر المنصات المعتمدة.'
         : currentLang === 'en'
-        ? 'Official confirmed flight bookings and certified hotel reservations tailored for consular application compliance.'
-        : 'Émission de billets d\'avion et de réservations hôtelières confirmées conformes aux exigences des ambassades et consulats.',
+        ? 'Assistance with flight selection and confirmed hotel reservations via authorized platforms.'
+        : 'Assistance à la recherche et à la réservation de billets d\'avion et d\'hébergements via les plateformes concernées.',
       features: currentLang === 'ar'
-        ? ['تذاكر طيران مؤكدة', 'حجوزات فندقية موثوقة', 'أفضل الأسعار والخيارات']
-        : ['Billets d\'avion certifiés', 'Réservations d\'hôtel valides', 'Tarifs compétitifs']
+        ? ['خيارات رحلات مدروسة', 'حجوزات فندقية موثوقة', 'أفضل الأسعار والمسارات']
+        : ['Recherche d\'itinéraires optimisés', 'Réservations d\'hôtel conformes', 'Tarifs compétitifs']
     }
   ];
 
@@ -121,8 +121,8 @@ export const Services: React.FC<ServicesProps> = ({
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'نرافقكم في رحلتكم بخبرة واحترافية : استشارات، تذاكر طيران، ومتابعة دقيقة لمختلف الإجراءات.'
-                : 'Accompagnement, billetterie d\'avion et suivi personnalisé par votre agence à Oran.'}
+                ? 'نرافقكم في رحلتكم بخبرة واحترافية : استشارات، مساعدة في الحجوزات، ومتابعة دقيقة لمختلف الإجراءات.'
+                : 'Accompagnement, assistance aux réservations et suivi personnalisé à Oran.'}
             </p>
           </div>
         </Reveal>

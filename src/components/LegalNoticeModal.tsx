@@ -1,0 +1,267 @@
+import React, { useEffect } from 'react';
+import { X, ShieldCheck, Lock, CheckCircle2, Building2, Phone, Mail, MapPin, MessageCircle, FileText } from 'lucide-react';
+import { Language } from '../types';
+import { siteConfig } from '../data/config';
+
+interface LegalNoticeModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  currentLang: Language;
+}
+
+export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
+  isOpen,
+  onClose,
+  currentLang
+}) => {
+  const isArabic = currentLang === 'ar';
+
+  // Close on Escape key & block background scroll
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') onClose();
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="legal-modal-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 select-none animate-fadeIn"
+    >
+      {/* Backdrop overlay */}
+      <div
+        className="fixed inset-0 bg-slate-950/75 backdrop-blur-sm transition-opacity"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Modal Dialog Card */}
+      <div className="relative z-10 w-full max-w-2xl max-h-[90vh] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden text-slate-800 select-text">
+        
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 sm:px-7 py-4 border-b border-slate-100 bg-slate-50/80 shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0">
+              <ShieldCheck className="w-5 h-5 stroke-[2.2]" />
+            </div>
+            <div>
+              <h2 id="legal-modal-title" className="text-base sm:text-lg font-bold text-slate-900">
+                {isArabic ? 'شروط الموقع والخصوصية' : 'Conditions du site & Confidentialité'}
+              </h2>
+              <p className="text-xs text-slate-500">
+                {isArabic ? 'Visado Service — وهران، الجزائر' : 'Visado Service — Oran, Algérie'}
+              </p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={onClose}
+            className="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-600 hover:text-slate-900 border border-slate-200 flex items-center justify-center transition-all cursor-pointer active:scale-90 shrink-0"
+            aria-label={isArabic ? 'إغلاق' : 'Fermer'}
+          >
+            <X className="w-5 h-5 stroke-[2.2]" aria-hidden="true" />
+          </button>
+        </div>
+
+        {/* Modal Scrollable Body */}
+        <div className="overflow-y-auto px-5 sm:px-7 py-5 space-y-5 text-xs sm:text-sm leading-relaxed text-slate-700">
+          
+          {isArabic ? (
+            /* ================= ARABIC VERSION ================= */
+            <div className="space-y-4">
+              
+              {/* 1. Site et WhatsApp (Ouverture rassurante en premier) */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <MessageCircle className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
+                  <h3>استخدام الموقع والتواصل الأولي</h3>
+                </div>
+                <p className="text-slate-700">
+                  تصفح هذا الموقع حر تماماً وبدون أي التزام، ولا يتطلب أي تسجيل أو إنشاء حساب.
+                </p>
+                <p className="text-slate-700">
+                  عبر الموقع أو عبر تطبيق واتساب، <strong>لا نحتفظ بأي معلومات تفصيلية عنكم</strong>. عند التواصل الأولي، فإن المعلومات الوحيدة التي قد تظهر لنا تقتصر فقط على <strong>رقم الهاتف، الاسم واللقب (أو الاسم المستعار على واتساب)</strong>.
+                </p>
+              </div>
+
+              {/* 2. Traitement direct au bureau */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>معالجة الملفات والوثائق تتم حصرياً بمقرنا</h3>
+                </div>
+                <p className="text-slate-700">
+                  يهدف الموقع فقط لتقديم خدماتنا وتسهيل الاتصال الأولي. أما دراسة الملف، وتسليم المستندات، والإجراءات الفعلية، فتتم <strong>مباشرة داخل مكاتبنا بوهران</strong> وبشكل حضوري مع الزبون في سرية وأمان تامين.
+                </p>
+              </div>
+
+              {/* 3. Confidentialité et Non-vente */}
+              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
+                <div className="flex items-center gap-2 text-emerald-950 font-bold text-sm">
+                  <Lock className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
+                  <h3>الخصوصية وحماية بيانات الاتصال</h3>
+                </div>
+                <p className="text-slate-700">
+                  المعلومات التي تختارون تقديمها طواعية عند الاتصال بنا تُستخدم فقط من أجل :
+                </p>
+                <ul className="list-disc ps-5 space-y-1 text-slate-700">
+                  <li>أخذ موعد والتواصل المباشر معكم ؛</li>
+                  <li>الإجابة على استفساراتكم وتوجيهكم ؛</li>
+                  <li>متابعة التواصل المهني بخصوص طلبكم.</li>
+                </ul>
+                <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>لا يتم إطلاقاً بيع أو تأجير معلوماتكم لأي جهة أو لأغراض إعلانية وتجارية.</span>
+                </p>
+              </div>
+
+              {/* 4. Statut & Identification (Placé en bas, intégré avec subtilité et professionnalisme) */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 text-slate-700">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <Building2 className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>البيانات القانونية وطبيعة النشاط</h3>
+                </div>
+                <p className="leading-relaxed">
+                  تنشط <strong>Visado Service</strong> في تقديم خدمات الاستشارة، المساعدة والمرافقة في الإجراءات والترتيبات المرتبطة بالسفر والخدمات الإدارية والرقمية المتعلقة به.
+                </p>
+                <p className="text-xs text-slate-500 pt-1">
+                  <strong>تذكير :</strong> قرار منح أو رفض التأشيرات يعود حصرياً وسيادياً للسلطات القنصلية والسفارات المعنية.
+                </p>
+              </div>
+
+              {/* Coordonnées officielles */}
+              <div className="pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1">
+                <p className="font-bold text-slate-900">Visado Service — خدمات ومرافقة السفر</p>
+                <p className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                  <span>14، شارع القبطان حضري محمد، وهران 31000، الجزائر</span>
+                </p>
+                <div className="flex items-center gap-1.5" dir="ltr">
+                  <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span className="flex items-center gap-1">
+                    <a href="tel:+213557426784" className="text-blue-600 hover:underline font-semibold">+213 557 42 67 84</a>
+                    <span>/</span>
+                    <a href="tel:+213555778460" className="text-blue-600 hover:underline font-semibold">+213 555 77 84 60</a>
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          ) : (
+            /* ================= FRENCH VERSION ================= */
+            <div className="space-y-4">
+              
+              {/* 1. Site et WhatsApp (Ouverture rassurante en premier) */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <MessageCircle className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
+                  <h3>Utilisation du site & Premier contact</h3>
+                </div>
+                <p className="text-slate-700">
+                  La consultation de ce site est entièrement libre, sans engagement et ne nécessite aucune création de compte.
+                </p>
+                <p className="text-slate-700">
+                  Sur le site internet ou via WhatsApp, <strong>nous ne retenons aucune information détaillée sur vous</strong>. Lors d’un premier échange, les seules informations pouvant être visibles sont votre <strong>numéro de téléphone, nom et prénom (ou pseudo WhatsApp)</strong>.
+                </p>
+              </div>
+
+              {/* 2. Traitement direct au bureau */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>Traitement du dossier directement à notre bureau</h3>
+                </div>
+                <p className="text-slate-700">
+                  Le site a pour seul objectif de présenter nos services et de faciliter la prise de contact. L’ensemble des démarches, l’analyse des dossiers et la remise des documents nécessaires se font <strong>exclusivement sur place, directement à notre bureau à Oran</strong>, avec le client.
+                </p>
+              </div>
+
+              {/* 3. Confidentialité et Non-vente */}
+              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
+                <div className="flex items-center gap-2 text-emerald-950 font-bold text-sm">
+                  <Lock className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
+                  <h3>Confidentialité & Protection de vos coordonnées</h3>
+                </div>
+                <p className="text-slate-700">
+                  Les informations que vous choisissez de communiquer volontairement servent uniquement à :
+                </p>
+                <ul className="list-disc ps-5 space-y-1 text-slate-700">
+                  <li>Prendre contact avec vous ;</li>
+                  <li>Répondre à votre demande d’information ;</li>
+                  <li>Assurer le suivi de notre échange.</li>
+                </ul>
+                <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Vos coordonnées ne sont <strong>ni vendues, ni louées</strong> à des fins publicitaires ou commerciales.</span>
+                </p>
+              </div>
+
+              {/* 4. Statut & Identification (Placé en bas, intégré avec subtilité et professionnalisme) */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 text-slate-700">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <Building2 className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>Identification légale & Cadre d'exercice</h3>
+                </div>
+                <p className="leading-relaxed">
+                  <strong>Visado Service</strong> intervient dans les prestations de conseil, d'assistance et d'accompagnement aux démarches liées au voyage, aux réservations et aux formalités administratives et numériques associées.
+                </p>
+                <p className="text-xs text-slate-500 pt-1">
+                  <strong>Rappel consulaire :</strong> La décision finale d’octroi ou de refus d'un visa relève de la compétence souveraine exclusive des autorités consulaires et ambassades compétentes.
+                </p>
+              </div>
+
+              {/* Coordonnées officielles */}
+              <div className="pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1">
+                <p className="font-bold text-slate-900">Visado Service — Prestations & Accompagnement Voyage</p>
+                <p className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                  <span>14, Rue Capitaine Hadri Mohamed, 31000 Oran, Algérie</span>
+                </p>
+                <div className="flex items-center gap-1.5" dir="ltr">
+                  <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span className="flex items-center gap-1">
+                    <a href="tel:+213557426784" className="text-blue-600 hover:underline font-semibold">+213 557 42 67 84</a>
+                    <span>/</span>
+                    <a href="tel:+213555778460" className="text-blue-600 hover:underline font-semibold">+213 555 77 84 60</a>
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          )}
+
+        </div>
+
+        {/* Footer of modal */}
+        <div className="px-5 sm:px-7 py-3 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs text-slate-500 shrink-0">
+          <span>
+            {isArabic ? 'Visado Service • وهران' : 'Visado Service • Oran'}
+          </span>
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-4 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold transition-all cursor-pointer active:scale-95"
+          >
+            {isArabic ? 'إغلاق' : 'Fermer'}
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+};

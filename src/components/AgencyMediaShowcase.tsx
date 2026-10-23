@@ -67,18 +67,18 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       id: "storefront-oran",
       type: "photo",
       imageUrl: imagery.realAgency.storefrontOran, // "/images/Exterieur.png"
-      titleFr: "Façade officielle de l'agence Visado Service à Oran",
-      titleAr: "الواجهة الخارجية الرسمية لوكالة Visado Service بوهران",
+      titleFr: "Façade de Visado Service à Oran",
+      titleAr: "الواجهة الخارجية لـ Visado Service بوهران",
       subtitleFr: "14, Rue Hadri Mohamed • Centre-ville d'Oran",
       subtitleAr: "14، شارع حضري محمد • وسط مدينة وهران",
-      badgeFr: "Siège Officiel",
-      badgeAr: "المقر الرئيسي",
+      badgeFr: "Nos Bureaux",
+      badgeAr: "مقرنا الرسمي",
       locationFr: "14, Rue Hadri Mohamed, Oran, Algérie",
       locationAr: "14، شارع حضري محمد، وهران، الجزائر",
-      descriptionFr: "Notre agence physique avec enseigne officielle pignon sur rue. Située au cœur d'Oran, nous accueillons nos clients dans un cadre professionnel et sécurisé pour l'ensemble des démarches de visa et de voyage.",
-      descriptionAr: "المقر الميداني لوكالتنا بلافتة رسمية واضحة في قلب مدينة وهران. نستقبلكم في أجواء راقية وآمنة لمعالجة كافة ملفات التأشيرات والأسفار الدولية.",
-      highlightFr: "Agence avec pignon sur rue",
-      highlightAr: "وكالة معتمدة وواجهة ميدانية",
+      descriptionFr: "Nos bureaux avec enseigne officielle pignon sur rue. Situés au cœur d'Oran, nous accueillons nos clients dans un cadre professionnel et sécurisé pour l'accompagnement dans les démarches de voyage et de visa.",
+      descriptionAr: "مقرنا بلافتة رسمية واضحة في قلب مدينة وهران. نستقبلكم في أجواء راقية وآمنة للمرافقة والمساعدة في مختلف إجراءات السفر والتأشيرات الدولية.",
+      highlightFr: "Locaux avec pignon sur rue",
+      highlightAr: "موقع مركزي وواجهة ميدانية",
       category: "agency"
     },
     {
@@ -86,16 +86,16 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       type: "video",
       imageUrl: imagery.youtubeVideos.officeTour.thumbnail, // "https://img.youtube.com/vi/30VIItLvrUI/hqdefault.jpg"
       youtubeId: imagery.youtubeVideos.officeTour.id, // "30VIItLvrUI"
-      titleFr: "Visite immersive des locaux en vidéo",
-      titleAr: "جولة فيديو استطلاعية داخل مكاتب الوكالة",
+      titleFr: "Visite immersive de nos locaux en vidéo",
+      titleAr: "جولة فيديو استطلاعية داخل مكاتبنا",
       subtitleFr: "Visite guidée authentique • 0:45 min",
       subtitleAr: "جولة مرئية حقيقية • 0:45 د",
       badgeFr: "Vidéo des Locaux",
       badgeAr: "فيديو المقر",
       locationFr: "Visado Service • Oran",
       locationAr: "Visado Service • وهران",
-      descriptionFr: "Découvrez en vidéo réelle nos postes de travail informatisés, notre espace d'accueil soigné et les drapeaux officiels des destinations partenaires (Espagne, Canada, etc.).",
-      descriptionAr: "شاهد عبر الفيديو التجهيزات المكتبية والإعلامية الحديثة وفضاء استقبال الزبائن وأعلام الوجهات الرسمية المعتمدة (إسبانيا، كندا وغيرها).",
+      descriptionFr: "Découvrez en vidéo réelle nos postes de travail informatisés, notre espace d'accueil soigné et les drapeaux des destinations partenaires (Espagne, Canada, etc.).",
+      descriptionAr: "شاهد عبر الفيديو التجهيزات المكتبية والإعلامية الحديثة وفضاء استقبال الزبائن وأعلام الوجهات المختلفة (إسبانيا، كندا وغيرها).",
       highlightFr: "Enregistré dans nos bureaux",
       highlightAr: "مصور داخل مكاتبنا بوهران",
       category: "video"
@@ -123,7 +123,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       type: "photo",
       imageUrl: imagery.realAgency.schengenVisaPassport, // "/images/IMG_0070.JPG"
       titleFr: "Exemple de Visa Schengen Espagne délivré & Carte Visado",
-      titleAr: "نموذج تأشيرة شنغن إسبانيا وجواز سفر مع بطاقة الوكالة",
+      titleAr: "نموذج تأشيرة شنغن إسبانيا وجواز سفر مع بطاقة Visado",
       subtitleFr: "Conseil & Orientation • Espagne & Europe",
       subtitleAr: "توجيه واستشارات • إسبانيا وأوروبا",
       badgeFr: "Visas & Voyages",
@@ -158,16 +158,16 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       id: "billetterie-officielle",
       type: "photo",
       imageUrl: imagery.realAgency.ticketingPoster, // "/images/visado_billetterie_officielle.jpg"
-      titleFr: "Billetterie officielle Air Algérie & Vols Internationaux",
-      titleAr: "حجز تذاكر الطيران الرسمية مع الخطوط الجوية الجزائرية والشركات العالمية",
+      titleFr: "Assistance Billetterie & Réservations de Vols Internationaux",
+      titleAr: "المساعدة في حجز تذاكر الطيران مع الخطوط الجوية الجزائرية والشركات العالمية",
       subtitleFr: "Vols confirmés • Réservations d'hôtels • Assurances",
       subtitleAr: "رحلات مؤكدة • حجوزات فندقية • تأمين سفر",
-      badgeFr: "Billetterie & Vols",
-      badgeAr: "حجز تذاكر الطيران",
-      locationFr: "Visado Service • Agréé Billetterie",
-      locationAr: "Visado Service • حجز معتمد",
-      descriptionFr: "Émission instantanée de billets d'avion confirmés (Air Algérie, Air France, etc.), réservations d'hôtels et assurances voyage internationales.",
-      descriptionAr: "إصدار وحجز تذاكر الطيران المؤكدة (الخطوط الجوية الجزائرية والشركات الدولية)، وحجوزات الفنادق المعتمدة وتأمينات السفر الدولية.",
+      badgeFr: "Réservations & Vols",
+      badgeAr: "حجوزات الطيران",
+      locationFr: "Visado Service • Oran",
+      locationAr: "Visado Service • وهران",
+      descriptionFr: "Assistance et réservation de billets d'avion (Air Algérie, Air France, etc.), réservations d'hôtels et assurances voyage internationales.",
+      descriptionAr: "المساعدة في حجز تذاكر الطيران (الخطوط الجوية الجزائرية والشركات الدولية)، وحجوزات الفنادق المعتمدة وتأمينات السفر الدولية.",
       highlightFr: "Partenariats & Compagnies",
       highlightAr: "تأكيدات سريعة وأسعار مدروسة",
       category: "agency"
@@ -298,19 +298,19 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
                 <Camera className="w-3.5 h-3.5" />
-                <span>{currentLang === 'ar' ? 'معرض الوكالة والتوثيق الميداني' : 'Visite de l\'agence & Locaux'}</span>
+                <span>{currentLang === 'ar' ? 'معرض الصور والتوثيق' : 'Visite de nos locaux'}</span>
               </div>
               
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 {currentLang === 'ar' 
-                  ? 'وكالة حقيقية ومقر معتمد في قلب وهران' 
-                  : "Une agence physique et transparente au cœur d'Oran"}
+                  ? 'مكاتبنا المفتوحة في قلب وهران' 
+                  : "Nos locaux d'accueil au cœur d'Oran"}
               </h2>
 
               <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
                 {currentLang === 'ar'
-                  ? 'صور وفيديوهات حقيقية توثق مقرنا بالشارع، مكاتب الاستقبال، وخدمات السفر وحجز الطيران المعتمدة.'
-                  : "Explorez nos véritables locaux au 14 Rue Hadri Mohamed, nos bureaux d'accueil et nos services de réservation et conseils de voyage."}
+                  ? 'صور وفيديوهات توثق مقرنا، مكاتب الاستقبال، وخدمات المرافقة وحجوزات السفر.'
+                  : "Explorez nos locaux au 14 Rue Hadri Mohamed, nos bureaux d'accueil et nos services d'assistance au voyage."}
               </p>
 
               {/* Physical trust indicators */}
@@ -321,7 +321,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 </span>
                 <span className="flex items-center gap-1.5 text-emerald-800 bg-white/80 px-2.5 py-1 rounded-lg border border-slate-200/70 shadow-2xs">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>{currentLang === 'ar' ? '100% صور ومقاطع حقيقية' : '100% Photos réelles de l\'agence'}</span>
+                  <span>{currentLang === 'ar' ? '100% صور ومقاطع حقيقية' : '100% Photos réelles de nos locaux'}</span>
                 </span>
               </div>
             </div>
@@ -353,7 +353,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                     : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                 }`}
               >
-                <span>{currentLang === 'ar' ? 'المقر والواجهة (3)' : 'Locaux & Agence (3)'}</span>
+                <span>{currentLang === 'ar' ? 'المقر والواجهة (3)' : 'Nos Locaux (3)'}</span>
               </button>
 
               <button
@@ -756,8 +756,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   {currentLang === 'ar'
-                    ? 'مستشارونا في انتظاركم لمراجعة وثائقكم، إعداد ملفات BLS Spain، حجز المواعيد الرسمية وإصدار تذاكر الطيران على الفور.'
-                    : 'Nos conseillers sont disponibles du Samedi au Jeudi (09h00 - 17h00) pour auditer vos pièces justificatives, réserver vos créneaux officiels BLS et émettre vos billets d\'avion.'}
+                    ? 'مستشارونا في خدمتكم لمراجعة وثائقكم، التوجيه لملفات التأشيرة والمواعيد الرسمية والمساعدة في حجز تذاكر الطيران.'
+                    : 'Nos conseillers sont disponibles du Samedi au Jeudi (09h00 - 17h00) pour auditer vos pièces justificatives, vous orienter pour vos démarches et vous assister dans vos réservations.'}
                 </p>
               </div>
 
@@ -771,7 +771,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 </a>
 
                 <a
-                  href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent("Bonjour Visado Service, je souhaite venir à votre agence au 14 Rue Hadri Mohamed à Oran.")}`}
+                  href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent("Bonjour Visado Service, je souhaite venir à vos bureaux au 14 Rue Hadri Mohamed à Oran.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs transition-all shadow-md active:scale-[0.98]"

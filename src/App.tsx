@@ -12,12 +12,14 @@ import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { MobileBottomBar } from './components/MobileBottomBar';
 import { ConsultationModal } from './components/ConsultationModal';
+import { LegalNoticeModal } from './components/LegalNoticeModal';
 import { Language } from './types';
 import { translations } from './data/translations';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState<Language>('ar');
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
 
   // Synchronize document language, text direction (RTL for Arabic), and SEO metadata
   useEffect(() => {
@@ -121,7 +123,10 @@ export default function App() {
       </main>
 
       {/* 9. Pied de page / Footer */}
-      <Footer currentLang={currentLang} />
+      <Footer 
+        currentLang={currentLang} 
+        onOpenLegalModal={() => setIsLegalModalOpen(true)}
+      />
 
       {/* Bouton WhatsApp Flottant sur Desktop */}
       <WhatsAppFloat currentLang={currentLang} />
@@ -136,6 +141,13 @@ export default function App() {
       <ConsultationModal
         isOpen={isConsultationModalOpen}
         onClose={() => setIsConsultationModalOpen(false)}
+        currentLang={currentLang}
+      />
+
+      {/* Modal Mentions Légales & Politique de Confidentialité */}
+      <LegalNoticeModal
+        isOpen={isLegalModalOpen}
+        onClose={() => setIsLegalModalOpen(false)}
         currentLang={currentLang}
       />
 
