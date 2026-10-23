@@ -32,6 +32,7 @@ export const Trust: React.FC<TrustProps> = ({
   onNavigateToSection
 }) => {
   const isArabic = currentLang === 'ar';
+  const isEnglish = currentLang === 'en';
 
   const handleScroll = (id: string) => {
     if (onNavigateToSection) {
@@ -55,18 +56,22 @@ export const Trust: React.FC<TrustProps> = ({
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
               <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-              <span>{isArabic ? 'ثقة وشفافية • وهران' : 'Confiance, Rigueur & Transparence'}</span>
+              <span>{isArabic ? 'ثقة وشفافية • وهران' : isEnglish ? 'Trust, Rigor & Transparency' : 'Confiance, Rigueur & Transparence'}</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {isArabic 
                 ? 'خدمات سفر ومرافقة متكاملة في قلب وهران' 
+                : isEnglish
+                ? 'Integrated travel services and guidance in central Oran'
                 : 'Services et accompagnement de voyage à Oran'}
             </h2>
 
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
               {isArabic
                 ? 'نستقبلكم في مكاتبنا بشارع حضري محمد لمرافقتكم وتوجيهكم في كافة إجراءات وحجوزات سفركم بكل شفافية واحترافية.'
+                : isEnglish
+                ? 'At 14 Rue Capitaine Hadri Mohamed, we welcome you in person to guide you through your travel bookings and application procedures with complete transparency.'
                 : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour vous orienter, préparer vos démarches et vous accompagner dans vos réservations en toute sérénité.'}
             </p>
           </div>

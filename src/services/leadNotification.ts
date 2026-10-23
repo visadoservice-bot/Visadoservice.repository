@@ -28,22 +28,7 @@ export async function sendLeadNotification(payload: LeadSubmissionPayload): Prom
     timeStyle: 'medium'
   });
 
-  // 1. Store in localStorage as local backup
-  try {
-    const existingRaw = localStorage.getItem('visado_service_leads');
-    const existing = existingRaw ? JSON.parse(existingRaw) : [];
-    existing.unshift({
-      ...payload,
-      createdAt: new Date().toISOString(),
-      formattedDate: submissionDate
-    });
-    // Keep last 50 leads locally
-    localStorage.setItem('visado_service_leads', JSON.stringify(existing.slice(0, 50)));
-  } catch (err) {
-    console.warn('Local lead backup error:', err);
-  }
-
-  // 2. Dispatch email notification to official inbox via FormSubmit AJAX API
+  // Dispatch email notification to official inbox via FormSubmit AJAX API
   try {
     const primaryEmail = siteConfig.email; // visado273@gmail.com
 

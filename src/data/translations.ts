@@ -40,7 +40,7 @@ export const translations = {
         {
           id: "schengen",
           number: "01",
-          title: "Rendez-vous & Démarches Visa Schengen",
+          title: "Accompagnement & Démarches Visa Schengen",
           subtitle: "Europe & Espace Schengen",
           description: "Nous vous accompagnons dans les démarches liées aux rendez-vous visa pour différentes destinations européennes, avec une attention particulière portée aux spécificités de chaque consulat.",
           highlights: ["France", "Italie", "Espagne", "Allemagne", "Belgique", "Malte et autres pays européens"],
@@ -50,7 +50,7 @@ export const translations = {
         {
           id: "canada",
           number: "02",
-          title: "Visa Touristique Canada",
+          title: "Accompagnement Visa Touristique Canada",
           subtitle: "Projets touristiques & visites familiales",
           description: "Nous vous accompagnons dans la préparation de votre demande de visa touristique pour le Canada et dans le suivi des différentes étapes de votre démarche.",
           highlights: ["Structuration du dossier", "Conformité des formulaires", "Suivi des étapes officielles"],
@@ -74,23 +74,55 @@ export const translations = {
           targetSection: "contact"
         },
         {
-          id: "conseil",
+          id: "air_algerie",
           number: "04",
+          title: "Réservation de Billets Air Algérie",
+          subtitle: "Lignes nationales & internationales Air Algérie",
+          description: "Assistance et réservation rapide de vos billets d'avion Air Algérie aux meilleurs tarifs, gestion des options de bagages, choix des sièges et modification de dates.",
+          highlights: [
+            "Vols nationaux & internationaux Air Algérie",
+            "Gestion des bagages, repas & sièges",
+            "Assistance rapide à nos bureaux d'Oran"
+          ],
+          cta: "Réserver billet Air Algérie",
+          targetSection: "contact"
+        },
+        {
+          id: "billetterie_vols",
+          number: "05",
+          title: "Réservation de Billets d'Avion (Toutes Compagnies)",
+          subtitle: "Air France, Transavia, Lufthansa, Turkish Airlines, etc.",
+          description: "Recherche et réservation des meilleures liaisons aériennes auprès de toutes les compagnies internationales pour vous garantir les meilleurs itinéraires, correspondances et tarifs.",
+          highlights: [
+            "Air France, Transavia, Lufthansa, Volotea...",
+            "Turkish Airlines, Emirates, Qatar Airways...",
+            "Comparatif d'itinéraires & tarifs optimisés"
+          ],
+          cta: "Réserver un vol international",
+          targetSection: "contact"
+        },
+        {
+          id: "assurance_voyage",
+          number: "06",
+          title: "Assurances Voyage Schengen & Monde",
+          subtitle: "Attestations officielles d'assurance voyage",
+          description: "Émission rapide d'attestations d'assurance voyage agréées et conformes aux exigences consulaires pour vos demandes de visa Schengen, Canada, Royaume-Uni et déplacements mondiaux.",
+          highlights: [
+            "Conforme aux exigences Schengen & Canada",
+            "Couverture médicale & rapatriement d'urgence",
+            "Délivrance immédiate à nos bureaux d'Oran"
+          ],
+          cta: "Obtenir une assurance voyage",
+          targetSection: "contact"
+        },
+        {
+          id: "conseil",
+          number: "07",
           title: "Conseils & Orientation Voyage",
           subtitle: "Écoute personnalisée",
           description: "Un accompagnement sur-mesure selon votre destination, votre projet et vos besoins pour aborder votre voyage en toute confiance et clarté.",
           highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue à nos bureaux"],
           cta: "Prendre conseil",
-          targetSection: "contact"
-        },
-        {
-          id: "billetterie",
-          number: "05",
-          title: "Assistance Billetterie & Réservations de Vols",
-          subtitle: "Voyagez partout dans le monde",
-          description: "Assistance et réservation de billets d'avion vers toutes les destinations avec les meilleures options des compagnies aériennes (Air Algérie, Air France et compagnies internationales).",
-          highlights: ["Billets vers tous les pays", "Offres Air Algérie & Air France", "Assistance directe au +213 557 42 67 84"],
-          cta: "Réserver un vol",
           targetSection: "contact"
         }
       ]
@@ -422,23 +454,55 @@ export const translations = {
           targetSection: "contact"
         },
         {
-          id: "conseil",
+          id: "air_algerie",
           number: "04",
+          title: "حجز تذاكر الخطوط الجوية الجزائرية",
+          subtitle: "الرحلات الداخلية والدولية عبر Air Algérie",
+          description: "حجز سريع لتذاكر الطيران عبر الخطوط الجوية الجزائرية بأفضل الأسعار، اختيار المقاعد، إضافة الأمتعة وتعديل التواريخ.",
+          highlights: [
+            "رحلات داخلية ودولية متوفرة",
+            "إدارة خيارات الأمتعة والمقاعد",
+            "مساعدة مباشرة في مكاتبنا بوهران"
+          ],
+          cta: "حجز تذكرة Air Algérie",
+          targetSection: "contact"
+        },
+        {
+          id: "billetterie_vols",
+          number: "05",
+          title: "حجز تذاكر الطيران لجميع الشركات الدولية",
+          subtitle: "إير فرنس، ترانسافيا، لوفتهانزا، التركية، الإماراتية...",
+          description: "مقارنة وحجز تذاكر الطيران عبر كافة الشركات العالمية لضمان أفضل المسارات، الأسعار والمواعيد المناسبة لرحلاتكم حول العالم.",
+          highlights: [
+            "Air France, Transavia, Lufthansa, Volotea",
+            "Turkish Airlines, Emirates, Qatar Airways...",
+            "مقارنة الأسعار واختيار المسار الأمثل"
+          ],
+          cta: "حجز رحلة دولية",
+          targetSection: "contact"
+        },
+        {
+          id: "assurance_voyage",
+          number: "06",
+          title: "تأمين السفر المعتمد (شنغن وجميع الدول)",
+          subtitle: "شهادات تأمين سفر معتمدة قنصلياً",
+          description: "إصدار فوري لشهادات تأمين السفر المعتمدة من القنصليات والممثليات الدبلوماسية (شنغن، كندا، بريطانيا ودول العالم) للتغطية الطبية والطوارئ.",
+          highlights: [
+            "مطابق لشروط تأشيرة شنغن وكندا",
+            "تغطية علاجية وطوارئ كاملة",
+            "إصدار فوري بمكاتبنا في وهران"
+          ],
+          cta: "طلب تأمين سفر",
+          targetSection: "contact"
+        },
+        {
+          id: "conseil",
+          number: "07",
           title: "استشارات وإرشادات السفر",
           subtitle: "إصغاء وتوجيه مخصص",
           description: "توجيه واستشارة مخصصة بحسب وجهتكم، ظروفكم ومشروع رحلتكم لتسافروا بكل اطمئنان ووضوح.",
           highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر في مكاتبنا"],
           cta: "طلب استشارة",
-          targetSection: "contact"
-        },
-        {
-          id: "billetterie",
-          number: "05",
-          title: "المساعدة في حجز تذاكر الطيران والرحلات",
-          subtitle: "سافروا إلى كافة أنحاء العالم",
-          description: "المساعدة في حجز وإصدار تذاكر الطيران لجميع دول العالم بأفضل الأسعار مع الخطوط الجوية الجزائرية والخطوط الفرنسية ومختلف الشركات الدولية.",
-          highlights: ["تذاكر لجميع دول العالم", "أفضل عروض Air Algérie & Air France", "مساعدة فورية عبر +213 557 42 67 84"],
-          cta: "حجز تذكرة طيران",
           targetSection: "contact"
         }
       ]
@@ -770,23 +834,55 @@ export const translations = {
           targetSection: "contact"
         },
         {
-          id: "conseil",
+          id: "air_algerie",
           number: "04",
+          title: "Air Algérie Flight Ticket Bookings",
+          subtitle: "Domestic & International Air Algérie Routes",
+          description: "Fast and direct booking of Air Algérie flight tickets at optimal rates, baggage management, seat selection, and date modification support.",
+          highlights: [
+            "Domestic & international Air Algérie routes",
+            "Baggage, meal & seat selection management",
+            "Direct in-office assistance in Oran"
+          ],
+          cta: "Book Air Algérie Ticket",
+          targetSection: "contact"
+        },
+        {
+          id: "billetterie_vols",
+          number: "05",
+          title: "Airline Ticket Bookings (All Airlines)",
+          subtitle: "Air France, Transavia, Lufthansa, Turkish Airlines, etc.",
+          description: "Flight search and reservation across all major international airlines to secure optimal routes, schedules, connections, and rates.",
+          highlights: [
+            "Air France, Transavia, Lufthansa, Volotea...",
+            "Turkish Airlines, Emirates, Qatar Airways...",
+            "Route & fare comparison for best rates"
+          ],
+          cta: "Book International Flight",
+          targetSection: "contact"
+        },
+        {
+          id: "assurance_voyage",
+          number: "06",
+          title: "Travel Insurance (Schengen & Worldwide)",
+          subtitle: "Official Consular Travel Insurance Certificates",
+          description: "Instant issuance of officially recognized travel insurance certificates fully compliant with consular requirements for Schengen, Canada, UK, and worldwide travel.",
+          highlights: [
+            "Fully compliant with Schengen & Canada criteria",
+            "Comprehensive medical & emergency repatriation",
+            "Immediate issuance at our Oran office"
+          ],
+          cta: "Get Travel Insurance",
+          targetSection: "contact"
+        },
+        {
+          id: "conseil",
+          number: "07",
           title: "Travel Advisory & Guidance",
           subtitle: "Personalized Consultation",
           description: "Tailored strategic guidance formulated around your destination, profile, and travel schedule to ensure complete clarity.",
           highlights: ["Custom orientation", "Step-by-step clarity", "In-office consultation and guidance"],
           cta: "Get expert advice",
-          targetSection: "contact"
-        },
-        {
-          id: "billetterie",
-          number: "05",
-          title: "Flight Bookings & Ticketing Assistance",
-          subtitle: "Travel Anywhere Worldwide",
-          description: "Assistance with flight reservations and bookings worldwide with leading carriers (Air Algérie, Air France, and international airlines).",
-          highlights: ["Flights to all destinations worldwide", "Best partner offers Air Algérie & Air France", "Direct assistance at +213 557 42 67 84"],
-          cta: "Book a flight",
           targetSection: "contact"
         }
       ]

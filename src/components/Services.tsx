@@ -1,6 +1,7 @@
 import React from 'react';
-import { Globe, FileCheck2, Plane, Sparkles, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
+import { Globe, FileCheck2, Plane, Sparkles, ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Ticket, Compass } from 'lucide-react';
 import { siteConfig } from '../data/config';
+import { translations } from '../data/translations';
 import { Reveal } from './ScrollReveal';
 import { Language } from '../types';
 
@@ -15,92 +16,29 @@ export const Services: React.FC<ServicesProps> = ({
   onNavigateToSection,
   onOpenConsultation
 }) => {
-  const servicesList = [
-    {
-      id: "schengen",
-      icon: Globe,
-      iconColor: "text-[#1A73E8]",
-      iconBg: "bg-[#E8F0FE]",
-      title: currentLang === 'ar' ? 'تأشيرات شنغن وأوروبا' : currentLang === 'en' ? 'Schengen & European Visas' : 'Visa Schengen & Europe',
-      subtitle: currentLang === 'ar' ? 'فرنسا، إسبانيا، إيطاليا وكافة دول أوروبا' : currentLang === 'en' ? 'France, Spain, Italy & Schengen Area' : 'France, Espagne, Italie & Espace Schengen',
-      description: currentLang === 'ar'
-        ? 'مرافقة شاملة ومتابعة دقيقة للملف، حجز المواعيد (TLScontact, BLS, VFS)، التأمين الدولي، والتحقق الدقيق من الوثائق.'
-        : currentLang === 'en'
-        ? 'Comprehensive file tracking and guidance, appointment assistance (TLScontact, BLS, VFS), travel insurance, and consular document verification.'
-        : 'Assistance complète pour le suivi et la vérification du dossier, prise de rendez-vous (TLScontact, BLS, VFS), assurance voyage et conformité des pièces.',
-      features: currentLang === 'ar' 
-        ? ['حجز وتتبع المواعيد', 'تدقيق كامل للوثائق', 'تأمين سفر دولي معتمد']
-        : ['Assistance prise de RDV', 'Audit minutieux des pièces', 'Assurance voyage certifiée']
-    },
-    {
-      id: "canada",
-      icon: Sparkles,
-      iconColor: "text-[#D93025]",
-      iconBg: "bg-[#FCE8E6]",
-      title: currentLang === 'ar' ? 'تأشيرات كندا والدول الدولية' : currentLang === 'en' ? 'Canada & Global Visas' : 'Visa Canada & International',
-      subtitle: currentLang === 'ar' ? 'تأشيرة زائر، دراسة، وسياحة' : currentLang === 'en' ? 'Visitor, Study & Tourism Visas' : 'Visiteur, Tourisme & Études',
-      description: currentLang === 'ar'
-        ? 'المساعدة في فتح الحساب الرسمي لكندا، صياغة رسائل الشرح المتقنة، وترتيب الوثائق والملف الداعم.'
-        : currentLang === 'en'
-        ? 'Assistance with official IRCC online portal procedures, explanatory letters, and supporting document preparation.'
-        : 'Assistance aux démarches sur le portail officiel canadien, rédaction des lettres explicatives et structuration des justificatifs requis.',
-      features: currentLang === 'ar'
-        ? ['تعبئة الاستمارات الرسمية', 'رسائل دافع متقنة', 'تنسيق البصمات والمتابعة']
-        : ['Formulaires en ligne IRCC', 'Lettres explicatives soignées', 'Suivi étape par étape']
-    },
-    {
-      id: "dossier",
-      icon: FileCheck2,
-      iconColor: "text-[#1E8E3E]",
-      iconBg: "bg-[#E6F4EA]",
-      title: currentLang === 'ar' ? 'متابعة ومراجعة ملف التأشيرة' : currentLang === 'en' ? 'Visa Dossier Review & Tracking' : 'Suivi & Vérification du Dossier',
-      subtitle: currentLang === 'ar' ? 'متابعة وتدقيق لضمان جاهزية الملف' : currentLang === 'en' ? 'Compliance check & guidance' : 'Contrôle de conformité & accompagnement',
-      description: currentLang === 'ar'
-        ? 'متابعة دقيقة لملفك والتأكد من جاهزيته قبل تقديمه، مع مراجعة الوثائق والتنبيه إلى أي نقص أو خطأ قد يؤثر على الملف.'
-        : currentLang === 'en'
-        ? 'Diligent tracking of your application and readiness check before submission, reviewing supporting documents and highlighting any potential omissions.'
-        : 'Suivi rigoureux de votre dossier et vérification de sa conformité avant le dépôt officiel, avec contrôle des pièces et détection de tout manque ou erreur.',
-      features: currentLang === 'ar'
-        ? [
-            'مراجعة الوثائق والتأكد من اكتمالها',
-            'التنبيه إلى النقائص والأخطاء وتصحيحها',
-            'تنظيم الوثائق بشكل واضح ومنطقي',
-            'التحقق من توافق الملف مع المتطلبات المطلوبة',
-            'متابعة الملف وتقديم التوجيهات اللازمة'
-          ]
-        : currentLang === 'en'
-        ? [
-            'Document completeness verification',
-            'Detection and correction of errors',
-            'Clear and logical document organization',
-            'Compliance with official requirements',
-            'Ongoing follow-up and expert guidance'
-          ]
-        : [
-            'Vérification des pièces et de leur complétude',
-            'Signalement des erreurs et corrections nécessaires',
-            'Organisation claire et logique des documents',
-            'Conformité du dossier avec les exigences requises',
-            'Suivi du dossier et orientation continue'
-          ]
-    },
-    {
-      id: "billetterie",
-      icon: Plane,
-      iconColor: "text-[#F9AB00]",
-      iconBg: "bg-[#FEF7E0]",
-      title: currentLang === 'ar' ? 'المساعدة في حجوزات الطيران والفنادق' : currentLang === 'en' ? 'Flight & Hotel Booking Assistance' : 'Assistance Réservations de Vols & Hôtels',
-      subtitle: currentLang === 'ar' ? 'الخطوط الجوية الجزائرية والشركات العالمية' : currentLang === 'en' ? 'Air Algérie, Air France & Global Airlines' : 'Air Algérie, Air France & Vols Mondiaux',
-      description: currentLang === 'ar'
-        ? 'المساعدة في البحث واختيار تذاكر الطيران وحجوزات الفنادق المؤكدة عبر المنصات المعتمدة.'
-        : currentLang === 'en'
-        ? 'Assistance with flight selection and confirmed hotel reservations via authorized platforms.'
-        : 'Assistance à la recherche et à la réservation de billets d\'avion et d\'hébergements via les plateformes concernées.',
-      features: currentLang === 'ar'
-        ? ['خيارات رحلات مدروسة', 'حجوزات فندقية موثوقة', 'أفضل الأسعار والمسارات']
-        : ['Recherche d\'itinéraires optimisés', 'Réservations d\'hôtel conformes', 'Tarifs compétitifs']
+  const t = translations[currentLang];
+  const items = t?.services?.items || [];
+
+  // Map service ID to Lucide icon component, icon color, and background
+  const getServiceMeta = (id: string) => {
+    switch (id) {
+      case 'schengen':
+        return { icon: Globe, iconColor: 'text-[#1A73E8]', iconBg: 'bg-[#E8F0FE]' };
+      case 'canada':
+        return { icon: Sparkles, iconColor: 'text-[#D93025]', iconBg: 'bg-[#FCE8E6]' };
+      case 'dossier':
+        return { icon: FileCheck2, iconColor: 'text-[#1E8E3E]', iconBg: 'bg-[#E6F4EA]' };
+      case 'air_algerie':
+        return { icon: Plane, iconColor: 'text-emerald-600', iconBg: 'bg-emerald-50' };
+      case 'billetterie_vols':
+        return { icon: Ticket, iconColor: 'text-blue-600', iconBg: 'bg-blue-50' };
+      case 'assurance_voyage':
+        return { icon: ShieldCheck, iconColor: 'text-purple-600', iconBg: 'bg-purple-50' };
+      case 'conseil':
+      default:
+        return { icon: Compass, iconColor: 'text-[#F9AB00]', iconBg: 'bg-[#FEF7E0]' };
     }
-  ];
+  };
 
   return (
     <section id="services" className="py-14 sm:py-24 bg-white border-b border-slate-200/70">
@@ -110,31 +48,26 @@ export const Services: React.FC<ServicesProps> = ({
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-100/60 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
-              {currentLang === 'ar' ? 'خدماتنا الرئيسية' : currentLang === 'en' ? 'Our Core Services' : 'Nos Services'}
+              {t.services.overline}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              {currentLang === 'ar' 
-                ? 'خدمات سفر مصممة لتسهيل رحلتكم' 
-                : currentLang === 'en' 
-                ? 'Travel services designed for your peace of mind' 
-                : 'Des prestations pensées pour faciliter votre voyage'}
+              {t.services.heading}
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
-              {currentLang === 'ar'
-                ? 'نرافقكم في رحلتكم بخبرة واحترافية : استشارات، مساعدة في الحجوزات، ومتابعة دقيقة لمختلف الإجراءات.'
-                : 'Accompagnement, assistance aux réservations et suivi personnalisé à Oran.'}
+              {t.services.subheading}
             </p>
           </div>
         </Reveal>
 
-        {/* 4 Clean Minimalist Cards - Responsive Grid & Mobile Snap-Carousel */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-          {servicesList.map((service, idx) => {
-            const IconComponent = service.icon;
+        {/* 7 Clean Minimalist Cards - Responsive Grid & Mobile Snap-Carousel */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+          {items.map((service, idx) => {
+            const meta = getServiceMeta(service.id);
+            const IconComponent = meta.icon;
             return (
               <Reveal 
                 key={service.id} 
-                delay={idx * 80} 
+                delay={idx * 60} 
                 direction="up" 
                 className="flex flex-col h-full min-w-[260px] min-[380px]:min-w-[290px] sm:min-w-[320px] md:min-w-0 snap-start"
               >
@@ -143,7 +76,7 @@ export const Services: React.FC<ServicesProps> = ({
                 >
                   <div>
                     {/* Icon with smooth scale on group hover */}
-                    <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${service.iconBg} ${service.iconColor} flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 group-hover:rotate-1 transition-all duration-300 shadow-2xs`}>
+                    <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${meta.iconBg} ${meta.iconColor} flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 group-hover:rotate-1 transition-all duration-300 shadow-2xs`}>
                       <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
 
@@ -162,7 +95,7 @@ export const Services: React.FC<ServicesProps> = ({
 
                     {/* Bullet features */}
                     <ul className="space-y-1.5 sm:space-y-2 border-t border-slate-100 pt-3.5 mb-4">
-                      {service.features.map((feat, fIdx) => (
+                      {service.highlights?.map((feat, fIdx) => (
                         <li key={fIdx} className="text-xs text-slate-700 flex items-start gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0 mt-1.5 group-hover:scale-125 transition-transform" />
                           <span className="leading-relaxed">{feat}</span>
@@ -173,10 +106,16 @@ export const Services: React.FC<ServicesProps> = ({
 
                   {/* Card Action */}
                   <button
-                    onClick={onOpenConsultation}
+                    onClick={() => {
+                      if (service.targetSection === 'europe' || service.targetSection === 'canada') {
+                        onNavigateToSection(service.targetSection);
+                      } else {
+                        onOpenConsultation();
+                      }
+                    }}
                     className="w-full mt-2 py-2.5 px-3.5 text-xs font-semibold text-slate-700 hover:text-blue-600 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98] group/btn"
                   >
-                    <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Demander conseil'}</span>
+                    <span>{service.cta || (currentLang === 'ar' ? 'تحدث مع مستشار' : 'Demander conseil')}</span>
                     <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180 text-blue-600 group-hover/btn:translate-x-1 rtl:group-hover/btn:-translate-x-1 transition-transform" />
                   </button>
                 </div>

@@ -148,8 +148,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             : 'bg-white/80 backdrop-blur-md border-b border-slate-200/50'
         }`}
       >
-        {/* Micro Status Banner (Discreet & Premium) */}
-        <div className={`transition-all duration-300 overflow-hidden bg-slate-50/90 border-b border-slate-100 text-xs text-slate-500 px-3.5 sm:px-6 ${
+        {/* Micro Status Banner (Discreet & Premium) - Hidden on mobile smartphones */}
+        <div className={`hidden md:block transition-all duration-300 overflow-hidden bg-slate-50/90 border-b border-slate-100 text-xs text-slate-500 px-3.5 sm:px-6 ${
           isScrolled ? 'h-0 py-0 opacity-0 border-none' : 'py-1 sm:py-1.5 opacity-100'
         }`}>
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 text-[11px] sm:text-xs">
@@ -353,18 +353,57 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Drawer Scrollable Content Body with Hidden Scrollbar */}
             <div className="overflow-y-auto mobile-menu-scroll flex-1 px-4 py-3 space-y-4">
               
-              {/* Sheet Header: Logo + Minimalist Elegant Close Button */}
+              {/* Sheet Header: Logo + Language Switcher + Close Button */}
               <div className="flex items-center justify-between pb-3 border-b border-slate-100/90">
                 <Logo variant="drawer" />
 
-                <button
-                  type="button"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-slate-100/80 hover:bg-slate-200/70 active:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-200/80 flex items-center justify-center active:scale-90 transition-all duration-200 cursor-pointer select-none touch-manipulation shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 shadow-2xs"
-                  aria-label={isArabic ? "إغلاق القائمة" : "Fermer le menu"}
-                >
-                  <X className="w-5 h-5 stroke-[2.2]" aria-hidden="true" />
-                </button>
+                <div className="flex items-center gap-2">
+                  {/* Language Switcher inside mobile drawer */}
+                  <div className="flex items-center gap-0.5 p-1 rounded-xl bg-slate-100 border border-slate-200">
+                    <button
+                      type="button"
+                      onClick={() => onLanguageChange('fr')}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        currentLang === 'fr' 
+                          ? 'bg-blue-600 text-white shadow-2xs' 
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      FR
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onLanguageChange('ar')}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        currentLang === 'ar' 
+                          ? 'bg-blue-600 text-white shadow-2xs' 
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      عربي
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onLanguageChange('en')}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        currentLang === 'en' 
+                          ? 'bg-blue-600 text-white shadow-2xs' 
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      EN
+                    </button>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-slate-100/80 hover:bg-slate-200/70 active:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-200/80 flex items-center justify-center active:scale-90 transition-all duration-200 cursor-pointer select-none touch-manipulation shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 shadow-2xs"
+                    aria-label={isArabic ? "إغلاق القائمة" : "Fermer le menu"}
+                  >
+                    <X className="w-5 h-5 stroke-[2.2]" aria-hidden="true" />
+                  </button>
+                </div>
               </div>
 
               {/* Navigation Links with Icons, Active Highlight & Badges */}

@@ -43,8 +43,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
             </div>
 
             {/* Quick Google Rating Counter Pill */}
-            <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center justify-between gap-4 shrink-0 hover:border-slate-300 transition-colors">
-              <div className="flex items-center gap-3">
+            <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 sm:gap-4 shrink-0 hover:border-slate-300 transition-colors w-full lg:w-auto">
+              <div className="flex items-center gap-3 min-w-0">
                 <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -53,16 +53,16 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
                   </svg>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="flex items-center gap-1.5">
                     <span className="text-lg font-extrabold text-slate-900 tracking-tight">4.9</span>
-                    <div className="flex items-center text-amber-400">
+                    <div className="flex items-center text-amber-400 shrink-0">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-current" />
                       ))}
                     </div>
                   </div>
-                  <p className="text-[11px] text-slate-500 font-medium">
+                  <p className="text-[11px] text-slate-500 font-medium truncate">
                     {testData.badgeVerified || "Établissement Google vérifié"}
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 href={siteConfig.googleMapsShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold transition-all shrink-0 cursor-pointer active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold transition-all shrink-0 cursor-pointer active:scale-[0.98] ml-auto sm:ml-0"
               >
                 <span>{testData.viewOnMaps || "Ouvrir"}</span>
                 <ExternalLink className="w-3 h-3" />
@@ -83,16 +83,16 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
 
         {/* Central Google Maps Verified Hub (Prominent Trust Showcase) */}
         <Reveal direction="up" delay={50}>
-          <div className="relative overflow-hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-sm hover:border-blue-200 transition-all duration-300">
+          <div className="relative overflow-hidden bg-white rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm hover:border-blue-200 transition-all duration-300">
             {/* Ambient decorative blur */}
             <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-6 sm:gap-8 lg:gap-12">
               
               {/* Left Score Block */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-5 shrink-0">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/80 shadow-md flex flex-col items-center justify-center p-3">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-4 sm:gap-5 shrink-0 w-full lg:w-auto">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/80 shadow-md flex flex-col items-center justify-center p-3 shrink-0">
                   <div className="flex items-center gap-1">
                     <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-none">4.9</span>
                   </div>
@@ -103,27 +103,27 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                   </div>
                 </div>
 
-                <div className="max-w-md">
+                <div className="max-w-md w-full">
                   <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold mb-2">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>{testData.badgeVerified || "Fiche officielle Google Maps vérifiée"}</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                    <span className="truncate">{testData.badgeVerified || "Fiche officielle Google Maps vérifiée"}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
                     {currentLang === 'ar'
-                      ? 'وكالة Visado Service بوهران — تقييمات حقيقية وموثقة'
+                      ? 'Visado Service بوهران — تقييمات حقيقية وموثقة'
                       : 'Visado Service Oran — Avis clients authentiques et vérifiés'}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
                     {testData.transparencyNotice ||
                       (currentLang === 'ar'
-                        ? 'تلتزم وكالتنا بالشفافية المطلقة : لا نضع أي تقييمات وهمية. يمكنكم تصفح كافة تجارب العملاء مباشرة عبر Google Maps.'
-                        : 'Notre agence privilégie l\'authenticité : aucun avis fictif. Tous les témoignages sont directement rédigés par nos clients sur Google Maps.')}
+                        ? 'نلتزم بالشفافية المطلقة : لا نضع أي تقييمات وهمية. يمكنكم تصفح كافة تجارب العملاء مباشرة عبر Google Maps.'
+                        : 'Notre équipe privilégie l\'authenticité : aucun avis fictif. Tous les témoignages sont directement rédigés par nos clients sur Google Maps.')}
                   </p>
                 </div>
               </div>
 
               {/* Middle Trust Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:max-w-md">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 w-full lg:max-w-md">
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/80 border border-slate-100">
                   <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
                   <span className="text-xs font-semibold text-slate-700">
@@ -138,36 +138,36 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/80 border border-slate-100 sm:col-span-2">
                   <MapPin className="w-5 h-5 text-red-500 shrink-0" />
-                  <span className="text-xs font-semibold text-slate-700">
+                  <span className="text-xs font-semibold text-slate-700 truncate" dir="ltr">
                     {currentLang === 'ar' ? '14، شارع حضري محمد، وهران' : '14, Rue Capitaine Hadri Mohamed, Oran'}
                   </span>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 w-full lg:w-auto">
+              <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-3 shrink-0 w-full lg:w-auto">
                 <a
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3 sm:py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer w-full sm:w-auto"
                 >
                   <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 24 24">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
                   </svg>
-                  <span>{testData.viewOnMaps || "Consulter nos avis sur Google Maps"}</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="truncate">{testData.viewOnMaps || "Consulter nos avis sur Google Maps"}</span>
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                 </a>
 
                 <a
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-xs font-semibold transition-all active:scale-[0.98] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-xs font-semibold transition-all active:scale-[0.98] cursor-pointer w-full sm:w-auto"
                 >
-                  <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                  <span>{testData.leaveReview || "Laisser un avis sur Google"}</span>
+                  <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500 shrink-0" />
+                  <span className="truncate">{testData.leaveReview || "Laisser un avis sur Google"}</span>
                 </a>
               </div>
 

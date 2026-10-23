@@ -24,14 +24,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Destinations rapides
+  // Destinations & Services rapides
   const quickDestinations = [
     { label: '🇪🇸 Espagne (BLS)', value: 'Espagne (BLS)' },
     { label: '🇫🇷 France (TLS)', value: 'France (TLS)' },
-    { label: '🇮🇹 Italie', value: 'Italie' },
     { label: '🇨🇦 Canada', value: 'Canada' },
-    { label: '🇬🇧 Royaume-Uni', value: 'Royaume-Uni' },
-    { label: '✈️ Billetterie vols seule', value: 'Billetterie / Réservation vol' },
+    {
+      label: currentLang === 'ar' ? '🇩🇿 حجز Air Algérie' : currentLang === 'en' ? '🇩🇿 Air Algérie Booking' : '🇩🇿 Billets Air Algérie',
+      value: 'Billets Air Algérie'
+    },
+    {
+      label: currentLang === 'ar' ? '✈️ تذاكر جميع الشركات' : currentLang === 'en' ? '✈️ All Airlines Flights' : '✈️ Billets Toutes Compagnies',
+      value: 'Billets d\'avion (Toutes compagnies)'
+    },
+    {
+      label: currentLang === 'ar' ? '🛡️ تأمين السفر' : currentLang === 'en' ? '🛡️ Travel Insurance' : '🛡️ Assurance Voyage',
+      value: 'Assurance Voyage'
+    },
   ];
 
   // Profils professionnels (critique pour les dossiers en Algérie)
@@ -232,7 +241,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
 
             {/* Agency Storefront Real Photo */}
             <div className="rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs mb-6">
-              <div className="relative aspect-[16/9] bg-slate-100 overflow-hidden group">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] bg-slate-100 overflow-hidden group">
                 <img
                   src="/images/Exterieur.png"
                   alt="Façade extérieure Visado Service Oran"
@@ -241,11 +250,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-semibold px-3 py-1 rounded-lg flex items-center gap-1.5 border border-white/10">
-                  <MapPin className="w-3.5 h-3.5 text-red-400" />
-                  <span>{currentLang === 'ar' ? 'المقر بالواجهة الخارجية' : 'Façade Extérieure de l\'Agence'}</span>
+                <div className="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-xs text-white text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-lg flex items-center gap-1.5 border border-white/10 shadow-xs max-w-[calc(100%-24px)] truncate">
+                  <MapPin className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                  <span className="truncate">{currentLang === 'ar' ? 'المقر بالواجهة الخارجية' : 'Façade Extérieure de nos Bureaux'}</span>
                 </div>
-                <div className="absolute bottom-3 right-3 bg-white/95 text-slate-900 text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs" dir="ltr">
+                <div className="absolute bottom-3 right-3 bg-white/95 text-slate-900 text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-1 rounded-md shadow-xs max-w-[calc(100%-24px)] truncate" dir="ltr">
                   14 Rue Hadri Mohamed, Oran
                 </div>
               </div>
@@ -253,22 +262,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
 
             {/* Google Map Card */}
             <div className="rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs">
-              <div className="p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-red-500" />
-                  <span>Visado Service sur Google Maps</span>
+              <div className="p-3 sm:p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-2">
+                <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5 truncate">
+                  <MapPin className="w-4 h-4 text-red-500 shrink-0" />
+                  <span className="truncate">Visado Service sur Google Maps</span>
                 </span>
                 <a
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-blue-600 font-semibold flex items-center gap-1 hover:underline"
+                  className="text-xs text-blue-600 font-semibold flex items-center gap-1 hover:underline shrink-0"
                 >
                   <span>Itinéraire</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
-              <div className="h-56 w-full bg-slate-200">
+              <div className="h-48 sm:h-56 md:h-64 lg:h-72 w-full bg-slate-200 relative">
                 <iframe
                   title="Visado Service Google Maps"
                   src={siteConfig.googleMapsEmbedUrl}
@@ -278,20 +287,21 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
                 />
               </div>
-              <div className="p-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
-                <span className="text-xs text-slate-600 truncate font-medium" dir="ltr">
+              <div className="p-3 sm:p-3.5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                <span className="text-xs text-slate-600 font-medium truncate" dir="ltr">
                   📍 14, Rue Capitaine Hadri Mohamed, Oran
                 </span>
                 <a
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs shrink-0"
+                  className="px-3.5 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs shrink-0 cursor-pointer active:scale-[0.98]"
                 >
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>{currentLang === 'ar' ? 'Google Maps' : 'Google Maps'}</span>
+                  <span>Google Maps</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -309,7 +319,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   <div className="border-b border-slate-100 pb-3">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
                       <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
-                        <span>{currentLang === 'ar' ? 'تحدث مع مستشار الوكالة' : 'Échanger avec un conseiller'}</span>
+                        <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Échanger avec un conseiller'}</span>
                         <Sparkles className="w-4 h-4 text-amber-500" />
                       </h3>
                       <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-0.5 rounded-full">

@@ -16,10 +16,58 @@ import { LegalNoticeModal } from './components/LegalNoticeModal';
 import { Language } from './types';
 import { translations } from './data/translations';
 
+const getInitialLanguage = (): Language => {
+  if (typeof window === 'undefined') return 'ar';
+  
+  try {
+    // Detect browser / phone preferred language fresh on every visit
+    const browserLangs = navigator.languages || [navigator.language || ''];
+    for (const lang of browserLangs) {
+      if (!lang) continue;
+      const code = lang.toLowerCase();
+      if (code.startsWith('ar')) return 'ar';
+      if (code.startsWith('fr')) return 'fr';
+      if (code.startsWith('en')) return 'en';
+    }
+  } catch (e) {
+    // Fallback gracefully on restricted environments
+  }
+
+  // Fallback to Arabic ('ar') as requested by client
+  return 'ar';
+};
+
 export default function App() {
-  const [currentLang, setCurrentLang] = useState<Language>('ar');
+  const [currentLang, setCurrentLang] = useState<Language>(getInitialLanguage);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
+
+  const handleLanguageChange = (lang: Language) => {
+    setCurrentLang(lang);
+  };
+
+  // Ensure no legacy storage or service workers keep stale cached versions
+  useEffect(() => {
+    try {
+      localStorage.clear();
+      sessionStorage.clear();
+    } catch (e) {}
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (const registration of registrations) {
+          registration.unregister();
+        }
+      }).catch(() => {});
+    }
+    if ('caches' in window) {
+      caches.keys().then((names) => {
+        for (const name of names) {
+          caches.delete(name);
+        }
+      }).catch(() => {});
+    }
+  }, []);
 
   // Synchronize document language, text direction (RTL for Arabic), and SEO metadata
   useEffect(() => {
@@ -67,7 +115,7 @@ export default function App() {
       {/* 1. En-tête / Header (Style Google Sites / Profil Entreprise) */}
       <Navbar
         currentLang={currentLang}
-        onLanguageChange={(lang) => setCurrentLang(lang)}
+        onLanguageChange={handleLanguageChange}
         onOpenConsultation={() => setIsConsultationModalOpen(true)}
       />
 

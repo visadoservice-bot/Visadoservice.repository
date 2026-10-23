@@ -182,10 +182,17 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   <option value="Espagne / Schengen">Espagne / Visa Schengen</option>
                   <option value="France / Schengen">France / Visa Schengen</option>
                   <option value="Canada (Tourisme / Études)">Canada (Tourisme / Études)</option>
+                  <option value="Billets Air Algérie">
+                    {currentLang === 'ar' ? 'تذاكر Air Algérie' : currentLang === 'en' ? 'Air Algérie Flight Tickets' : 'Billets Air Algérie'}
+                  </option>
+                  <option value="Billets Avion (Toutes compagnies)">
+                    {currentLang === 'ar' ? 'تذاكر جميع شركات الطيران' : currentLang === 'en' ? 'Flight Tickets (All Airlines)' : 'Billets Avion (Toutes compagnies)'}
+                  </option>
+                  <option value="Assurance Voyage">
+                    {currentLang === 'ar' ? 'تأمين السفر معتمد' : currentLang === 'en' ? 'Certified Travel Insurance' : 'Assurance Voyage agréée'}
+                  </option>
                   <option value="Italie / Portugal / Europe">Italie / Portugal / Autre Europe</option>
                   <option value="Royaume-Uni (UK)">Royaume-Uni (UK)</option>
-                  <option value="Turquie / Dubaï">Turquie / Dubaï</option>
-                  <option value="Billetterie Avion">Billetterie & Vol</option>
                 </select>
               </div>
 
