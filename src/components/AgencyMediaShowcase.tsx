@@ -94,7 +94,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       badgeAr: "فيديو المقر",
       locationFr: "Visado Service • Oran",
       locationAr: "Visado Service • وهران",
-      descriptionFr: "Découvrez en vidéo réelle nos postes de travail informatisés, notre espace d'accueil soigné et les drapeaux des destinations partenaires (Espagne, Canada, etc.).",
+      descriptionFr: "Découvrez en vidéo réelle nos postes de travail informatisés, notre espace d'accueil soigné et les drapeaux des destinations accompagnées (Espagne, Canada, etc.).",
       descriptionAr: "شاهد عبر الفيديو التجهيزات المكتبية والإعلامية الحديثة وفضاء استقبال الزبائن وأعلام الوجهات المختلفة (إسبانيا، كندا وغيرها).",
       highlightFr: "Enregistré dans nos bureaux",
       highlightAr: "مصور داخل مكاتبنا بوهران",

@@ -58,14 +58,13 @@ export async function sendLeadNotification(payload: LeadSubmissionPayload): Prom
     });
 
     if (response.ok) {
-      return { success: true };
+      return { success: true, message: 'Transmis avec succès' };
     } else {
       console.warn('FormSubmit returned non-ok status:', response.status);
-      return { success: true, message: 'Transmis' };
+      return { success: false, message: `Erreur serveur (${response.status})` };
     }
   } catch (error) {
     console.error('Erreur lors de la transmission email du prospect:', error);
-    // Return true anyway so customer flow isn't blocked (WhatsApp will still handle the lead)
-    return { success: true, message: 'Sauvegardé en local' };
+    return { success: false, message: 'Erreur de connexion' };
   }
 }

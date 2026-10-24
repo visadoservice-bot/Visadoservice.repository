@@ -71,7 +71,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
       desc: currentLang === 'ar'
         ? 'معالجة سريعة ودقيقة للاستمارات، رصد فوري للمواعيد المتاحة، ودون تأخير في الإجراءات.'
         : currentLang === 'en'
-        ? 'Fast turnaround times, prompt appointment tracking, and timely submission preparation.'
+        ? 'Fast turnaround times, prompt appointment tracking, and strict deadline management.'
         : 'Prise en charge rapide de vos formulaires, veille active sur les créneaux de rendez-vous et respect strict des délais.'
     },
     {

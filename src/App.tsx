@@ -21,7 +21,14 @@ const getInitialLanguage = (): Language => {
   if (typeof window === 'undefined') return 'ar';
   
   try {
-    // Detect browser / phone preferred language fresh on every visit
+    // 1. Honor explicit ?lang= URL query parameter if present (SEO hreflang & shared links)
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = urlParams.get('lang')?.toLowerCase();
+    if (paramLang === 'fr' || paramLang === 'ar' || paramLang === 'en') {
+      return paramLang;
+    }
+
+    // 2. Detect browser / phone preferred language fresh on every visit
     const browserLangs = navigator.languages || [navigator.language || ''];
     for (const lang of browserLangs) {
       if (!lang) continue;
@@ -47,13 +54,8 @@ export default function App() {
     setCurrentLang(lang);
   };
 
-  // Ensure no legacy storage or service workers keep stale cached versions
+  // Ensure no stale service workers or caches lock users into outdated assets
   useEffect(() => {
-    try {
-      localStorage.clear();
-      sessionStorage.clear();
-    } catch (e) {}
-
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then((registrations) => {
         for (const registration of registrations) {

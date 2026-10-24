@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Share2, MapPin, Star, Copy, Check, ExternalLink, X, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../data/config';
 import { Language } from '../types';
@@ -11,6 +11,16 @@ export const ShareWidget: React.FC<ShareWidgetProps> = ({ currentLang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedLocation, setCopiedLocation] = useState(false);
+
+  // Close modal on Escape key press
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
 
   const isArabic = currentLang === 'ar';
   const siteUrl = typeof window !== 'undefined' ? window.location.href : 'https://visadoservice.dz/';
@@ -67,7 +77,7 @@ export const ShareWidget: React.FC<ShareWidgetProps> = ({ currentLang }) => {
       {/* Discreet Floating Share Button (Desktop & Mobile) */}
       <aside
         aria-label="Actions de partage et avis"
-        className="fixed bottom-6 start-6 z-40 flex items-center gap-2.5 pointer-events-auto select-none"
+        className="fixed bottom-20 start-4 md:bottom-6 md:start-6 z-40 flex items-center gap-2.5 pointer-events-auto select-none"
       >
         <button
           type="button"

@@ -25,6 +25,17 @@ export interface SiteConfig {
   googleMapsEmbedUrl: string;
   googleMapsShareUrl: string;
   googleReviewsUrl?: string;
+  openingHoursFr?: string;
+  openingHoursAr?: string;
+  openingHoursEn?: string;
+  legalEntity?: {
+    raisonSociale: string;
+    registreCommerce: string;
+    nif: string;
+    directeurPublication: string;
+    hebergeur: string;
+    contactProcessor?: string;
+  };
 }
 
 export interface ServiceItem {

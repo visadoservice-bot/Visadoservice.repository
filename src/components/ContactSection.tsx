@@ -23,6 +23,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState('');
 
   // Destinations & Services rapides
   const quickDestinations = [
@@ -82,13 +85,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     `Envoyé depuis le site web Visado Service Oran (${siteConfig.address}).`
   )}`;
 
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName.trim() || !formData.phone.trim()) {
+    if (honeypot) return; // Anti-bot honeypot caught a submission
+    if (!formData.fullName.trim() || !formData.phone.trim() || isSubmitting) {
       return;
     }
-    // Dispatch email notification to official email
-    sendLeadNotification({
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const result = await sendLeadNotification({
       fullName: formData.fullName,
       phone: formData.phone,
       email: formData.email,
@@ -99,10 +106,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
       source: 'Formulaire devis & contact (Bouton WhatsApp)'
     });
 
-    setIsSubmitted(true);
-    // Open WhatsApp directly with prefilled message
-    if (typeof window !== 'undefined') {
-      window.open(customWhatsAppUrl, '_blank');
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setIsSubmitted(true);
+      if (typeof window !== 'undefined') {
+        window.open(customWhatsAppUrl, '_blank');
+      }
+    } else {
+      setSubmitError(
+        currentLang === 'ar'
+          ? 'تعذر إرسال الطلب تلقائياً عبر الخادم. يمكنكم التواصل معنا مباشرة عبر واتساب أو الاتصال الهاتفي :'
+          : 'La transmission automatique a rencontré un imprévu. Vous pouvez nous joindre directement via WhatsApp ou par téléphone :'
+      );
     }
   };
 
@@ -159,7 +175,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     </a>
                     {siteConfig.phoneSecondary && (
                       <a
-                        href="tel:+213555778460"
+                        href={`tel:${siteConfig.phoneSecondary.replace(/\s+/g, '')}`}
                         className="text-xs text-slate-500 hover:text-slate-800 block mt-0.5"
                         dir="ltr"
                       >
@@ -436,14 +452,64 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     />
                   </div>
 
+                  {/* Honeypot anti-spam field (hidden from users) */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="contact-hp">Ne pas remplir</label>
+                    <input
+                      id="contact-hp"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </div>
+
+                  {/* Error Notification Banner if submission fails */}
+                  {submitError && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs space-y-2">
+                      <p className="font-semibold">{submitError}</p>
+                      <div className="flex flex-wrap gap-2 pt-1">
+                        <a
+                          href={customWhatsAppUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-1.5 bg-[#25D366] text-white font-bold rounded-lg text-xs inline-flex items-center gap-1.5"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                          <span>WhatsApp</span>
+                        </a>
+                        <a
+                          href={`tel:${siteConfig.phoneRaw}`}
+                          className="px-3 py-1.5 bg-blue-600 text-white font-bold rounded-lg text-xs inline-flex items-center gap-1.5"
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                          <span>Appeler</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
                   {/* 5. Primary CTA Action - Opens WhatsApp with prefilled data */}
                   <div className="pt-2 space-y-2.5">
                     <button
                       type="submit"
-                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-md shadow-emerald-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                      disabled={isSubmitting}
+                      className={`w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-md shadow-emerald-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
+                        isSubmitting ? 'opacity-70 cursor-wait' : 'cursor-pointer'
+                      }`}
                     >
-                      <MessageCircle className="w-5 h-5 fill-current shrink-0" aria-hidden="true" />
-                      <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
+                      {isSubmitting ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          <span>{currentLang === 'ar' ? 'جاري الإرسال...' : 'Transmission en cours...'}</span>
+                        </>
+                      ) : (
+                        <>
+                          <MessageCircle className="w-5 h-5 fill-current shrink-0" aria-hidden="true" />
+                          <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
+                        </>
+                      )}
                     </button>
 
                     <div className="flex items-center justify-center pt-1.5">

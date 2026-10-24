@@ -78,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({
                 ? 'نضع خبرتنا في خدمتكم لمرافقتكم وتوجيهكم في مختلف خدمات وإجراءات السفر، والاستشارات والمتابعة الدقيقة بكل شفافية واحترافية.'
                 : currentLang === 'en'
                 ? 'Visado Service welcomes you at 14 Rue Hadri Mohamed in Oran for travel guidance, official appointments support, and personalized journey assistance.'
-                : 'Visado Service vous accueille au 14, Rue Hadri Mohamed à Oran pour vous orienter, préparer vos démarches de voyage, vous assister dans vos réservations et assurer un suivi personnalisé en toute transparence.'}
+                : 'Visado Service vous accueille au 14, Rue Hadri Mohamed à Oran pour vous orienter, vous assister dans vos démarches de voyage, vous accompagner dans vos réservations et assurer un suivi personnalisé en toute transparence.'}
             </p>
 
             {/* 4. Action Buttons (CTA Principal + CTA Secondaire + Appel direct) */}
@@ -215,7 +215,7 @@ export const Hero: React.FC<HeroProps> = ({
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1 text-[11px] font-bold text-blue-700">
                         <CheckCircle2 className="w-3 h-3 shrink-0 text-emerald-600" />
-                        <span>{currentLang === 'ar' ? 'خدمات السفر والاستشارات المعتمدة' : 'Services & Conseils aux Voyageurs'}</span>
+                        <span>{currentLang === 'ar' ? 'خدمات السفر والاستشارات المتخصصة' : 'Services & Conseils aux Voyageurs'}</span>
                       </div>
                       <h4 className="text-xs sm:text-sm font-bold text-slate-900 truncate">
                         Visado Service · Oran

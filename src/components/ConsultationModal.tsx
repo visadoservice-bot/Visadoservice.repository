@@ -19,6 +19,9 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   const [phone, setPhone] = useState('');
   const [destination, setDestination] = useState('Espagne / Schengen');
   const [isSent, setIsSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState('');
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   // Close on Escape key press
@@ -50,21 +53,34 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     `_Envoyé depuis le site web Visado Service Oran_`
   )}`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) return;
+    if (honeypot) return;
+    if (!name.trim() || !phone.trim() || isSubmitting) return;
 
-    // Send lead notification to official email
-    sendLeadNotification({
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const result = await sendLeadNotification({
       fullName: name,
       phone: phone,
       destination: destination,
       source: 'Modale Consultation Rapide'
     });
 
-    setIsSent(true);
-    if (typeof window !== 'undefined') {
-      window.open(directWhatsAppUrl, '_blank');
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setIsSent(true);
+      if (typeof window !== 'undefined') {
+        window.open(directWhatsAppUrl, '_blank');
+      }
+    } else {
+      setSubmitError(
+        currentLang === 'ar'
+          ? 'تعذر إرسال الطلب تلقائياً عبر الخادم. يمكنكم التواصل المباشر عبر واتساب أو الهاتف :'
+          : 'La transmission automatique a échoué. Vous pouvez nous joindre directement via WhatsApp ou par téléphone :'
+      );
     }
   };
 
@@ -92,7 +108,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               className="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-lg bg-white border border-slate-200 p-0.5"
             />
             <h2 id="consultation-modal-title" className="font-bold text-xs sm:text-sm text-slate-900 truncate">
-              {currentLang === 'ar' ? 'تحدث مع مستشار معتمد' : 'Parler à un conseiller'}
+              {currentLang === 'ar' ? 'تحدث مع مستشار مختص' : 'Parler à un conseiller'}
             </h2>
           </div>
           <button
@@ -189,20 +205,68 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     {currentLang === 'ar' ? 'تذاكر جميع شركات الطيران' : currentLang === 'en' ? 'Flight Tickets (All Airlines)' : 'Billets Avion (Toutes compagnies)'}
                   </option>
                   <option value="Assurance Voyage">
-                    {currentLang === 'ar' ? 'تأمين السفر معتمد' : currentLang === 'en' ? 'Certified Travel Insurance' : 'Assurance Voyage agréée'}
+                    {currentLang === 'ar' ? 'تأمين السفر (تأشيرات ودولي)' : currentLang === 'en' ? 'Travel Insurance (Visa & Worldwide)' : 'Assurance Voyage (Visas & Monde)'}
                   </option>
                   <option value="Italie / Portugal / Europe">Italie / Portugal / Autre Europe</option>
                   <option value="Royaume-Uni (UK)">Royaume-Uni (UK)</option>
                 </select>
               </div>
 
+              {/* Honeypot anti-spam */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
+              {/* Error fallback message */}
+              {submitError && (
+                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs space-y-2">
+                  <p className="font-semibold">{submitError}</p>
+                  <div className="flex gap-2">
+                    <a
+                      href={directWhatsAppUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 bg-[#25D366] text-white font-bold rounded-lg text-xs inline-flex items-center gap-1"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                      <span>WhatsApp</span>
+                    </a>
+                    <a
+                      href={`tel:${siteConfig.phoneRaw}`}
+                      className="px-3 py-1.5 bg-blue-600 text-white font-bold rounded-lg text-xs inline-flex items-center gap-1"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Appeler</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
               <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
                 <button
                   type="submit"
-                  className="w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-xs transition-all cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                  disabled={isSubmitting}
+                  className={`w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
+                    isSubmitting ? 'opacity-70 cursor-wait' : 'cursor-pointer'
+                  }`}
                 >
-                  <MessageCircle className="w-4 h-4 fill-current" aria-hidden="true" />
-                  <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
+                  {isSubmitting ? (
+                    <>
+                      <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>{currentLang === 'ar' ? 'جاري الإرسال...' : 'Transmission en cours...'}</span>
+                    </>
+                  ) : (
+                    <>
+                      <MessageCircle className="w-4 h-4 fill-current" aria-hidden="true" />
+                      <span>{currentLang === 'ar' ? 'تحدث مع مستشار عبر واتساب' : 'Échanger avec un conseiller sur WhatsApp'}</span>
+                    </>
+                  )}
                 </button>
               </div>
               <p className="text-[11px] text-slate-500 text-center pt-1">

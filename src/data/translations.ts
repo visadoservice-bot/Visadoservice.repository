@@ -26,7 +26,7 @@ export const translations = {
       scrollPrompt: "DÉCOUVRIR NOS SERVICES"
     },
     intro: {
-      overline: "VOTRE PARTENAIRE DE VOYAGE",
+      overline: "VOTRE AGENCE DE CONSEIL & ASSISTANCE VOYAGE",
       heading: "Plus qu'une démarche.\nUn véritable projet de voyage.",
       paragraph1: "Chez Visado Service, nous savons qu'un voyage représente bien plus qu'une simple formalité. C'est le début d'un projet, d'une découverte ou de retrouvailles importantes.",
       paragraph2: "Notre équipe vous accueille au cœur d'Oran pour vous écouter, vous conseiller et vous accompagner à chaque étape avec clarté, disponibilité et professionnalisme."
@@ -52,7 +52,7 @@ export const translations = {
           number: "02",
           title: "Accompagnement Visa Touristique Canada",
           subtitle: "Projets touristiques & visites familiales",
-          description: "Nous vous accompagnons dans la préparation de votre demande de visa touristique pour le Canada et dans le suivi des différentes étapes de votre démarche.",
+          description: "Nous vous accompagnons dans les démarches de votre demande de visa touristique pour le Canada et dans le suivi rigoureux de chaque étape officielle.",
           highlights: ["Structuration du dossier", "Conformité des formulaires", "Suivi des étapes officielles"],
           cta: "Découvrir le parcours Canada",
           targetSection: "canada"
@@ -105,8 +105,8 @@ export const translations = {
           id: "assurance_voyage",
           number: "06",
           title: "Assurances Voyage Schengen & Monde",
-          subtitle: "Attestations officielles d'assurance voyage",
-          description: "Émission rapide d'attestations d'assurance voyage agréées et conformes aux exigences consulaires pour vos demandes de visa Schengen, Canada, Royaume-Uni et déplacements mondiaux.",
+          subtitle: "Attestations d'assurance voyage conformes",
+          description: "Émission rapide d'attestations d'assurance voyage conformes aux exigences consulaires pour vos demandes de visa Schengen, Canada, Royaume-Uni et déplacements mondiaux.",
           highlights: [
             "Conforme aux exigences Schengen & Canada",
             "Couverture médicale & rapatriement d'urgence",
@@ -163,7 +163,7 @@ export const translations = {
           number: "04",
           name: "Allemagne",
           city: "Berlin",
-          description: "Préparation rigoureuse répondant aux critères des représentations consulaires allemandes.",
+          description: "Accompagnement rigoureux et vérification répondant aux critères des représentations consulaires allemandes.",
           highlights: ["Rigueur documentaire", "Fiches professionnelles", "Plan de voyage"]
         },
         {
@@ -275,8 +275,8 @@ export const translations = {
         },
         {
           title: "RIGUEUR",
-          description: "Une préparation soignée.",
-          detail: "Une méthode attentive pour vérifier la cohérence de vos éléments avant toute démarche officielle."
+          description: "Une vérification soignée.",
+          detail: "Une méthode attentive pour vérifier la conformité et la cohérence de vos éléments avant toute démarche officielle."
         },
         {
           title: "PROXIMITÉ",
@@ -308,13 +308,13 @@ export const translations = {
         },
         {
           id: "faq-2",
-          question: "Quels documents dois-je préparer ?",
+          question: "Quels documents dois-je fournir ?",
           answer: "La liste dépend de votre destination et de votre statut. Lors de notre échange à nos bureaux ou à distance, nous vous remettons une orientation claire et personnalisée sur les éléments à réunir."
         },
         {
           id: "faq-3",
           question: "Proposez-vous un accompagnement pour le Canada ?",
-          answer: "Oui. Nous vous accompagnons dans la préparation de votre demande de visa touristique ou visite familiale pour le Canada : orientation sur les pièces, assistance aux formulaires et suivi des étapes."
+          answer: "Oui. Nous vous accompagnons dans les démarches de votre demande de visa touristique ou visite familiale pour le Canada : orientation sur les pièces, assistance aux formulaires et suivi des étapes."
         },
         {
           id: "faq-4",
@@ -406,7 +406,7 @@ export const translations = {
       scrollPrompt: "اكتشف خدماتنا ومكاتبنا"
     },
     intro: {
-      overline: "شريككم في السفر",
+      overline: "وكالتكم للاستشارة والمرافقة في السفر",
       heading: "أكثر من مجرد إجراء.\nمشروع سفر وطموح حقيقي.",
       paragraph1: "مع Visado Service ندرك تماماً أن السفر يمثل أكثر بكثير من مجرد معاملات ورقية. إنه انطلاق لمشروع، اكتشاف لآفاق جديدة أو خطوة مهمة في حياتكم.",
       paragraph2: "دورنا يتمثل في مرافقتكم بمنهجية واضحة، إصغاء شخصي واحترافية عالية في كل مرحلة من مراحل رحلتكم."
@@ -433,7 +433,7 @@ export const translations = {
           title: "توجيه ومرافقة تأشيرة كندا",
           subtitle: "رحلات سياحية وزيارات عائلية",
           description: "نرافقكم في خطوات طلب التأشيرة السياحية إلى كندا ومتابعة مختلف المراحل الإدارية بكل عناية.",
-          highlights: ["تنظيم الملف وتجهيزه", "مطابقة الاستمارات الرسمية", "متابعة المراحل الإدارية"],
+          highlights: ["تنظيم ومراجعة الوثائق", "مطابقة الاستمارات الرسمية", "متابعة المراحل الإدارية"],
           cta: "مسار تأشيرة كندا",
           targetSection: "canada"
         },
@@ -484,9 +484,9 @@ export const translations = {
         {
           id: "assurance_voyage",
           number: "06",
-          title: "تأمين السفر المعتمد (شنغن وجميع الدول)",
-          subtitle: "شهادات تأمين سفر معتمدة قنصلياً",
-          description: "إصدار فوري لشهادات تأمين السفر المعتمدة من القنصليات والممثليات الدبلوماسية (شنغن، كندا، بريطانيا ودول العالم) للتغطية الطبية والطوارئ.",
+          title: "تأمين السفر الدولي (شنغن وجميع الوجهات)",
+          subtitle: "شهادات تأمين سفر مطابقة للاشتراطات القنصلية",
+          description: "إصدار فوري لشهادات تأمين السفر المطابقة لشروط القنصليات والممثليات الدبلوماسية (شنغن، كندا، بريطانيا ودول العالم) للتغطية الطبية والطوارئ.",
           highlights: [
             "مطابق لشروط تأشيرة شنغن وكندا",
             "تغطية علاجية وطوارئ كاملة",
@@ -600,7 +600,7 @@ export const translations = {
           number: "03",
           title: "الترتيب والمراجعة",
           subtitle: "مرافقتكم في تنظيم وتدقيق المعطيات.",
-          detail: "تنظيم منهجي لكافة الأوراق لإعداد ملف واضح ومرتب."
+          detail: "تنظيم منهجي وتدقيق لكافة الأوراق لتقديم ملف واضح ومستوفٍ للشروط."
         },
         {
           number: "04",
@@ -688,7 +688,7 @@ export const translations = {
         },
         {
           id: "faq-2",
-          question: "ما هي المستندات التي ينبغي عليّ تجهيزها ؟",
+          question: "ما هي المستندات التي ينبغي عليّ تقديمها ؟",
           answer: "تختلف القائمة حسب الوجهة ونوع الرحلة. في أول اتصال أو زيارة لمكاتبنا، نقدم لكم توجيهاً دقيقاً ومخصصاً بحسب وضعكم."
         },
         {
@@ -812,7 +812,7 @@ export const translations = {
           number: "02",
           title: "Canada Visitor Visa Guidance",
           subtitle: "Tourism & Family Visits",
-          description: "We guide you through the preparation of your Canadian visitor visa application and assist you across each official submission milestone.",
+          description: "We guide and assist you through your Canadian visitor visa application procedures across each official submission milestone.",
           highlights: ["Dossier structuring", "Form conformity", "Administrative tracking"],
           cta: "Discover Canada pathway",
           targetSection: "canada"
@@ -865,8 +865,8 @@ export const translations = {
           id: "assurance_voyage",
           number: "06",
           title: "Travel Insurance (Schengen & Worldwide)",
-          subtitle: "Official Consular Travel Insurance Certificates",
-          description: "Instant issuance of officially recognized travel insurance certificates fully compliant with consular requirements for Schengen, Canada, UK, and worldwide travel.",
+          subtitle: "Compliant Travel Insurance Certificates",
+          description: "Instant issuance of travel insurance certificates fully compliant with consular requirements for Schengen, Canada, UK, and worldwide travel.",
           highlights: [
             "Fully compliant with Schengen & Canada criteria",
             "Comprehensive medical & emergency repatriation",
@@ -923,7 +923,7 @@ export const translations = {
           number: "04",
           name: "Germany",
           city: "Berlin",
-          description: "Rigorous preparation satisfying the standards of German consular authorities.",
+          description: "Rigorous verification and guidance satisfying the standards of German consular authorities.",
           highlights: ["Document precision", "Professional records", "Structured travel plan"]
         },
         {
@@ -1068,7 +1068,7 @@ export const translations = {
         },
         {
           id: "faq-2",
-          question: "Which documents should I prepare?",
+          question: "Which documents should I provide?",
           answer: "Checklists vary by destination and traveler profile. During our in-office consultation or phone assessment, we provide clear, customized guidance on necessary items."
         },
         {

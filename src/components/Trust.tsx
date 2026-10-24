@@ -72,7 +72,7 @@ export const Trust: React.FC<TrustProps> = ({
                 ? 'نستقبلكم في مكاتبنا بشارع حضري محمد لمرافقتكم وتوجيهكم في كافة إجراءات وحجوزات سفركم بكل شفافية واحترافية.'
                 : isEnglish
                 ? 'At 14 Rue Capitaine Hadri Mohamed, we welcome you in person to guide you through your travel bookings and application procedures with complete transparency.'
-                : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour vous orienter, préparer vos démarches et vous accompagner dans vos réservations en toute sérénité.'}
+                : 'Au 14 Rue Capitaine Hadri Mohamed, nous vous recevons en personne pour vous orienter, vous assister dans vos démarches et vous accompagner dans vos réservations en toute sérénité.'}
             </p>
           </div>
         </Reveal>
@@ -243,7 +243,7 @@ export const Trust: React.FC<TrustProps> = ({
                     <span dir="ltr" className="text-emerald-700">{siteConfig.phone}</span>
                   </a>
                   <a
-                    href={`tel:+213555778460`}
+                    href={`tel:${siteConfig.phoneSecondary.replace(/\s+/g, '')}`}
                     className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-white border border-slate-200/80 text-xs font-bold text-slate-800 hover:border-emerald-300 transition-colors"
                   >
                     <span className="text-slate-500 font-medium">{isArabic ? 'الثانوي:' : 'Ligne 2 :'}</span>
@@ -342,64 +342,7 @@ export const Trust: React.FC<TrustProps> = ({
 
         </div>
 
-        {/* Social Proof & Official Social Media Ribbon */}
-        <Reveal direction="up" delay={120}>
-          <div className="mt-8 sm:mt-10 p-4 sm:p-5 rounded-2xl bg-slate-100/80 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-center md:text-start">
-              <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-2xs">
-                <Sparkles className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-slate-900">
-                  {isArabic
-                    ? 'تابعوا إرشادات التأشيرات وأخبار المواعيد الرسمية يومياً على شبكاتنا'
-                    : 'Suivez nos conseils visas et les actualités de voyage sur nos réseaux officiels'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isArabic
-                    ? 'محتوى توعوي ومقاطع حقيقية توضح شروط التأشيرات والخطوات المطلوبة'
-                    : 'Comptes officiels vérifiés Visado Service à Oran'}
-                </p>
-              </div>
-            </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0 flex-wrap justify-center">
-              <a
-                href={siteConfig.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-pink-50 text-slate-800 hover:text-pink-600 border border-slate-200/90 text-xs font-semibold transition-colors shadow-2xs"
-              >
-                <span className="w-2 h-2 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600" />
-                <span>Instagram {siteConfig.instagramHandle}</span>
-                <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-              </a>
-
-              <a
-                href={siteConfig.tiktokUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 hover:text-black border border-slate-200/90 text-xs font-semibold transition-colors shadow-2xs"
-              >
-                <span className="w-2 h-2 rounded-full bg-black" />
-                <span>TikTok {siteConfig.tiktokHandle}</span>
-                <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-              </a>
-
-              <a
-                href={siteConfig.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-blue-50 text-slate-800 hover:text-blue-600 border border-slate-200/90 text-xs font-semibold transition-colors shadow-2xs"
-              >
-                <span className="w-2 h-2 rounded-full bg-blue-600" />
-                <span>Facebook {siteConfig.facebookName}</span>
-                <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
-              </a>
-            </div>
-          </div>
-        </Reveal>
 
       </div>
     </section>

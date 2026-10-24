@@ -152,14 +152,27 @@ export const Services: React.FC<ServicesProps> = ({
                 </div>
               </div>
               <div className="md:col-span-4 flex justify-center">
-                <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-md max-w-[200px] sm:max-w-[220px] group cursor-pointer" onClick={onOpenConsultation}>
-                  <img
-                    src="/images/rdv.png"
-                    alt="Confirmation officielle de rendez-vous BLS Espagne"
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                  <div className="absolute bottom-0 inset-x-0 bg-slate-900/80 text-white text-[10px] font-semibold py-1.5 px-2 text-center backdrop-blur-xs">
-                    {currentLang === 'ar' ? 'نموذج موعد BLS معتمد' : 'Récépissé BLS vérifié'}
+                <div 
+                  className="w-full max-w-[240px] rounded-2xl bg-gradient-to-br from-blue-50 to-slate-100 p-5 border border-blue-200/80 shadow-md text-center space-y-3 group cursor-pointer hover:border-blue-300 transition-all"
+                  onClick={onOpenConsultation}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onOpenConsultation(); }}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mx-auto shadow-sm group-hover:scale-105 transition-transform">
+                    <FileCheck2 className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
+                      {currentLang === 'ar' ? 'مساعدة ومتابعة ملفات السفر والمواعيد' : 'Assistance & Suivi des Dossiers'}
+                    </h4>
+                    <p className="text-[11px] text-slate-500 mt-1">
+                      {currentLang === 'ar' ? 'مراجعة وتدقيق المستندات بوهران' : 'Conformité & accompagnement Oran'}
+                    </p>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-blue-700 text-[10px] font-bold shadow-2xs border border-blue-100">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>{currentLang === 'ar' ? 'تدقيق دقيق قبل الإيداع' : 'Contrôle attentif'}</span>
                   </div>
                 </div>
               </div>
