@@ -442,9 +442,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                         }`}>
                           {link.badge}
                         </span>
-                        <ChevronRight className={`w-4 h-4 transition-transform ${
-                          isActive ? 'text-white' : 'text-slate-400 group-hover:text-blue-600'
-                        } rtl:rotate-180`} />
                       </div>
                     </a>
                   );

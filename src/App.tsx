@@ -10,6 +10,7 @@ import { ContactSection } from './components/ContactSection';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { ShareWidget } from './components/ShareWidget';
 import { MobileBottomBar } from './components/MobileBottomBar';
 import { ConsultationModal } from './components/ConsultationModal';
 import { LegalNoticeModal } from './components/LegalNoticeModal';
@@ -178,6 +179,9 @@ export default function App() {
 
       {/* Bouton WhatsApp Flottant sur Desktop */}
       <WhatsAppFloat currentLang={currentLang} />
+
+      {/* Widget discret de partage & avis Google Maps */}
+      <ShareWidget currentLang={currentLang} />
 
       {/* Barre CTA Fixe Mobile (WhatsApp / Appeler / Prendre RDV) */}
       <MobileBottomBar

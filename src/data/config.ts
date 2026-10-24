@@ -24,6 +24,7 @@ export const siteConfig: SiteConfig = {
   // Interactive Google Maps centered on official Visado service visa profile in Oran
   googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.957582299863!2d-0.6432667!3d35.704193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7e89271254e3c1%3A0xc66ecc6e44e7a3aa!2sVisado%20service%20visa!5e0!3m2!1sfr!2sdz!4v1710000000000!5m2!1sfr!2sdz",
   googleMapsShareUrl: "https://maps.app.goo.gl/PUcAubAdHqLz2p5D6",
+  googleReviewsUrl: "https://g.page/r/Caqj50RuzG7GEAE/review",
 };
 
 export const WHATSAPP_DEFAULT_MESSAGE = "Bonjour Visado Service, je souhaite avoir des informations sur vos services de voyage.";

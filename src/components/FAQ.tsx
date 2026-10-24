@@ -128,10 +128,9 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
 
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer"
               >
                 <span>{currentLang === 'ar' ? 'دراسة الملف' : 'Demander une étude'}</span>
-                <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
               </button>
             </div>
           </div>

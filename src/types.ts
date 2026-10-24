@@ -24,6 +24,7 @@ export interface SiteConfig {
   serviceZone: string;
   googleMapsEmbedUrl: string;
   googleMapsShareUrl: string;
+  googleReviewsUrl?: string;
 }
 
 export interface ServiceItem {

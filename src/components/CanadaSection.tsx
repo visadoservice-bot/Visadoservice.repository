@@ -82,10 +82,9 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
           <div>
             <button
               onClick={onOpenConsultation}
-              className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-blue-600/25 transition-all duration-300 flex items-center gap-2.5 group cursor-pointer active:scale-[0.98]"
+              className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-blue-600/25 transition-all duration-300 flex items-center justify-center cursor-pointer active:scale-[0.98]"
             >
               <span>{t.canada.cta}</span>
-              <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform rtl:rotate-180" />
             </button>
           </div>
 

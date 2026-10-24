@@ -86,10 +86,9 @@ export const Hero: React.FC<HeroProps> = ({
               {/* CTA Principal */}
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3.5 sm:py-4 bg-[#002A79] hover:bg-[#002060] active:bg-[#001848] text-white text-sm sm:text-base font-bold rounded-xl shadow-md shadow-[#002A79]/20 hover:shadow-lg hover:shadow-[#002A79]/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer group"
+                className="px-6 py-3.5 sm:py-4 bg-[#002A79] hover:bg-[#002060] active:bg-[#001848] text-white text-sm sm:text-base font-bold rounded-xl shadow-md shadow-[#002A79]/20 hover:shadow-lg hover:shadow-[#002A79]/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : currentLang === 'en' ? 'Speak to an Advisor' : 'Parler à un conseiller'}</span>
-                <ArrowRight className="w-4 h-4 rtl:rotate-180 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform" />
               </button>
 
               {/* CTA Secondaire (WhatsApp direct) */}
@@ -143,7 +142,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="flex flex-wrap items-center gap-2.5 font-medium text-slate-800">
                 <span className="hover:text-blue-700 transition-colors">🇪🇸 Espagne (BLS)</span>
                 <span className="text-slate-300">/</span>
-                <span className="hover:text-blue-700 transition-colors">🇫🇷 France (TLS)</span>
+                <span className="hover:text-blue-700 transition-colors">🇫🇷 France (Capago)</span>
                 <span className="text-slate-300">/</span>
                 <span className="hover:text-blue-700 transition-colors">🇮🇹 Italie</span>
                 <span className="text-slate-300">/</span>

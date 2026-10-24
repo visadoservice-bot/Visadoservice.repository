@@ -113,10 +113,9 @@ export const Services: React.FC<ServicesProps> = ({
                         onOpenConsultation();
                       }
                     }}
-                    className="w-full mt-2 py-2.5 px-3.5 text-xs font-semibold text-slate-700 hover:text-blue-600 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98] group/btn"
+                    className="w-full mt-2 py-2.5 px-3.5 text-xs font-semibold text-slate-700 hover:text-blue-600 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl transition-all flex items-center justify-center cursor-pointer active:scale-[0.98]"
                   >
                     <span>{service.cta || (currentLang === 'ar' ? 'تحدث مع مستشار' : 'Demander conseil')}</span>
-                    <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180 text-blue-600 group-hover/btn:translate-x-1 rtl:group-hover/btn:-translate-x-1 transition-transform" />
                   </button>
                 </div>
               </Reveal>

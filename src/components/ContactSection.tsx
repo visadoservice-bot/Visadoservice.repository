@@ -27,7 +27,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
   // Destinations & Services rapides
   const quickDestinations = [
     { label: '🇪🇸 Espagne (BLS)', value: 'Espagne (BLS)' },
-    { label: '🇫🇷 France (TLS)', value: 'France (TLS)' },
+    { label: '🇫🇷 France (Capago)', value: 'France (Capago)' },
     { label: '🇨🇦 Canada', value: 'Canada' },
     {
       label: currentLang === 'ar' ? '🇩🇿 حجز Air Algérie' : currentLang === 'en' ? '🇩🇿 Air Algérie Booking' : '🇩🇿 Billets Air Algérie',
