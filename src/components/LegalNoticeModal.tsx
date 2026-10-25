@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ShieldCheck, Lock, CheckCircle2, Building2, Phone, MapPin, MessageCircle, FileText, Server } from 'lucide-react';
+import { X, ShieldCheck, Lock, CheckCircle2, Phone, MapPin, MessageCircle, FileText } from 'lucide-react';
 import { Language } from '../types';
 import { siteConfig } from '../data/config';
 
@@ -135,39 +135,7 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
                 </p>
               </div>
 
-              {/* 4. Statut & Identification légale */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5 text-slate-700">
-                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <Building2 className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>البيانات القانونية والتعريف بالمؤسسة</h3>
-                </div>
-                <p className="leading-relaxed">
-                  تنشط <strong>{siteConfig.legalEntity?.raisonSociale || 'Visado Service'}</strong> في تقديم خدمات الاستشارة، المساعدة والمرافقة في الإجراءات والترتيبات المرتبطة بالسفر والخدمات الإدارية والرقمية المتعلقة به.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs">
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">السجل التجاري (RC) :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.registreCommerce}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">الرقم الجبائي (NIF / NIS) :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.nif}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">مسؤول النشر :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.directeurPublication}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">استضافة الموقع :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.hebergeur}</span>
-                  </div>
-                </div>
 
-                <p className="text-xs text-slate-500 pt-1">
-                  <strong>تذكير سيادي :</strong> قرار منح أو رفض التأشيرات يعود حصرياً وسيادياً للسلطات القنصلية والسفارات المعنية ولا نملك أي تأثير عليه.
-                </p>
-              </div>
 
               {/* Coordonnées officielles */}
               <div className="pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1.5">
@@ -229,39 +197,6 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
                 <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Your contact information is <strong>never sold, leased, or shared</strong> with third parties.</span>
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5 text-slate-700">
-                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <Building2 className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>Legal Notice & Enterprise Identity</h3>
-                </div>
-                <p className="leading-relaxed">
-                  <strong>{siteConfig.legalEntity?.raisonSociale || 'Visado Service'}</strong> provides travel consulting, application file verification, and travel booking assistance.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs">
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Trade Register (RC):</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.registreCommerce}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Tax ID (NIF / NIS):</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.nif}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Director of Publication:</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.directeurPublication}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Web Hosting:</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.hebergeur}</span>
-                  </div>
-                </div>
-
-                <p className="text-xs text-slate-500 pt-1">
-                  <strong>Consular notice:</strong> The sovereign decision to issue or refuse a visa belongs exclusively to official consulates and embassies.
                 </p>
               </div>
 
@@ -328,47 +263,6 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
                 <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Vos coordonnées ne sont <strong>ni vendues, ni louées</strong> à des fins publicitaires ou commerciales.</span>
-                </p>
-              </div>
-
-              {/* 4. Statut & Identification légale */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5 text-slate-700">
-                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <Building2 className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>Identification légale & Cadre d'exercice</h3>
-                </div>
-                <p className="leading-relaxed">
-                  <strong>{siteConfig.legalEntity?.raisonSociale || 'Visado Service'}</strong> intervient dans les prestations de conseil, d'assistance et d'accompagnement aux démarches liées au voyage, aux réservations et aux formalités administratives et numériques associées.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs">
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Registre du Commerce (RC) :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.registreCommerce}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Identifiant Fiscal (NIF / NIS) :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.nif}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Directeur de la publication :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.directeurPublication}</span>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-xl border border-slate-200/70">
-                    <span className="text-slate-500 block">Hébergement web :</span>
-                    <span className="font-semibold text-slate-800">{siteConfig.legalEntity?.hebergeur}</span>
-                  </div>
-                </div>
-
-                <div className="pt-1 flex items-start gap-2 text-[11px] text-slate-500">
-                  <Server className="w-3.5 h-3.5 shrink-0 mt-0.5 text-slate-400" />
-                  <span>
-                    <strong>Transmission des messages :</strong> Les messages envoyés via le formulaire sont traités et transmis de manière sécurisée par {siteConfig.legalEntity?.contactProcessor} à l'adresse e-mail professionnelle de l'agence.
-                  </span>
-                </div>
-
-                <p className="text-xs text-slate-500 pt-1">
-                  <strong>Rappel consulaire :</strong> La décision finale d’octroi ou de refus d'un visa relève de la compétence souveraine exclusive des autorités consulaires et ambassades compétentes.
                 </p>
               </div>
 

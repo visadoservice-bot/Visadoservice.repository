@@ -150,8 +150,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
             <div className="space-y-6">
             
             {/* Contact Details Card */}
-            <div className="bg-slate-50/70 rounded-2xl border border-slate-200/80 p-5 sm:p-7 space-y-5 shadow-xs">
-              <h3 className="text-base sm:text-lg font-bold text-slate-900 pb-3 border-b border-slate-200/80">
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-5 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms] overflow-hidden">
+              <h3 className="text-[19px] sm:text-[20px] font-extrabold text-slate-900 pb-3 border-b border-slate-100">
                 {currentLang === 'ar' ? 'معلومات الاتصال المباشرة' : 'Coordonnées directes'}
               </h3>
 
@@ -256,7 +256,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
             </div>
 
             {/* Agency Storefront Real Photo */}
-            <div className="rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs mb-6">
+            <div className="rounded-3xl overflow-hidden bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms] mb-6">
               <div className="relative aspect-[16/10] sm:aspect-[16/9] bg-slate-100 overflow-hidden group">
                 <img
                   src="/images/Exterieur.png"
@@ -277,8 +277,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
             </div>
 
             {/* Google Map Card */}
-            <div className="rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs">
-              <div className="p-3 sm:p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-2">
+            <div className="rounded-3xl overflow-hidden bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms]">
+              <div className="p-3.5 sm:p-4 bg-slate-50 border-b border-slate-100 flex items-center justify-between gap-2">
                 <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5 truncate">
                   <MapPin className="w-4 h-4 text-red-500 shrink-0" />
                   <span className="truncate">Visado Service sur Google Maps</span>
@@ -306,7 +306,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   className="w-full h-full"
                 />
               </div>
-              <div className="p-3 sm:p-3.5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+              <div className="p-3.5 sm:p-4 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
                 <span className="text-xs text-slate-600 font-medium truncate" dir="ltr">
                   📍 14, Rue Capitaine Hadri Mohamed, Oran
                 </span>
@@ -314,7 +314,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs shrink-0 cursor-pointer active:scale-[0.98]"
+                  className="px-4 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-2xs shrink-0 cursor-pointer active:scale-[0.98]"
                 >
                   <MapPin className="w-3.5 h-3.5" />
                   <span>Google Maps</span>
@@ -328,7 +328,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
 
           {/* Right Column: High-Converting Express Quote Form */}
           <Reveal direction="up" delay={80} className="lg:col-span-7">
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-9 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-9 shadow-sm hover:shadow-xl transition-all duration-[250ms] overflow-hidden">
               
               {!isSubmitted ? (
                 <form onSubmit={handleWhatsAppSubmit} className="space-y-4 sm:space-y-5">
@@ -495,7 +495,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-md shadow-emerald-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
+                      className={`w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-2xl shadow-md shadow-emerald-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
                         isSubmitting ? 'opacity-70 cursor-wait' : 'cursor-pointer'
                       }`}
                     >
@@ -515,7 +515,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                     <div className="flex items-center justify-center pt-1.5">
                       <a
                         href={`tel:${siteConfig.phoneRaw}`}
-                        className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold inline-flex items-center justify-center gap-2 border border-slate-200 transition-all active:scale-[0.98]"
+                        className="w-full sm:w-auto px-5 py-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold inline-flex items-center justify-center gap-2 border border-slate-200 transition-all active:scale-[0.98]"
                       >
                         <Phone className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
                         <span dir="ltr">{siteConfig.phone}</span>

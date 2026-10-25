@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 32" fill="none">
+  <path d="M4 22L14 6l10 16" stroke="#D97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14" cy="14" r="3" fill="#D97706"/>
+  <text x="28" y="21" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="12" fill="#D97706">ALLIANCE</text>
+</svg>

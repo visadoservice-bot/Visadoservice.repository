@@ -97,10 +97,10 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
         aria-hidden="true" 
       />
       
-      <div className="relative z-10 w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-2xl shadow-2xl border border-slate-200 animate-modal-pop">
+      <div className="relative z-10 w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-3xl shadow-2xl border border-slate-200 animate-modal-pop">
         
         {/* Modal Top Bar */}
-        <div className="sticky top-0 z-10 px-5 sm:px-6 py-3.5 sm:py-4 bg-white/95 backdrop-blur-xs border-b border-slate-200/80 flex items-center justify-between">
+        <div className="sticky top-0 z-10 px-6 py-4 bg-white/95 backdrop-blur-xs border-b border-slate-200/80 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <img
               src="/images/LOGO.png"
@@ -252,7 +252,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
+                  className={`w-full bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white font-bold text-xs sm:text-sm py-3.5 px-5 rounded-2xl shadow-xs transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
                     isSubmitting ? 'opacity-70 cursor-wait' : 'cursor-pointer'
                   }`}
                 >

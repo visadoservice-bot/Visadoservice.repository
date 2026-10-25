@@ -86,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* CTA Principal */}
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3.5 sm:py-4 bg-[#002A79] hover:bg-[#002060] active:bg-[#001848] text-white text-sm sm:text-base font-bold rounded-xl shadow-md shadow-[#002A79]/20 hover:shadow-lg hover:shadow-[#002A79]/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                className="px-6 py-3.5 sm:py-4 bg-[#002A79] hover:bg-[#002060] active:bg-[#001848] text-white text-sm sm:text-base font-bold rounded-2xl shadow-md shadow-[#002A79]/20 hover:shadow-lg hover:shadow-[#002A79]/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : currentLang === 'en' ? 'Speak to an Advisor' : 'Parler à un conseiller'}</span>
               </button>
@@ -96,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({
                 href={directWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3.5 sm:py-4 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white text-sm sm:text-base font-bold rounded-xl shadow-xs active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                className="px-5 py-3.5 sm:py-4 bg-[#25D366] hover:bg-[#20ba5a] active:bg-[#1da851] text-white text-sm sm:text-base font-bold rounded-2xl shadow-xs active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-current shrink-0" />
                 <span>{currentLang === 'ar' ? 'تواصل عبر واتساب' : currentLang === 'en' ? 'Chat on WhatsApp' : 'Écrire sur WhatsApp'}</span>
@@ -105,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Téléphone direct */}
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="px-4 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 text-sm font-semibold rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-2xs"
+                className="px-4 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 text-sm font-semibold rounded-2xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-2xs"
               >
                 <Phone className="w-4 h-4 text-[#002A79] shrink-0" />
                 <span dir="ltr">{siteConfig.phone}</span>
@@ -192,11 +192,11 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
 
                 {/* Bottom Overlay Card: Real Visa Proof & Authenticity at Oran */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-5 sm:left-5 sm:right-5 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/60 shadow-lg text-slate-900">
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-5 sm:left-5 sm:right-5 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-white/60 shadow-lg text-slate-900">
                   <div className="flex items-center gap-3">
                     
                     {/* Thumbnail of real approved Schengen visa on passport */}
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden shrink-0 border border-slate-200 shadow-2xs">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shrink-0 border border-slate-200 shadow-2xs">
                       <img
                         src={imagery.realAgency.schengenVisaPassport}
                         alt="Passeport avec visa délivré par Visado Service"
@@ -228,7 +228,7 @@ export const Hero: React.FC<HeroProps> = ({
                     {/* Quick Action Button within Card */}
                     <button
                       onClick={onOpenConsultation}
-                      className="hidden sm:inline-flex items-center justify-center px-3 py-2 bg-blue-50 hover:bg-blue-100 text-[#002A79] text-xs font-bold rounded-lg transition-colors cursor-pointer shrink-0"
+                      className="hidden sm:inline-flex items-center justify-center px-3.5 py-2 bg-blue-50 hover:bg-blue-100 text-[#002A79] text-xs font-bold rounded-2xl transition-colors cursor-pointer shrink-0"
                     >
                       {currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}
                     </button>

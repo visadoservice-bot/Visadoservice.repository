@@ -47,10 +47,10 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
             return (
               <Reveal key={item.id} delay={index * 50} direction="up">
                 <div
-                  className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  className={`bg-white rounded-3xl border transition-all duration-[250ms] overflow-hidden ${
                     isOpen 
-                      ? 'border-blue-200 shadow-sm ring-1 ring-blue-100/60' 
-                      : 'border-slate-200/80 shadow-2xs hover:border-slate-300 hover:shadow-xs'
+                      ? 'border-blue-300 shadow-md ring-1 ring-blue-100' 
+                      : 'border-slate-200/90 shadow-sm hover:border-slate-300 hover:shadow-md'
                   }`}
                 >
                   <button
@@ -59,25 +59,25 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                     aria-controls={`faq-answer-${item.id}`}
                     aria-expanded={isOpen}
                     onClick={() => toggleAccordion(index)}
-                    className="w-full text-start px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 cursor-pointer text-slate-900 group"
+                    className="w-full text-start px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 cursor-pointer text-slate-900 group"
                   >
                     <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
-                      <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-[250ms] ${
                         isOpen ? 'bg-blue-600 text-white shadow-xs' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100/70'
                       }`}>
-                        <HelpCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
+                        <HelpCircle className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
                         {item.question}
                       </span>
                     </div>
                     <div
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
+                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-[250ms] shrink-0 ${
                         isOpen ? 'rotate-180 bg-blue-50 text-blue-600' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200/70'
                       }`}
                       aria-hidden="true"
                     >
-                      <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300" />
+                      <ChevronDown className="w-4 h-4 transition-transform duration-[250ms]" />
                     </div>
                   </button>
 
@@ -85,12 +85,12 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                     id={`faq-answer-${item.id}`}
                     role="region"
                     aria-labelledby={`faq-btn-${item.id}`}
-                    className={`grid transition-all duration-300 ease-out ${
+                    className={`grid transition-all duration-[250ms] ease-out ${
                       isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100/80">
+                      <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100/80">
                         <p className="ps-0 sm:ps-11">{item.answer}</p>
                       </div>
                     </div>
@@ -103,9 +103,9 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
 
         {/* Contextual CTA after FAQ */}
         <Reveal direction="up" delay={80}>
-          <div className="mt-10 sm:mt-12 bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-7 shadow-xs text-center sm:text-start flex flex-col sm:flex-row items-center justify-between gap-5 hover:border-blue-200 hover:shadow-md transition-all duration-300">
+          <div className="mt-10 sm:mt-12 bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm text-center sm:text-start flex flex-col sm:flex-row items-center justify-between gap-5 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms]">
             <div className="space-y-1">
-              <h3 className="text-sm sm:text-base font-bold text-slate-900">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 {currentLang === 'ar' ? 'هل لديك حالة خاصة أو سؤال غير مذكور هنا؟' : 'Une question sur votre situation personnelle ?'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600">
@@ -120,7 +120,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                 href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, j\'ai une question spécifique concernant ma demande de visa.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-5 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-2xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-current shrink-0" />
                 <span>{currentLang === 'ar' ? 'اسأل عبر واتساب' : 'Poser ma question'}</span>
@@ -128,7 +128,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
 
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-2xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer"
               >
                 <span>{currentLang === 'ar' ? 'دراسة الطلب' : 'Demander une étude'}</span>
               </button>

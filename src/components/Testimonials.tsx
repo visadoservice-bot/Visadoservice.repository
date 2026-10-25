@@ -181,9 +181,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
           </div>
         </Reveal>
 
-        {/* Real Verified Client Review Cards Grid & Mobile Snap-Carousel (rendered dynamically if items are present) */}
+        {/* Real Verified Client Review Cards Grid & Mobile Snap-Carousel */}
         {hasItems && (
-          <div className="mt-8 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+          <div className="mt-8 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             {testData.items.map((item, idx) => {
               const initials = item.clientName
                 .split(' ')
@@ -200,57 +200,55 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                   className="flex flex-col h-full min-w-[260px] min-[380px]:min-w-[285px] sm:min-w-[320px] md:min-w-0 snap-start"
                 >
                   <div
-                    className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 hover:border-blue-300 shadow-2xs hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 h-full"
+                    className="bg-white rounded-3xl border border-slate-200/90 hover:border-blue-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms] overflow-hidden flex flex-col justify-between h-full group"
                   >
-                    <div>
-                      {/* Top user bar */}
-                      <div className="flex items-start justify-between gap-3 mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className={`w-10 h-10 rounded-xl ${item.avatarColor || 'bg-blue-600'} text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-300`}>
-                            {initials}
-                          </div>
-                          <div>
-                            <h4 className="text-sm font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
-                              {item.clientName}
-                            </h4>
-                            <div className="flex items-center gap-1 text-[11px] text-slate-500">
-                              <MapPin className="w-3 h-3 text-red-500 shrink-0" />
-                              <span>{item.city || "Oran"}</span>
-                            </div>
-                          </div>
-                        </div>
+                    {/* Header band with 10% tint, 54px avatar tile & star rating pill */}
+                    <div className="p-5 pb-4 bg-slate-50/80 border-b border-slate-100 flex items-center justify-between gap-3">
+                      <div className={`w-[54px] h-[54px] rounded-2xl ${item.avatarColor || 'bg-blue-600'} text-white font-black text-base flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-[250ms]`}>
+                        {initials}
+                      </div>
 
-                        {/* Star rating */}
-                        <div className="flex items-center text-amber-400 shrink-0">
-                          {[...Array(item.rating || 5)].map((_, i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                          ))}
-                        </div>
+                      <div className="flex items-center gap-1 text-amber-500 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full shadow-2xs">
+                        {[...Array(item.rating || 5)].map((_, i) => (
+                          <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="p-5 sm:p-6 flex flex-col flex-1">
+                      <h4 className="text-[19px] sm:text-[20px] font-extrabold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
+                        {item.clientName}
+                      </h4>
+
+                      <div className="flex items-center gap-1 text-xs text-slate-500 mb-3">
+                        <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                        <span>{item.city || "Oran"}</span>
                       </div>
 
                       {/* Destination / Visa Type Tag */}
                       <div className="mb-3.5 flex flex-wrap gap-1.5">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-blue-50 text-blue-700">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-700 border border-blue-500/20">
                           {item.destination}
                         </span>
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                           {item.visaType}
                         </span>
                       </div>
 
                       {/* Quote */}
-                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed italic">
+                      <p className="text-[14px] sm:text-[14.5px] text-slate-600 leading-relaxed italic mb-4">
                         "{item.quote}"
                       </p>
-                    </div>
 
-                    {/* Card footer: Verified status & Date */}
-                    <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-                      <span className="inline-flex items-center gap-1 text-emerald-600 font-semibold">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        <span>{testData.badgeVerified || "Avis vérifié"}</span>
-                      </span>
-                      <span>{item.date || item.year}</span>
+                      {/* Card footer: Verified status & Date */}
+                      <div className="pt-3.5 mt-auto border-t border-dashed border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                        <span className="inline-flex items-center gap-1 text-emerald-600 font-semibold">
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          <span>{testData.badgeVerified || "Avis vérifié"}</span>
+                        </span>
+                        <span>{item.date || item.year}</span>
+                      </div>
                     </div>
                   </div>
                 </Reveal>
@@ -261,13 +259,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
 
         {/* Bottom Consultation / Appointment Banner */}
         <Reveal direction="up" delay={100}>
-          <div className="mt-10 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6 hover:border-blue-200 hover:shadow-md transition-all duration-300">
+          <div className="mt-10 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:border-blue-200 hover:shadow-md transition-all duration-[250ms]">
             <div className="flex items-center gap-4 text-start">
-              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100 shadow-2xs">
-                <ShieldCheck className="w-6 h-6" />
+              <div className="w-[54px] h-[54px] rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-500/20 shadow-2xs">
+                <ShieldCheck className="w-7 h-7" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-slate-900">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">
                   {currentLang === 'ar'
                     ? 'هل استفدتم من خدمات وتوجيهات Visado Service بوهران؟'
                     : 'Vous avez voyagé ou fait appel à nos services chez Visado Service ?'}

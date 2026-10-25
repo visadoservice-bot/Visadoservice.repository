@@ -52,20 +52,20 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {t.canada.steps.map((step) => (
               <div
                 key={step.number}
-                className="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-blue-400/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between h-full hover:-translate-y-1"
+                className="bg-slate-900/70 backdrop-blur-md p-6 rounded-3xl border border-white/10 hover:border-blue-400/50 hover:shadow-2xl transition-all duration-250 ease-out group flex flex-col justify-between h-full hover:-translate-y-1.5"
               >
                 <div>
-                  <span className="font-mono text-2xl lg:text-3xl text-blue-400 font-bold block mb-3">
+                  <div className="w-[54px] h-[54px] rounded-2xl bg-blue-600/20 border border-blue-400/30 text-blue-400 font-mono text-xl font-extrabold flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-250">
                     {step.number}
-                  </span>
-                  <h4 className="text-base font-bold text-white mb-2 leading-snug">
+                  </div>
+                  <h4 className="text-lg font-extrabold text-white mb-2 leading-snug">
                     {step.title}
                   </h4>
-                  <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed">
+                  <p className="text-[14.5px] text-slate-300 leading-relaxed">
                     {step.text}
                   </p>
                 </div>
@@ -82,14 +82,14 @@ export const CanadaSection: React.FC<CanadaSectionProps> = ({
           <div>
             <button
               onClick={onOpenConsultation}
-              className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-blue-600/25 transition-all duration-300 flex items-center justify-center cursor-pointer active:scale-[0.98]"
+              className="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-sm font-extrabold rounded-2xl shadow-lg hover:shadow-blue-600/25 transition-all duration-250 flex items-center justify-center cursor-pointer active:scale-[0.98]"
             >
               <span>{t.canada.cta}</span>
             </button>
           </div>
 
           {/* Legal Notice */}
-          <div className="max-w-xl flex items-start gap-3 bg-white/5 border border-white/10 p-5 rounded-2xl">
+          <div className="max-w-xl flex items-start gap-3 bg-white/5 border border-white/10 p-5 rounded-3xl">
             <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
             <p className="text-xs text-slate-400 leading-relaxed">
               {t.canada.legalNotice}

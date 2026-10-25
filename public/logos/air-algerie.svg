@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" fill="none">
+  <!-- Air Algérie stylized logo -->
+  <path d="M12 4C7.58 4 4 7.58 4 12c0 6.63 12 16 12 16s12-9.37 12-16c0-4.42-3.58-8-8-8-2.6 0-4.9 1.24-6 3.16C12.9 5.24 10.6 4 8 4h4z" fill="#C41230" opacity="0.15"/>
+  <circle cx="16" cy="16" r="12" fill="#C41230"/>
+  <path d="M12 11l8 5-8 5v-10z" fill="#FFFFFF"/>
+  <text x="36" y="21" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13" fill="#C41230" letter-spacing="-0.3">AIR ALGÉRIE</text>
+</svg>

@@ -53,8 +53,8 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
           </p>
         </div>
 
-        {/* Editorial Grid: Asymmetric 3-column & 2-row layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Editorial Grid: 3-column & 2-row layout with 24px gap */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.europe.destinations.map((dest) => {
             const imgSrc = destinationImages[dest.id] || imagery.europe.france;
 
@@ -62,54 +62,54 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
               <div
                 key={dest.id}
                 onClick={() => handleDestinationClick(dest)}
-                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 hover:border-blue-400/40 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-500 hover:-translate-y-1.5"
+                className="group relative cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-950/40 transition-all duration-250 ease-out hover:-translate-y-1.5 h-full flex flex-col"
               >
                 {/* Image Aspect Box */}
                 <div className="relative h-[400px] sm:h-[440px] w-full overflow-hidden">
                   <img
                     src={imgSrc}
                     alt={`${dest.name} - ${dest.city}`}
-                    className="w-full h-full object-cover object-center scale-100 group-hover:scale-108 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-250 ease-out"
                     loading="lazy"
                   />
                   {/* Modern gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-250" />
 
                   {/* Top metadata */}
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
-                    <span className="text-xs font-mono tracking-widest text-blue-400 font-bold bg-slate-950/60 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/10">
+                    <span className="text-xs font-mono tracking-widest text-blue-400 font-bold bg-slate-950/70 backdrop-blur-xs px-3 py-1 rounded-full border border-white/10">
                       {dest.number}
                     </span>
                     <div className="flex items-center gap-2">
                       {dest.id === 'es' && (
-                        <span className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold shadow-md">
+                        <span className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-600 text-white font-bold shadow-md">
                           {currentLang === 'ar' ? 'وجهة شائعة' : 'Destination Populaire'}
                         </span>
                       )}
-                      <span className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg bg-white/15 text-white backdrop-blur-xs border border-white/15">
+                      <span className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/15 text-white backdrop-blur-xs border border-white/15">
                         Schengen
                       </span>
                     </div>
                   </div>
 
                   {/* Bottom Editorial Content */}
-                  <div className="absolute bottom-6 left-6 right-6 transition-transform duration-500 group-hover:-translate-y-1">
+                  <div className="absolute bottom-6 left-6 right-6 transition-transform duration-250 group-hover:-translate-y-1">
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-blue-400 mb-1.5">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{dest.city}</span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl text-white font-bold mb-2">
+                    <h3 className="text-2xl sm:text-3xl text-white font-extrabold mb-2 tracking-tight">
                       {dest.name}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 mb-4 leading-relaxed">
+                    <p className="text-[14.5px] text-slate-300 line-clamp-2 mb-4 leading-relaxed">
                       {dest.description}
                     </p>
 
-                    <div className="flex items-center gap-2 text-xs font-bold text-white group-hover:text-blue-400 transition-colors">
-                      <span>{t.europe.exploreAction}</span>
-                    </div>
+                    <button className="w-full py-3 px-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-md transition-all active:scale-[0.98]">
+                      {t.europe.exploreAction}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export const EuropeSection: React.FC<EuropeSectionProps> = ({
       {/* Destination Detail Modal */}
       {selectedDest && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
-          <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 text-left max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-6 sm:p-8 text-start max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setSelectedDest(null)}
               className="absolute top-5 right-5 p-2 text-slate-400 hover:text-white rounded-full hover:bg-white/10 transition-colors cursor-pointer"
