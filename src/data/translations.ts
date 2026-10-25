@@ -40,89 +40,37 @@ export const translations = {
         {
           id: "schengen",
           number: "01",
-          title: "Accompagnement & Démarches Visa Schengen",
+          title: "Rendez-vous et démarches Visa Schengen",
           subtitle: "Europe & Espace Schengen",
-          description: "Nous vous accompagnons dans les démarches liées aux rendez-vous visa pour différentes destinations européennes, avec une attention particulière portée aux spécificités de chaque consulat.",
-          highlights: ["France", "Italie", "Espagne", "Allemagne", "Belgique", "Malte et autres pays européens"],
-          cta: "Explorer les destinations",
+          description: "Accompagnement rigoureux pour la prise de rendez-vous et le suivi de vos démarches vers les principales destinations européennes.",
+          highlights: ["France, Espagne, Italie", "Allemagne, Belgique, Malte", "Prise de rendez-vous officielle"],
           targetSection: "europe"
         },
         {
-          id: "canada",
+          id: "canada_orientation",
           number: "02",
-          title: "Accompagnement Visa Touristique Canada",
-          subtitle: "Projets touristiques & visites familiales",
-          description: "Nous vous accompagnons dans les démarches de votre demande de visa touristique pour le Canada et dans le suivi rigoureux de chaque étape officielle.",
-          highlights: ["Structuration du dossier", "Conformité des formulaires", "Suivi des étapes officielles"],
-          cta: "Découvrir le parcours Canada",
+          title: "Orientation, Canada et Conseils de Voyage",
+          subtitle: "Canada, Amérique du Nord & Conseils personnalisés",
+          description: "Conseil sur-mesure pour votre projet de voyage au Canada (tourisme et visites familiales) et orientation personnalisée selon votre profil.",
+          highlights: ["Visa touristique & visite Canada", "Conseils adaptés à votre profil", "Orientation claire et sereine"],
           targetSection: "canada"
         },
         {
-          id: "dossier",
-          number: "03",
-          title: "Suivi & Vérification du Dossier",
-          subtitle: "Contrôle de conformité & accompagnement",
-          description: "Suivi rigoureux de votre dossier et vérification de sa conformité avant le dépôt officiel, avec contrôle minutieux des justificatifs et détection de tout manque ou erreur.",
-          highlights: [
-            "Vérification des pièces et de leur complétude",
-            "Signalement des erreurs et recommandations de correction",
-            "Organisation claire et logique des documents",
-            "Contrôle de conformité avec les exigences requises",
-            "Suivi du dossier et orientation continue"
-          ],
-          cta: "Demander un suivi de dossier",
-          targetSection: "contact"
-        },
-        {
-          id: "air_algerie",
-          number: "04",
-          title: "Réservation de Billets Air Algérie",
-          subtitle: "Lignes nationales & internationales Air Algérie",
-          description: "Assistance et réservation rapide de vos billets d'avion Air Algérie aux meilleurs tarifs, gestion des options de bagages, choix des sièges et modification de dates.",
-          highlights: [
-            "Vols nationaux & internationaux Air Algérie",
-            "Gestion des bagages, repas & sièges",
-            "Assistance rapide à nos bureaux d'Oran"
-          ],
-          cta: "Réserver billet Air Algérie",
-          targetSection: "contact"
-        },
-        {
           id: "billetterie_vols",
-          number: "05",
-          title: "Réservation de Billets d'Avion (Toutes Compagnies)",
-          subtitle: "Air France, Transavia, Lufthansa, Turkish Airlines, etc.",
-          description: "Recherche et réservation des meilleures liaisons aériennes auprès de toutes les compagnies internationales pour vous garantir les meilleurs itinéraires, correspondances et tarifs.",
-          highlights: [
-            "Air France, Transavia, Lufthansa, Volotea...",
-            "Turkish Airlines, Emirates, Qatar Airways...",
-            "Comparatif d'itinéraires & tarifs optimisés"
-          ],
-          cta: "Réserver un vol international",
+          number: "03",
+          title: "Réservation de billets d'avion internationaux",
+          subtitle: "Air Algérie, Tassili, Transavia, Volotea, Vueling...",
+          description: "Recherche et émission rapide de vos billets d'avion nationaux et internationaux aux meilleurs tarifs garantis.",
+          highlights: ["Lignes nationales & internationales", "Gestion des bagages et sièges", "Réservation en ligne rapide"],
           targetSection: "contact"
         },
         {
           id: "assurance_voyage",
-          number: "06",
-          title: "Assurances Voyage Schengen & Monde",
-          subtitle: "Attestations d'assurance voyage conformes",
-          description: "Émission rapide d'attestations d'assurance voyage conformes aux exigences consulaires pour vos demandes de visa Schengen, Canada, Royaume-Uni et déplacements mondiaux.",
-          highlights: [
-            "Conforme aux exigences Schengen & Canada",
-            "Couverture médicale & rapatriement d'urgence",
-            "Délivrance immédiate à nos bureaux d'Oran"
-          ],
-          cta: "Obtenir une assurance voyage",
-          targetSection: "contact"
-        },
-        {
-          id: "conseil",
-          number: "07",
-          title: "Conseils & Orientation Voyage",
-          subtitle: "Écoute personnalisée",
-          description: "Un accompagnement sur-mesure selon votre destination, votre projet et vos besoins pour aborder votre voyage en toute confiance et clarté.",
-          highlights: ["Orientation sur-mesure", "Éclairage sur les démarches", "Disponibilité continue à nos bureaux"],
-          cta: "Prendre conseil",
+          number: "04",
+          title: "Assurances Voyage en ligne",
+          subtitle: "Attestations conformes Schengen & Monde",
+          description: "Délivrance immédiate de contrats d'assurance voyage conformes aux exigences consulaires pour vos départs à l'étranger.",
+          highlights: ["Couverture médicale & rapatriement", "Attestation immédiate", "Conforme Schengen & Monde"],
           targetSection: "contact"
         }
       ]
@@ -180,7 +128,7 @@ export const translations = {
           name: "Malte",
           city: "La Valette",
           description: "Accompagnement personnalisé pour vos projets de séjour sur l'archipel méditerranéen.",
-          highlights: ["Séjours linguistiques", "Voyages d'agrément", "Dossier vérifié"]
+          highlights: ["Séjours linguistiques", "Voyages d'agrément", "Demande vérifiée"]
         }
       ]
     },
@@ -194,7 +142,7 @@ export const translations = {
         { number: "02", title: "Collecte & organisation", text: "Structuration méthodique des justificatifs nécessaires à votre demande." },
         { number: "03", title: "Vérification des documents", text: "Examen attentif de chaque pièce pour assurer clarté et cohérence." },
         { number: "04", title: "Assistance aux formulaires", text: "Accompagnement pour renseigner les formulaires officiels requis." },
-        { number: "05", title: "Suivi de la démarche", text: "Suivi attentif de l'évolution de la demande jusqu'à l'issue du dossier." }
+        { number: "05", title: "Suivi de la démarche", text: "Suivi attentif de l'évolution de la demande jusqu'à l'issue de la procédure." }
       ],
       cta: "Parler à un conseiller Canada",
       legalNotice: "Visado Service propose des prestations de conseil et d'accompagnement aux démarches de voyage. La décision finale d'octroi d'un visa appartient exclusivement aux autorités consulaires compétentes. Aucun prestataire ne peut garantir l'obtention d'un visa."
@@ -218,9 +166,9 @@ export const translations = {
         },
         {
           number: "03",
-          title: "PRÉPARER",
-          subtitle: "Vous accompagner dans la constitution et la vérification du dossier.",
-          detail: "Organisation ordonnée de vos pièces justificatives afin de présenter un dossier clair et complet."
+          title: "ORGANISER",
+          subtitle: "Vous accompagner dans la vérification et l'organisation des pièces requises.",
+          detail: "Organisation ordonnée de vos pièces justificatives afin de présenter une demande claire et complète."
         },
         {
           number: "04",
@@ -422,87 +370,35 @@ export const translations = {
           number: "01",
           title: "مواعيد وإجراءات تأشيرة شنغن",
           subtitle: "أوروبا ومنطقة شنغن",
-          description: "نرافقكم في الإجراءات المتعلقة بحجز مواعيد التأشيرة لمختلف الوجهات الأوروبية مع مراعاة المتطلبات الخاصة بكل قنصلية.",
-          highlights: ["فرنسا", "إيطاليا", "إسبانيا", "ألمانيا", "بلجيكا", "مالطا وبلدان أوروبية أخرى"],
-          cta: "اكتشف الوجهات الأوروبية",
+          description: "مرافقة دقيقة لحجز المواعيد ومتابعة إجراءات السفر لمختلف الوجهات الأوروبية وفق المعايير الرسمية.",
+          highlights: ["فرنسا، إسبانيا وإيطاليا", "ألمانيا، بلجيكا ومالطا", "متابعة المواعيد الرسمية"],
           targetSection: "europe"
         },
         {
-          id: "canada",
+          id: "canada_orientation",
           number: "02",
-          title: "توجيه ومرافقة تأشيرة كندا",
-          subtitle: "رحلات سياحية وزيارات عائلية",
-          description: "نرافقكم في خطوات طلب التأشيرة السياحية إلى كندا ومتابعة مختلف المراحل الإدارية بكل عناية.",
-          highlights: ["تنظيم ومراجعة الوثائق", "مطابقة الاستمارات الرسمية", "متابعة المراحل الإدارية"],
-          cta: "مسار تأشيرة كندا",
+          title: "توجيه، تأشيرة كندا واستشارات السفر",
+          subtitle: "كندا، أمريكا الشمالية واستشارات مخصصة",
+          description: "إرشادات وتوجيه مخصص لرحلاتكم نحو كندا (سياحة وزيارات عائلية) مع مرافقة استشارية دقيقة بحسب وضعية كل مسافر.",
+          highlights: ["تأشيرة السياحة والزيارة لكندا", "استشارات مخصصة لرحلتكم", "توجيه واضح ومرافقة مطمئنة"],
           targetSection: "canada"
         },
         {
-          id: "dossier",
-          number: "03",
-          title: "متابعة ومراجعة ملف التأشيرة",
-          subtitle: "متابعة دقيقة ومراجعة الوثائق",
-          description: "متابعة دقيقة لملفك والتأكد من جاهزيته قبل تقديمه، مع مراجعة الوثائق والتنبيه إلى أي نقص أو خطأ قد يؤثر على الملف.",
-          highlights: [
-            "مراجعة الوثائق والتأكد من اكتمالها",
-            "التنبيه إلى النقائص والأخطاء وتصحيحها",
-            "تنظيم الوثائق بشكل واضح ومنطقي",
-            "التحقق من توافق الملف مع المتطلبات المطلوبة",
-            "متابعة الملف وتقديم التوجيهات اللازمة"
-          ],
-          cta: "طلب مراجعة ومتابعة الملف",
-          targetSection: "contact"
-        },
-        {
-          id: "air_algerie",
-          number: "04",
-          title: "حجز تذاكر الخطوط الجوية الجزائرية",
-          subtitle: "الرحلات الداخلية والدولية عبر Air Algérie",
-          description: "حجز سريع لتذاكر الطيران عبر الخطوط الجوية الجزائرية بأفضل الأسعار، اختيار المقاعد، إضافة الأمتعة وتعديل التواريخ.",
-          highlights: [
-            "رحلات داخلية ودولية متوفرة",
-            "إدارة خيارات الأمتعة والمقاعد",
-            "مساعدة مباشرة في مكاتبنا بوهران"
-          ],
-          cta: "حجز تذكرة Air Algérie",
-          targetSection: "contact"
-        },
-        {
           id: "billetterie_vols",
-          number: "05",
+          number: "03",
           title: "حجز تذاكر الطيران لجميع الشركات الدولية",
-          subtitle: "إير فرنس، ترانسافيا، لوفتهانزا، التركية، الإماراتية...",
-          description: "مقارنة وحجز تذاكر الطيران عبر كافة الشركات العالمية لضمان أفضل المسارات، الأسعار والمواعيد المناسبة لرحلاتكم حول العالم.",
-          highlights: [
-            "Air France, Transavia, Lufthansa, Volotea",
-            "Turkish Airlines, Emirates, Qatar Airways...",
-            "مقارنة الأسعار واختيار المسار الأمثل"
-          ],
-          cta: "حجز رحلة دولية",
+          subtitle: "الجزائرية، طاسيلي، ترانسافيا، فولوتيا، فيولينغ...",
+          description: "حجز فوري لتذاكر الطيران الداخلية والدولية عبر كافة الخطوط العالمية بأفضل الأسعار وأنسب المسارات.",
+          highlights: ["رحلات دولية وداخلية منتظمة", "إدارة الأمتعة والمقاعد", "حجز فوري وتأكيد سريع"],
           targetSection: "contact"
         },
         {
           id: "assurance_voyage",
-          number: "06",
-          title: "تأمين السفر الدولي (شنغن وجميع الوجهات)",
-          subtitle: "شهادات تأمين سفر مطابقة للاشتراطات القنصلية",
-          description: "إصدار فوري لشهادات تأمين السفر المطابقة لشروط القنصليات والممثليات الدبلوماسية (شنغن، كندا، بريطانيا ودول العالم) للتغطية الطبية والطوارئ.",
-          highlights: [
-            "مطابق لشروط تأشيرة شنغن وكندا",
-            "تغطية علاجية وطوارئ كاملة",
-            "إصدار فوري بمكاتبنا في وهران"
-          ],
-          cta: "طلب تأمين سفر",
-          targetSection: "contact"
-        },
-        {
-          id: "conseil",
-          number: "07",
-          title: "استشارات وإرشادات السفر",
-          subtitle: "إصغاء وتوجيه مخصص",
-          description: "توجيه واستشارة مخصصة بحسب وجهتكم، ظروفكم ومشروع رحلتكم لتسافروا بكل اطمئنان ووضوح.",
-          highlights: ["توجيه شخصي", "شرح دقيق لكل خطوة", "تواصل مستمر في مكاتبنا"],
-          cta: "طلب استشارة",
+          number: "04",
+          title: "تأمين السفر الدولي عبر الإنترنت",
+          subtitle: "شهادات تأمين سفر معتمدة قنصلياً",
+          description: "إصدار فوري لشهادات تأمين السفر المعتمدة والمطابقة لكافة الشروط القنصلية للتغطية الطبية والطوارئ.",
+          highlights: ["تغطية طبية وطوارئ شاملة", "إصدار فوري لشهادة التأمين", "مطابق لشروط شنغن ودول العالم"],
           targetSection: "contact"
         }
       ]
@@ -560,7 +456,7 @@ export const translations = {
           name: "مالطا",
           city: "فاليتا",
           description: "مرافقة مخصصة لرحلات الاستجمام أو الدراسة في الأرخبيل المتوسطي.",
-          highlights: ["دراسة لغات", "رحلات سياحية", "ملف منظم بعناية"]
+          highlights: ["دراسة لغات", "رحلات سياحية", "وثائق مرتبة بعناية"]
         }
       ]
     },
@@ -600,7 +496,7 @@ export const translations = {
           number: "03",
           title: "الترتيب والمراجعة",
           subtitle: "مرافقتكم في تنظيم وتدقيق المعطيات.",
-          detail: "تنظيم منهجي وتدقيق لكافة الأوراق لتقديم ملف واضح ومستوفٍ للشروط."
+          detail: "تنظيم منهجي وتدقيق لكافة الأوراق لتقديم طلب واضح ومستوفٍ للشروط."
         },
         {
           number: "04",
@@ -801,88 +697,36 @@ export const translations = {
           id: "schengen",
           number: "01",
           title: "Schengen Visa Appointments & Procedures",
-          subtitle: "Europe & Schengen Zone",
-          description: "We guide you through the appointment booking procedures and documentation alignment for major European destinations with careful attention to consular guidelines.",
-          highlights: ["France", "Italy", "Spain", "Germany", "Belgium", "Malta and other European destinations"],
-          cta: "Explore European destinations",
+          subtitle: "Europe & Schengen Area",
+          description: "Dedicated guidance for official appointment bookings and procedure follow-up across premier European destinations.",
+          highlights: ["France, Spain, Italy", "Germany, Belgium, Malta", "Official appointment tracking"],
           targetSection: "europe"
         },
         {
-          id: "canada",
+          id: "canada_orientation",
           number: "02",
-          title: "Canada Visitor Visa Guidance",
-          subtitle: "Tourism & Family Visits",
-          description: "We guide and assist you through your Canadian visitor visa application procedures across each official submission milestone.",
-          highlights: ["Dossier structuring", "Form conformity", "Administrative tracking"],
-          cta: "Discover Canada pathway",
+          title: "Travel Guidance, Canada & Advisory",
+          subtitle: "Canada, North America & Tailored Guidance",
+          description: "Tailored consultation for Canadian visitor visas and strategic travel advisory aligned with your specific journey.",
+          highlights: ["Canada visitor & family visa", "Custom travel consultation", "Clear and reliable guidance"],
           targetSection: "canada"
         },
         {
-          id: "dossier",
-          number: "03",
-          title: "Visa Dossier Review & Tracking",
-          subtitle: "Compliance check & pre-submission guidance",
-          description: "Diligent tracking of your application and readiness check before submission, reviewing supporting documents and highlighting any potential omissions.",
-          highlights: [
-            "Comprehensive document completeness check",
-            "Identification of errors and corrective guidance",
-            "Clear and logical document structuring",
-            "Verification against official requirements",
-            "Continuous follow-up and guidance"
-          ],
-          cta: "Request dossier review",
-          targetSection: "contact"
-        },
-        {
-          id: "air_algerie",
-          number: "04",
-          title: "Air Algérie Flight Ticket Bookings",
-          subtitle: "Domestic & International Air Algérie Routes",
-          description: "Fast and direct booking of Air Algérie flight tickets at optimal rates, baggage management, seat selection, and date modification support.",
-          highlights: [
-            "Domestic & international Air Algérie routes",
-            "Baggage, meal & seat selection management",
-            "Direct in-office assistance in Oran"
-          ],
-          cta: "Book Air Algérie Ticket",
-          targetSection: "contact"
-        },
-        {
           id: "billetterie_vols",
-          number: "05",
-          title: "Airline Ticket Bookings (All Airlines)",
-          subtitle: "Air France, Transavia, Lufthansa, Turkish Airlines, etc.",
-          description: "Flight search and reservation across all major international airlines to secure optimal routes, schedules, connections, and rates.",
-          highlights: [
-            "Air France, Transavia, Lufthansa, Volotea...",
-            "Turkish Airlines, Emirates, Qatar Airways...",
-            "Route & fare comparison for best rates"
-          ],
-          cta: "Book International Flight",
+          number: "03",
+          title: "International Flight Ticket Bookings",
+          subtitle: "Air Algérie, Tassili, Transavia, Volotea, Vueling...",
+          description: "Fast search and booking of domestic and international flights at optimal rates across all major airlines.",
+          highlights: ["Domestic & international routes", "Baggage and seating options", "Instant online booking confirmation"],
           targetSection: "contact"
         },
         {
           id: "assurance_voyage",
-          number: "06",
-          title: "Travel Insurance (Schengen & Worldwide)",
-          subtitle: "Compliant Travel Insurance Certificates",
-          description: "Instant issuance of travel insurance certificates fully compliant with consular requirements for Schengen, Canada, UK, and worldwide travel.",
-          highlights: [
-            "Fully compliant with Schengen & Canada criteria",
-            "Comprehensive medical & emergency repatriation",
-            "Immediate issuance at our Oran office"
-          ],
-          cta: "Get Travel Insurance",
-          targetSection: "contact"
-        },
-        {
-          id: "conseil",
-          number: "07",
-          title: "Travel Advisory & Guidance",
-          subtitle: "Personalized Consultation",
-          description: "Tailored strategic guidance formulated around your destination, profile, and travel schedule to ensure complete clarity.",
-          highlights: ["Custom orientation", "Step-by-step clarity", "In-office consultation and guidance"],
-          cta: "Get expert advice",
+          number: "04",
+          title: "Online Travel Insurance",
+          subtitle: "Consular-Compliant Travel Certificates",
+          description: "Immediate issuance of travel insurance certificates compliant with consular standards for worldwide travel.",
+          highlights: ["Medical & emergency coverage", "Instant certificate issuance", "Compliant Schengen & worldwide"],
           targetSection: "contact"
         }
       ]
@@ -978,8 +822,8 @@ export const translations = {
         },
         {
           number: "03",
-          title: "PREPARE",
-          subtitle: "Assist you in structuring and auditing your file.",
+          title: "ORGANIZE",
+          subtitle: "Assist you in structuring and auditing your application.",
           detail: "Methodical ordering of all supporting items to exhibit a cohesive, impeccably ordered submission."
         },
         {

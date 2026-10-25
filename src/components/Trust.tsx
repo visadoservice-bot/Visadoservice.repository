@@ -171,14 +171,14 @@ export const Trust: React.FC<TrustProps> = ({
 
                 <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                   {isArabic
-                    ? 'أكثر من 120 تقييم حقيقي لمسافرين رافقناهم في ملفات تأشيرة إسبانيا، فرنسا، كندا وحجوزات السفر.'
-                    : 'Plus de 120 retours d\'expérience de voyageurs accompagnés pour leurs dossiers de visa Schengen, Canada et réservations.'}
+                    ? 'أكثر من 120 تقييم حقيقي لمسافرين رافقناهم في إجراءات تأشيرة إسبانيا، فرنسا، كندا وحجوزات السفر.'
+                    : 'Plus de 120 retours d\'expérience de voyageurs accompagnés pour leurs démarches de visa Schengen, Canada et réservations.'}
                 </p>
 
                 {/* Micro quote */}
                 <div className="mt-3.5 p-2.5 rounded-xl bg-amber-50/70 border border-amber-200/50 text-[11px] text-slate-700 italic">
                   {isArabic
-                    ? '«خدمة في قمة الاحترافية بوهران، تدقيق ممتاز للملف قبل الإيداع»'
+                    ? '«خدمة في قمة الاحترافية بوهران، تدقيق ممتاز للوثائق قبل الإيداع»'
                     : '« Service soigné et vérification minutieuse avant le dépôt officiel. »'}
                 </div>
               </div>

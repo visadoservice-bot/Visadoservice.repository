@@ -27,21 +27,11 @@ const getInitialLanguage = (): Language => {
     if (paramLang === 'fr' || paramLang === 'ar' || paramLang === 'en') {
       return paramLang;
     }
-
-    // 2. Detect browser / phone preferred language fresh on every visit
-    const browserLangs = navigator.languages || [navigator.language || ''];
-    for (const lang of browserLangs) {
-      if (!lang) continue;
-      const code = lang.toLowerCase();
-      if (code.startsWith('ar')) return 'ar';
-      if (code.startsWith('fr')) return 'fr';
-      if (code.startsWith('en')) return 'en';
-    }
   } catch (e) {
     // Fallback gracefully on restricted environments
   }
 
-  // Fallback to Arabic ('ar') as requested by client
+  // 2. Par défaut en arabe ('ar') pour tous les visiteurs
   return 'ar';
 };
 

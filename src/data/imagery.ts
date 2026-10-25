@@ -28,7 +28,7 @@ export const imagery = {
       embedUrl: "https://www.youtube.com/embed/Q7CLYUX4Tew",
       shortsUrl: "https://www.youtube.com/shorts/Q7CLYUX4Tew",
       thumbnail: "https://img.youtube.com/vi/Q7CLYUX4Tew/hqdefault.jpg",
-      title: "Présentation des Services & Traitement des Dossiers"
+      title: "Présentation des Services & Accompagnement aux Démarches"
     },
     clientGuidance: {
       id: "_94n5bV3q6g",

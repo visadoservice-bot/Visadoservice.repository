@@ -46,7 +46,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
     },
   ];
 
-  // Profils professionnels (critique pour les dossiers en Algérie)
+  // Profils professionnels (critique pour les démarches en Algérie)
   const quickProfiles = [
     { label: currentLang === 'ar' ? '💼 موظف / أجير' : '💼 Salarié(e)', value: 'Salarié(e)' },
     { label: currentLang === 'ar' ? '🏬 تاجر / C20' : '🏬 Commerçant(e) (C20)', value: 'Commerçant(e) (C20)' },

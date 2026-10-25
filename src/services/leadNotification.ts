@@ -41,7 +41,7 @@ export async function sendLeadNotification(payload: LeadSubmissionPayload): Prom
       'Telephone_WhatsApp': payload.phone.trim() || 'Non renseigné',
       'Destination_Demandee': payload.destination || 'Non spécifiée',
       'Statut_Professionnel': payload.profile || 'Non spécifié',
-      'Type_de_Demarche': payload.visaType || 'Consultation / Dossier',
+      'Type_de_Demarche': payload.visaType || 'Consultation / Demande',
       'Questions_ou_Precisions': payload.message?.trim() || 'Aucune question spécifique',
       'Canal_Source': payload.source || 'Site Web Visado Service',
       'Date_et_Heure_Algerie': submissionDate,

@@ -136,7 +136,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                     <Award className="w-5 h-5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-slate-800">
-                    {currentLang === 'ar' ? 'متابعة ملفات شنغن وكندا' : 'Suivi expert Schengen & Canada'}
+                    {currentLang === 'ar' ? 'متابعة طلبات شنغن وكندا' : 'Suivi expert Schengen & Canada'}
                   </span>
                 </div>
 

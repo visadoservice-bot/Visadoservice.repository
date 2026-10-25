@@ -106,14 +106,14 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       imageUrl: imagery.realAgency.agencyInterior, // "/images/interieur.png"
       titleFr: "Espace d'accueil & Bureaux de consultation",
       titleAr: "فضاء الاستقبال ومكاتب الاستشارة الفردية",
-      subtitleFr: "Postes de traitement & Analyse confidentielle des dossiers",
-      subtitleAr: "مكاتب دراسة الملفات والتدقيق في سرية تامة",
+      subtitleFr: "Postes de traitement & Analyse confidentielle des demandes",
+      subtitleAr: "مكاتب دراسة الطلبات والتدقيق في سرية تامة",
       badgeFr: "Espace Client",
       badgeAr: "فضاء العملاء",
       locationFr: "Bureaux Visado Service • Oran",
       locationAr: "مكاتب Visado Service • وهران",
       descriptionFr: "Un espace de travail moderne et confidentiel où chaque voyageur est conseillé individuellement selon son profil (salarié, commerçant, fonctionnaire, étudiant).",
-      descriptionAr: "فضاء استشاري منظم ومكيف يضمن دراسة دقيقة لكل ملف بشكل فردي بحسب صفة كل متقدم (أجير، تاجر، موظف، طالب).",
+      descriptionAr: "فضاء استشاري منظم ومكيف يضمن دراسة دقيقة لكل طلب بشكل فردي بحسب صفة كل متقدم (أجير، تاجر، موظف، طالب).",
       highlightFr: "Confidentialité & Confort",
       highlightAr: "سرية تامة ومتابعة فردية",
       category: "agency"
@@ -130,7 +130,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       badgeAr: "سفر وتأشيرات",
       locationFr: "Visado Service • Oran",
       locationAr: "Visado Service • وهران",
-      descriptionFr: "Exemple concret illustrant notre savoir-faire dans l'orientation des voyageurs et la vérification soignée des dossiers.",
+      descriptionFr: "Exemple concret illustrant notre savoir-faire dans l'orientation des voyageurs et la vérification soignée des demandes.",
       descriptionAr: "نموذج توضيحي يجسد خبرتنا الميدانية في مرافقة وتوجيه المسافرين نحو مختلف الوجهات الأوروبية.",
       highlightFr: "Expérience & Conseil",
       highlightAr: "خبرة وتوجيه دقيق",
@@ -150,8 +150,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
       locationAr: "مركز BLS International • وهران",
       descriptionFr: "Vérification rigoureuse, organisation et contrôle attentif des pièces justificatives avant votre démarche au centre officiel.",
       descriptionAr: "مراجعة دقيقة، تنظيم وتأكد من جاهزية الوثائق والتوجيه السليم قبل التوجه للمركز الرسمي.",
-      highlightFr: "Dossier soigné & vérifié",
-      highlightAr: "ملف منظم ومراجع بعناية",
+      highlightFr: "Demande soignée & vérifiée",
+      highlightAr: "طلب منظم ومراجع بعناية",
       category: "visas"
     },
     {
@@ -612,7 +612,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
               </div>
             </Reveal>
 
-            {/* 5. BLS APPOINTMENT DOSSIER (Dossier & Convocation BLS) */}
+            {/* 5. BLS APPOINTMENT & CONVOCATION */}
             <Reveal direction="up" delay={120} className="lg:col-span-4">
               <div 
                 onClick={() => handleOpenLightbox(4)}
@@ -734,62 +734,6 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
             })}
           </div>
         )}
-
-        {/* Physical Agency Callout Banner & Direct Booking */}
-        <Reveal direction="up" delay={80}>
-          <div className="mt-12 sm:mt-16 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-800 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
-              <div className="space-y-3 max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
-                  <MapPin className="w-3.5 h-3.5 text-red-400" />
-                  <span>{currentLang === 'ar' ? 'مقرنا مفتوح بوهران' : 'Venez nous rencontrer à Oran'}</span>
-                </div>
-
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
-                  {currentLang === 'ar'
-                    ? '14، شارع حضري محمد، وهران — استشارات مباشرة دون موعد'
-                    : '14, Rue Hadri Mohamed, Oran — Accueil direct sans rendez-vous'}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {currentLang === 'ar'
-                    ? 'مستشارونا في خدمتكم لمراجعة وثائقكم، التوجيه لملفات التأشيرة والمواعيد الرسمية والمساعدة في حجز تذاكر الطيران.'
-                    : 'Nos conseillers sont disponibles du Samedi au Jeudi (09h00 - 17h00) pour auditer vos pièces justificatives, vous orienter pour vos démarches et vous assister dans vos réservations.'}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full lg:w-auto">
-                <a
-                  href={`tel:${siteConfig.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-900 font-bold text-xs hover:bg-slate-100 transition-all shadow-md active:scale-[0.98]"
-                >
-                  <Phone className="w-4 h-4 text-blue-600" />
-                  <span dir="ltr">{siteConfig.phone}</span>
-                </a>
-
-                <a
-                  href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent("Bonjour Visado Service, je souhaite venir à vos bureaux au 14 Rue Hadri Mohamed à Oran.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs transition-all shadow-md active:scale-[0.98]"
-                >
-                  <MessageCircle className="w-4 h-4 fill-current" />
-                  <span>WhatsApp</span>
-                </a>
-
-                <button
-                  onClick={onOpenConsultation}
-                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-md active:scale-[0.98] cursor-pointer"
-                >
-                  <span>{currentLang === 'ar' ? 'طلب دراسة ملف' : 'Demander une étude'}</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </Reveal>
 
       </div>
 

@@ -97,7 +97,7 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
                   <h3>استخدام الموقع والتواصل الأولي</h3>
                 </div>
                 <p className="text-slate-700">
-                  تصفح هذا الموقع حر تماماً وبدون أي التزام، ولا يتطلب أي تسجيل أو إنشاء حساب. لا يتم استخدام أي ملفات تعريف ارتباط (Cookies) أو تخزين بيانات على جهازك (Zero LocalStorage / SessionStorage).
+                  تصفح هذا الموقع حر تماماً وبدون أي التزام، ولا يتطلب أي تسجيل أو إنشاء حساب. لا يتم استخدام أي كوكيز (Cookies) أو أدوات تتبع أو تخزين بيانات على جهازك (Zero LocalStorage / SessionStorage).
                 </p>
                 <p className="text-slate-700">
                   عبر الموقع أو عبر تطبيق واتساب، <strong>لا نحتفظ بأي معلومات تفصيلية عنكم</strong>. عند التواصل الأولي، فإن المعلومات الوحيدة التي قد تظهر لنا تقتصر فقط على <strong>رقم الهاتف، الاسم واللقب (أو الاسم المستعار على واتساب)</strong>.
@@ -108,10 +108,10 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                   <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>معالجة الملفات والوثائق تتم حصرياً بمقرنا</h3>
+                  <h3>معالجة الطلبات ومراجعة الوثائق تتم حصرياً بمقرنا</h3>
                 </div>
                 <p className="text-slate-700">
-                  يهدف الموقع فقط لتقديم خدماتنا وتسهيل الاتصال الأولي. أما دراسة الملف، وتسليم المستندات، والإجراءات الفعلية، فتتم <strong>مباشرة داخل مكاتبنا بوهران</strong> وبشكل حضوري مع الزبون في سرية وأمان تامين.
+                  يهدف الموقع فقط لتقديم خدماتنا وتسهيل الاتصال الأولي. أما دراسة الطلب ومراجعة المستندات والإجراءات الفعلية، فتتم <strong>مباشرة داخل مكاتبنا بوهران</strong> وبشكل حضوري مع الزبون في سرية وأمان تامين.
                 </p>
               </div>
 
@@ -206,7 +206,7 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                   <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>In-Person File Processing</h3>
+                  <h3>In-Person Application & Document Review</h3>
                 </div>
                 <p className="text-slate-700">
                   This website serves only to present our advisory services and facilitate initial contact. Formal document verification, submission reviews, and travel arrangements take place <strong>in-person at our Oran office</strong>.
@@ -304,10 +304,10 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                   <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>Traitement du dossier directement à notre bureau</h3>
+                  <h3>Traitement des démarches directement à notre bureau</h3>
                 </div>
                 <p className="text-slate-700">
-                  Le site a pour seul objectif de présenter nos prestations et de faciliter la prise de contact. L’ensemble des démarches, l’analyse des dossiers et la remise des documents nécessaires se font <strong>exclusivement sur place, directement à notre bureau à Oran</strong>, avec le client.
+                  Le site a pour seul objectif de présenter nos prestations et de faciliter la prise de contact. L’ensemble des démarches, l’analyse des demandes et la remise des documents nécessaires se font <strong>exclusivement sur place, directement à notre bureau à Oran</strong>, avec le client.
                 </p>
               </div>
 

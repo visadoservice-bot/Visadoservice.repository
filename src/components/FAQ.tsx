@@ -33,8 +33,8 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
             </h2>
             <p className="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
               {currentLang === 'ar'
-                ? 'إجابات شفافة ومفصلة حول ملفات التأشيرة والمواعيد والتكاليف.'
-                : 'Informations transparentes sur les démarches, délais et prise en charge de votre dossier.'}
+                ? 'إجابات شفافة ومفصلة حول طلبات التأشيرة والمواعيد والتكاليف.'
+                : 'Informations transparentes sur les démarches, délais et prise en charge de votre demande.'}
             </p>
           </div>
         </Reveal>
@@ -117,7 +117,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
 
             <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto shrink-0">
               <a
-                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, j\'ai une question spécifique concernant mon dossier de visa.')}`}
+                href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, j\'ai une question spécifique concernant ma demande de visa.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-2"
@@ -130,7 +130,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                 onClick={onOpenConsultation}
                 className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer"
               >
-                <span>{currentLang === 'ar' ? 'دراسة الملف' : 'Demander une étude'}</span>
+                <span>{currentLang === 'ar' ? 'دراسة الطلب' : 'Demander une étude'}</span>
               </button>
             </div>
           </div>

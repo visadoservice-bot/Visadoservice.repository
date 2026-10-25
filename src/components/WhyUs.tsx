@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Zap, CheckCheck, Headphones, CircleDollarSign, MapPin, Play, Phone, MessageCircle, Calendar } from 'lucide-react';
-import { siteConfig } from '../data/config';
+import React from 'react';
+import { Zap, CheckCheck, Headphones, CircleDollarSign } from 'lucide-react';
 import { Reveal } from './ScrollReveal';
 import { Language } from '../types';
 
@@ -9,58 +8,7 @@ interface WhyUsProps {
   onOpenConsultation?: () => void;
 }
 
-export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation }) => {
-  const [isPlayingTour, setIsPlayingTour] = useState(false);
-  const videoContainerRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  // Stop video playback and reset state cleanly
-  const handleStopTour = useCallback(() => {
-    if (iframeRef.current?.contentWindow) {
-      try {
-        iframeRef.current.contentWindow.postMessage(
-          JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }),
-          '*'
-        );
-        iframeRef.current.contentWindow.postMessage(
-          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
-          '*'
-        );
-      } catch {
-        // ignore cross-origin error
-      }
-    }
-    setIsPlayingTour(false);
-  }, []);
-
-  // Automatically stop and close the video whenever the user scrolls away from this section/video
-  useEffect(() => {
-    if (!isPlayingTour) return;
-
-    const target = videoContainerRef.current;
-    if (!target) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // When the video container is no longer visible in the viewport
-          if (!entry.isIntersecting) {
-            handleStopTour();
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0,
-      }
-    );
-
-    observer.observe(target);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [isPlayingTour, handleStopTour]);
+export const WhyUs: React.FC<WhyUsProps> = ({ currentLang }) => {
 
   const pillars = [
     {
@@ -164,110 +112,6 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
             );
           })}
         </div>
-
-        {/* Real Agency Presentation Card (Google Business verified badge & video) */}
-        <Reveal direction="up" delay={120}>
-          <div className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-9 shadow-sm hover:shadow-md transition-shadow">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
-              
-              {/* Left info */}
-              <div className="md:col-span-7 space-y-3 sm:space-y-4">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/60 px-3 py-1 rounded-full">
-                  <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>{currentLang === 'ar' ? 'مقرنا الرسمي في وهران' : 'Nos bureaux situés à Oran'}</span>
-                </div>
-                <h3 className="text-lg sm:text-2xl font-bold text-slate-900 leading-snug">
-                  {currentLang === 'ar' ? 'مقرنا في قلب مدينة وهران في خدمتكم' : 'Visitez nos locaux au 14 Rue Capitaine Hadri à Oran'}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {currentLang === 'ar'
-                    ? 'نستقبلكم طيلة أيام الأسبوع من السبت إلى الخميس (09:00 - 17:00) لتقديم الاستشارات، فحص المستندات، واستلام المعاملات بكل ثقة وأمان.'
-                    : 'Nous vous accueillons du samedi au jeudi pour étudier vos pièces, procéder aux réservations officielles et déposer vos demandes en toute sérénité.'}
-                </p>
-                <div className="pt-1 flex flex-wrap gap-2 sm:gap-3 text-xs font-semibold text-slate-600">
-                  <span className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs" dir="ltr">📍 14, Rue Capitaine Hadri Mohamed, Oran</span>
-                  <a href={`tel:${siteConfig.phoneRaw}`} className="flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs text-blue-700 hover:underline font-bold" dir="ltr">📞 {siteConfig.phone}</a>
-                  <span className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 text-[11px] sm:text-xs">✉️ {siteConfig.email}</span>
-                </div>
-
-                {/* Contextual CTAs for Office / Consultation */}
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
-                  <button
-                    onClick={onOpenConsultation}
-                    className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-xl shadow-2xs hover:shadow-sm active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
-                  </button>
-
-                  <a
-                    href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent('Bonjour Visado Service, je souhaite avoir des conseils pour préparer mon voyage.')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-1.5"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                    <span>{currentLang === 'ar' ? 'تواصل عبر واتساب' : 'Écrire sur WhatsApp'}</span>
-                  </a>
-
-                  <a
-                    href={`tel:${siteConfig.phoneRaw}`}
-                    className="px-3.5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs font-semibold rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-1.5"
-                  >
-                    <Phone className="w-3.5 h-3.5 text-blue-600" />
-                    <span dir="ltr">{siteConfig.phone}</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Right: Real Agency Visual / Video */}
-              <div className="md:col-span-5">
-                <div 
-                  ref={videoContainerRef}
-                  className="relative rounded-2xl overflow-hidden aspect-video bg-slate-900 border border-slate-200/80 shadow-md"
-                >
-                  {!isPlayingTour ? (
-                    <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlayingTour(true)}>
-                      <img
-                        src="/images/interieur.png"
-                        alt="Intérieur des locaux Visado Service Oran"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px] flex flex-col items-center justify-center gap-2.5 transition-opacity group-hover:bg-slate-900/30">
-                        <div className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-blue-500 transition-all">
-                          <Play className="w-6 h-6 ml-0.5 fill-current" />
-                        </div>
-                        <span className="text-xs font-semibold text-white bg-slate-900/80 px-3 py-1 rounded-full backdrop-blur-xs border border-white/10">
-                          {currentLang === 'ar' ? 'شاهد فيديو المقر' : 'Vidéo de nos locaux'}
-                        </span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center">
-                      <iframe
-                        ref={iframeRef}
-                        src="https://www.youtube-nocookie.com/embed/30VIItLvrUI?enablejsapi=1&autoplay=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&loop=1&playlist=30VIItLvrUI"
-                        title="Visado Service Oran Locaux"
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] h-[250%] max-w-none border-0 select-none pointer-events-auto"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                      
-                      <button
-                        onClick={handleStopTour}
-                        className="absolute top-3 right-3 bg-black/85 hover:bg-black text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5 z-20 transition-all border border-white/20 cursor-pointer"
-                      >
-                        <span>✕</span>
-                        <span>{currentLang === 'ar' ? 'إغلاق' : 'Fermer'}</span>
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </Reveal>
 
       </div>
     </section>
