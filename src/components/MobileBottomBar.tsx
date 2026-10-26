@@ -44,7 +44,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
           className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-slate-100 hover:bg-slate-200/70 active:bg-slate-200 text-slate-800 font-bold transition-all active:scale-95 group border border-slate-200/80"
           aria-label="Appeler directement"
         >
-          <Phone className="w-5 h-5 text-blue-600" />
+          <Phone className="w-5 h-5 text-slate-700" />
           <span className="text-[11px] font-bold mt-1 text-slate-800 leading-tight">
             {currentLang === 'ar' ? 'اتصال مباشر' : 'Appeler'}
           </span>
@@ -54,7 +54,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
         <button
           type="button"
           onClick={onOpenConsultation}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold transition-all active:scale-95 shadow-sm shadow-blue-600/30 cursor-pointer"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#002A79] hover:bg-[#002060] active:bg-[#001744] text-white font-bold transition-all active:scale-95 shadow-sm shadow-slate-900/20 cursor-pointer"
           aria-label="Demander un rendez-vous ou devis"
         >
           <Calendar className="w-5 h-5 text-white" />

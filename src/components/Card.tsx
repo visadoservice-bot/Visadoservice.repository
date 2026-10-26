@@ -47,78 +47,36 @@ export const Card: React.FC<CardProps> = ({
   children,
   className = ''
 }) => {
-  // Map standard color aliases to Tailwind color presets for background tiles & buttons
-  const getColorClasses = (color: string) => {
-    switch (color) {
-      case 'rose':
-      case 'red':
-        return {
-          bgSolid: 'bg-[#D93025]',
-          bgTint: 'bg-[#D93025]/10',
-          textAccent: 'text-[#D93025]',
-          borderHover: 'hover:border-[#D93025]/40',
-          ringFocus: 'focus-visible:ring-[#D93025]'
-        };
-      case 'emerald':
-      case 'green':
-        return {
-          bgSolid: 'bg-[#059669]',
-          bgTint: 'bg-[#059669]/10',
-          textAccent: 'text-[#059669]',
-          borderHover: 'hover:border-[#059669]/40',
-          ringFocus: 'focus-visible:ring-[#059669]'
-        };
-      case 'purple':
-        return {
-          bgSolid: 'bg-[#7C3AED]',
-          bgTint: 'bg-[#7C3AED]/10',
-          textAccent: 'text-[#7C3AED]',
-          borderHover: 'hover:border-[#7C3AED]/40',
-          ringFocus: 'focus-visible:ring-[#7C3AED]'
-        };
-      case 'amber':
-        return {
-          bgSolid: 'bg-[#D97706]',
-          bgTint: 'bg-[#D97706]/10',
-          textAccent: 'text-[#D97706]',
-          borderHover: 'hover:border-[#D97706]/40',
-          ringFocus: 'focus-visible:ring-[#D97706]'
-        };
-      case 'blue':
-      default:
-        return {
-          bgSolid: 'bg-[#1A73E8]',
-          bgTint: 'bg-[#1A73E8]/10',
-          textAccent: 'text-[#1A73E8]',
-          borderHover: 'hover:border-[#1A73E8]/40',
-          ringFocus: 'focus-visible:ring-[#1A73E8]'
-        };
-    }
+  // Harmonious, sober palette: elegant corporate navy / charcoal without rainbow colors
+  const colors = {
+    bgSolid: 'bg-[#002A79]',
+    bgTint: 'bg-slate-50',
+    textAccent: 'text-[#002A79]',
+    borderHover: 'hover:border-slate-300 hover:shadow-slate-200/60',
+    ringFocus: 'focus-visible:ring-[#002A79]'
   };
-
-  const colors = getColorClasses(colorClass);
 
   return (
     <div
-      className={`group relative h-full flex flex-col justify-between bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-xl ${colors.borderHover} hover:-translate-y-1.5 transition-all duration-250 ease-out overflow-hidden ${className}`}
+      className={`group relative h-full flex flex-col justify-between bg-white rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-xl ${colors.borderHover} hover:-translate-y-1.5 transition-all duration-250 ease-out overflow-hidden ${className}`}
     >
       <div>
-        {/* En-tête de carte : bande à fond teinté contenant l'icône dans une tuile pleine de 54px et le sous-titre */}
-        <div className={`p-5 sm:p-6 ${colors.bgTint} flex items-center justify-between gap-3 border-b border-slate-100/60 dark:border-slate-800/60`}>
+        {/* En-tête de carte : sobre, épuré, fond crème/blanc délicat */}
+        <div className="p-5 sm:p-6 bg-slate-50/60 flex items-center justify-between gap-3 border-b border-slate-100">
           {Icon && (
-            <div className={`w-[54px] h-[54px] rounded-2xl ${colors.bgSolid} text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-250`}>
-              <Icon className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/80 text-[#002A79] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-250">
+              <Icon className="w-5 h-5" />
             </div>
           )}
 
           {subtitle && (
-            <span className={`text-xs font-bold px-3 py-1 rounded-full ${colors.bgSolid} text-white shadow-2xs ms-auto text-end`}>
+            <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white border border-slate-200/80 text-slate-700 shadow-2xs ms-auto text-end">
               {subtitle}
             </span>
           )}
 
           {badge && !subtitle && (
-            <span className={`text-xs font-bold px-3 py-1 rounded-full ${colors.bgSolid} text-white shadow-2xs ms-auto text-end`}>
+            <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white border border-slate-200/80 text-slate-700 shadow-2xs ms-auto text-end">
               {badge}
             </span>
           )}
@@ -126,12 +84,12 @@ export const Card: React.FC<CardProps> = ({
 
         {/* Corps de la carte */}
         <div className="p-5 sm:p-6 space-y-3 text-start">
-          <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug group-hover:text-[#1A73E8] dark:group-hover:text-blue-400 transition-colors duration-200">
+          <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-[#002A79] transition-colors duration-200">
             {title}
           </h3>
 
           {description && (
-            <p className="text-[14.5px] text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-[14px] text-slate-600 leading-relaxed">
               {description}
             </p>
           )}
@@ -202,11 +160,11 @@ export const Card: React.FC<CardProps> = ({
           </div>
         )}
 
-        {/* Bouton d'action plein et pleine largeur en bas de chaque carte, rounded-2xl */}
+        {/* Bouton d'action sobre et élégant en bas de carte */}
         {action && (
           <button
             onClick={action.onClick}
-            className={`w-full py-3 px-4 rounded-2xl ${colors.bgSolid} text-white font-bold text-sm shadow-md hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer text-center mt-3 focus-visible:outline-none focus-visible:ring-2 ${colors.ringFocus}`}
+            className="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-[#002A79] text-white font-bold text-xs shadow-xs hover:shadow-sm active:scale-[0.98] transition-all cursor-pointer text-center mt-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002A79]"
           >
             {action.label}
           </button>

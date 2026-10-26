@@ -19,13 +19,13 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
   };
 
   return (
-    <section id="faq" className="py-14 sm:py-24 bg-slate-50/60 border-b border-slate-200/70">
+    <section id="faq" className="py-14 sm:py-24 bg-white border-b border-slate-200/70">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-            <span className="text-xs uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-100/60 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
+            <span className="text-xs uppercase font-bold tracking-wider text-slate-700 bg-slate-100 border border-slate-200/80 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
               {currentLang === 'ar' ? 'الأسئلة الشائعة' : 'Questions fréquentes'}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -62,18 +62,18 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
                     className="w-full text-start px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 cursor-pointer text-slate-900 group"
                   >
                     <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
-                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-[250ms] ${
-                        isOpen ? 'bg-blue-600 text-white shadow-xs' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100/70'
+                      <div className={`w-8 h-8 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-[250ms] ${
+                        isOpen ? 'bg-slate-900 text-white shadow-xs' : 'bg-slate-100 text-slate-700 group-hover:bg-slate-200/80'
                       }`}>
                         <HelpCircle className="w-4 h-4" aria-hidden="true" />
                       </div>
-                      <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
+                      <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug group-hover:text-[#002A79] transition-colors">
                         {item.question}
                       </span>
                     </div>
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-[250ms] shrink-0 ${
-                        isOpen ? 'rotate-180 bg-blue-50 text-blue-600' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200/70'
+                        isOpen ? 'rotate-180 bg-slate-100 text-slate-800' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200/70'
                       }`}
                       aria-hidden="true"
                     >
@@ -103,7 +103,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
 
         {/* Contextual CTA after FAQ */}
         <Reveal direction="up" delay={80}>
-          <div className="mt-10 sm:mt-12 bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm text-center sm:text-start flex flex-col sm:flex-row items-center justify-between gap-5 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms]">
+          <div className="mt-10 sm:mt-12 bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm text-center sm:text-start flex flex-col sm:flex-row items-center justify-between gap-5 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms]">
             <div className="space-y-1">
               <h3 className="text-base sm:text-lg font-bold text-slate-900">
                 {currentLang === 'ar' ? 'هل لديك حالة خاصة أو سؤال غير مذكور هنا؟' : 'Une question sur votre situation personnelle ?'}
@@ -128,7 +128,7 @@ export const FAQ: React.FC<FAQProps> = ({ currentLang, onOpenConsultation }) => 
 
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto px-5 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-bold rounded-2xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3 bg-slate-900 hover:bg-[#002A79] active:bg-[#001848] text-white text-xs font-bold rounded-2xl shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer"
               >
                 <span>{currentLang === 'ar' ? 'دراسة الطلب' : 'Demander une étude'}</span>
               </button>

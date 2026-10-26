@@ -22,12 +22,8 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <section 
       id="hero" 
-      className="relative bg-[#FAFAFC] border-b border-slate-200/80 pt-8 sm:pt-14 lg:pt-20 pb-12 sm:pb-20 lg:pb-24 overflow-hidden"
+      className="relative bg-white border-b border-slate-200/80 pt-8 sm:pt-14 lg:pt-20 pb-12 sm:pb-20 lg:pb-24 overflow-hidden"
     >
-      {/* Subtle atmospheric ambient glow for an editorial, luminous feeling */}
-      <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-gradient-to-br from-blue-100/40 via-sky-50/20 to-transparent rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-tr from-amber-50/40 to-transparent rounded-full blur-3xl pointer-events-none -z-0" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
@@ -36,8 +32,8 @@ export const Hero: React.FC<HeroProps> = ({
             
             {/* 1. Petite indication: "VISADO SERVICE — ORAN" */}
             <div className="animate-hero-fade flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-slate-500 mb-3 sm:mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#002A79] shrink-0 ring-4 ring-blue-100" />
-              <span className="text-[#002A79] font-black">VISADO SERVICE</span>
+              <span className="w-2 h-2 rounded-full bg-[#002A79] shrink-0" />
+              <span className="text-slate-900 font-bold">VISADO SERVICE</span>
               <span className="text-slate-300 font-light">—</span>
               <span className="text-slate-700 tracking-[0.22em]">ORAN</span>
               <span className="hidden sm:inline text-slate-300">·</span>
@@ -46,28 +42,28 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
             </div>
 
-            {/* 2. Grand titre très élégant */}
-            <h1 className="animate-hero-fade text-3xl sm:text-4xl lg:text-[46px] font-black text-[#0B1528] tracking-tight leading-[1.18] sm:leading-[1.15] mb-4 sm:mb-5">
+            {/* 2. Grand titre sobre et très élégant */}
+            <h1 className="animate-hero-fade text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.2] mb-4 sm:mb-5">
               {currentLang === 'ar' ? (
                 <>
-                  <span className="block font-medium text-slate-700 text-2xl sm:text-3xl lg:text-[34px] mb-1">
+                  <span className="block font-medium text-slate-600 text-2xl sm:text-3xl lg:text-[32px] mb-1">
                     خبرة واحترافية لمرافقتكم في عالم السفر
                   </span>
-                  <span className="text-[#002A79]">وكالتكم في وهران</span> لخدمات السفر، الاستشارات، وحجوزات الطيران
+                  <span>وكالتكم في وهران لخدمات السفر، الاستشارات، وحجوزات الطيران</span>
                 </>
               ) : currentLang === 'en' ? (
                 <>
                   <span className="block font-normal text-slate-600 text-2xl sm:text-3xl lg:text-[32px] mb-1 font-serif italic">
                     Expertise and serenity for every journey.
                   </span>
-                  <span className="text-[#002A79]">Travel Services</span>, Consultation & Ticketing in Oran.
+                  <span>Travel Services, Consultation & Ticketing in Oran.</span>
                 </>
               ) : (
                 <>
-                  <span className="block font-normal text-slate-600 text-2xl sm:text-3xl lg:text-[34px] mb-1 font-serif italic">
+                  <span className="block font-normal text-slate-600 text-2xl sm:text-3xl lg:text-[32px] mb-1 font-serif italic">
                     Expertise et sérénité pour votre voyage.
                   </span>
-                  <span className="text-[#002A79]">Services de voyage</span>, assistance aux démarches et réservations à Oran.
+                  <span>Services de voyage, assistance aux démarches et réservations à Oran.</span>
                 </>
               )}
             </h1>
@@ -115,12 +111,12 @@ export const Hero: React.FC<HeroProps> = ({
             {/* 5. Petits éléments de confiance autour du CTA */}
             <div className="animate-hero-fade-late flex flex-wrap items-center gap-y-2 gap-x-3 text-xs text-slate-500 pt-1">
               <span className="flex items-center gap-1.5 font-medium text-slate-700">
-                <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                 <span>14, Rue Hadri Mohamed, Oran</span>
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>
               <span className="flex items-center gap-1.5 font-medium text-slate-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-slate-700 shrink-0" />
                 <span>{currentLang === 'ar' ? 'استقبال وإصغاء مخصص' : 'Accueil & conseil personnalisé'}</span>
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>
@@ -129,7 +125,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <span>{currentLang === 'ar' ? 'مساعدة في حجوزات السفر' : 'Assistance aux réservations'}</span>
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>
-              <span className="text-emerald-700 font-semibold">
+              <span className="text-slate-800 font-semibold">
                 {currentLang === 'ar' ? 'شفافية ومصداقية تامة' : 'Totale transparence'}
               </span>
             </div>
@@ -139,16 +135,16 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                 {currentLang === 'ar' ? 'الوجهات الرئيسية :' : 'Destinations courantes :'}
               </span>
-              <div className="flex flex-wrap items-center gap-2.5 font-medium text-slate-800">
-                <span className="hover:text-blue-700 transition-colors">🇪🇸 Espagne (BLS)</span>
+              <div className="flex flex-wrap items-center gap-2.5 font-medium text-slate-700">
+                <span className="hover:text-slate-900 transition-colors">Espagne (BLS)</span>
                 <span className="text-slate-300">/</span>
-                <span className="hover:text-blue-700 transition-colors">🇫🇷 France (Capago)</span>
+                <span className="hover:text-slate-900 transition-colors">France (Capago)</span>
                 <span className="text-slate-300">/</span>
-                <span className="hover:text-blue-700 transition-colors">🇮🇹 Italie</span>
+                <span className="hover:text-slate-900 transition-colors">Italie</span>
                 <span className="text-slate-300">/</span>
-                <span className="hover:text-blue-700 transition-colors">🇨🇦 Canada</span>
+                <span className="hover:text-slate-900 transition-colors">Canada</span>
                 <span className="text-slate-300">/</span>
-                <span className="hover:text-blue-700 transition-colors">✈️ Billetterie Monde</span>
+                <span className="hover:text-slate-900 transition-colors">Billetterie Monde</span>
               </div>
             </div>
 

@@ -138,11 +138,11 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className="p-3 sm:p-3.5 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-xl border border-blue-200/70 flex flex-col items-center text-center transition-all shadow-2xs active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="p-3 sm:p-3.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-xl border border-slate-200 flex flex-col items-center text-center transition-all shadow-2xs active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"
             >
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mb-1" aria-hidden="true" />
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700 mb-1" aria-hidden="true" />
               <span className="text-xs font-bold">Appel Direct</span>
-              <span className="text-[10px] sm:text-[11px] text-blue-800 font-medium" dir="ltr">{siteConfig.phone}</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-700 font-medium" dir="ltr">{siteConfig.phone}</span>
             </a>
           </div>
 

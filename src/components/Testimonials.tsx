@@ -23,15 +23,15 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
   const hasItems = Array.isArray(testData.items) && testData.items.length > 0;
 
   return (
-    <section id="testimonials" className="py-14 sm:py-24 bg-slate-50/50 border-t border-slate-200/70 relative overflow-hidden">
+    <section id="testimonials" className="py-14 sm:py-24 bg-white border-t border-slate-200/70 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Top Header */}
         <Reveal direction="up" delay={0}>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-10 sm:mb-14">
             <div className="max-w-2xl">
-              <span className="text-xs uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-100/60 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5 mb-3 shadow-2xs">
-                <MessageSquareQuote className="w-3.5 h-3.5 text-blue-600" />
+              <span className="text-xs uppercase font-bold tracking-wider text-slate-700 bg-slate-100 border border-slate-200/80 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5 mb-3 shadow-2xs">
+                <MessageSquareQuote className="w-3.5 h-3.5 text-slate-600" />
                 <span>{testData.overline}</span>
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -72,7 +72,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 href={siteConfig.googleMapsShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold transition-all shrink-0 cursor-pointer active:scale-[0.98] ml-auto sm:ml-0"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-all shrink-0 cursor-pointer active:scale-[0.98] ml-auto sm:ml-0"
               >
                 <span>{testData.viewOnMaps || "Ouvrir"}</span>
                 <ExternalLink className="w-3 h-3" />
@@ -83,16 +83,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
 
         {/* Central Google Maps Verified Hub (Prominent Trust Showcase) */}
         <Reveal direction="up" delay={50}>
-          <div className="relative overflow-hidden bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm hover:border-blue-200/80 transition-all duration-300">
-            {/* Ambient decorative blur */}
-            <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-
+          <div className="relative overflow-hidden bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm hover:border-slate-300 transition-all duration-300">
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
               {/* Left Column: Score Badge & Business Title (lg:col-span-5) */}
               <div className="md:col-span-2 lg:col-span-5 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-start gap-4 sm:gap-5">
-                <div className="w-22 h-22 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/90 shadow-sm flex flex-col items-center justify-center p-3 shrink-0">
+                <div className="w-22 h-22 sm:w-24 sm:h-24 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-sm flex flex-col items-center justify-center p-3 shrink-0">
                   <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-none">4.9</span>
                   <div className="flex items-center text-amber-400 mt-2">
                     {[...Array(5)].map((_, i) => (
@@ -102,8 +98,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-2.5 border border-emerald-100">
-                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold mb-2.5 border border-slate-200">
+                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
                     <span className="truncate">{testData.badgeVerified || "Fiche officielle Google Maps vérifiée"}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
@@ -123,7 +119,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
               {/* Middle Column: Guarantees & Location Cards (lg:col-span-4) */}
               <div className="md:col-span-1 lg:col-span-4 flex flex-col gap-2.5 w-full">
                 <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 shadow-2xs hover:bg-slate-100/60 transition-colors">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-100/80 text-emerald-700 flex items-center justify-center shrink-0 shadow-2xs">
+                  <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/80 text-[#002A79] flex items-center justify-center shrink-0 shadow-2xs">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-slate-800">
@@ -132,7 +128,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 </div>
 
                 <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 shadow-2xs hover:bg-slate-100/60 transition-colors">
-                  <div className="w-9 h-9 rounded-xl bg-amber-100/80 text-amber-700 flex items-center justify-center shrink-0 shadow-2xs">
+                  <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/80 text-[#002A79] flex items-center justify-center shrink-0 shadow-2xs">
                     <Award className="w-5 h-5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-slate-800">
@@ -141,7 +137,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 </div>
 
                 <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 shadow-2xs hover:bg-slate-100/60 transition-colors">
-                  <div className="w-9 h-9 rounded-xl bg-red-100/80 text-red-600 flex items-center justify-center shrink-0 shadow-2xs">
+                  <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/80 text-slate-700 flex items-center justify-center shrink-0 shadow-2xs">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-slate-800 truncate" dir="ltr">
@@ -156,7 +152,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                   href={siteConfig.googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all active:scale-[0.98] cursor-pointer w-full"
+                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-slate-900 hover:bg-[#002A79] active:bg-slate-950 text-white text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all active:scale-[0.98] cursor-pointer w-full"
                 >
                   <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 24 24">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -200,11 +196,11 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                   className="flex flex-col h-full min-w-[260px] min-[380px]:min-w-[285px] sm:min-w-[320px] md:min-w-0 snap-start"
                 >
                   <div
-                    className="bg-white rounded-3xl border border-slate-200/90 hover:border-blue-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms] overflow-hidden flex flex-col justify-between h-full group"
+                    className="bg-white rounded-3xl border border-slate-200/90 hover:border-slate-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-[250ms] overflow-hidden flex flex-col justify-between h-full group"
                   >
-                    {/* Header band with 10% tint, 54px avatar tile & star rating pill */}
+                    {/* Header band with neutral tint, 54px avatar tile & star rating pill */}
                     <div className="p-5 pb-4 bg-slate-50/80 border-b border-slate-100 flex items-center justify-between gap-3">
-                      <div className={`w-[54px] h-[54px] rounded-2xl ${item.avatarColor || 'bg-blue-600'} text-white font-black text-base flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-[250ms]`}>
+                      <div className="w-[54px] h-[54px] rounded-2xl bg-[#002A79] text-white font-black text-base flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-[250ms]">
                         {initials}
                       </div>
 
@@ -217,21 +213,21 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
 
                     {/* Card Body */}
                     <div className="p-5 sm:p-6 flex flex-col flex-1">
-                      <h4 className="text-[19px] sm:text-[20px] font-extrabold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
+                      <h4 className="text-[19px] sm:text-[20px] font-extrabold text-slate-900 leading-snug group-hover:text-[#002A79] transition-colors">
                         {item.clientName}
                       </h4>
 
                       <div className="flex items-center gap-1 text-xs text-slate-500 mb-3">
-                        <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                         <span>{item.city || "Oran"}</span>
                       </div>
 
                       {/* Destination / Visa Type Tag */}
                       <div className="mb-3.5 flex flex-wrap gap-1.5">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-700 border border-blue-500/20">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200/80">
                           {item.destination}
                         </span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-150">
                           {item.visaType}
                         </span>
                       </div>
@@ -243,8 +239,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
 
                       {/* Card footer: Verified status & Date */}
                       <div className="pt-3.5 mt-auto border-t border-dashed border-slate-200 flex items-center justify-between text-xs text-slate-500">
-                        <span className="inline-flex items-center gap-1 text-emerald-600 font-semibold">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
+                        <span className="inline-flex items-center gap-1 text-emerald-700 font-semibold">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                           <span>{testData.badgeVerified || "Avis vérifié"}</span>
                         </span>
                         <span>{item.date || item.year}</span>
@@ -259,9 +255,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
 
         {/* Bottom Consultation / Appointment Banner */}
         <Reveal direction="up" delay={100}>
-          <div className="mt-10 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:border-blue-200 hover:shadow-md transition-all duration-[250ms]">
+          <div className="mt-10 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:border-slate-300 hover:shadow-md transition-all duration-[250ms]">
             <div className="flex items-center gap-4 text-start">
-              <div className="w-[54px] h-[54px] rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-500/20 shadow-2xs">
+              <div className="w-[54px] h-[54px] rounded-2xl bg-slate-100 text-[#002A79] flex items-center justify-center shrink-0 border border-slate-200 shadow-2xs">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <div>
@@ -294,7 +290,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ currentLang, onOpenC
                 <button
                   type="button"
                   onClick={onOpenConsultation}
-                  className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-xs font-semibold transition-all shadow-xs cursor-pointer active:scale-[0.98]"
+                  className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-[#002A79] active:bg-slate-950 text-white text-xs font-semibold transition-all shadow-xs cursor-pointer active:scale-[0.98]"
                 >
                   <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
                 </button>

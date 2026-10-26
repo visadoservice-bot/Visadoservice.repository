@@ -58,16 +58,16 @@ export const WhyUs: React.FC<WhyUsProps> = ({ currentLang, onOpenConsultation })
   ];
 
   return (
-    <section id="why-us" className="py-14 sm:py-24 bg-slate-50/60 dark:bg-slate-900/60 border-b border-slate-200/70 dark:border-slate-800">
+    <section id="why-us" className="py-14 sm:py-24 bg-white border-b border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <Reveal direction="up" delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-            <span className="text-xs uppercase font-bold tracking-wider text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 border border-blue-100/60 dark:border-blue-800 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
+            <span className="text-xs uppercase font-bold tracking-wider text-slate-700 bg-slate-100 border border-slate-200/80 px-3.5 py-1 rounded-full inline-block mb-3 shadow-2xs">
               {currentLang === 'ar' ? 'لماذا تختارنا' : currentLang === 'en' ? 'Why Choose Us' : 'Pourquoi nous choisir'}
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {currentLang === 'ar'
                 ? 'خبرة واحترافية لمرافقتكم في عالم السفر'
                 : currentLang === 'en'

@@ -283,21 +283,15 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
   const currentLightboxItem = activeLightboxIndex !== null ? mediaItems[activeLightboxIndex] : null;
 
   return (
-    <section id="media-gallery" className="py-16 sm:py-24 bg-slate-50/70 border-b border-slate-200/80 relative overflow-hidden">
-      
-      {/* Subtle luxury background ambience */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white to-transparent pointer-events-none" />
-      <div className="absolute -top-32 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-20 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="media-gallery" className="py-16 sm:py-24 bg-white border-b border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Editorial Section Header */}
         <Reveal direction="up" delay={0}>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14 gap-6">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
-                <Camera className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/80 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
+                <Camera className="w-3.5 h-3.5 text-[#002A79]" />
                 <span>{currentLang === 'ar' ? 'معرض الصور والتوثيق' : 'Visite de nos locaux'}</span>
               </div>
               
@@ -315,28 +309,28 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
               {/* Physical trust indicators */}
               <div className="mt-4 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-600">
-                <span className="flex items-center gap-1.5 text-blue-800 bg-white/80 px-2.5 py-1 rounded-lg border border-slate-200/70 shadow-2xs">
-                  <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                <span className="flex items-center gap-1.5 text-slate-700 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-2xs">
+                  <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                   <span className="font-semibold">14, Rue Hadri Mohamed, Oran</span>
                 </span>
-                <span className="flex items-center gap-1.5 text-emerald-800 bg-white/80 px-2.5 py-1 rounded-lg border border-slate-200/70 shadow-2xs">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span className="flex items-center gap-1.5 text-slate-700 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-2xs">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#002A79] shrink-0" />
                   <span>{currentLang === 'ar' ? '100% صور ومقاطع حقيقية' : '100% Photos réelles de nos locaux'}</span>
                 </span>
               </div>
             </div>
 
             {/* Category Filter Tabs */}
-            <div className="flex items-center gap-1.5 p-1.5 bg-white border border-slate-200 rounded-2xl shadow-xs self-start lg:self-auto overflow-x-auto max-w-full" role="tablist" aria-label="Filtres de la galerie">
+            <div className="flex items-center gap-1.5 p-1.5 bg-slate-100 border border-slate-200/80 rounded-2xl shadow-xs self-start lg:self-auto overflow-x-auto max-w-full" role="tablist" aria-label="Filtres de la galerie">
               <button
                 type="button"
                 role="tab"
                 aria-selected={activeFilter === 'all'}
                 onClick={() => setActiveFilter('all')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'all'
-                    ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
+                    ? 'bg-slate-900 text-white shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
                 {currentLang === 'ar' ? 'كافة الوسائط (6)' : 'Tous les visuels (6)'}
@@ -347,10 +341,10 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 role="tab"
                 aria-selected={activeFilter === 'agency'}
                 onClick={() => setActiveFilter('agency')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'agency'
-                    ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
+                    ? 'bg-slate-900 text-white shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
                 <span>{currentLang === 'ar' ? 'المقر والواجهة (3)' : 'Nos Locaux (3)'}</span>
@@ -361,10 +355,10 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 role="tab"
                 aria-selected={activeFilter === 'visas'}
                 onClick={() => setActiveFilter('visas')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'visas'
-                    ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
+                    ? 'bg-slate-900 text-white shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
                 <span>{currentLang === 'ar' ? 'خدمات السفر والمتابعة (2)' : 'Services & Conseils (2)'}</span>
@@ -375,10 +369,10 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 role="tab"
                 aria-selected={activeFilter === 'video'}
                 onClick={() => setActiveFilter('video')}
-                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'video'
-                    ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
+                    ? 'bg-slate-900 text-white shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
                 <Play className="w-3 h-3 fill-current" aria-hidden="true" />
@@ -414,7 +408,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 {/* Top Badges */}
                 <div className="absolute top-4 sm:top-6 inset-x-4 sm:inset-x-6 flex items-center justify-between z-10">
                   <div className="flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-md flex items-center gap-1.5 backdrop-blur-xs">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 text-white border border-white/20 shadow-md flex items-center gap-1.5 backdrop-blur-md">
                       <Sparkles className="w-3.5 h-3.5" />
                       <span>{currentLang === 'ar' ? mediaItems[0].badgeAr : mediaItems[0].badgeFr}</span>
                     </span>
@@ -497,7 +491,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
 
                     {/* Top bar */}
                     <div className="relative z-10 flex items-center justify-between">
-                      <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white shadow-md flex items-center gap-1.5">
+                      <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 text-white border border-white/20 shadow-md flex items-center gap-1.5 backdrop-blur-md">
                         <Video className="w-3.5 h-3.5" />
                         <span>{currentLang === 'ar' ? mediaItems[1].badgeAr : mediaItems[1].badgeFr}</span>
                       </span>
@@ -592,8 +586,8 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
 
                 <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-md flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 text-white border border-white/20 shadow-md flex items-center gap-1 backdrop-blur-md">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-slate-300" />
                     <span>{currentLang === 'ar' ? mediaItems[3].badgeAr : mediaItems[3].badgeFr}</span>
                   </span>
                   <div className="w-8 h-8 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -629,7 +623,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
 
                 <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-700 text-white shadow-md">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 text-white border border-white/20 shadow-md backdrop-blur-md">
                     {currentLang === 'ar' ? mediaItems[4].badgeAr : mediaItems[4].badgeFr}
                   </span>
                   <div className="w-8 h-8 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -652,7 +646,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
             <Reveal direction="up" delay={140} className="lg:col-span-4">
               <div 
                 onClick={() => handleOpenLightbox(5)}
-                className="group relative h-full min-h-[240px] sm:min-h-[260px] rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-300 transition-all duration-300 cursor-pointer flex flex-col justify-end bg-slate-950 p-5"
+                className="group relative h-full min-h-[240px] sm:min-h-[260px] rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-400 transition-all duration-300 cursor-pointer flex flex-col justify-end bg-slate-950 p-5"
               >
                 <img
                   src={mediaItems[5].imageUrl}
@@ -665,7 +659,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10" />
 
                 <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-600 text-white shadow-md">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 text-white border border-white/20 shadow-md backdrop-blur-md">
                     {currentLang === 'ar' ? mediaItems[5].badgeAr : mediaItems[5].badgeFr}
                   </span>
                   <div className="w-8 h-8 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center group-hover:scale-110 transition-transform">

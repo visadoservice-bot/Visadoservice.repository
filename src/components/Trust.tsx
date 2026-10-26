@@ -40,18 +40,14 @@ export const Trust: React.FC<TrustProps> = ({
   };
 
   return (
-    <section id="trust" className="py-12 sm:py-16 bg-white border-b border-slate-200/80 relative overflow-hidden">
-      
-      {/* Soft background ambient gradient */}
-      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-slate-50/80 to-transparent pointer-events-none" />
-
+    <section id="trust" className="py-12 sm:py-16 bg-white border-b border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <Reveal direction="up" delay={0}>
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/80 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#002A79]" />
               <span>{isArabic ? 'ثقة وشفافية • وهران' : isEnglish ? 'Trust, Rigor & Transparency' : 'Confiance, Rigueur & Transparence'}</span>
             </div>
 
