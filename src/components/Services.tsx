@@ -108,25 +108,73 @@ export const Services: React.FC<ServicesProps> = ({
                     </div>
                   )}
 
-                  {/* Carte 3 : Ligne fine de logos compagnies aériennes (Air Algérie, Tassili, Transavia, Volotea, Vueling) */}
+                  {/* Carte 3 : Ligne fine de logos décoratifs de compagnies aériennes (déco pure sans texte du nom) */}
                   {service.id === 'billetterie_vols' && (
                     <div className="pt-3 mt-4 border-t border-slate-100">
-                      <div className="flex items-center justify-between gap-1 w-full" aria-label="Compagnies aériennes">
-                        {[
-                          { name: 'Air Algérie', code: 'AH' },
-                          { name: 'Tassili Airlines', code: 'SF' },
-                          { name: 'Transavia', code: 'TO' },
-                          { name: 'Volotea', code: 'V7' },
-                          { name: 'Vueling', code: 'VY' },
-                        ].map((airline, aIdx) => (
-                          <div
-                            key={aIdx}
-                            title={airline.name}
-                            className="flex-1 flex items-center justify-center py-1 px-0.5 rounded-md bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-500 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-100 transition-all duration-200 cursor-default shadow-2xs"
-                          >
-                            {airline.code}
-                          </div>
-                        ))}
+                      <div className="flex items-center justify-between gap-1.5 w-full" aria-label="Compagnies aériennes">
+                        {/* Air Algérie */}
+                        <div
+                          title="Air Algérie"
+                          aria-label="Air Algérie"
+                          className="flex-1 h-8 sm:h-9 flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 text-slate-400 hover:text-[#BA1515] hover:bg-white hover:border-red-200 hover:shadow-xs transition-all duration-300 cursor-default group/air"
+                        >
+                          <svg viewBox="0 0 40 40" className="w-5 h-5 transition-transform duration-200 group-hover/air:scale-110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="17" stroke="currentColor" strokeWidth="2" />
+                            <path d="M10 24C13.5 19.5 18 16 29 13C24.5 17 21 21.5 19 26C18 23 15 22 10 24Z" fill="currentColor" />
+                            <path d="M17 17.5C21 14.5 25 13 29 13C25 14.5 21 16 17 17.5Z" fill="currentColor" opacity="0.8" />
+                          </svg>
+                        </div>
+
+                        {/* Tassili Airlines */}
+                        <div
+                          title="Tassili Airlines"
+                          aria-label="Tassili Airlines"
+                          className="flex-1 h-8 sm:h-9 flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 text-slate-400 hover:text-[#0C6839] hover:bg-white hover:border-emerald-200 hover:shadow-xs transition-all duration-300 cursor-default group/tas"
+                        >
+                          <svg viewBox="0 0 40 40" className="w-5 h-5 transition-transform duration-200 group-hover/tas:scale-110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3.5" y="3.5" width="33" height="33" rx="8" stroke="currentColor" strokeWidth="2" />
+                            <path d="M10 26C14 21 19.5 14 29 12C26.5 16 23 22 21 25.5C19.5 23 16 22.5 10 26Z" fill="currentColor" />
+                            <path d="M18 15C22.5 12 27 11.5 29 12C25.5 13.5 22 15 18 15Z" fill="currentColor" opacity="0.75" />
+                          </svg>
+                        </div>
+
+                        {/* Transavia */}
+                        <div
+                          title="Transavia"
+                          aria-label="Transavia"
+                          className="flex-1 h-8 sm:h-9 flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 text-slate-400 hover:text-[#00D66C] hover:bg-white hover:border-emerald-200 hover:shadow-xs transition-all duration-300 cursor-default group/tra"
+                        >
+                          <svg viewBox="0 0 40 40" className="w-5 h-5 transition-transform duration-200 group-hover/tra:scale-110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3.5" y="3.5" width="33" height="33" rx="8" stroke="currentColor" strokeWidth="2" />
+                            <path d="M12 14H28V18H22V27H18V18H12V14Z" fill="currentColor" />
+                            <circle cx="27" cy="25" r="2.5" fill="currentColor" />
+                          </svg>
+                        </div>
+
+                        {/* Volotea */}
+                        <div
+                          title="Volotea"
+                          aria-label="Volotea"
+                          className="flex-1 h-8 sm:h-9 flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 text-slate-400 hover:text-[#D11A38] hover:bg-white hover:border-rose-200 hover:shadow-xs transition-all duration-300 cursor-default group/vol"
+                        >
+                          <svg viewBox="0 0 40 40" className="w-5 h-5 transition-transform duration-200 group-hover/vol:scale-110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3.5" y="3.5" width="33" height="33" rx="8" stroke="currentColor" strokeWidth="2" />
+                            <path d="M12 14L20 27L28 14H24L20 21L16 14H12Z" fill="currentColor" />
+                          </svg>
+                        </div>
+
+                        {/* Vueling */}
+                        <div
+                          title="Vueling"
+                          aria-label="Vueling"
+                          className="flex-1 h-8 sm:h-9 flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 text-slate-400 hover:text-[#F59E0B] hover:bg-white hover:border-amber-200 hover:shadow-xs transition-all duration-300 cursor-default group/vue"
+                        >
+                          <svg viewBox="0 0 40 40" className="w-5 h-5 transition-transform duration-200 group-hover/vue:scale-110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="17" stroke="currentColor" strokeWidth="2" />
+                            <circle cx="18" cy="20" r="6.5" fill="currentColor" />
+                            <circle cx="26" cy="14" r="2.5" fill="currentColor" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   )}

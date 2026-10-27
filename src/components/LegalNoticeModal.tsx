@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ShieldCheck, Lock, CheckCircle2, Phone, MapPin, MessageCircle, FileText } from 'lucide-react';
+import { X, ShieldCheck, Lock, Globe, Phone, MapPin, MessageCircle, AlertCircle } from 'lucide-react';
 import { Language } from '../types';
 import { siteConfig } from '../data/config';
 
@@ -64,10 +64,10 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
                 {isArabic
                   ? 'شروط الموقع والبيانات القانونية'
                   : isEnglish
-                    ? 'Legal Notice & Privacy'
-                    : 'Mentions légales & Confidentialité'}
+                    ? 'Website Terms & Legal Notice'
+                    : 'Conditions du site et Mentions légales'}
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 font-medium">
                 {isArabic ? 'Visado Service — وهران، الجزائر' : 'Visado Service — Oran, Algérie'}
               </p>
             </div>
@@ -84,203 +84,281 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="overflow-y-auto px-5 sm:px-7 py-5 space-y-5 text-xs sm:text-sm leading-relaxed text-slate-700">
+        <div className="overflow-y-auto px-5 sm:px-7 py-5 space-y-4 text-xs sm:text-sm leading-relaxed text-slate-700">
           
           {isArabic ? (
-            /* ================= ARABIC VERSION ================= */
-            <div className="space-y-4">
+            /* ================= ARABIC VERSION (EXACT USER TEXT) ================= */
+            <div className="space-y-4 text-right" dir="rtl">
               
-              {/* 1. Site et WhatsApp */}
+              {/* 1. استخدام الموقع */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <Globe className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>استخدام الموقع</h3>
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  هذا الموقع هو موقع تعريفي بخدمات <strong>Visado Service</strong>، ويهدف إلى تسهيل التواصل الأولي مع المكتب.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  تصفح الموقع متاح دون تسجيل أو إنشاء حساب. لا يستخدم الموقع Cookies لأغراض التتبع أو الإعلانات، ولا يعتمد على LocalStorage أو SessionStorage لتخزين بيانات المستخدم على جهازه.
+                </p>
+              </div>
+
+              {/* 2. التواصل والبيانات */}
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                   <MessageCircle className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <h3>استخدام الموقع والتواصل الأولي</h3>
+                  <h3>التواصل والبيانات</h3>
                 </div>
-                <p className="text-slate-700">
-                  تصفح هذا الموقع حر تماماً وبدون أي التزام، ولا يتطلب أي تسجيل أو إنشاء حساب. لا يتم استخدام أي كوكيز (Cookies) أو أدوات تتبع أو تخزين بيانات على جهازك (Zero LocalStorage / SessionStorage).
+                <p className="text-slate-700 leading-relaxed">
+                  عند التواصل معنا عبر الموقع أو WhatsApp، قد نتلقى المعلومات التي تختارون تقديمها، مثل الاسم ورقم الهاتف ومحتوى الرسالة أو المعلومات المتعلقة بطلبكم.
                 </p>
-                <p className="text-slate-700">
-                  عبر الموقع أو عبر تطبيق واتساب، <strong>لا نحتفظ بأي معلومات تفصيلية عنكم</strong>. عند التواصل الأولي، فإن المعلومات الوحيدة التي قد تظهر لنا تقتصر فقط على <strong>رقم الهاتف، الاسم واللقب (أو الاسم المستعار على واتساب)</strong>.
+                <p className="text-slate-700 leading-relaxed">
+                  تُستخدم هذه المعلومات فقط للتواصل المهني، والرد على الاستفسارات، وتحديد المواعيد، وتقديم التوجيه والمرافقة المطلوبة.
                 </p>
+                <div className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 text-xs font-semibold flex items-center gap-2">
+                  <Lock className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>لا يتم بيع أو تأجير بيانات العملاء لأغراض إعلانية أو تسويقية.</span>
+                </div>
               </div>
 
-              {/* 2. Traitement direct au bureau */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+              {/* 3. خدمات التأشيرات */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>معالجة الطلبات ومراجعة الوثائق تتم حصرياً بمقرنا</h3>
+                  <AlertCircle className="w-4.5 h-4.5 text-amber-600 shrink-0" />
+                  <h3>خدمات التأشيرات</h3>
                 </div>
-                <p className="text-slate-700">
-                  يهدف الموقع فقط لتقديم خدماتنا وتسهيل الاتصال الأولي. أما دراسة الطلب ومراجعة المستندات والإجراءات الفعلية، فتتم <strong>مباشرة داخل مكاتبنا بوهران</strong> وبشكل حضوري مع الزبون في سرية وأمان تامين.
+                <p className="text-slate-700 leading-relaxed">
+                  تقدم <strong>Visado Service</strong> خدمات التوجيه والمرافقة المتعلقة بإجراءات السفر والتأشيرات حسب طبيعة كل طلب.
                 </p>
+                <p className="text-slate-700 leading-relaxed">
+                  قرار منح أو رفض التأشيرة يعود حصريًا إلى السفارة أو القنصلية أو الجهة الرسمية المختصة، كما أن مواعيد التأشيرات تعتمد على توفرها عبر المنصات الرسمية.
+                </p>
+                <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-amber-950 font-bold text-xs sm:text-[13px] leading-relaxed">
+                  Visado Service لا تضمن قبول طلبات التأشيرة أو الحصول على موعد، ولا تتحمل مسؤولية القرارات الصادرة عن الجهات الرسمية.
+                </div>
               </div>
 
-              {/* 3. Confidentialité et Non-vente */}
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
-                <div className="flex items-center gap-2 text-emerald-950 font-bold text-sm">
-                  <Lock className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <h3>الخصوصية وحماية بيانات الاتصال</h3>
+              {/* 4. المعلومات القانونية */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+                <h3 className="text-slate-900 font-bold text-sm">المعلومات القانونية</h3>
+                
+                <div className="space-y-1.5 text-xs text-slate-700">
+                  <p className="font-bold text-slate-900 text-sm">Visado Service</p>
+                  <p className="flex items-center gap-2 text-slate-600">
+                    <MapPin className="w-4 h-4 text-red-500 shrink-0" />
+                    <span>14, Rue Capitaine Hadri Mohamed, Oran 31000, Algérie</span>
+                  </p>
                 </div>
-                <p className="text-slate-700">
-                  المعلومات التي تختارون تقديمها طواعية عند الاتصال بنا تُستخدم فقط من أجل :
-                </p>
-                <ul className="list-disc ps-5 space-y-1 text-slate-700">
-                  <li>أخذ موعد والتواصل المباشر معكم ؛</li>
-                  <li>الإجابة على استفساراتكم وتوجيهكم ؛</li>
-                  <li>متابعة التواصل المهني بخصوص طلبكم.</li>
-                </ul>
-                <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>لا يتم إطلاقاً بيع أو تأجير معلوماتكم لأي جهة أو لأغراض إعلانية وتجارية.</span>
-                </p>
-              </div>
 
-
-
-              {/* Coordonnées officielles */}
-              <div className="pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1.5">
-                <p className="font-bold text-slate-900">{siteConfig.name} — خدمات ومرافقة السفر</p>
-                <p className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                  <span>{siteConfig.address}</span>
-                </p>
-                <div className="flex items-center gap-1.5" dir="ltr">
-                  <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span className="flex items-center gap-1">
-                    <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline font-semibold">{siteConfig.phone}</a>
-                    <span>/</span>
-                    <a href={`tel:${siteConfig.phoneSecondary.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline font-semibold">{siteConfig.phoneSecondary}</a>
-                  </span>
+                <div className="pt-2 border-t border-slate-200/80">
+                  <p className="text-xs font-bold text-slate-800 mb-1.5">Téléphone / WhatsApp :</p>
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold" dir="ltr">
+                    <a
+                      href="tel:+213557426784"
+                      className="text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>+213 557 42 67 84</span>
+                    </a>
+                    <span className="text-slate-300">|</span>
+                    <a
+                      href="tel:+213555778460"
+                      className="text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>+213 555 77 84 60</span>
+                    </a>
+                  </div>
                 </div>
+
+                <p className="text-xs text-slate-500 pt-2 border-t border-slate-200/80 leading-relaxed">
+                  المعلومات المنشورة على هذا الموقع مخصصة للتعريف بالخدمات وتسهيل التواصل مع المكتب، ولا تحل محل المعلومات أو القرارات الرسمية الصادرة عن الجهات المختصة.
+                </p>
               </div>
 
             </div>
           ) : isEnglish ? (
             /* ================= ENGLISH VERSION ================= */
-            <div className="space-y-4">
+            <div className="space-y-4 text-left" dir="ltr">
+              
+              {/* 1. Website Usage */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <Globe className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>Website Usage</h3>
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  This website is an informational showcase of <strong>Visado Service</strong>, aimed at facilitating initial contact with our office.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  Browsing the site is open without registration or account creation. The website does not use cookies for tracking or advertising purposes, and does not rely on LocalStorage or SessionStorage to store user data on their device.
+                </p>
+              </div>
+
+              {/* 2. Communication & Data */}
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                   <MessageCircle className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <h3>Website Usage & Initial Contact</h3>
+                  <h3>Communication & Data</h3>
                 </div>
-                <p className="text-slate-700">
-                  Browsing this website is free, requires no commitment, and does not require account creation. We do not use cookies or persist tracking data to your device (zero localStorage / sessionStorage).
+                <p className="text-slate-700 leading-relaxed">
+                  When communicating with us via the website or WhatsApp, we may receive information you choose to provide, such as your name, phone number, message content, or details regarding your request.
                 </p>
-                <p className="text-slate-700">
-                  Through the website or via WhatsApp, <strong>we do not retain detailed personal records</strong>. Initial contact reveals only your <strong>phone number, name, and surname (or WhatsApp username)</strong>.
+                <p className="text-slate-700 leading-relaxed">
+                  This information is used strictly for professional communication, answering inquiries, scheduling appointments, and providing the requested guidance and accompaniment.
                 </p>
+                <div className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 text-xs font-semibold flex items-center gap-2">
+                  <Lock className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Client data is never sold or rented for advertising or marketing purposes.</span>
+                </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+              {/* 3. Visa Services */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>In-Person Application & Document Review</h3>
+                  <AlertCircle className="w-4.5 h-4.5 text-amber-600 shrink-0" />
+                  <h3>Visa Services</h3>
                 </div>
-                <p className="text-slate-700">
-                  This website serves only to present our advisory services and facilitate initial contact. Formal document verification, submission reviews, and travel arrangements take place <strong>in-person at our Oran office</strong>.
+                <p className="text-slate-700 leading-relaxed">
+                  <strong>Visado Service</strong> provides guidance and accompaniment services related to travel and visa procedures according to the nature of each request.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  The decision to grant or refuse a visa belongs exclusively to the embassy, consulate, or competent official authority; likewise, visa appointments depend on availability via official platforms.
+                </p>
+                <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-amber-950 font-bold text-xs sm:text-[13px] leading-relaxed">
+                  Visado Service does not guarantee the acceptance of visa applications or securing an appointment, and bears no responsibility for decisions issued by official authorities.
+                </div>
+              </div>
+
+              {/* 4. Legal Information */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+                <h3 className="text-slate-900 font-bold text-sm">Legal Information</h3>
+                
+                <div className="space-y-1.5 text-xs text-slate-700">
+                  <p className="font-bold text-slate-900 text-sm">Visado Service</p>
+                  <p className="flex items-center gap-2 text-slate-600">
+                    <MapPin className="w-4 h-4 text-red-500 shrink-0" />
+                    <span>14, Rue Capitaine Hadri Mohamed, Oran 31000, Algérie</span>
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-slate-200/80">
+                  <p className="text-xs font-bold text-slate-800 mb-1.5">Phone / WhatsApp :</p>
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
+                    <a
+                      href="tel:+213557426784"
+                      className="text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>+213 557 42 67 84</span>
+                    </a>
+                    <span className="text-slate-300">|</span>
+                    <a
+                      href="tel:+213555778460"
+                      className="text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>+213 555 77 84 60</span>
+                    </a>
+                  </div>
+                </div>
+
+                <p className="text-xs text-slate-500 pt-2 border-t border-slate-200/80 leading-relaxed">
+                  The information published on this website is intended to introduce our services and facilitate contact with the office, and does not replace official information or decisions issued by competent authorities.
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
-                <div className="flex items-center gap-2 text-emerald-950 font-bold text-sm">
-                  <Lock className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <h3>Confidentiality & Privacy</h3>
-                </div>
-                <p className="text-slate-700">
-                  Contact details voluntarily submitted are used strictly to:
-                </p>
-                <ul className="list-disc ps-5 space-y-1 text-slate-700">
-                  <li>Schedule appointments and contact you;</li>
-                  <li>Respond to your service inquiries;</li>
-                  <li>Provide customer service support.</li>
-                </ul>
-                <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Your contact information is <strong>never sold, leased, or shared</strong> with third parties.</span>
-                </p>
-              </div>
-
-              {/* Official Coordinates */}
-              <div className="pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1.5">
-                <p className="font-bold text-slate-900">{siteConfig.name} — Travel Consulting & Booking</p>
-                <p className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                  <span>{siteConfig.address}</span>
-                </p>
-                <div className="flex items-center gap-1.5" dir="ltr">
-                  <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span className="flex items-center gap-1">
-                    <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline font-semibold">{siteConfig.phone}</a>
-                    <span>/</span>
-                    <a href={`tel:${siteConfig.phoneSecondary.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline font-semibold">{siteConfig.phoneSecondary}</a>
-                  </span>
-                </div>
-              </div>
             </div>
           ) : (
             /* ================= FRENCH VERSION ================= */
-            <div className="space-y-4">
+            <div className="space-y-4 text-left" dir="ltr">
               
-              {/* 1. Site et WhatsApp */}
+              {/* 1. Utilisation du site */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
+                  <Globe className="w-4.5 h-4.5 text-blue-600 shrink-0" />
+                  <h3>Utilisation du site</h3>
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  Ce site est un site de présentation des prestations de <strong>Visado Service</strong>, et vise à faciliter le premier contact avec le bureau.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  La navigation sur le site est accessible sans inscription ni création de compte. Le site n'utilise aucun cookie à des fins de suivi ou de publicité, et ne s'appuie ni sur LocalStorage ni sur SessionStorage pour stocker des données utilisateur sur son appareil.
+                </p>
+              </div>
+
+              {/* 2. Communication et données */}
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
                   <MessageCircle className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <h3>Utilisation du site & Premier contact</h3>
+                  <h3>Communication et données</h3>
                 </div>
-                <p className="text-slate-700">
-                  La consultation de ce site est entièrement libre, sans engagement et ne nécessite aucune création de compte. Aucun cookie de pistage ni traceur persistant n’est enregistré sur votre terminal (zéro localStorage / sessionStorage).
+                <p className="text-slate-700 leading-relaxed">
+                  Lors de vos échanges avec nous via le site ou WhatsApp, nous pouvons recevoir les informations que vous choisissez de transmettre, telles que le nom, le numéro de téléphone, le contenu du message ou les informations relatives à votre demande.
                 </p>
-                <p className="text-slate-700">
-                  Sur le site internet ou via WhatsApp, <strong>nous ne retenons aucune information détaillée sur vous</strong>. Lors d’un premier échange, les seules informations pouvant être visibles sont votre <strong>numéro de téléphone, nom et prénom (ou pseudo WhatsApp)</strong>.
+                <p className="text-slate-700 leading-relaxed">
+                  Ces informations sont utilisées uniquement pour les échanges professionnels, les réponses aux demandes d’information, la prise de rendez-vous et l'orientation et l'accompagnement demandés.
                 </p>
+                <div className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 text-xs font-semibold flex items-center gap-2">
+                  <Lock className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>Les données des clients ne sont en aucun cas vendues ou louées à des fins publicitaires ou marketing.</span>
+                </div>
               </div>
 
-              {/* 2. Traitement direct au bureau */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+              {/* 3. Prestations relatives aux visas */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <FileText className="w-4.5 h-4.5 text-blue-600 shrink-0" />
-                  <h3>Traitement des démarches directement à notre bureau</h3>
+                  <AlertCircle className="w-4.5 h-4.5 text-amber-600 shrink-0" />
+                  <h3>Services de visas</h3>
                 </div>
-                <p className="text-slate-700">
-                  Le site a pour seul objectif de présenter nos prestations et de faciliter la prise de contact. L’ensemble des démarches, l’analyse des demandes et la remise des documents nécessaires se font <strong>exclusivement sur place, directement à notre bureau à Oran</strong>, avec le client.
+                <p className="text-slate-700 leading-relaxed">
+                  <strong>Visado Service</strong> fournit des services d'orientation et d'accompagnement liés aux démarches de voyage et de visas selon la nature de chaque demande.
                 </p>
+                <p className="text-slate-700 leading-relaxed">
+                  La décision d'accorder ou de refuser un visa relève exclusivement de l'ambassade, du consulat ou de l'autorité officielle compétente ; de même, les rendez-vous dépendent de leur disponibilité sur les plateformes officielles.
+                </p>
+                <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-amber-950 font-bold text-xs sm:text-[13px] leading-relaxed">
+                  Visado Service ne garantit ni l'acceptation des demandes de visa ni l'obtention d'un rendez-vous, et n'assume aucune responsabilité quant aux décisions émanant des autorités officielles.
+                </div>
               </div>
 
-              {/* 3. Confidentialité et Non-vente */}
-              <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
-                <div className="flex items-center gap-2 text-emerald-950 font-bold text-sm">
-                  <Lock className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
-                  <h3>Confidentialité & Protection de vos coordonnées</h3>
+              {/* 4. Informations légales */}
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+                <h3 className="text-slate-900 font-bold text-sm">Informations légales</h3>
+                
+                <div className="space-y-1.5 text-xs text-slate-700">
+                  <p className="font-bold text-slate-900 text-sm">Visado Service</p>
+                  <p className="flex items-center gap-2 text-slate-600">
+                    <MapPin className="w-4 h-4 text-red-500 shrink-0" />
+                    <span>14, Rue Capitaine Hadri Mohamed, Oran 31000, Algérie</span>
+                  </p>
                 </div>
-                <p className="text-slate-700">
-                  Les informations que vous choisissez de communiquer volontairement servent uniquement à :
-                </p>
-                <ul className="list-disc ps-5 space-y-1 text-slate-700">
-                  <li>Prendre contact avec vous ;</li>
-                  <li>Répondre à votre demande d’information ;</li>
-                  <li>Assurer le suivi de notre échange.</li>
-                </ul>
-                <p className="text-emerald-900 font-semibold text-xs pt-1 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Vos coordonnées ne sont <strong>ni vendues, ni louées</strong> à des fins publicitaires ou commerciales.</span>
-                </p>
-              </div>
 
-              {/* Coordonnées officielles */}
-              <div className="pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1.5">
-                <p className="font-bold text-slate-900">{siteConfig.name} — Prestations & Accompagnement Voyage</p>
-                <p className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                  <span>{siteConfig.address}</span>
-                </p>
-                <div className="flex items-center gap-1.5" dir="ltr">
-                  <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span className="flex items-center gap-1">
-                    <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline font-semibold">{siteConfig.phone}</a>
-                    <span>/</span>
-                    <a href={`tel:${siteConfig.phoneSecondary.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline font-semibold">{siteConfig.phoneSecondary}</a>
-                  </span>
+                <div className="pt-2 border-t border-slate-200/80">
+                  <p className="text-xs font-bold text-slate-800 mb-1.5">Téléphone / WhatsApp :</p>
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
+                    <a
+                      href="tel:+213557426784"
+                      className="text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>+213 557 42 67 84</span>
+                    </a>
+                    <span className="text-slate-300">|</span>
+                    <a
+                      href="tel:+213555778460"
+                      className="text-blue-600 hover:text-blue-700 hover:underline flex items-center gap-1.5"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>+213 555 77 84 60</span>
+                    </a>
+                  </div>
                 </div>
+
+                <p className="text-xs text-slate-500 pt-2 border-t border-slate-200/80 leading-relaxed">
+                  Les informations publiées sur ce site sont destinées à présenter les prestations et à faciliter la prise de contact avec le bureau, et ne remplacent en aucun cas les informations ou décisions officielles émises par les autorités compétentes.
+                </p>
               </div>
 
             </div>
@@ -289,9 +367,9 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({
         </div>
 
         {/* Footer of modal */}
-        <div className="px-5 sm:px-7 py-3 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs text-slate-500 shrink-0">
-          <span>
-            {isArabic ? 'Visado Service • وهران' : isEnglish ? 'Visado Service • Oran' : 'Visado Service • Oran'}
+        <div className="px-5 sm:px-7 py-3.5 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs text-slate-500 shrink-0">
+          <span className="font-medium">
+            {isArabic ? 'Visado Service • وهران، الجزائر' : 'Visado Service • Oran, Algérie'}
           </span>
           <button
             type="button"

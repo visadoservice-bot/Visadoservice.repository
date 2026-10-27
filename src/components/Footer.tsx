@@ -188,8 +188,10 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
               className="text-slate-300 hover:text-[#00A3E0] underline-offset-4 hover:underline transition-colors font-semibold cursor-pointer py-1 px-2 rounded-md hover:bg-white/5"
             >
               {currentLang === 'ar' 
-                ? 'شروط الموقع والخصوصية' 
-                : 'Conditions du site & Confidentialité'}
+                ? 'شروط الموقع والبيانات القانونية' 
+                : currentLang === 'en'
+                  ? 'Website Terms & Legal Notice'
+                  : 'Conditions du site & Mentions légales'}
             </button>
           )}
 
