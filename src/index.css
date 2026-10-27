@@ -35,6 +35,13 @@
   font-family: 'Cairo', system-ui, -apple-system, sans-serif;
 }
 
+:root {
+  --visado-royal: #003E92;
+  --visado-cyan: #009EE2;
+  --visado-navy: #002458;
+  --visado-surface: #F8FAFC;
+}
+
 /* Premium Travel Agency Card Styles */
 .google-card, .travel-card {
   background-color: #FFFFFF;
@@ -45,23 +52,23 @@
 }
 
 .google-card:hover, .travel-card:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  border-color: #009EE2;
+  box-shadow: 0 10px 25px -5px rgba(0, 62, 146, 0.08), 0 8px 10px -6px rgba(0, 62, 146, 0.04);
 }
 
-/* Premium High-End Buttons */
+/* Premium High-End Buttons with Visado Brand Royal Blue */
 .btn-google-primary, .btn-primary {
-  background-color: #1A56DB;
+  background-color: #003E92;
   color: #FFFFFF;
   font-weight: 600;
   border-radius: 10px;
   padding: 0.625rem 1.25rem;
-  box-shadow: 0 1px 2px 0 rgba(26, 86, 219, 0.2);
+  box-shadow: 0 1px 2px 0 rgba(0, 62, 146, 0.2);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-google-primary:hover, .btn-primary:hover {
-  background-color: #1E40AF;
-  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.25);
+  background-color: #002D6B;
+  box-shadow: 0 4px 14px rgba(0, 62, 146, 0.28);
   transform: translateY(-1px);
 }
 .btn-google-primary:active, .btn-primary:active {

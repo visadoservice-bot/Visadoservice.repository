@@ -314,7 +314,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                   <span className="font-semibold">14, Rue Hadri Mohamed, Oran</span>
                 </span>
                 <span className="flex items-center gap-1.5 text-slate-700 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-2xs">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#002A79] shrink-0" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#003E92] shrink-0" />
                   <span>{currentLang === 'ar' ? '100% صور ومقاطع حقيقية' : '100% Photos réelles de nos locaux'}</span>
                 </span>
               </div>
@@ -329,7 +329,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 onClick={() => setActiveFilter('all')}
                 className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'all'
-                    ? 'bg-slate-900 text-white shadow-2xs'
+                    ? 'bg-[#003E92] text-white shadow-2xs'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
@@ -343,7 +343,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 onClick={() => setActiveFilter('agency')}
                 className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'agency'
-                    ? 'bg-slate-900 text-white shadow-2xs'
+                    ? 'bg-[#003E92] text-white shadow-2xs'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
@@ -357,7 +357,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 onClick={() => setActiveFilter('visas')}
                 className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'visas'
-                    ? 'bg-slate-900 text-white shadow-2xs'
+                    ? 'bg-[#003E92] text-white shadow-2xs'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >
@@ -371,7 +371,7 @@ export const AgencyMediaShowcase: React.FC<AgencyMediaShowcaseProps> = ({
                 onClick={() => setActiveFilter('video')}
                 className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                   activeFilter === 'video'
-                    ? 'bg-slate-900 text-white shadow-2xs'
+                    ? 'bg-[#003E92] text-white shadow-2xs'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                 }`}
               >

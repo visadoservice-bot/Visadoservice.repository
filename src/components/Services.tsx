@@ -55,12 +55,12 @@ export const Services: React.FC<ServicesProps> = ({
                 <div className="bg-white rounded-3xl border border-slate-200/80 hover:border-slate-300 p-5 sm:p-6 flex flex-col justify-between h-full shadow-2xs hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1.5 transition-all duration-300 group cursor-default">
                   <div>
                     {/* Sober, unified icon container */}
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-slate-100 border border-slate-200/70 text-[#002A79] flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-105 transition-transform duration-300 shadow-2xs">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-slate-100 border border-slate-200/70 text-[#003E92] flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-105 transition-transform duration-300 shadow-2xs">
                       <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1 group-hover:text-[#002A79] transition-colors duration-200">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1 group-hover:text-[#003E92] transition-colors duration-200">
                       {service.title}
                     </h3>
                     <p className="text-xs font-semibold text-slate-500 mb-2.5">

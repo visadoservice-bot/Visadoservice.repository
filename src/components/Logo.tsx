@@ -51,12 +51,12 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'header' }
       <div className="flex flex-col text-left leading-tight select-none">
         <div className="flex items-baseline gap-1 sm:gap-1.5">
           <span className={`font-black text-base sm:text-lg md:text-xl tracking-tight transition-colors ${
-            isDark ? 'text-white' : 'text-[#002A79]'
+            isDark ? 'text-white' : 'text-[#003E92]'
           }`}>
             VISADO
           </span>
           <span className={`font-black text-base sm:text-lg md:text-xl tracking-tight ${
-            isDark ? 'text-[#38B6FF]' : 'text-[#00A3E0]'
+            isDark ? 'text-[#38B6FF]' : 'text-[#009EE2]'
           }`}>
             SERVICE
           </span>

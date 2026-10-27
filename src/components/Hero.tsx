@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({
             
             {/* 1. Petite indication: "VISADO SERVICE — ORAN" */}
             <div className="animate-hero-fade flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-slate-500 mb-3 sm:mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#002A79] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#003E92] shrink-0" />
               <span className="text-slate-900 font-bold">VISADO SERVICE</span>
               <span className="text-slate-300 font-light">—</span>
               <span className="text-slate-700 tracking-[0.22em]">ORAN</span>
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* CTA Principal */}
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3.5 sm:py-4 bg-[#002A79] hover:bg-[#002060] active:bg-[#001848] text-white text-sm sm:text-base font-bold rounded-2xl shadow-md shadow-[#002A79]/20 hover:shadow-lg hover:shadow-[#002A79]/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                className="px-6 py-3.5 sm:py-4 bg-[#003E92] hover:bg-[#002060] active:bg-[#001848] text-white text-sm sm:text-base font-bold rounded-2xl shadow-md shadow-[#003E92]/20 hover:shadow-lg hover:shadow-[#003E92]/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <span>{currentLang === 'ar' ? 'تحدث مع مستشار' : currentLang === 'en' ? 'Speak to an Advisor' : 'Parler à un conseiller'}</span>
               </button>
@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({
                 href={`tel:${siteConfig.phoneRaw}`}
                 className="px-4 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 text-sm font-semibold rounded-2xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-2xs"
               >
-                <Phone className="w-4 h-4 text-[#002A79] shrink-0" />
+                <Phone className="w-4 h-4 text-[#003E92] shrink-0" />
                 <span dir="ltr">{siteConfig.phone}</span>
               </a>
             </div>
@@ -121,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>
               <span className="flex items-center gap-1.5 font-medium text-slate-700">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#002A79] shrink-0" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#003E92] shrink-0" />
                 <span>{currentLang === 'ar' ? 'مساعدة في حجوزات السفر' : 'Assistance aux réservations'}</span>
               </span>
               <span className="text-slate-300" aria-hidden="true">·</span>

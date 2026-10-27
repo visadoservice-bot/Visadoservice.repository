@@ -21,10 +21,10 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-[#08152E] via-[#0A1A3A] to-[#050D1C] text-[#9FB3C8] border-t border-[#00A3E0]/30 pt-8 pb-24 md:pb-8 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#002458] via-[#001D47] to-[#001533] text-[#B0C7DE] border-t border-[#009EE2]/30 pt-8 pb-24 md:pb-8 relative overflow-hidden">
       {/* Subtle brand glow in background */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00A3E0]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#002A79]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#009EE2]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#003E92]/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Main Footer Grid */}
@@ -42,19 +42,19 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
               href={siteConfig.googleMapsShareUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-[#00A3E0]/50 text-xs text-[#C5D7EC] hover:text-white transition-all group max-w-full"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.08] hover:border-[#009EE2]/50 text-xs text-[#C5D7EC] hover:text-white transition-all group max-w-full"
               title="Ouvrir sur Google Maps"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#00A3E0] group-hover:scale-110 transition-transform shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-[#009EE2] group-hover:scale-110 transition-transform shrink-0" />
               <span dir="ltr" className="font-medium text-[11px] sm:text-xs truncate">14, Rue Capitaine Hadri Mohamed, Oran</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#00A3E0]/20 text-[#00A3E0] font-bold group-hover:bg-[#00A3E0] group-hover:text-white transition-colors shrink-0">Maps ↗</span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#009EE2]/20 text-[#009EE2] font-bold group-hover:bg-[#009EE2] group-hover:text-white transition-colors shrink-0">Maps ↗</span>
             </a>
           </div>
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#009EE2]" />
               {currentLang === 'ar' ? 'روابط سريعة' : 'Navigation'}
             </h4>
             <ul className="space-y-2 text-xs">
@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[#9FB3C8] hover:text-[#00A3E0] transition-colors inline-block"
+                    className="text-[#9FB3C8] hover:text-[#009EE2] transition-colors inline-block"
                   >
                     {link.label}
                   </a>
@@ -74,22 +74,22 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
           {/* Col 3: Contact & Direct Lines */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#009EE2]" />
               {currentLang === 'ar' ? 'الاتصال المباشر' : 'Lignes Directes'}
             </h4>
             <div className="space-y-2.5 text-xs">
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="group flex items-center gap-2.5 p-2 rounded-lg bg-white/[0.03] hover:bg-[#00A3E0]/15 border border-white/[0.06] hover:border-[#00A3E0]/40 transition-all text-white font-medium"
+                className="group flex items-center gap-2.5 p-2 rounded-lg bg-white/[0.03] hover:bg-[#009EE2]/15 border border-white/[0.06] hover:border-[#009EE2]/40 transition-all text-white font-medium"
               >
-                <div className="w-7 h-7 rounded-md bg-[#00A3E0]/20 text-[#00A3E0] flex items-center justify-center shrink-0 group-hover:bg-[#00A3E0] group-hover:text-white transition-colors">
+                <div className="w-7 h-7 rounded-md bg-[#009EE2]/20 text-[#009EE2] flex items-center justify-center shrink-0 group-hover:bg-[#009EE2] group-hover:text-white transition-colors">
                   <Phone className="w-3.5 h-3.5" />
                 </div>
                 <div>
                   <span className="block text-[10px] text-[#8DA6C6] uppercase font-semibold tracking-wider">
                     {currentLang === 'ar' ? 'الهاتف' : 'Téléphone'}
                   </span>
-                  <span dir="ltr" className="text-sm font-bold text-white group-hover:text-[#00A3E0] transition-colors">
+                  <span dir="ltr" className="text-sm font-bold text-white group-hover:text-[#009EE2] transition-colors">
                     {siteConfig.phone}
                   </span>
                 </div>
@@ -116,9 +116,9 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
 
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#00A3E0] transition-colors pt-1 break-all"
+                className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#009EE2] transition-colors pt-1 break-all"
               >
-                <Mail className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#009EE2] shrink-0" />
                 <span>{siteConfig.email}</span>
               </a>
 
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
                 href={siteConfig.googleMapsShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#00A3E0] transition-colors pt-0.5"
+                className="flex items-center gap-2 text-xs text-[#9FB3C8] hover:text-[#009EE2] transition-colors pt-0.5"
               >
                 <MapPin className="w-3.5 h-3.5 text-[#EA4335] shrink-0" />
                 <span>{currentLang === 'ar' ? 'موقعنا على Google Maps' : 'Accès Google Maps (Oran)'}</span>
@@ -137,7 +137,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
           {/* Col 4: Socials */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#009EE2]" />
               {currentLang === 'ar' ? 'شبكات التواصل' : 'Réseaux Sociaux'}
             </h4>
             <div className="flex flex-col space-y-2 text-xs">
@@ -145,28 +145,28 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
                 href={siteConfig.tiktokUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#00A3E0]/40 text-white transition-all"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#009EE2]/40 text-white transition-all"
               >
                 <span className="font-medium text-xs">TikTok @visadoservice</span>
-                <span className="text-[11px] text-[#00A3E0] font-bold">@</span>
+                <span className="text-[11px] text-[#009EE2] font-bold">@</span>
               </a>
               <a
                 href={siteConfig.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#00A3E0]/40 text-white transition-all"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#009EE2]/40 text-white transition-all"
               >
                 <span className="font-medium text-xs">Instagram @visadoservice</span>
-                <span className="text-[11px] text-[#00A3E0] font-bold">IG</span>
+                <span className="text-[11px] text-[#009EE2] font-bold">IG</span>
               </a>
               <a
                 href={siteConfig.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#00A3E0]/40 text-white transition-all"
+                className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] hover:border-[#009EE2]/40 text-white transition-all"
               >
                 <span className="font-medium text-xs">Facebook Visado Service</span>
-                <span className="text-[11px] text-[#00A3E0] font-bold">FB</span>
+                <span className="text-[11px] text-[#009EE2] font-bold">FB</span>
               </a>
             </div>
           </div>
@@ -176,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-[#7A93B0] gap-3">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
+            <span className="w-2 h-2 rounded-full bg-[#009EE2]" />
             <span>© {new Date().getFullYear()} Visado Service Oran. Tous droits réservés.</span>
           </div>
 
@@ -185,7 +185,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenLegalModal })
             <button
               type="button"
               onClick={onOpenLegalModal}
-              className="text-slate-300 hover:text-[#00A3E0] underline-offset-4 hover:underline transition-colors font-semibold cursor-pointer py-1 px-2 rounded-md hover:bg-white/5"
+              className="text-slate-300 hover:text-[#009EE2] underline-offset-4 hover:underline transition-colors font-semibold cursor-pointer py-1 px-2 rounded-md hover:bg-white/5"
             >
               {currentLang === 'ar' 
                 ? 'شروط الموقع والبيانات القانونية' 

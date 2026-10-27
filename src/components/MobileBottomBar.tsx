@@ -54,7 +54,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
         <button
           type="button"
           onClick={onOpenConsultation}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#002A79] hover:bg-[#002060] active:bg-[#001744] text-white font-bold transition-all active:scale-95 shadow-sm shadow-slate-900/20 cursor-pointer"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#003E92] hover:bg-[#002D6B] active:bg-[#002458] text-white font-bold transition-all active:scale-95 shadow-sm shadow-[#003E92]/20 cursor-pointer"
           aria-label="Demander un rendez-vous ou devis"
         >
           <Calendar className="w-5 h-5 text-white" />

@@ -365,7 +365,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                             onClick={() => setFormData({ ...formData, destination: dest.value })}
                             className={`px-3 py-2 rounded-xl text-xs font-semibold text-start border transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                               isSelected
-                                ? 'bg-slate-900 border-slate-900 text-white shadow-xs'
+                                ? 'bg-[#003E92] border-[#003E92] text-white shadow-xs'
                                 : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
                             }`}
                           >
@@ -392,7 +392,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                             onClick={() => setFormData({ ...formData, profile: prof.value })}
                             className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 ${
                               isSelected
-                                ? 'bg-slate-900 border-slate-900 text-white shadow-xs'
+                                ? 'bg-[#003E92] border-[#003E92] text-white shadow-xs'
                                 : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
                             }`}
                           >

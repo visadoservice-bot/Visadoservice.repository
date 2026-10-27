@@ -278,7 +278,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={onOpenConsultation}
-              className="flex items-center gap-1.5 px-4 sm:px-5 py-2 text-xs font-bold text-white bg-[#002A79] hover:bg-[#002060] active:bg-[#001744] rounded-full shadow-xs hover:shadow-md hover:shadow-slate-900/10 active:scale-95 transition-all cursor-pointer"
+              className="flex items-center gap-1.5 px-4 sm:px-5 py-2 text-xs font-bold text-white bg-[#003E92] hover:bg-[#002060] active:bg-[#001744] rounded-full shadow-xs hover:shadow-md hover:shadow-slate-900/10 active:scale-95 transition-all cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>{isArabic ? 'تحدث مع مستشار' : 'Parler à un conseiller'}</span>
@@ -303,7 +303,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-2xl border transition-all duration-300 cursor-pointer select-none touch-manipulation shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 active:scale-90 ${
                 isMobileMenuOpen
-                  ? 'bg-[#002A79] border-[#002A79] text-white shadow-md shadow-slate-900/20'
+                  ? 'bg-[#003E92] border-[#003E92] text-white shadow-md shadow-slate-900/20'
                   : 'bg-slate-100/90 hover:bg-slate-200/80 active:bg-slate-200 border-slate-200/80 text-slate-800 shadow-2xs'
               }`}
               aria-label={isMobileMenuOpen ? (isArabic ? "إغلاق القائمة" : "Fermer le menu") : (isArabic ? "فتح القائمة" : "Ouvrir le menu")}
@@ -365,7 +365,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={() => onLanguageChange('fr')}
                       className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                         currentLang === 'fr' 
-                          ? 'bg-[#002A79] text-white shadow-2xs' 
+                          ? 'bg-[#003E92] text-white shadow-2xs' 
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
@@ -376,7 +376,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={() => onLanguageChange('ar')}
                       className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                         currentLang === 'ar' 
-                          ? 'bg-[#002A79] text-white shadow-2xs' 
+                          ? 'bg-[#003E92] text-white shadow-2xs' 
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
@@ -387,7 +387,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={() => onLanguageChange('en')}
                       className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                         currentLang === 'en' 
-                          ? 'bg-[#002A79] text-white shadow-2xs' 
+                          ? 'bg-[#003E92] text-white shadow-2xs' 
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
@@ -419,7 +419,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={(e) => handleNavClick(e, link.href)}
                       className={`group flex items-center justify-between p-3 rounded-2xl text-sm font-bold transition-all duration-200 active:scale-[0.98] ${
                         isActive
-                          ? 'bg-[#002A79] text-white shadow-sm'
+                          ? 'bg-[#003E92] text-white shadow-sm'
                           : 'text-slate-800 bg-slate-50/80 hover:bg-slate-100 hover:text-slate-900 border border-slate-200/60'
                       }`}
                     >
@@ -427,7 +427,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                           isActive 
                             ? 'bg-white/20 text-white' 
-                            : 'bg-white border border-slate-200 text-[#002A79] shadow-2xs group-hover:border-slate-300'
+                            : 'bg-white border border-slate-200 text-[#003E92] shadow-2xs group-hover:border-slate-300'
                         }`}>
                           <IconComponent className="w-4.5 h-4.5 stroke-[2.2]" />
                         </div>
@@ -503,7 +503,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setIsMobileMenuOpen(false);
                     onOpenConsultation();
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#002A79] hover:bg-[#002060] text-white text-xs font-bold shadow-md shadow-slate-900/15 active:scale-98 transition-all cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#003E92] hover:bg-[#002060] text-white text-xs font-bold shadow-md shadow-slate-900/15 active:scale-98 transition-all cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4 text-white" />
                   <span>{isArabic ? 'تحدث مع مستشار مختص' : 'Parler à un conseiller'}</span>

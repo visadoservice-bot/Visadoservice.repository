@@ -298,7 +298,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 </a>
                 <a
                   href={`tel:${siteConfig.phoneRaw}`}
-                  className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-xs flex items-center justify-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                  className="w-full sm:w-auto px-4 py-2.5 bg-[#003E92] hover:bg-[#002D6B] text-white text-xs font-bold rounded-xl shadow-xs flex items-center justify-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
                   <span>Appeler {siteConfig.phone}</span>

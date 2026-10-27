@@ -47,7 +47,7 @@ export const Trust: React.FC<TrustProps> = ({
         <Reveal direction="up" delay={0}>
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/80 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#002A79]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#003E92]" />
               <span>{isArabic ? 'ثقة وشفافية • وهران' : isEnglish ? 'Trust, Rigor & Transparency' : 'Confiance, Rigueur & Transparence'}</span>
             </div>
 

@@ -49,11 +49,11 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   // Harmonious, sober palette: elegant corporate navy / charcoal without rainbow colors
   const colors = {
-    bgSolid: 'bg-[#002A79]',
+    bgSolid: 'bg-[#003E92]',
     bgTint: 'bg-slate-50',
-    textAccent: 'text-[#002A79]',
+    textAccent: 'text-[#003E92]',
     borderHover: 'hover:border-slate-300 hover:shadow-slate-200/60',
-    ringFocus: 'focus-visible:ring-[#002A79]'
+    ringFocus: 'focus-visible:ring-[#003E92]'
   };
 
   return (
@@ -64,7 +64,7 @@ export const Card: React.FC<CardProps> = ({
         {/* En-tête de carte : sobre, épuré, fond crème/blanc délicat */}
         <div className="p-5 sm:p-6 bg-slate-50/60 flex items-center justify-between gap-3 border-b border-slate-100">
           {Icon && (
-            <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/80 text-[#002A79] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-250">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/80 text-[#003E92] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-250">
               <Icon className="w-5 h-5" />
             </div>
           )}
@@ -84,7 +84,7 @@ export const Card: React.FC<CardProps> = ({
 
         {/* Corps de la carte */}
         <div className="p-5 sm:p-6 space-y-3 text-start">
-          <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-[#002A79] transition-colors duration-200">
+          <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-[#003E92] transition-colors duration-200">
             {title}
           </h3>
 
